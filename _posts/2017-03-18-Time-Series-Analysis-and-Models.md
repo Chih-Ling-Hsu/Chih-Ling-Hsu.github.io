@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Sample post
+title: Time Series Analysis and Models
 ---
 
 ## Definitions
