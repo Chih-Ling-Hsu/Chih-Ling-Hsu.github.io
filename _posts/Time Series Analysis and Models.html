@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>
+        Time Series Analysis and Models - HackMD
+    </title>
+    <link rel="icon" type="image/png" href="https://hackmd.io/favicon.png">
+    <link rel="apple-touch-icon" href="https://hackmd.io/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.5.0/octicons.min.css" integrity="sha256-QiWfLIsCT02Sdwkogf6YMiQlj4NE84MKkzEMkZnMGdg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/themes/prism.min.css" integrity="sha256-vtR0hSWRc3Tb26iuN2oZHt3KRUomwTufNIf5/4oeCyg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/github-gist.min.css" integrity="sha256-tAflq+ymku3Khs+I/WcAneIlafYgDiOQ9stIHH985Wo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,600italic,300italic,300|Source+Serif+Pro|Source+Code+Pro:400,300,500&subset=latin,latin-ext);.markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.5;word-wrap:break-word}.markdown-body:after,.markdown-body:before{display:table;content:""}.markdown-body:after{clear:both}.markdown-body>:first-child{margin-top:0!important}.markdown-body>:last-child{margin-bottom:0!important}.markdown-body a:not([href]){color:inherit;text-decoration:none}.markdown-body .absent{color:#c00}.markdown-body .anchor{float:left;padding-right:4px;margin-left:-20px;line-height:1}.markdown-body .anchor:focus{outline:none}.markdown-body blockquote,.markdown-body dl,.markdown-body ol,.markdown-body p,.markdown-body pre,.markdown-body table,.markdown-body ul{margin-top:0;margin-bottom:16px}.markdown-body hr{height:.25em;padding:0;margin:24px 0;background-color:#e7e7e7;border:0}.markdown-body blockquote{padding:0 1em;color:#777;border-left:.25em solid #ddd}.markdown-body blockquote>:first-child{margin-top:0}.markdown-body blockquote>:last-child{margin-bottom:0}.markdown-body .loweralpha{list-style-type:lower-alpha}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{margin-top:24px;margin-bottom:16px;font-weight:600;line-height:1.25}.markdown-body h1 .octicon-link,.markdown-body h2 .octicon-link,.markdown-body h3 .octicon-link,.markdown-body h4 .octicon-link,.markdown-body h5 .octicon-link,.markdown-body h6 .octicon-link{color:#000;vertical-align:middle;visibility:hidden}.markdown-body h1:hover .anchor,.markdown-body h2:hover .anchor,.markdown-body h3:hover .anchor,.markdown-body h4:hover .anchor,.markdown-body h5:hover .anchor,.markdown-body h6:hover .anchor{text-decoration:none}.markdown-body h1:hover .anchor .octicon-link,.markdown-body h2:hover .anchor .octicon-link,.markdown-body h3:hover .anchor .octicon-link,.markdown-body h4:hover .anchor .octicon-link,.markdown-body h5:hover .anchor .octicon-link,.markdown-body h6:hover .anchor .octicon-link{visibility:visible}.markdown-body h1 code,.markdown-body h1 tt,.markdown-body h2 code,.markdown-body h2 tt,.markdown-body h3 code,.markdown-body h3 tt,.markdown-body h4 code,.markdown-body h4 tt,.markdown-body h5 code,.markdown-body h5 tt,.markdown-body h6 code,.markdown-body h6 tt{font-size:inherit}.markdown-body h1{font-size:2em}.markdown-body h1,.markdown-body h2{padding-bottom:.3em;border-bottom:1px solid #eee}.markdown-body h2{font-size:1.5em}.markdown-body h3{font-size:1.25em}.markdown-body h4{font-size:1em}.markdown-body h5{font-size:.875em}.markdown-body h6{font-size:.85em;color:#777}.markdown-body ol,.markdown-body ul{padding-left:2em}.markdown-body ol.no-list,.markdown-body ul.no-list{padding:0;list-style-type:none}.markdown-body ol ol,.markdown-body ol ul,.markdown-body ul ol,.markdown-body ul ul{margin-top:0;margin-bottom:0}.markdown-body li>p{margin-top:16px}.markdown-body li+li{margin-top:.25em}.markdown-body dl{padding:0}.markdown-body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}.markdown-body dl dd{padding:0 16px;margin-bottom:16px}.markdown-body table{display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}.markdown-body table th{font-weight:700}.markdown-body table td,.markdown-body table th{padding:6px 13px;border:1px solid #ddd}.markdown-body table tr{background-color:#fff;border-top:1px solid #ccc}.markdown-body table tr:nth-child(2n){background-color:#f8f8f8}.markdown-body img{max-width:100%;box-sizing:content-box;background-color:#fff}.markdown-body img[align=right]{padding-left:20px}.markdown-body img[align=left]{padding-right:20px}.markdown-body .emoji{max-width:none;vertical-align:text-top;background-color:transparent}.markdown-body span.frame{display:block;overflow:hidden}.markdown-body span.frame>span{display:block;float:left;width:auto;padding:7px;margin:13px 0 0;overflow:hidden;border:1px solid #ddd}.markdown-body span.frame span img{display:block;float:left}.markdown-body span.frame span span{display:block;padding:5px 0 0;clear:both;color:#333}.markdown-body span.align-center{display:block;overflow:hidden;clear:both}.markdown-body span.align-center>span{display:block;margin:13px auto 0;overflow:hidden;text-align:center}.markdown-body span.align-center span img{margin:0 auto;text-align:center}.markdown-body span.align-right{display:block;overflow:hidden;clear:both}.markdown-body span.align-right>span{display:block;margin:13px 0 0;overflow:hidden;text-align:right}.markdown-body span.align-right span img{margin:0;text-align:right}.markdown-body span.float-left{display:block;float:left;margin-right:13px;overflow:hidden}.markdown-body span.float-left span{margin:13px 0 0}.markdown-body span.float-right{display:block;float:right;margin-left:13px;overflow:hidden}.markdown-body span.float-right>span{display:block;margin:13px auto 0;overflow:hidden;text-align:right}.markdown-body code,.markdown-body tt{padding:0;padding-top:.2em;padding-bottom:.2em;margin:0;font-size:85%;background-color:rgba(0,0,0,.04);border-radius:3px}.markdown-body code:after,.markdown-body code:before,.markdown-body tt:after,.markdown-body tt:before{letter-spacing:-.2em;content:"\A0"}.markdown-body code br,.markdown-body tt br{display:none}.markdown-body del code{text-decoration:inherit}.markdown-body pre{word-wrap:normal}.markdown-body pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:transparent;border:0}.markdown-body .highlight{margin-bottom:16px}.markdown-body .highlight pre{margin-bottom:0;word-break:normal}.markdown-body .highlight pre,.markdown-body pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f7f7f7;border-radius:3px}.markdown-body pre code,.markdown-body pre tt{display:inline;max-width:auto;padding:0;margin:0;overflow:visible;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}.markdown-body pre code:after,.markdown-body pre code:before,.markdown-body pre tt:after,.markdown-body pre tt:before{content:normal}.markdown-body .csv-data td,.markdown-body .csv-data th{padding:5px;overflow:hidden;font-size:12px;line-height:1;text-align:left;white-space:nowrap}.markdown-body .csv-data .blob-line-num{padding:10px 8px 9px;text-align:right;background:#fff;border:0}.markdown-body .csv-data tr{border-top:0}.markdown-body .csv-data th{font-weight:700;background:#f8f8f8;border-top:0}.markdown-body kbd{display:inline-block;padding:3px 5px;font-size:11px;line-height:10px;color:#555;vertical-align:middle;background-color:#fcfcfc;border:1px solid #ccc;border-bottom-color:#bbb;border-radius:3px;box-shadow:inset 0 -1px 0 #bbb}.news .alert .markdown-body blockquote{padding:0 0 0 40px;border:0 none}.activity-tab .news .alert .commits,.activity-tab .news .markdown-body blockquote{padding-left:0}.task-list-item{list-style-type:none}.task-list-item label{font-weight:400}.task-list-item.enabled label{cursor:pointer}.task-list-item+.task-list-item{margin-top:3px}.task-list-item-checkbox{float:left;margin:.31em 0 .2em -1.3em!important;vertical-align:middle;cursor:default!important}.markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;padding-top:40px;padding-bottom:40px;max-width:758px;overflow:visible!important}.markdown-body pre{border:inherit!important}.markdown-body code{color:inherit!important}.markdown-body pre code .wrapper{display:-moz-inline-flex;display:-ms-inline-flex;display:-o-inline-flex;display:inline-flex}.markdown-body pre code .gutter{float:left;overflow:hidden;-webkit-user-select:none;user-select:none}.markdown-body pre code .gutter.linenumber{text-align:right;position:relative;display:inline-block;cursor:default;z-index:4;padding:0 8px 0 0;min-width:20px;box-sizing:content-box;color:#afafaf!important;border-right:3px solid #6ce26c!important}.markdown-body pre code .gutter.linenumber>span:before{content:attr(data-linenumber)}.markdown-body pre code .code{float:left;margin:0 0 0 16px}.markdown-body .gist .line-numbers{border-left:none;border-top:none;border-bottom:none}.markdown-body .gist .line-data{border:none}.markdown-body .gist table{border-spacing:0;border-collapse:inherit!important}.markdown-body code[data-gist-id]{background:none;padding:0}.markdown-body code[data-gist-id]:after,.markdown-body code[data-gist-id]:before{content:""}.markdown-body code[data-gist-id] .blob-num{border:unset}.markdown-body code[data-gist-id] table{overflow:unset;margin-bottom:unset}.markdown-body code[data-gist-id] table tr{background:unset}.markdown-body[dir=rtl] pre{direction:ltr}.markdown-body[dir=rtl] code{direction:ltr;unicode-bidi:embed}.markdown-body .alert>p{margin-bottom:0}.markdown-body pre.flow-chart,.markdown-body pre.graphviz,.markdown-body pre.mermaid,.markdown-body pre.sequence-diagram{text-align:center;background-color:inherit;border-radius:0;white-space:inherit}.markdown-body pre.flow-chart>code,.markdown-body pre.graphviz>code,.markdown-body pre.mermaid>code,.markdown-body pre.sequence-diagram>code{text-align:left}.markdown-body pre.flow-chart>svg,.markdown-body pre.graphviz>svg,.markdown-body pre.mermaid>svg,.markdown-body pre.sequence-diagram>svg{max-width:100%;height:100%}.markdown-body pre>code.wrap{white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;word-wrap:break-word}.markdown-body .alert>p,.markdown-body .alert>ul{margin-bottom:0}.vimeo,.youtube{cursor:pointer;display:table;text-align:center;background-position:50%;background-repeat:no-repeat;background-size:contain;background-color:#000;overflow:hidden}.vimeo,.youtube{position:relative;width:100%}.youtube{padding-bottom:56.25%}.vimeo img{width:100%;object-fit:contain;z-index:0}.youtube img{object-fit:cover;z-index:0}.vimeo iframe,.youtube iframe,.youtube img{width:100%;height:100%;position:absolute;top:0;left:0}.vimeo iframe,.youtube iframe{vertical-align:middle;z-index:1}.vimeo .icon,.youtube .icon{position:absolute;height:auto;width:auto;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;opacity:.3;-webkit-transition:opacity .2s;transition:opacity .2s;z-index:0}.vimeo:hover .icon,.youtube:hover .icon{opacity:.6;-webkit-transition:opacity .2s;transition:opacity .2s}.slideshare .inner,.speakerdeck .inner{position:relative;width:100%}.slideshare .inner iframe,.speakerdeck .inner iframe{position:absolute;top:0;bottom:0;left:0;right:0;width:100%;height:100%}.MJX_Assistive_MathML{display:none}.ui-infobar{position:relative;z-index:2;max-width:758px;margin-top:25px;margin-bottom:-25px;color:#777}.ui-toc{position:fixed;bottom:20px;z-index:10000}.ui-toc-label{opacity:.3;background-color:#ccc;border:none}.ui-toc-label,.ui-toc .open .ui-toc-label{-webkit-transition:opacity .2s;transition:opacity .2s}.ui-toc .open .ui-toc-label{opacity:1;color:#fff}.ui-toc-label:focus{opacity:.3;background-color:#ccc;color:#000}.ui-toc-label:hover{opacity:1;background-color:#ccc;-webkit-transition:opacity .2s;transition:opacity .2s}.ui-toc-dropdown{margin-top:23px;margin-bottom:20px;padding-left:10px;padding-right:10px;max-width:45vw;width:25vw;max-height:70vh;overflow:auto;text-align:inherit}.ui-toc-dropdown>.toc{max-height:calc(70vh - 100px);overflow:auto}.ui-toc-dropdown[dir=rtl] .nav{padding-right:0;letter-spacing:.0029em}.ui-toc-dropdown a{overflow:hidden;text-overflow:ellipsis;white-space:pre}.ui-toc-dropdown .nav>li>a{display:block;padding:4px 20px;font-size:13px;font-weight:500;color:#767676}.ui-toc-dropdown .nav>li:first-child:last-child > ul,.ui-toc-dropdown .toc.expand ul{display:block}.ui-toc-dropdown .nav>li>a:focus,.ui-toc-dropdown .nav>li>a:hover{padding-left:19px;color:#000;text-decoration:none;background-color:transparent;border-left:1px solid #000}.ui-toc-dropdown[dir=rtl] .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav>li>a:hover{padding-right:19px;border-left:none;border-right:1px solid #000}.ui-toc-dropdown .nav>.active:focus>a,.ui-toc-dropdown .nav>.active:hover>a,.ui-toc-dropdown .nav>.active>a{padding-left:18px;font-weight:700;color:#000;background-color:transparent;border-left:2px solid #000}.ui-toc-dropdown[dir=rtl] .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav>.active>a{padding-right:18px;border-left:none;border-right:2px solid #000}.ui-toc-dropdown .nav .nav{display:none;padding-bottom:10px}.ui-toc-dropdown .nav>.active>ul{display:block}.ui-toc-dropdown .nav .nav>li>a{padding-top:1px;padding-bottom:1px;padding-left:30px;font-size:12px;font-weight:400}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a{padding-right:30px}.ui-toc-dropdown .nav .nav>li>ul>li>a{padding-top:1px;padding-bottom:1px;padding-left:40px;font-size:12px;font-weight:400}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a{padding-right:40px}.ui-toc-dropdown .nav .nav>li>a:focus,.ui-toc-dropdown .nav .nav>li>a:hover{padding-left:29px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:hover{padding-right:29px}.ui-toc-dropdown .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown .nav .nav>li>ul>li>a:hover{padding-left:39px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:hover{padding-right:39px}.ui-toc-dropdown .nav .nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>a{padding-left:28px;font-weight:500}.ui-toc-dropdown[dir=rtl] .nav .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>a{padding-right:28px}.ui-toc-dropdown .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active>a{padding-left:38px;font-weight:500}.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active>a{padding-right:38px}.markdown-body[lang^=ja]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,Hiragino Kaku Gothic Pro,\\30D2\30E9\30AE\30CE\89D2\30B4 Pro W3,Osaka,Meiryo,\\30E1\30A4\30EA\30AA,MS Gothic,"\FF2D\FF33   \30B4\30B7\30C3\30AF",sans-serif}.ui-toc-dropdown[lang^=ja]{font-family:Source Sans Pro,Helvetica,Arial,Meiryo UI,MS PGothic,"\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF",sans-serif}.markdown-body[lang=zh-tw]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,PingFang TC,Microsoft JhengHei,\\5FAE\8EDF\6B63\9ED1,sans-serif}.ui-toc-dropdown[lang=zh-tw]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft JhengHei UI,\\5FAE\8EDF\6B63\9ED1UI,sans-serif}.markdown-body[lang=zh-cn]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,PingFang SC,Microsoft YaHei,\\5FAE\8F6F\96C5\9ED1,sans-serif}.ui-toc-dropdown[lang=zh-cn]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft YaHei UI,\\5FAE\8F6F\96C5\9ED1UI,sans-serif}.ui-affix-toc{position:fixed;top:0;max-width:15vw;max-height:70vh;overflow:auto}.back-to-top,.expand-toggle,.go-to-bottom{display:block;padding:4px 10px;margin-top:10px;margin-left:10px;font-size:12px;font-weight:500;color:#999}.back-to-top:focus,.back-to-top:hover,.expand-toggle:focus,.expand-toggle:hover,.go-to-bottom:focus,.go-to-bottom:hover{color:#563d7c;text-decoration:none}.back-to-top,.go-to-bottom{margin-top:0}.ui-user-icon{width:20px;height:20px;display:block;border-radius:3px;margin-top:2px;margin-bottom:2px;margin-right:5px;background-position:50%;background-repeat:no-repeat;background-size:contain}.ui-user-icon.small{width:18px;height:18px;display:inline-block;vertical-align:middle;margin:0 0 .2em}small span{line-height:22px}small .dropdown{display:inline-block}small .dropdown a:focus,small .dropdown a:hover{text-decoration:none}.unselectable{-moz-user-select:none;-webkit-user-select:none;-o-user-select:none;user-select:none}@media print{blockquote,div,img,pre,table{page-break-inside:avoid!important}a[href]:after{font-size:12px!important}}.markdown-body.slides{position:relative;z-index:1;color:#222}.markdown-body.slides:before{content:"";display:block;position:absolute;top:0;left:0;right:0;bottom:0;z-index:-1;background-color:currentColor;box-shadow:0 0 0 50vw}.markdown-body.slides section[data-markdown]{position:relative;margin-bottom:1.5em;background-color:#fff;text-align:center}.markdown-body.slides section[data-markdown] code{text-align:left}.markdown-body.slides section[data-markdown]:before{content:"";display:block;padding-bottom:56.23%}.markdown-body.slides section[data-markdown]>div:first-child{position:absolute;top:50%;left:1em;right:1em;transform:translateY(-50%);max-height:100%;overflow:hidden}.markdown-body.slides section[data-markdown]>ul{display:inline-block}.markdown-body.slides>section>section+section:after{content:"";position:absolute;top:-1.5em;right:1em;height:1.5em;border:3px solid #777}body{font-smoothing:subpixel-antialiased!important;-webkit-font-smoothing:subpixel-antialiased!important;-moz-osx-font-smoothing:auto!important;text-shadow:0 0 1em transparent,1px 1px 1.2px rgba(0,0,0,.004);-webkit-overflow-scrolling:touch;font-family:Source Sans Pro,Helvetica,Arial,sans-serif;letter-spacing:.025em}.focus,:focus{outline:none!important}::-moz-focus-inner{border:0!important}body.modal-open{overflow-y:auto;padding-right:0!important}
+    </style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div id="doc" class="markdown-body container-fluid"><h1 id="time-series-analysis-and-models"><a class="anchor hidden-xs" href="#time-series-analysis-and-models" title="time-series-analysis-and-models"><span class="octicon octicon-link"></span></a>Time Series Analysis and Models</h1><h6 id="tags-study-data-science-statistics"><a class="anchor hidden-xs" href="#tags-study-data-science-statistics" title="tags-study-data-science-statistics"><span class="octicon octicon-link"></span></a>tags: <code>Study</code> <code>Data Science</code> <code>Statistics</code></h6><hr><h2 id="definitions"><a class="anchor hidden-xs" href="#definitions" title="definitions"><span class="octicon octicon-link"></span></a>Definitions</h2><ul>
+<li><strong>Time series</strong>: A time series is a series of data points indexed (or listed or graphed) in time order.   A sequence taken at successive equally spaced points in time (A sequence of discrete-time data).</li>
+<li><strong>Time series analysis</strong>: Methods for analyzing time series data in order to extract meaningful statistics and other characteristics of the data.</li>
+<li><strong>Time series forecasting</strong>: The use of a model to predict future values based on previously observed values.   While regression analysis is often employed in such a way as to test theories that the current values of one or more independent time series affect the current value of another time series, Time series forecasting focuses on comparing values of a single time series or multiple dependent time series at different points in time.</li>
+<li><strong>Time series modeling</strong>: It involves working on time (years, days, hours, minutes) based data, to derive hidden insights to make informed decision making.</li>
+</ul><hr><h2 id="time-series-modeling-basis"><a class="anchor hidden-xs" href="#time-series-modeling-basis" title="time-series-modeling-basis"><span class="octicon octicon-link"></span></a>Time Series Modeling Basis</h2><p><img src="https://i.imgur.com/3lKCxEn.png" alt=""></p><h3 id="stationary-series"><a class="anchor hidden-xs" href="#stationary-series" title="stationary-series"><span class="octicon octicon-link"></span></a>Stationary Series</h3><ul>
+<li>Stationary Criterion:
+<ol>
+<li>The <strong>mean</strong> of the series should not be a function of time rather should be a constant.</li>
+<li>The <strong>variance</strong> of the series should not a be a function of time.</li>
+<li>The <strong>covariance</strong> of the i th term and the (i + m) th term should not be a function of time.</li>
+</ol>
+</li>
+<li><strong>You cannot build a time series model with a time series that is not stationary.</strong></li>
+</ul><h3 id="random-walk"><a class="anchor hidden-xs" href="#random-walk" title="random-walk"><span class="octicon octicon-link"></span></a>Random Walk</h3><ul>
+<li>
+<p>Random walk is <strong>not a stationary process</strong> as it has a time variant variance and covariance.</p>
+<blockquote>
+<p>X(t) = X(t-1) + Er(t)<br>
+X(t) = X(0) + Sum(Er(1),Er(2),Er(3)…Er(t))<br>
+E[X(t)] = E[X(t-1)]<br>
+where Er(t) is the error at time point t.</p>
+</blockquote>
+<ul>
+<li>
+<p>Is the Mean constant ? <em>YES</em></p>
+<blockquote>
+<p>E[X(t)] = E[X(0)] + Sum(E[Er(1)],E[Er(2)],E[Er(3)]…E[Er(t)]) = Constant</p>
+</blockquote>
+<p>Expectation of any Error will be zero as it is random.</p>
+</li>
+<li>
+<p>Is the Variance constant? <em>NO</em></p>
+<blockquote>
+<p>Var[X(t)] = Var[X(0)] + Sum(Var[Er(1)],Var[Er(2)],Var[Er(3)]…Var[Er(t)])<br>
+Var[X(t)] = t * Var(Error) = Time dependent.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p>Introduce coefficient <strong>Rho</strong> to make the formulation stationary.</p>
+<blockquote>
+<p>X(t) = <strong>Rho</strong> * X(t-1) + Er(t)<br>
+E[X(t)] = <strong>Rho</strong> *E[X(t-1)]<br>
+<em>1 &lt;= Rho &lt;= 1.0</em></p>
+</blockquote>
+<p>The next X (or at time point t) is being pulled down to <em>Rho * Last value of X</em>. Hence, <strong>Rho = 1</strong> is a special case which comes out badly in stationary test. The reason is that in the equation the only component which can drive X even further is the error term, and no force can pull the X down in the next step if Rho = 1.</p>
+</li>
+</ul><hr><h2 id="exploration-of-time-series-data-in-r"><a class="anchor hidden-xs" href="#exploration-of-time-series-data-in-r" title="exploration-of-time-series-data-in-r"><span class="octicon octicon-link"></span></a>Exploration of Time Series Data in R</h2><h3 id="load-data"><a class="anchor hidden-xs" href="#load-data" title="load-data"><span class="octicon octicon-link"></span></a>Load data</h3><pre><code>&gt; data(AirPassengers)
+
+&gt; class(AirPassengers)
+ [1] "ts"
+ #This tells you that the data series is in a time series format
+</code></pre><pre><code>&gt; start(AirPassengers)
+ [1] 1949 1
+ #This is the start of the time series
+
+&gt; end(AirPassengers)
+ [1] 1960 12
+ #This is the end of the time series
+</code></pre><pre><code>&gt; frequency(AirPassengers)
+ [1] 12
+ #The cycle of this time series is 12months in a year
+
+&gt; summary(AirPassengers)
+ Min. 1st Qu. Median Mean 3rd Qu. Max.
+ 104.0 180.0 265.5 280.3 360.5 622.0
+
+</code></pre><h3 id="plots"><a class="anchor hidden-xs" href="#plots" title="plots"><span class="octicon octicon-link"></span></a>Plots</h3><pre><code>&gt; plot(AirPassengers)
+ #This will plot the time series
+&gt;abline(model=lm(AirPassengers~time(AirPassengers)))
+ # This will fit in a line
+</code></pre><p><img src="https://www.analyticsvidhya.com/wp-content/uploads/2015/02/plot_AP1-1024x443.png" alt=""></p><pre><code>&gt; cycle(AirPassengers)
+ #This will print the cycle across years.
+      Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
+1949   1   2   3   4   5   6   7   8   9  10  11  12
+1950   1   2   3   4   5   6   7   8   9  10  11  12
+        ...
+
+&gt; plot(aggregate(AirPassengers,FUN=mean))
+ #This will aggregate the cycles and display a year on year trend
+</code></pre><p><img src="https://www.analyticsvidhya.com/wp-content/uploads/2015/02/plot_aggregate-1024x412.png" alt=""></p><pre><code>&gt; boxplot(AirPassengers~cycle(AirPassengers))
+ #Box plot across months will give us a sense on seasonal effect
+</code></pre><p><img src="https://www.analyticsvidhya.com/wp-content/uploads/2015/02/plot_month_wise-1024x402.png" alt=""></p><h3 id="important-inferences"><a class="anchor hidden-xs" href="#important-inferences" title="important-inferences"><span class="octicon octicon-link"></span></a>Important Inferences</h3><ol>
+<li>Number of passengers have been increasing without fail.</li>
+<li>The variance and the mean value in July and August is much higher than rest of the months.</li>
+<li>The mean value of each month is quite different. However, their variance is small. Hence, we have strong seasonal effect with a cycle of 12 months or less.</li>
+</ol><hr><h2 id="arma-time-series-modeling"><a class="anchor hidden-xs" href="#arma-time-series-modeling" title="arma-time-series-modeling"><span class="octicon octicon-link"></span></a>ARMA Time Series Modeling</h2><ul>
+<li>AR stands for <strong>auto-regression</strong> and MA stands for <strong>moving average</strong>.</li>
+<li>Once we have got the stationary time series, we must answer two primary questions:
+<ol>
+<li>Is it an AR or MA process?</li>
+<li>What order of AR or MA process do we need to use?</li>
+</ol>
+</li>
+</ul><h3 id="auto-regressive-time-series-model"><a class="anchor hidden-xs" href="#auto-regressive-time-series-model" title="auto-regressive-time-series-model"><span class="octicon octicon-link"></span></a>Auto-Regressive Time Series Model</h3><blockquote>
+<p>AR(1) formulation :<br>
+X(t) = <strong>alpha</strong> *  X(t – 1) + error(t)</p>
+</blockquote><ul>
+<li>The <strong>numeral one (1)</strong> denotes that the next instance is <mark>solely</mark> dependent on the previous instance.</li>
+<li>The <strong>alpha</strong> is a coefficient which we seek so as to minimize the error function.</li>
+<li>Example: The current GDP of a country say x(t) is dependent on the last year’s GDP. (Consider the set up of manufacturing plants / services in both the previous year and the current year.)</li>
+</ul><p><img src="https://www.analyticsvidhya.com/wp-content/uploads/2015/02/AR1.png" alt=""></p><ul>
+<li>The AR model has a much lasting effect of the noise / shock. Any shock to X(t) will gradually <em>fade off</em> in future.</li>
+<li>The correlation of x(t) and x(t-n) <em>gradually</em> declines with n becoming larger in the AR model.</li>
+</ul><h3 id="moving-average-time-series-model"><a class="anchor hidden-xs" href="#moving-average-time-series-model" title="moving-average-time-series-model"><span class="octicon octicon-link"></span></a>Moving Average Time Series Model</h3><blockquote>
+<p>MA(n) formulation :<br>
+X(t) = <strong>beta</strong> *  X(t – 1) + error(t)</p>
+</blockquote><ul>
+<li>The <strong>beta</strong> is the the backshift operator.</li>
+<li>It specifies that the output variable depends <mark>linearly</mark> on the current and various past values of a stochastic (imperfectly predictable) term.</li>
+<li>It is essentially a <strong>finite impulse response filter</strong> applied to white noise, with some additional interpretation placed on it.</li>
+<li>It is conceptually <strong>a linear regression of the current value of the series</strong> against current and previous (unobserved) white noise error terms or random shocks.</li>
+<li>The random shocks at each point are assumed to be mutually independent and to come from the same distribution, typically a normal distribution, with location at zero and constant scale.<br>
+<img src="https://www.analyticsvidhya.com/wp-content/uploads/2015/02/MA1.png" alt=""></li>
+<li>In MA model, noise / shock <em>quickly vanishes</em> with time.</li>
+<li>The correlation between x(t) and x(t-n) for n &gt; order of MA is always <em>zero</em>.</li>
+</ul><hr><h2 id="exploiting-acf-and-pacf-plots"><a class="anchor hidden-xs" href="#exploiting-acf-and-pacf-plots" title="exploiting-acf-and-pacf-plots"><span class="octicon octicon-link"></span></a>Exploiting ACF and PACF plots</h2><ul>
+<li>Once we have got the stationary time series, we must answer two primary questions:
+<ol>
+<li>Is it an AR or MA process?</li>
+<li>What order of AR or MA process do we need to use?</li>
+</ol>
+</li>
+</ul><h3 id="auto-correlation-function-acf"><a class="anchor hidden-xs" href="#auto-correlation-function-acf" title="auto-correlation-function-acf"><span class="octicon octicon-link"></span></a>Auto Correlation Function (ACF)</h3><ul>
+<li>In an MA series of lag n, we will not get any correlation between x(t) and x(t – n -1) . Hence, the total correlation chart cuts off at nth lag.
+<ul>
+<li>MA(2) process:<br>
+<img src="https://i.imgur.com/2drPhjQ.png" alt=""></li>
+</ul>
+</li>
+<li>For an AR series this correlation will gradually go down without any cut off value.
+<ul>
+<li>AR(2) process:<br>
+<img src="https://i.imgur.com/8OUtZhK.png" alt=""><br>
+Our 2nd lag (x (t-2) ) is independent of x(t). Hence, the partial correlation function (PACF) will drop sharply after the 1st lag.</li>
+</ul>
+</li>
+</ul><hr><h2 id="framework-of-time-series-modeling"><a class="anchor hidden-xs" href="#framework-of-time-series-modeling" title="framework-of-time-series-modeling"><span class="octicon octicon-link"></span></a>Framework of Time Series Modeling</h2><p><img src="https://www.analyticsvidhya.com/wp-content/uploads/2015/02/flowchart.png" alt=""></p><h3 id="step-1-visualize-the-time-series"><a class="anchor hidden-xs" href="#step-1-visualize-the-time-series" title="step-1-visualize-the-time-series"><span class="octicon octicon-link"></span></a>Step 1. Visualize the Time Series</h3><p>Any kind of trend, seasonality or random behaviour in the series?</p><h3 id="step-2-stationarize-the-series"><a class="anchor hidden-xs" href="#step-2-stationarize-the-series" title="step-2-stationarize-the-series"><span class="octicon octicon-link"></span></a>Step 2. Stationarize the Series</h3><p>First, we check if the time series is stationary.<br>
+If the series is found to be non-stationary, the followings are the commonly used technique to make a time series stationary:</p><ul>
+<li>
+<p><strong>Detrending</strong></p>
+<blockquote>
+<p>X(t) = (mean + trend*t) + error</p>
+</blockquote>
+<p>-&gt;  remove the trend component from the time series.</p>
+</li>
+<li>
+<p><strong>Differencing</strong><br>
+Try to model the differences of the terms and not the actual term.</p>
+<blockquote>
+<p>X(t) – X(t-1) = ARMA (p, q)<br>
+p : AR, d : I, q : MA</p>
+</blockquote>
+<p>(This differencing is called as the Integration part in AR(I)MA)</p>
+</li>
+<li>
+<p><strong>Seasonality</strong><br>
+Seasonality can easily be incorporated in the ARIMA model directly.</p>
+</li>
+</ul><h3 id="step-3-find-optimal-parameters"><a class="anchor hidden-xs" href="#step-3-find-optimal-parameters" title="step-3-find-optimal-parameters"><span class="octicon octicon-link"></span></a>Step 3. Find Optimal Parameters</h3><p>The parameters p,d,q can be found using  ACF and PACF plots.</p><h3 id="step-4-build-arima-model"><a class="anchor hidden-xs" href="#step-4-build-arima-model" title="step-4-build-arima-model"><span class="octicon octicon-link"></span></a>Step 4. Build ARIMA Model</h3><ul>
+<li>The value found in the previous section might be an approximate estimate and we need to explore more (p,d,q) combinations.</li>
+<li>The one with the lowest BIC and AIC should be our choice.</li>
+<li>We notice any seasonality in ACF/PACF plots.</li>
+</ul><h3 id="step-5-make-predictions"><a class="anchor hidden-xs" href="#step-5-make-predictions" title="step-5-make-predictions"><span class="octicon octicon-link"></span></a>Step 5. Make Predictions</h3><p>Now we can make predictions on the future time points using the final ARIMA model.</p><hr><h2 id="applications-of-time-series-model"><a class="anchor hidden-xs" href="#applications-of-time-series-model" title="applications-of-time-series-model"><span class="octicon octicon-link"></span></a>Applications of Time Series Model</h2><p>To be added…</p><hr><h2 id="references"><a class="anchor hidden-xs" href="#references" title="references"><span class="octicon octicon-link"></span></a>References</h2><ul>
+<li><a href="https://www.wikiwand.com/en/Time_series" target="_blank">Wiki: Time Series</a></li>
+<li><a href="https://www.wikiwand.com/en/Moving-average_model" target="_blank">Wiki: Moving-average model</a></li>
+<li><a href="https://www.analyticsvidhya.com/blog/2015/12/complete-tutorial-time-series-modeling/" target="_blank">A Complete Tutorial on Time Series Modeling in R</a></li>
+</ul></div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+                <div class="toc"><ul class="nav"><li class=""><a href="#time-series-analysis-and-models">Time Series Analysis and Models</a><ul class="nav"><li class=""><a href="#definitions">Definitions</a></li><li class=""><a href="#time-series-modeling-basis">Time Series Modeling Basis</a><ul class="nav"><li class=""><a href="#stationary-series">Stationary Series</a></li><li class=""><a href="#random-walk">Random Walk</a></li></ul></li><li class=""><a href="#exploration-of-time-series-data-in-r">Exploration of Time Series Data in R</a><ul class="nav"><li class=""><a href="#load-data">Load data</a></li><li class=""><a href="#plots">Plots</a></li><li class=""><a href="#important-inferences">Important Inferences</a></li></ul></li><li class=""><a href="#arma-time-series-modeling">ARMA Time Series Modeling</a><ul class="nav"><li class=""><a href="#auto-regressive-time-series-model">Auto-Regressive Time Series Model</a></li><li class=""><a href="#moving-average-time-series-model">Moving Average Time Series Model</a></li></ul></li><li class=""><a href="#exploiting-acf-and-pacf-plots">Exploiting ACF and PACF plots</a><ul class="nav"><li class=""><a href="#auto-correlation-function-acf">Auto Correlation Function (ACF)</a></li></ul></li><li class=""><a href="#framework-of-time-series-modeling">Framework of Time Series Modeling</a><ul class="nav"><li class=""><a href="#step-1-visualize-the-time-series">Step 1. Visualize the Time Series</a></li><li class=""><a href="#step-2-stationarize-the-series">Step 2. Stationarize the Series</a></li><li class=""><a href="#step-3-find-optimal-parameters">Step 3. Find Optimal Parameters</a></li><li class=""><a href="#step-4-build-arima-model">Step 4. Build ARIMA Model</a></li><li><a href="#step-5-make-predictions">Step 5. Make Predictions</a></li></ul></li><li><a href="#applications-of-time-series-model">Applications of Time Series Model</a></li><li class=""><a href="#references">References</a></li></ul></li></ul></div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="top:17px;display:none;"  >
+        <div class="toc"><ul class="nav"><li class=""><a href="#time-series-analysis-and-models">Time Series Analysis and Models</a><ul class="nav"><li class=""><a href="#definitions">Definitions</a></li><li class=""><a href="#time-series-modeling-basis">Time Series Modeling Basis</a><ul class="nav"><li class=""><a href="#stationary-series">Stationary Series</a></li><li class=""><a href="#random-walk">Random Walk</a></li></ul></li><li class=""><a href="#exploration-of-time-series-data-in-r">Exploration of Time Series Data in R</a><ul class="nav"><li class=""><a href="#load-data">Load data</a></li><li class=""><a href="#plots">Plots</a></li><li class=""><a href="#important-inferences">Important Inferences</a></li></ul></li><li class=""><a href="#arma-time-series-modeling">ARMA Time Series Modeling</a><ul class="nav"><li class=""><a href="#auto-regressive-time-series-model">Auto-Regressive Time Series Model</a></li><li class=""><a href="#moving-average-time-series-model">Moving Average Time Series Model</a></li></ul></li><li class=""><a href="#exploiting-acf-and-pacf-plots">Exploiting ACF and PACF plots</a><ul class="nav"><li class=""><a href="#auto-correlation-function-acf">Auto Correlation Function (ACF)</a></li></ul></li><li class=""><a href="#framework-of-time-series-modeling">Framework of Time Series Modeling</a><ul class="nav"><li class=""><a href="#step-1-visualize-the-time-series">Step 1. Visualize the Time Series</a></li><li class=""><a href="#step-2-stationarize-the-series">Step 2. Stationarize the Series</a></li><li class=""><a href="#step-3-find-optimal-parameters">Step 3. Find Optimal Parameters</a></li><li class=""><a href="#step-4-build-arima-model">Step 4. Build ARIMA Model</a></li><li><a href="#step-5-make-predictions">Step 5. Make Predictions</a></li></ul></li><li><a href="#applications-of-time-series-model">Applications of Time Series Model</a></li><li class=""><a href="#references">References</a></li></ul></li></ul></div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
+    <script>
+        var markdown = $(".markdown-body");
+        //smooth all hash trigger scrolling
+        function smoothHashScroll() {
+            var hashElements = $("a[href^='#']").toArray();
+            for (var i = 0; i < hashElements.length; i++) {
+                var element = hashElements[i];
+                var $element = $(element);
+                var hash = element.hash;
+                if (hash) {
+                    $element.on('click', function (e) {
+                        // store hash
+                        var hash = this.hash;
+                        if ($(hash).length <= 0) return;
+                        // prevent default anchor click behavior
+                        e.preventDefault();
+                        // animate
+                        $('body, html').stop(true, true).animate({
+                            scrollTop: $(hash).offset().top
+                        }, 100, "linear", function () {
+                            // when done, add hash to url
+                            // (default click behaviour)
+                            window.location.hash = hash;
+                        });
+                    });
+                }
+            }
+        }
+
+        smoothHashScroll();
+        var toc = $('.ui-toc');
+        var tocAffix = $('.ui-affix-toc');
+        var tocDropdown = $('.ui-toc-dropdown');
+        //toc
+        tocDropdown.click(function (e) {
+            e.stopPropagation();
+        });
+
+        var enoughForAffixToc = true;
+
+        function generateScrollspy() {
+            $(document.body).scrollspy({
+                target: ''
+            });
+            $(document.body).scrollspy('refresh');
+            if (enoughForAffixToc) {
+                toc.hide();
+                tocAffix.show();
+            } else {
+                tocAffix.hide();
+                toc.show();
+            }
+            $(document.body).scroll();
+        }
+
+        function windowResize() {
+            //toc right
+            var paddingRight = parseFloat(markdown.css('padding-right'));
+            var right = ($(window).width() - (markdown.offset().left + markdown.outerWidth() - paddingRight));
+            toc.css('right', right + 'px');
+            //affix toc left
+            var newbool;
+            var rightMargin = (markdown.parent().outerWidth() - markdown.outerWidth()) / 2;
+            //for ipad or wider device
+            if (rightMargin >= 133) {
+                newbool = true;
+                var affixLeftMargin = (tocAffix.outerWidth() - tocAffix.width()) / 2;
+                var left = markdown.offset().left + markdown.outerWidth() - affixLeftMargin;
+                tocAffix.css('left', left + 'px');
+            } else {
+                newbool = false;
+            }
+            if (newbool != enoughForAffixToc) {
+                enoughForAffixToc = newbool;
+                generateScrollspy();
+            }
+        }
+        $(window).resize(function () {
+            windowResize();
+        });
+        $(document).ready(function () {
+            windowResize();
+            generateScrollspy();
+        });
+
+        //remove hash
+        function removeHash() {
+            window.location.hash = '';
+        }
+
+        var backtotop = $('.back-to-top');
+        var gotobottom = $('.go-to-bottom');
+
+        backtotop.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToTop)
+                scrollToTop();
+            removeHash();
+        });
+        gotobottom.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToBottom)
+                scrollToBottom();
+            removeHash();
+        });
+
+        function scrollToTop() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: 0
+            }, 100, "linear");
+        }
+
+        function scrollToBottom() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: $(document.body)[0].scrollHeight
+            }, 100, "linear");
+        }
+    </script>
+</body>
+
+</html>
