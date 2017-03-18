@@ -2,7 +2,7 @@
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 
 #### Code Highlighter
-highlighter: pygments
+rouge: pygments
 
 #### Permalink
 # For more see: http://jekyllrb.com/docs/permalinks/
@@ -36,7 +36,7 @@ excerpt_separator: <!--more-->
 paginate: 10
 
 #### Site
-title : Yitao's Blog
+title : Amy's Cassette
 tagline: A technology blog for myself.
 assets: /assets
 baseurl:
@@ -93,7 +93,6 @@ author:
   name: Chih-Ling Hsu      ## e.g. wuchong Author name
   intro_line1:  "Hello, I'm Chih-Ling."    ## your introduction on the bottom of the page
   intro_line2:  "Too simple, sometimes naive."  ## the 2nd line
-  weibo:       ## e.g. wuchong1014 or 2176287895 for http://weibo.com/2176287895
   weibo_verifier:   ## e.g. b3593ceb Your weibo-show widget verifier ,if you use weibo-show it is needed.
   tsina:       ## e.g. 2176287895  Your weibo ID,It will be used in share button.
   douban:      ## e.g. wuchong1014 or your id for https://www.douban.com/people/wuchong1014
