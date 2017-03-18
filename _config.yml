@@ -5,7 +5,7 @@ url: "https://chih-ling-hsu.github.io/" # the base hostname & protocol for your 
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
   # Meta
-  title: Amy's Cassette
+  title: "Amy's Cassette"
   avatar: profile.jpg
   gravatar: # Email MD5 hash
   description: "Recording my notes, my works, and also my life." # used by search engines
