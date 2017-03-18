@@ -38,7 +38,7 @@ Definition: Collection of data objects and their attributes
 
 Combining two or more attributes (or objects) into a single attribute (or object)
 
-**Purpose
+**Purpose**
 - Data reduction
 - Change of scale
 - More "stable" data - less variability
