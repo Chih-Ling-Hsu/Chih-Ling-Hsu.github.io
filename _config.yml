@@ -8,11 +8,11 @@ theme_settings:
   title: Amy's Cassette
   avatar: profile.jpg
   gravatar: # Email MD5 hash
-  description: "Recording my notes, my works, and also my life" # used by search engines
+  description: "Recording my notes, my works, and also my life." # used by search engines
 
   # Header and footer text
   header_text: >
-     <p>Recording my notes, my works, and also my life</p>
+     <p>Recording my notes, my works, and also my life.</p>
   header_text_feature_image:
   footer_text: >
    Footer Text
