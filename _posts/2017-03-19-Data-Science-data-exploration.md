@@ -45,14 +45,12 @@ Combining two or more attributes (or objects) into a single attribute (or object
 
 
 ### Sampling
-
 The main technique employed for data selection.  
 Often used for both the preliminary investigation of the data and the final data analysis.
-
-#### Purpose
+** Purpose **
 - Obtaining the entire set of data of interest is too expensive or time consuming
 - Processing the entire set of data of interest is too expensive or time consuming.
-#### Types of Sampling
+** Types of Sampling **
 - Simple Random Sampling
 - Sampling without replacement
 - Sampling with replacement
@@ -68,6 +66,7 @@ Curse of Dimensionality: Definitions of density and distance between points, whi
 - Reduce amount of time and memory required by data mining algorithms
 - Allow data to be more easily visualized
 - May help to eliminate irrelevant features or reduce noise
+
 #### Techniques
 - Principle Component Analysis (PCA)
 - Singular Value Decomposition (SVD)
@@ -86,8 +85,7 @@ Remove redundant features and irrelevant features to reduce dimensionality of da
     Features are selected before data mining algorithm is run
 - Wrapper approaches - 
     Use the data mining algorithm as a black box to find best subset of attributes
-  
-  
+ 
 ### Feature Creation
 
 Create new attributes that can capture the important rmation in a data set much more efficiently than the original attributes
