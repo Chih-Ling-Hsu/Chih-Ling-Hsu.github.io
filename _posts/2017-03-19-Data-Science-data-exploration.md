@@ -8,7 +8,9 @@ tags:
 category: Program
 ---
 
-# Data
+<!--more-->
+
+## Data
 :::info
 Definition: Collection of data objects and their attributes
 :::
