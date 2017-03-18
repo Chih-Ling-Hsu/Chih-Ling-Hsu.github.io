@@ -47,9 +47,11 @@ Combining two or more attributes (or objects) into a single attribute (or object
 ### Sampling
 The main technique employed for data selection.  
 Often used for both the preliminary investigation of the data and the final data analysis.
+
 ** Purpose **
 - Obtaining the entire set of data of interest is too expensive or time consuming
 - Processing the entire set of data of interest is too expensive or time consuming.
+
 ** Types of Sampling **
 - Simple Random Sampling
 - Sampling without replacement
