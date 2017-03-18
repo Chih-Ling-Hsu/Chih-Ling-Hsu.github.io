@@ -127,17 +127,21 @@ A distance that satisfies the following properties is a <u>metric:</u>
     d(p, r) <= d(p, q) + d(q, r)   for all points p, q, and r
 
 **1. Euclidean Distance**
+
 ![](https://hackpad-attachments.s3.amazonaws.com/hackpad.com_Mb8cBmk1kgS_p.684681_1489297732788_undefined)
 
 **2. Minkowski Distance**
+
 ![](https://hackpad-attachments.s3.amazonaws.com/hackpad.com_Mb8cBmk1kgS_p.684681_1489297951137_undefined)
 *   When p=1, it is Manhattan distance
 *   When p=2, it is Euclidean distance
 *   When p→∞, it is Chebyshev distance
+
 ![](https://hackpad-attachments.s3.amazonaws.com/hackpad.com_Mb8cBmk1kgS_p.684681_1489298637122_undefined)
 *   Since Minkowski distance assumes the scales of different dimensions are the same, **standardization is necessary** if scales differ.
 
 **3. Mahalanobis Distance**
+
 ![](https://hackpad-attachments.s3.amazonaws.com/hackpad.com_Mb8cBmk1kgS_p.684681_1489298382429_undefined)
 *   S is the covariance matrix of the input data
 
@@ -154,22 +158,28 @@ s(p, q) = s(q, p)   for all p and q
 *   Mij = the number of attributes where p = i and q = j
 *   Simple Matching (**SMC**)  =  (M11}+ M00) / (M01 + M10 + M11 + M00)
 *   **Jaccard Coefficients** = (M11) / (M01 + M10 + M11) 
+
 ![](https://hackpad-attachments.s3.amazonaws.com/hackpad.com_Mb8cBmk1kgS_p.684681_1489300190297_undefined)
 
 **2. Cosine Siminarity**
+
 ![](https://hackpad-attachments.s3.amazonaws.com/hackpad.com_Mb8cBmk1kgS_p.684681_1489300159033_undefined)
 
 **3. Extended Jaccard Coefficient (Tanimoto)**
+
 ![](https://hackpad-attachments.s3.amazonaws.com/hackpad.com_Mb8cBmk1kgS_p.684681_1489300977469_圖片4.jpg)
 
 **4. Correlation Coefficient/Distance**
+
 ![](https://hackpad-attachments.s3.amazonaws.com/hackpad.com_Mb8cBmk1kgS_p.684681_1489301219573_undefined)
 - To compute correlation, we standardize data objects and then take their dot product
 
 **5. Approach for Combining Similarities**
 - General Approach
+
 ![](https://hackpad-attachments.s3.amazonaws.com/hackpad.com_Mb8cBmk1kgS_p.684681_1489301969600_圖片5.png)
 - Using Weights
+
 ![](https://i.imgur.com/I2XXwRb.png)
 
 ---
@@ -203,6 +213,7 @@ Summary statistics are numbers that summarize properties of the data
 **Spread (Range and Variance)**
 - Range is the difference between the max and min.
 - The variance or standard deviation is the most common measure of the spread of a set of points.
+
 ![](https://i.imgur.com/4jkH2um.png)
 - Since the variance is also sensitive to outliers, so other measures such as AAD, MAD, and interquartile range are often used.
 
@@ -217,6 +228,7 @@ Visualization is the conversion of data into a visual or tabular format so that 
 
 **Arrangement**
 - The placement of visual elements within a display.
+
 ![](https://i.imgur.com/uUzpznl.png)
 
 **Selection**
@@ -227,34 +239,44 @@ Visualization is the conversion of data into a visual or tabular format so that 
 1. **Histograms**
     - 1D - shows the distribution of values of a single variable
     - 2D - Show the joint distribution of the values of two attributes 
+    
     ![](https://i.imgur.com/hml1ADX.png)
 2. **Box Plots**
     - Another way of displaying the distribution of values of a single variable
+    
     ![](https://i.imgur.com/y6OsQy4.png)
     - It can be used to compare attributes
+    
     ![](https://i.imgur.com/wTB9iDo.png)
 3. **Scatter Plots**
     - Attributes values determine the position. Two-dimensional scatter plots most common, but can have three-dimensional scatter plots.
+    
     ![](https://i.imgur.com/9nZUMVG.png)
 4. **Contour Plots**
     - Partition the plane into regions of similar values. The contour lines that form the boundaries of these regions connect points with equal values.
     - Useful when a **continuous attribute** is measured on a **spatial grid**.
     - The most common example is contour maps of elevation, temperature, rainfall, air pressure, etc.
+    
     ![](https://i.imgur.com/Dnd9Yia.png)
 5. **Matrix Plots**
     - Plot the data matrix to show **relationships between objects**. Typically, the attributes are normalized to prevent one attribute from dominating the plot.
     - Useful when objects are **sorted according to class**.
+    
     ![](https://i.imgur.com/f0igt2m.png)
     - Plots of **similarity** or **distance** matrices can also be useful for visualizing the relationships between objects. (The Matrix Plot below is the _Correlation Matrix_ Plot of Iris data.)
+    
     ![](https://i.imgur.com/tBkXG59.png)
 6. **Parallel Coordinates**
     - Instead of using perpendicular axes, use a set of parallel axes. Thus, **each object is represented as a line**.
     - Used to plot the attribute values of **high-dimensional** data
+    
     ![](https://i.imgur.com/nRmv010.png)
     - Ordering of attributes is important in seeing such groupings
 7. **Star Plots**
+    
     ![](https://i.imgur.com/ccPP2rS.png)
 8. **Chernoff Faces**
+    
     ![](https://i.imgur.com/jajuDx7.png)
 
 
@@ -274,25 +296,33 @@ Convert tabular data into a multidimensional array:
     - The attributes used as dimensions must have _discrete_ values
     - The target value is typically _a count or continuous value_, e.g., the cost of an item, these are values appear as entries in the multidimensional array.
 - **Step 2.** find the value of each entry in the multidimensional array by _summing the values (of the target attribute)_ or count of all objects that have the attribute values corresponding to that entry.
+
 ![](https://i.imgur.com/bmbTn8v.png)
+
 ![](https://i.imgur.com/QOBZPx8.png)
 
 **OLAP Operation - Data Cube**
 A data cube is a multidimensional representation of data, together with all possible **aggregates**.   We mean the aggregates that result by **selecting a proper subset of the dimensions** and **summing over all remaining dimensions**.
+
 ![](https://i.imgur.com/6MNZPPN.png)
+
 ![](https://i.imgur.com/yodwXWl.png)
 
 **OLAP Operation - Slicing and Dicing**
 - **Slicing** is selecting a group of cells from the entire multidimensional array by specifying a **_specific_** value for one or more dimensions.
+    
     ![](https://i.imgur.com/ZhdAQf3.png)
 - **Dicing** involves selecting a subset of cells by specifying a **_range_** of attribute values. 
+    
     ![](https://i.imgur.com/RSzN0za.png)
 - Both operations can also be accompanied by aggregation over some dimensions.
 
 **OLAP Operation - Roll-up and Drill-down**
 - **Roll-up** is performed by **_climbing up a concept hierarchy_** for the dimension location.
+    
     ![](https://i.imgur.com/Giglpwz.png)
 - **Drill-down** is performed by **_stepping down a concept hierarchy_** for the dimension time.
+    
     ![](https://i.imgur.com/AXhGYaU.png)
 
 ---
