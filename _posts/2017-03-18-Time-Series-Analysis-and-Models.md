@@ -1,3 +1,8 @@
+---
+layout: post
+title: Sample post
+---
+
 ## Definitions
 - **Time series**: A time series is a series of data points indexed (or listed or graphed) in time order.   A sequence taken at successive equally spaced points in time (A sequence of discrete-time data).
 - **Time series analysis**: Methods for analyzing time series data in order to extract meaningful statistics and other characteristics of the data.
