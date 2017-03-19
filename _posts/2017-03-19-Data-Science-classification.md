@@ -79,36 +79,46 @@ $$
 
 Assume $n_{t}$ = number of records at child $t$, $n$ = number of records at node $p$, the **quality of a split** on node $p$ can be
 
-$Gini_{split} = \sum_{t=1}^{k}\frac{n_{t}}{n}Gini(t)$
+$$
+Gini_{split} = \sum_{t=1}^{k}\frac{n_{t}}{n}Gini(t)
+$$
 
 
 **2. Entropy**
 
 Entropy of node $t$ can be expressed as follows.
 
-$Entropy(t) = -\sum_{j}^{C}p(j|t)log(p(j|t))$
-
-$p(j|t):probability~of~class~j~to~occur~on~node~t$
-
-$C:collection~of~classes$
+$$
+Entropy(t) = -\sum_{j}^{C}p(j|t)log(p(j|t))
+\\
+p(j|t):probability~of~class~j~to~occur~on~node~t
+\\
+C:collection~of~classes
+$$
 
 Assume $n_{t}$ = number of records at child $t$, $n$ = number of records at node $p$, the **Information Gain (IG) of a split** on node $p$ can be
 
-$Gain_{split} = Entropy(p) - \sum_{t=1}^{k}\frac{n_{t}}{n}Entropy(t)$
+$$
+Gain_{split} = Entropy(p) - \sum_{t=1}^{k}\frac{n_{t}}{n}Entropy(t)
+$$
 
 However, using information gain to decide a split may be in approppriate since it tends to select an attribute with large amount of meaningless values, such as student ID. Thus, **Gain Ratio** should be considered instead as the standardization of Information Gain.
 
-$GainRatio_{split} = \frac{Gain_{split}}{SplitInfo}$
-
-where $SplitInfo = -\sum_{t=1}^{k}\frac{n_{t}}{n}log(\frac{n_{t}}{n})$
+$$
+GainRatio_{split} = \frac{Gain_{split}}{SplitInfo}
+\\
+where SplitInfo = -\sum_{t=1}^{k}\frac{n_{t}}{n}log(\frac{n_{t}}{n})
+$$
 
 **3. Misclassification error**
 
-$Error(t) = 1-max_{j\in C}(p(j|t))$
-
-$p(j|t):probability~of~class~j~to~occur~on~node~t$
-
-$C:collection~of~classes$
+$$
+Error(t) = 1-max_{j\in C}(p(j|t))
+\\
+p(j|t):probability~of~class~j~to~occur~on~node~t
+\\
+C:collection~of~classes
+$$
 
 ### Stopping Criteria for Splitting 
 - Stop expanding a node when all the records belong to the **same** class
