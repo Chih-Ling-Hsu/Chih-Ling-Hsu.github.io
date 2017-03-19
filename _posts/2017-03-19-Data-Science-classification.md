@@ -9,22 +9,29 @@ tags:
 category: Notes
 mathjax: true
 ---
+# Data Science - classification
+###### tags: `Study` `Data Science` `<<Introduction to Data Mining>>` `Classification`
 
-### Definition
+<script type="text/javascript"  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+**Definition**
 Classification as the task of learning a **target function** **_f_** that maps each attribute set **_x_** to one of the predicted class labels **_y_**.
 
-### Classification Tasks
+**Classification Tasks**
 - Predicting tumor cells as benign or malignant
 - Classifying credit card transactions as legitimate or fraudulent
 - Categorizing news stories as finance, weather, entertainment, sports, etc.
 
-### Classification Techniques
+**Classification Techniques**
 - Decision Tree based Methods
 - Rule-based Methods
 - Memory based reasoning
 - Neural Networks (NN)
 - Naïve Bayes and Bayesian Belief Networks
 - Support Vector Machines (SVM)
+
+<!--more-->
 
 ---
 
@@ -64,7 +71,7 @@ The following figure is the comparison among different impurity measure for a 2-
 
 
 
-#### Gini Index
+**1. Gini Index**
 
 Gini Index of node $t$ can be expressed as follows 
 
@@ -77,7 +84,7 @@ Assume $n_{t}$ = number of records at child $t$, $n$ = number of records at node
 $Gini_{split} = \sum_{t=1}^{k}\frac{n_{t}}{n}Gini(t)$
 
 
-#### Entropy
+**2. Entropy**
 
 Entropy of node $t$ can be expressed as follows.
 
@@ -94,7 +101,7 @@ However, using information gain to decide a split may be in approppriate since i
 $GainRatio_{split} = \frac{Gain_{split}}{SplitInfo}$
 where $SplitInfo = -\sum_{t=1}^{k}\frac{n_{t}}{n}log(\frac{n_{t}}{n})$
 
-#### Misclassification error
+**3. Misclassification error**
 (formula)
 
 ### Stopping Criteria for Splitting 
