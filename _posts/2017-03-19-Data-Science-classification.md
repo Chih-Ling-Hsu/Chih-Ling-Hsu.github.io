@@ -71,10 +71,9 @@ Gini Index of node $t$ can be expressed as follows
 
 $$
 Gini(t)=1-\sum_{j=1}^{C}(p(j|t))^2
-$$
-$$
+\\
 p(j|t):probability~of~class~j~to~occur~on~node~t
-~~~~~
+\\
 C:collection~of~classes
 $$
 
