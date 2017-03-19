@@ -4,7 +4,6 @@ layout: post
 tags:
   - Study
   - Data Science
-  - <<Introduction to Data Mining>>
   - Classification
 category: Notes
 mathjax: true
@@ -71,7 +70,9 @@ The following figure is the comparison among different impurity measure for a 2-
 Gini Index of node $t$ can be expressed as follows 
 
 $Gini(t)=1-\sum_{j=1}^{C}(p(j|t))^2$
+
 $p(j|t):probability~of~class~j~to~occur~on~node~t$
+
 $C:collection~of~classes$
 
 Assume $n_{t}$ = number of records at child $t$, $n$ = number of records at node $p$, the **quality of a split** on node $p$ can be
@@ -84,7 +85,9 @@ $Gini_{split} = \sum_{t=1}^{k}\frac{n_{t}}{n}Gini(t)$
 Entropy of node $t$ can be expressed as follows.
 
 $Entropy(t) = -\sum_{j}^{C}p(j|t)log(p(j|t))$
+
 $p(j|t):probability~of~class~j~to~occur~on~node~t$
+
 $C:collection~of~classes$
 
 Assume $n_{t}$ = number of records at child $t$, $n$ = number of records at node $p$, the **Information Gain (IG) of a split** on node $p$ can be
@@ -94,10 +97,16 @@ $Gain_{split} = Entropy(p) - \sum_{t=1}^{k}\frac{n_{t}}{n}Entropy(t)$
 However, using information gain to decide a split may be in approppriate since it tends to select an attribute with large amount of meaningless values, such as student ID. Thus, **Gain Ratio** should be considered instead as the standardization of Information Gain.
 
 $GainRatio_{split} = \frac{Gain_{split}}{SplitInfo}$
+
 where $SplitInfo = -\sum_{t=1}^{k}\frac{n_{t}}{n}log(\frac{n_{t}}{n})$
 
 **3. Misclassification error**
-(formula)
+
+$Error(t) = 1-max_{j\in C}(p(j|t))$
+
+$p(j|t):probability~of~class~j~to~occur~on~node~t$
+
+$C:collection~of~classes$
 
 ### Stopping Criteria for Splitting 
 - Stop expanding a node when all the records belong to the **same** class
@@ -140,7 +149,8 @@ where $SplitInfo = -\sum_{t=1}^{k}\frac{n_{t}}{n}log(\frac{n_{t}}{n})$
 
 ## Practical Issues of Classification
 ### Underfitting and Overfitting
-(img)
+
+![](https://i.imgur.com/Ar1ErgU.png)
 
 > **Occam’s Razor** - Given two models of similar generalization errors,  one should prefer the simpler model over the more complex model.
 > **Underfitting** - When model is too simple, both training and test errors are large. It occurs when a statistical model or machine learning algorithm cannot capture the underlying trend of the data. For example, when fitting a linear model to non-linear data.
@@ -166,15 +176,11 @@ where $SplitInfo = -\sum_{t=1}^{k}\frac{n_{t}}{n}log(\frac{n_{t}}{n})$
 
 
 ### Missing Values
-> Missing values affect decision tree construction in three different ways:
-> 
-> - Affects how **impurity** measures are computed
-> - Affects how to **distribute** instance with missing value to child nodes
-> - Affects how a test instance with missing value is **classified**
+Missing values affect decision tree construction in three different ways:
 
-**Computing Impurity Measures**
-**Distribute Instances**
-**Classify Instances**
+- Affects how **impurity** measures are computed
+- Affects how to **distribute** instance with missing value to child nodes
+- Affects how a test instance with missing value is **classified**
 
 
 ### Costs of Classification
@@ -191,32 +197,34 @@ The algorithm presented so far uses a **greedy**, **top-down**, **recursive part
 
 Decision tree provides expressive representation for learning discrete-valued function, but it is NOT expressive enough for modeling continuous variables.
 
+![](https://i.imgur.com/vpObzLQ.png)
+
 - Decision boundary is **parallel** to axes because test condition involves _a single attribute at-a-time_.
 - **Oblique** Decision Trees -  **More expressive** representation. Test condition may _involve multiple attributes_.
 
 **Tree Replication**
 Same subtree appears in multiple branches.
 
-(img)
-
+![](https://i.imgur.com/EOIqIYX.png)
 
 ---
 
 ## Model Evaluation
 ### Metrics for Performance Evaluation
-> How to evaluate the performance of a model?
+> How to evaluate the performance
+ of a model?
 
 Focus on the predictive capability of a model rather than how fast it takes to classify or build models, scalability, etc.
 
-<img src='confusion.jpg'></img>
+![](https://i.imgur.com/jdcdJRi.jpg)
 
 
 ### Methods for Performance Evaluation
 > How to obtain reliable estimate of performance?
 
-Performance of a model may depend on other factors besides the learning algorithm:
+Performance of a model may depend on other factors besides the learning algorithm, such as class distribution and size of training/testing set.
 
-#### Class distribution & Cost of misclassification
+**Class distribution**
 Consider a 2-class problem. Number of Class 0 examples = 9990, Number of Class 1 examples = 10.
 
 - Accuracy is not Cost-Sensitive. 
@@ -234,7 +242,8 @@ Consider a 2-class problem. Number of Class 0 examples = 9990, Number of Class 1
 **ROC (Receiver Operating Characteristic)**
 ROC curve plots **TP** (on the y-axis) against **FP** (on the x-axis). It  characterizes the trade-off between positive hits and false alarms
 
-<img src="ROC.png"></img>
+![](https://i.imgur.com/yiu1gKv.png)
+
 
 - How to construct an ROC curve?
     1. Use classifier that produces posterior probability for each test instance P(+|A)
@@ -253,11 +262,11 @@ Given x (# of correct predictions) and N (# of test instances), we get acc=x/N, 
 
 - For large test sets (N > 30), acc has a normal distribution with mean p and variance p(1-p)/N
 - Confidence Interval for p :
-	<img src="confidence.png"></img>
+	![](https://i.imgur.com/BG75gfX.png)
 
 ---
 
-# References
+## References
 - [“Introduction to Data Mining,” by P.-N. Tan, M. Steinbach, V. Kumar, Addison-Wesley.](http://www-users.cs.umn.edu/~kumar/dmbook/index.php)
 - [Wiki - Receiver operating characteristic](https://en.wikipedia.org/wiki/Receiver_operating_characteristic)
 - [Plotting and Intrepretating an ROC Curve](http://gim.unmc.edu/dxtests/roc2.htm)

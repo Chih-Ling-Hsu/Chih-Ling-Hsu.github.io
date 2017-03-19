@@ -4,33 +4,29 @@ layout: post
 tags:
   - Study
   - Data Science
-  - <<Introduction to Data Mining>>
 category: Notes
 ---
 
-<!--more-->
+Data: Collection of data objects and their attributes
 
-## Data
-
-Definition: Collection of data objects and their attributes
-
-### Types of attributes
+**Types of attributes**
 *   Nominal: distinctness
 *   Oridinal: distinctness & order
 *   Interval: distinctness, order & addition
 *   Ratio: distinctness, order, addition & multiplication
 
-### Types of data sets
+**Types of data sets**
 *   Record: data matrix, documents, transactions
 *   Graph: web, chemical structures
 *   Ordered: spatial/temporal data, sequential data
   
-### Data quality problems
+**Data quality problems**
 *   noise
 *   outliers
 *   missing values
 *   duplicate data
 
+<!--more-->
 ---
 
 ## Data Preprocessing
