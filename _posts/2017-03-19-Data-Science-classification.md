@@ -69,9 +69,9 @@ The following figure is the comparison among different impurity measure for a 2-
 
 Gini Index of node $t$ can be expressed as follows 
 
-$Gini(t)=1-\sum_{j=1}^{C}(p(j\|t))^2$
+$Gini(t)=1-\sum_{j=1}^{C}(p(j|t))^2$
 
-$p(j\|t):probability~of~class~j~to~occur~on~node~t$
+$p(j|t):probability~of~class~j~to~occur~on~node~t$
 
 $C:collection~of~classes$
 
@@ -84,9 +84,9 @@ $Gini_{split} = \sum_{t=1}^{k}\frac{n_{t}}{n}Gini(t)$
 
 Entropy of node $t$ can be expressed as follows.
 
-$Entropy(t) = -\sum_{j}^{C}p(j\|t)log(p(j\|t))$
+$Entropy(t) = -\sum_{j}^{C}p(j|t)log(p(j|t))$
 
-$p(j\|t):probability~of~class~j~to~occur~on~node~t$
+$p(j|t):probability~of~class~j~to~occur~on~node~t$
 
 $C:collection~of~classes$
 
@@ -102,9 +102,9 @@ where $SplitInfo = -\sum_{t=1}^{k}\frac{n_{t}}{n}log(\frac{n_{t}}{n})$
 
 **3. Misclassification error**
 
-$Error(t) = 1-max_{j\in C}(p(j\|t))$
+$Error(t) = 1-max_{j\in C}(p(j|t))$
 
-$p(j\|t):probability~of~class~j~to~occur~on~node~t$
+$p(j|t):probability~of~class~j~to~occur~on~node~t$
 
 $C:collection~of~classes$
 
@@ -246,9 +246,9 @@ ROC curve plots **TP** (on the y-axis) against **FP** (on the x-axis). It  chara
 
 
 - How to construct an ROC curve?
-    1. Use classifier that produces posterior probability for each test instance P(+\|A)
-    2. Sort the instances according to P(+\|A) in decreasing order
-    3. Apply threshold at each unique value of P(+\|A)
+    1. Use classifier that produces posterior probability for each test instance P(+|A)
+    2. Sort the instances according to P(+|A) in decreasing order
+    3. Apply threshold at each unique value of P(+|A)
     4. Count the number of TP, FP, TN, FN at each threshold
 
 - An ROC curve demonstrates several things:
