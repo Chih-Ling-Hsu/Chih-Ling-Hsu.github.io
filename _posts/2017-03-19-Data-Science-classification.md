@@ -69,7 +69,7 @@ The following figure is the comparison among different impurity measure for a 2-
 
 Gini Index of node $t$ can be expressed as follows 
 
-$Gini(t)=1-\sum_{j=1}^{C}(p(j|t))^2$
+$Gini(t)=1-\sum_{j=1}^{C}(p(j~|~t))^2$
 
 $p(j|t):probability~of~class~j~to~occur~on~node~t$
 
