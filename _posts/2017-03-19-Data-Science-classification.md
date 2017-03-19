@@ -164,9 +164,11 @@ $$
 
 ![](https://i.imgur.com/Ar1ErgU.png)
 
-> **Occam’s Razor** - Given two models of similar generalization errors,  one should prefer the simpler model over the more complex model.
-> **Underfitting** - When model is too simple, both training and test errors are large. It occurs when a statistical model or machine learning algorithm cannot capture the underlying trend of the data. For example, when fitting a linear model to non-linear data.
-> **Overfitting** - Due to _noise_ or _insufficient training data_, a statistical model describes random error or noise instead of the underlying relationship. As a result, training error no longer provides a good estimate of how well the tree will perform on previously unseen records.
+**Occam’s Razor** - Given two models of similar generalization errors,  one should prefer the simpler model over the more complex model.
+
+**Underfitting** - When model is too simple, both training and test errors are large. It occurs when a statistical model or machine learning algorithm cannot capture the underlying trend of the data. For example, when fitting a linear model to non-linear data.
+
+**Overfitting** - Due to _noise_ or _insufficient training data_, a statistical model describes random error or noise instead of the underlying relationship. As a result, training error no longer provides a good estimate of how well the tree will perform on previously unseen records.
 
 
 **How To Address Overfitting?**
