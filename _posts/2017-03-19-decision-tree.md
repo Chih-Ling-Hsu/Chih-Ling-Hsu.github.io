@@ -3,7 +3,7 @@ title: 'Decision Tree'
 layout: post
 tags:
   - Study
-  - Data Science
+  - DataScience
   - Classification
 category: Notes
 mathjax: true

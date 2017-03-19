@@ -3,8 +3,7 @@ title: 'Data Science - data exploration'
 layout: post
 tags:
   - Study
-  - Data Science
-  - Introduction to Data Mining
+  - DataScience
 category: Notes
 ---
 

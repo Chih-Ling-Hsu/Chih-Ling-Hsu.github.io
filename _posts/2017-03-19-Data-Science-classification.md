@@ -3,8 +3,7 @@ title: 'Data Science - classification'
 layout: post
 tags:
   - Study
-  - Data Science
-  - Introduction to Data Mining
+  - DataScience
   - Classification
 category: Notes
 mathjax: true
