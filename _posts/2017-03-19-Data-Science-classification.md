@@ -57,9 +57,7 @@ Classification as the task of learning a **target function** **_f_** that maps e
 	- _Binary Decision_: (A < v) or (A $\geq$ v)
 
 ### Measures of Node Impurity
-> Homogeneous class distribution are preferred to **determine the best split (best test condition)**. Thus, need a measure of node **impurity**.
-
-The following figure is the comparison among different impurity measure for a 2-class problem:
+Homogeneous class distribution are preferred to **determine the best split (best test condition)**.   Thus, need a measure of node **impurity**.   The following figure is the comparison among different impurity measure for a 2-class problem:
 
 ![](https://i.imgur.com/LaAOkSl.png)
 
