@@ -30,7 +30,7 @@ Classification as the task of learning a **target function** **_f_** that maps e
 - Easy to interpret for small-sized trees
 - Accuracy is comparable to other classification techniques for many simple data sets
 - Unsuitable for Large Datasets because sorting continuous attributes at each node needs entire data to fit in memory.
-- [More Datails](./2017/03/19/decision-tree)
+- [More Datails](../../../2017/03/19/decision-tree)
 
 ### Rule Based Methods
 ### Instance Based Methods
