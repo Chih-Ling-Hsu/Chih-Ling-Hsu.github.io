@@ -5,7 +5,7 @@ tags:
   - Study
   - Data Science
   - Introduction to Data Mining`
-category: Program
+category: Notes
 ---
 
 <!--more-->
