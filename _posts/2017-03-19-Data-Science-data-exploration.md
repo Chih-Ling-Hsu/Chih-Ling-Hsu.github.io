@@ -1,4 +1,4 @@
----
+
 title: 'Data Science - data exploration'
 layout: post
 tags:
@@ -6,7 +6,7 @@ tags:
   - Data Science
   - Introduction to Data Mining
 category: Notes
----
+
 
 Data: Collection of data objects and their attributes
 
@@ -28,7 +28,7 @@ Data: Collection of data objects and their attributes
 *   duplicate data
 
 <!--more-->
----
+
 
 ## Data Preprocessing
 ### Aggregation
@@ -106,7 +106,7 @@ Create new attributes that can capture the important rmation in a data set much 
 ### Attribute Transformation
 A function that maps the entire set of values of a given attribute to a new set of replacement values such that each old value can be identified with one of the new values. (ex. Standardization and Normalization)
 
----
+
 
 ## Similarity and Dissimilarity
 
@@ -179,7 +179,7 @@ s(p, q) = s(q, p)   for all p and q
 
 ![](https://i.imgur.com/I2XXwRb.png)
 
----
+
 
 ## Data Exploration
 
@@ -326,7 +326,7 @@ A data cube is a multidimensional representation of data, together with all poss
     
     ![](https://i.imgur.com/AXhGYaU.png)
 
----
+
 
 ## References
 - [Similarities in Machine Learning](http://tiredapple.pixnet.net/blog/post/4757594)

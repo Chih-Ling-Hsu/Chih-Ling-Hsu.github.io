@@ -1,4 +1,4 @@
----
+
 title: 'Data Science - classification'
 layout: post
 tags:
@@ -7,7 +7,7 @@ tags:
   - Classification
 category: Notes
 mathjax: true
----
+
 
 Decision Tree Based Classification has the following properties:
 
@@ -105,7 +105,7 @@ $$
 - Early termination 
 
 
----
+
 
 ## References
 - [“Introduction to Data Mining,” by P.-N. Tan, M. Steinbach, V. Kumar, Addison-Wesley.](http://www-users.cs.umn.edu/~kumar/dmbook/index.php)

@@ -1,4 +1,4 @@
----
+
 title: 'Data Science - classification'
 layout: post
 tags:
@@ -8,7 +8,7 @@ tags:
   - Classification
 category: Notes
 mathjax: true
----
+
 **Definition**
 Classification as the task of learning a **target function** **_f_** that maps each attribute set **_x_** to one of the predicted class labels **_y_**.
 
@@ -19,7 +19,7 @@ Classification as the task of learning a **target function** **_f_** that maps e
 
 <!--more-->
 
----
+
 
 ## Classification Techniques
 ### Decision-tree-based Methods
@@ -37,7 +37,7 @@ Classification as the task of learning a **target function** **_f_** that maps e
 ### Support Vector Machines (SVM)
 ### Ensemble Methods
 
----
+
 
 ## Practical Issues of Classification
 ### Underfitting and Overfitting
@@ -101,7 +101,7 @@ Same subtree appears in multiple branches.
 
 ![](https://i.imgur.com/EOIqIYX.png)
 
----
+
 
 ## Model Evaluation
 ### Metrics for Performance Evaluation
@@ -158,7 +158,7 @@ Given x (# of correct predictions) and N (# of test instances), we get acc=x/N, 
 - Confidence Interval for p :
 	![](https://i.imgur.com/BG75gfX.png)
 
----
+
 
 ## References
 - [“Introduction to Data Mining,” by P.-N. Tan, M. Steinbach, V. Kumar, Addison-Wesley.](http://www-users.cs.umn.edu/~kumar/dmbook/index.php)
