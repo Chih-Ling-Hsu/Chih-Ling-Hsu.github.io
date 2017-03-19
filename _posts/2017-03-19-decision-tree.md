@@ -1,5 +1,5 @@
 ---
-title: 'Data Science - classification'
+title: 'Decision Tree'
 layout: post
 tags:
   - Study
