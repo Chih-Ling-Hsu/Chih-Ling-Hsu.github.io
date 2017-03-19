@@ -201,15 +201,19 @@ Summary statistics are numbers that summarize properties of the data
 **Frequency**
 - The frequency of an attribute value is the percentage of time the value occurs in the data set 
 - Typically used with **categorical** data
+
 **Mode**
 - The mode of a an attribute is the most frequent attribute value
 - Typically used with **categorical** data
+
 **Percentile**
 - the pth percentile of a distribution is a number such that approximately p percent (p%) of the values in the distribution are equal to or less than that number.
 - Typically used with **continuous** data
+
 **Location (Mean and Median)**
 - The most common measure of the location of a set of points
 - Since the mean is very sensitive to outliers, the **median** or a **trimmed mean** is also commonly used.
+
 **Spread (Range and Variance)**
 - Range is the difference between the max and min.
 - The variance or standard deviation is the most common measure of the spread of a set of points.
