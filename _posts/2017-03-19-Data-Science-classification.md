@@ -258,9 +258,9 @@ ROC curve plots **TP** (on the y-axis) against **FP** (on the x-axis). It  chara
 
 
 - How to construct an ROC curve?
-    1. Use classifier that produces posterior probability for each test instance P(+|A)
-    2. Sort the instances according to P(+|A) in decreasing order
-    3. Apply threshold at each unique value of P(+|A)
+    1. Use classifier that produces posterior probability for each test instance P(+\|A)
+    2. Sort the instances according to P(+\|A) in decreasing order
+    3. Apply threshold at each unique value of P(+\|A)
     4. Count the number of TP, FP, TN, FN at each threshold
 
 - An ROC curve demonstrates several things:
