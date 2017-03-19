@@ -1,4 +1,3 @@
-
 ---
 title: 'Data Science - data exploration'
 layout: post
