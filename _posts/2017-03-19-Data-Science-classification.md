@@ -1,4 +1,5 @@
 
+---
 title: 'Data Science - classification'
 layout: post
 tags:
@@ -8,17 +9,20 @@ tags:
   - Classification
 category: Notes
 mathjax: true
+---
 
 **Definition**
+
 Classification as the task of learning a **target function** **_f_** that maps each attribute set **_x_** to one of the predicted class labels **_y_**.
 
 **Classification Tasks**
+
 - Predicting tumor cells as benign or malignant
 - Classifying credit card transactions as legitimate or fraudulent
 - Categorizing news stories as finance, weather, entertainment, sports, etc.
 
-<!--more-->
 
+<!--more-->
 
 
 ## Classification Techniques
@@ -52,6 +56,7 @@ Classification as the task of learning a **target function** **_f_** that maps e
 
 
 **How To Address Overfitting?**
+
 - Pre-Pruning (Early Stoppping Rule)
 	- Stop if number of instances is less than some user-specified threshold
 	-  Stop if class distribution of instances are independent of the available features (e.g., using X2 test)
@@ -62,6 +67,7 @@ Classification as the task of learning a **target function** **_f_** that maps e
 	3. If generalization error improves after trimming, replace sub-tree by a leaf node.
 
 **Methods for Estimating Generalization Error:**
+
 - Optimistic approach -  Generalization Error = Training Error
 - Pessimistic approach -
 	- For each leaf node: Generalization Error = (Training Error+0.5) 
@@ -80,9 +86,11 @@ Missing values affect decision tree construction in three different ways:
 ### Costs of Classification
 
 **Data Fragmentation**
+
 Number of instances gets smaller as you traverse down the tree. As a result, number of instances at the leaf nodes could be too small to make any statistically significant decision.
 
 **Search Strategy**
+
 Finding an optimal decision tree is NP-hard.
 
 The algorithm presented so far uses a **greedy**, **top-down**, **recursive partitioning** strategy to induce a reasonable solution.
@@ -97,6 +105,7 @@ Decision tree provides expressive representation for learning discrete-valued fu
 - **Oblique** Decision Trees -  **More expressive** representation. Test condition may _involve multiple attributes_.
 
 **Tree Replication**
+
 Same subtree appears in multiple branches.
 
 ![](https://i.imgur.com/EOIqIYX.png)
@@ -119,12 +128,14 @@ Focus on the predictive capability of a model rather than how fast it takes to c
 Performance of a model may depend on other factors besides the learning algorithm, such as class distribution and size of training/testing set.
 
 **Class distribution**
+
 Consider a 2-class problem. Number of Class 0 examples = 9990, Number of Class 1 examples = 10.
 
 - Accuracy is not Cost-Sensitive. 
 - Cost-Sensitive Measures: Precision, Recall, F-measure
 
 **Size of training and test sets**
+
 - Holdout - Reserve 2/3 for training and 1/3 for testing 
 - Random subsampling - Repeated holdout
 - Bootstrap - Sampling with replacement
@@ -134,6 +145,7 @@ Consider a 2-class problem. Number of Class 0 examples = 9990, Number of Class 1
 > How to compare the relative performance among competing models?
 
 **ROC (Receiver Operating Characteristic)**
+
 ROC curve plots **TP** (on the y-axis) against **FP** (on the x-axis). It  characterizes the trade-off between positive hits and false alarms
 
 ![](https://i.imgur.com/yiu1gKv.png)
@@ -152,10 +164,11 @@ ROC curve plots **TP** (on the y-axis) against **FP** (on the x-axis). It  chara
     - The slope of the tangent line at a cutpoint gives the **likelihood ratio** (LR) for that value of the test. You can check this out on the graph above.
 
 **Confidence Interval for Accuracy**
-Given x (# of correct predictions) and N (# of test instances), we get acc=x/N, Can we predict p (true accuracy of model)?
 
-- For large test sets (N > 30), acc has a normal distribution with mean p and variance p(1-p)/N
-- Confidence Interval for p :
+Given $x$ (# of correct predictions) and $N$ (# of test instances), we get $acc=x/N$. Can we predict $p$ (true accuracy of model)?
+
+- For large test sets ($N$ > 30), acc has a normal distribution with mean $p$ and variance $p(1-p)/N$
+- Confidence Interval for $p$ :
 	![](https://i.imgur.com/BG75gfX.png)
 
 

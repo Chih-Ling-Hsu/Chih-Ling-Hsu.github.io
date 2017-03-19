@@ -1,4 +1,5 @@
 
+---
 title: 'Data Science - data exploration'
 layout: post
 tags:
@@ -6,7 +7,7 @@ tags:
   - Data Science
   - Introduction to Data Mining
 category: Notes
-
+---
 
 Data: Collection of data objects and their attributes
 

@@ -1,4 +1,5 @@
 
+---
 title: 'Data Science - classification'
 layout: post
 tags:
@@ -7,7 +8,7 @@ tags:
   - Classification
 category: Notes
 mathjax: true
-
+---
 
 Decision Tree Based Classification has the following properties:
 
@@ -27,10 +28,12 @@ Decision Tree Based Classification has the following properties:
 
 ## Specify Attribute Test Condition
 **Depending on Number of Splits**
+
 - _Binary Split_ - Use as many partitions as distinct values.
 - _Multi-Way Split_ - Divides values into two subsets. Need to find optimal partitioning.
 
 **Depending on Attribute Types**
+
 - Nominal
 - Ordinal
 - Continuous
@@ -103,8 +106,6 @@ $$
 - Stop expanding a node when all the records belong to the **same** class
 - Stop expanding a node when all the records have **similar** attribute values
 - Early termination 
-
-
 
 
 ## References
