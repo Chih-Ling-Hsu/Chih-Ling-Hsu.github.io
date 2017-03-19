@@ -25,16 +25,16 @@ Classification as the task of learning a **target function** **_f_** that maps e
 
 
 ## Classification Techniques
-### Decision-tree-based Methods
+### Decision Tree Based Methods
 - Inexpensive to construct
 - Extremely fast at classifying unknown records
 - Easy to interpret for small-sized trees
 - Accuracy is comparable to other classification techniques for many simple data sets
 - Unsuitable for Large Datasets because sorting continuous attributes at each node needs entire data to fit in memory.
 
-### Rule-based Methods
-### Instance-Based Methods
-### Memory based reasoning
+### Rule Based Methods
+### Instance Based Methods
+### Memory Based Reasoning
 ### Naïve Bayes and Bayesian Belief Networks
 ### Artificial Neural Networks (ANN)
 ### Support Vector Machines (SVM)
