@@ -7,6 +7,7 @@ tags:
   - <<Introduction to Data Mining>>
   - Classification
 category: Notes
+mathjax: true
 ---
 
 ### Definition
