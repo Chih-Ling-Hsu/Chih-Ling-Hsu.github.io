@@ -1,8 +1,13 @@
-# Data Science - classification
-###### tags: `Study` `Data Science` `<<Introduction to Data Mining>>` `Classification`
-
-<script type="text/javascript"  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
+---
+title: 'Data Science - classification'
+layout: post
+tags:
+  - Study
+  - Data Science
+  - <<Introduction to Data Mining>>
+  - Classification
+category: Notes
+---
 
 ### Definition
 Classification as the task of learning a **target function** **_f_** that maps each attribute set **_x_** to one of the predicted class labels **_y_**.
