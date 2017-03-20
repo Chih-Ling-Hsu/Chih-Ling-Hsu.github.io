@@ -24,6 +24,7 @@ mathjax: true
     2. The **variance** of the series should not a be a function of time.
     3. The **covariance** of the i th term and the (i + m) th term should not be a function of time.
 - **You cannot build a time series model with a time series that is not stationary.**
+
 ### Random Walk
 - Random walk is **not a stationary process** as it has a time variant variance and covariance.
     $$
