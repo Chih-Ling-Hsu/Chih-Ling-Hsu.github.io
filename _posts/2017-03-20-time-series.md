@@ -27,6 +27,7 @@ mathjax: true
 
 ### Random Walk
 - Random walk is **not a stationary process** as it has a time variant variance and covariance.
+    
     $$
     X(t) = X(t-1) + Er(t)
     \\
@@ -36,6 +37,7 @@ mathjax: true
     \\
     where~Er(t)~is~the~error~at~time~point~t.
     $$
+
     - Is the Mean constant ? *YES*
         
         $E[X(t)] = E[X(0)] + Sum(E[Er(1)],E[Er(2)],E[Er(3)].....E[Er(t)]) = Constant$
@@ -45,6 +47,7 @@ mathjax: true
         
         $Var[X(t)] = Var[X(0)] + Sum(Var[Er(1)],Var[Er(2)],Var[Er(3)].....Var[Er(t)])$
         $Var[X(t)] = t * Var(Error) = Time~dependent$
+
 - Introduce coefficient **Rho** to make the formulation stationary.
     
     $$
@@ -171,8 +174,10 @@ mathjax: true
 
 ## Framework of Time Series Modeling
 ![](https://www.analyticsvidhya.com/wp-content/uploads/2015/02/flowchart.png)
+
 ### Step 1. Visualize the Time Series
 Any kind of trend, seasonality or random behaviour in the series?
+
 ### Step 2. Stationarize the Series
 First, we check if the time series is stationary.
 If the series is found to be non-stationary, the followings are the commonly used technique to make a time series stationary:
@@ -190,12 +195,15 @@ If the series is found to be non-stationary, the followings are the commonly use
     (This differencing is called as the Integration part in AR(I)MA)
 - **Seasonality**
     Seasonality can easily be incorporated in the ARIMA model directly.
+
 ### Step 3. Find Optimal Parameters
 The parameters p,d,q can be found using  ACF and PACF plots.
+
 ### Step 4. Build ARIMA Model
 - The value found in the previous section might be an approximate estimate and we need to explore more (p,d,q) combinations.
 - The one with the lowest BIC and AIC should be our choice. 
 - We notice any seasonality in ACF/PACF plots.
+
 ### Step 5. Make Predictions
 Now we can make predictions on the future time points using the final ARIMA model.
 
