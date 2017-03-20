@@ -20,14 +20,14 @@ MinGW包括：
 - 用於Windows平台安裝和部署MinGW和MSYS的命令行安裝器（mingw-get）
 - 用於命令行安裝器的GUI打包器（mingw-get-inst）
 
-### Step 2. Install `GCC` using MinGW Installation Manager
+## Step 2. Install `GCC` using MinGW Installation Manager
 
 In the window of minGW, right click on `mingw32-gcc-g++` and select `Mark for Installation`.
 ![](https://i.imgur.com/oeL8TYt.png)
 
 Then click `Installation` on the menu bar and select `Apply Change`. The installation of `gcc` would begin.
 
-### Step 3. Install `Make` using MinGW Installation Manager
+## Step 3. Install `Make` using MinGW Installation Manager
 
 In the window of minGW, right click on `mingw32-gcc-g++` and select `Mark for Installation`.
 ![](https://i.imgur.com/zGGiGRe.png)
