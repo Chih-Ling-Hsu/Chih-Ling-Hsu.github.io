@@ -17,12 +17,12 @@ $ pip install sklearn
 failed building wheel for scikit-learn
 ```
 So I check the requirements on the [sklearn official site](http://scikit-learn.org/stable/install.html) and found that I didn't install scipy before.
-
-    Scikit-learn requires:
-    Python (>= 2.6 or >= 3.3),
-    NumPy (>= 1.6.1),
-    SciPy (>= 0.9).
-    
+```
+Scikit-learn requires:
+Python (>= 2.6 or >= 3.3),
+NumPy (>= 1.6.1),
+SciPy (>= 0.9).
+```
 Since sklearn needs the dependency of `scipy`, I need to install scipy before installing sklearn. However, teh same error occurs.
 ```shell=
 $ pip install sklearn

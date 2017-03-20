@@ -2,7 +2,7 @@
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 
 #### Code Highlighter
-highlighter: pygments
+highlighter: rouge
 
 #### Permalink
 # For more see: http://jekyllrb.com/docs/permalinks/
@@ -129,7 +129,7 @@ jiathis:
 #### Analytics
 google_analytics:
   enable: true
-  id: UA-67994495-1        ## e.g. UA-46321946-2 your google analytics ID.
+  id:         ## e.g. UA-46321946-2 your google analytics ID.
   site: auto      ## e.g. wuchong.me your google analytics site or set the value as auto.
 ## You MUST upgrade to Universal Analytics first!
 ## https://developers.google.com/analytics/devguides/collection/upgrade/?hl=zh_CN
@@ -147,7 +147,7 @@ totop: true           ## if you want to scroll to top in every post set the valu
 #### Custom Search
 google_cse: 
   enable: true
-  cx: 004255214185073801838:_icnlls8kds  ## e.g. 018294693190868310296:abnhpuysycw your Custom Search ID.
+  cx:   ## e.g. 018294693190868310296:abnhpuysycw your Custom Search ID.
 ## https://www.google.com/cse/ 
 ## To enable the custom search You must create a "search" folder in '/source' and a "index.md" file
 ## set the 'front-matter' as
@@ -157,7 +157,7 @@ google_cse:
 baidu_search:     ## http://zn.baidu.com/
   enable: false
   id:   ## e.g. "783281470518440642"  for your baidu search id
-  site: http://zhannei.baidu.com/cse/search  ## your can change to your site instead of the default site
+  site:  ## your can change to your site instead of the default site
 tinysou_search:     ## http://tinysou.com/
   enable: false
   id:  ## e.g. "4ac092ad8d749fdc6293" for your tiny search id
