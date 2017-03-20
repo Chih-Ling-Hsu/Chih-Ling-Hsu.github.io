@@ -2514,7 +2514,7 @@ footer {
 .article-content pre,
 .article-content .highlight,
 .article-content .highlight pre {
-    background: #2d2d2d;
+    background: #666;
     margin: .5em 0;
     padding: .5em 2%;
     color: #ccc;
