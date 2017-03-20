@@ -10,7 +10,8 @@ permalink: /:year/:month/:day/:title
 
 #### Markdown Processors
 markdown: kramdown
-redcarpet:
+kramdown:
+  syntax_highlighter: rouge
   extensions:
     - hard_wrap
     - no_intra_emphasis
