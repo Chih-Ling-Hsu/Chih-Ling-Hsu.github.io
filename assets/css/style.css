@@ -2511,15 +2511,6 @@ footer {
     display: inline-block
 }
 
-.c { color: #99AA8A } /* Comment */
-.err { color: #960050; background-color: #1e0010 } /* Error */
-.k { color: #93C763 } /* Keyword */
-.l { color: #ae81ff } /* Literal */
-.highlight .c { color: #99AA8A } /* Comment */
-.highlight .err { color: #960050; background-color: #1e0010 } /* Error */
-.highlight .k { color: #93C763 } /* Keyword */
-.highlight .l { color: #ae81ff } /* Literal */
-
 .article-content pre,
 .article-content .highlight,
 .article-content .highlight pre {
@@ -2564,7 +2555,7 @@ footer {
 }
 
 .article-content pre code {
-    color: #333;
+    color: #ccc;
     background: none;
     text-shadow: none;
     padding: 0;
