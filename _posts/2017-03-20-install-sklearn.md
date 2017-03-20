@@ -4,8 +4,11 @@ layout: post
 tags:
   - Python
   - Sklearn
-category: Notes
+category: Install
 ---
+
+Sklearn is an open source Python library that implements a range of machine learning, preprocessing, cross-validation and visualization algorithms.   To analyze data with machine learning, sklearn is often used to approach.   Although I already have experience installing sklearn library on Windows, this time I encountered problems installing on my new computer.
+
 <!--more-->
 
 ## Problem 1. pip install sklearn/scipy failed
