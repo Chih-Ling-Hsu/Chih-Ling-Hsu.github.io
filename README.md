@@ -1,106 +1,90 @@
-# Jacman
+# Jekyll-Jacman
 
-[中文说明](/README_zh.md)
+**中文 | [English](/README_en.md)**
 
-Jacman is a fresh looking and responsive theme for [Hexo](http://hexo.io) with more features and some build-in Chinese service based on [Pacman](https://github.com/A-limon/pacman).  
+以前的博客主题已不再维护，如果需要请移步 [jekyll-simpleyyt](https://github.com/Simpleyyt/jekyll-simpleyyt)。
 
-**Jacman support Hexo 3.0 now !**
+Jacman 这主题是从 Hexo 版的 Jacman 主题移植过来的，个人比较喜欢。
 
-[Demo](http://jacman.wuchong.me)
+Jekyll-Jacman 是为 [Jekyll](http://jekyllrb.com) 设计的一款清新且具有响应式的主题，拥有更丰富的特性并支持了很多的国内服务。Jacman 始于 [Hexo Jacman](https://github.com/wuchong/jacman) 移植而来。
 
-[如何使用 Jacman 主题](http://jacman.wuchong.me/2014/11/20/how-to-use-jacman/)
+ * [主题演示](http://simpleyyt.github.io/jekyll-jacman/)
+ * [Yitao's Blog](http://simpleyyt.github.io)
+ * [如何使用 Jacman 主题](http://simpleyyt.github.io/jekyll-jacman/jekyll/2015/09/20/how-to-use-jacman)
 
-##Installation
-###Install
+##本地搭建
+
+确保已安装`Ruby 2.1.0` 或更高版本：
+
+```sh
+ruby --version
 ```
-$ git clone https://github.com/wuchong/jacman.git themes/jacman
-```
-**Jacman requires Hexo 2.7 and above.** 
-###Enable
-Modify `theme` setting in blog folder` _config.yml` to `jacman`.
-###Update
-```
-cd themes/jacman
-git pull origin master
-```
-**please backup your `_config.yml` file before update.** 
 
-##Configuration
+安装`Bundler`：
 
-Modify settings in  `/themes/jacman/_config.yml`. [Learn More](https://github.com/wuchong/jacman/wiki/%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97).
+```sh
+gem install bundler
+```
 
-##Features
-- **menu**  
- Main navigation menu.
-- **widget**  
- Widgets displaying in sidebar.The category,tag,rss,archive,tagcloud,links,weibo are supported.
-- **Image**  
- Images about favicon, site logo, author image, banner image. Support different image styles like `img-logo`,`img-topic`,`img-center` etc.
-- **index**  
- Two different home page display modes.You can visit [Demo](http://jacman.wuchong.me) to check the difference.
-- **author**  
- Author imformation, used to show your social network links on the bottom right. Including github, stackoverflow, twitter, facebook, linkedin, google+, weibo, douban, zhihu, email.
-- **toc**  
- Show Table Of Contents in article & aside.
-- **comments**  
- [duoshuo](http://duoshuo.com/) & [disqus](https://disqus.com/) are supported.
-- **jiathis**  
- Build-in share tool or [JiaThis](http://www.jiathis.com/) share buttons at the bottom of articles.
-- **Analytiscs**  
- [Google analytics](http://www.google.com/analytics/) & [Baidu tongji](http://tongji.baidu.com/) & [CNZZ tongji](http://www.cnzz.com/) are all supported.
+下载 Jacman 主题：
+
+```sh
+git clone https://github.com/Simpleyyt/jekyll-jacman.git
+cd jekyll-jacman
+```
+
+安装依赖：
+
+```sh
+bundle install
+```
+
+运行 Jekyll：
+
+```sh
+bundle exec jekyll server
+```
+
+更多细节可以参考：[Setting up your GitHub Pages site locally with Jekyll](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/)
+
+##功能
+- **菜单 menu**  
+ 主导航菜单
+- **控件 widget**  
+ 侧边栏的控件。包括：Github 名片	、分类、标签、RSS、友情链接、微博秀。
+- **图片相关 Image**  
+ 设置网站图标、网站logo、作者头像、博客顶部大图等。还提供了多种图片样式`img-logo`,`img-topic`,`img-center`等。
+- **首页模式 index**  
+ 主题提供了两种首页展示模式。
+- **作者 author**  
+ 作者信息，主要用于展示网站右下角的社交网络链接。包括：微博、豆瓣、知乎、邮箱、GitHub、StackOverflow、Twitter、Facebook、Linkedin、Google+。
+- **目录 toc**  
+ 在文章中和侧边栏可以显示目录。
+- **评论 comments**  
+ 支持 [多说](http://duoshuo.com/) & [disqus](https://disqus.com/) 评论。
+- **分享 jiathis**  
+ 启用 内建分享工具 或 [加网](http://www.jiathis.com/) 分享系统。
+- **网站统计 Analytiscs**  
+ 支持 [谷歌统计](http://www.google.com/analytics/) & [百度统计](http://tongji.baidu.com/) & [CNZZ站长统计](http://www.cnzz.com/)。
 - **Search**  
- [Googlle Custom Search](https://www.google.com/cse/ ) & [Baidu Site Search](http://zn.baidu.com/) & [Tiny Search](http://tinysou.com/) are supported.
+ 支持 [谷歌自定义搜索](https://www.google.com/cse/ ) & [百度站内搜索](http://zn.baidu.com/)  &[微搜索](http://tinysou.com/)。
 - **totop**  
- Scroll to top
+ 回到顶部。
 - **rss**  
- RSS subscription link (change if using Feedburner).
+ RSS 订阅链接。
 - **fancybox**  
- Enable [Fancybox](http://fancyapps.com/fancybox/)
-- **custom theme color**
- Mondify theme color in `_config.yaml` instead of finding unfamiliar stylus files.
-- **others**
- You can configure sidebar not show in post pages.
+ 图片查看的 [Fancybox](http://fancyapps.com/fancybox/) 工具。
+- **其他**
+ 你可以设置侧边栏在博文页面中不显示。
 
-You can learn how to use them from [Configuration](https://github.com/wuchong/jacman/wiki/配置指南).
+##关于 Kramdown 引擎
+由于 Github 不再支持原来的 redcarpet，因此每次更新时都会有 Page build warning 发到邮件。我新建了一个分支 kramdown，把 Markdown 引擎换成了 kramdown，把高亮换成了 rough。但是，kramdown 的 markdown 语法比较严格，我不喜欢。所以，你也可以像我一样建个规则过滤 Page build warning 邮件。
 
-##Sites
-- [Jacman Theme](http://jacman.wuchong.me) - The demo site of Jacman Theme
-- [Jark's Blog](http://wuchong.me) - The author's blog of Jacman
-- [阿杜个人博客](http://ralphadu.com) - 阿杜个人博客
-- [PhiloSky's Blog](http://philosky.ml/) - Personal blog
-- [hiluSdream](http://hiluluke.cn) - 梦想是无所谓无的，无所谓有的
-- [Melface](http://melface.tk) - Personal blog
-- [heamon7's Utopia](http://heamon7.com) - 修行绝尘，悟道涉俗
-- [PegasusWang's Blog](http://ningning.today) - 你的问题主要在于读书不多而想得太多
-- [青劲草](http://www.caoqq.net) - 学会记录成长点滴
-- [Vigorass](http://cscao.com) - Learn to record dripping growth
-- [MoqiZhan](http://moqizhan.com) - 人生就是不停的战斗
-- [Think Differently](http://think-diff.me/) - If You Can Think Differently, You Can Act Differently.
-- [ylf](http://wangyangyang.gitcafe.com) - 王洋洋
-- [Gevin's blog](http://blog.igevin.info/) - Stay hungry, stay foolish; Stop when you are perfect.
-- [keychar](http://keychar.com) - A technology blog, design & programming.
-- [peng的博客](http://chenpengdsp.com) - 人生就是不停的战斗
-- [More and More](http://aeesky.github.io) -刚起步：）
-- [好久不见](http://dpast.org) - Julian Zhu
-- [keke2014's blog](http://jukezhang.com/) - Stay hungry, stay foolish - Steve Jobs
-- [Eurry](http://www.eurry.net) - Eurry's Blog.
-- [sencle's blog](http://isencle.com) -just do it
-- [Oxymoron's Blog](http://ioxymoron.me) - Let's start from here.
-- [HelloDog](http://wsgzao.github.io) - Keep Clam and Carry On
-- [屠城｜屠夫9441的博客](http://haomwei.com) - 苟全性命于乱世，不求闻达于诸侯。
-- [Ice He. 何志遠](http://icehe.github.io/) - Less is more. 寧靜致遠。
-- [prokitty，侏罗纪公园](http://www.prokitty.com) -Belive yourself,belive Cherry.
-- [Ceclinux](http://ceclinux.org) - Arch is the best
-- [BruceGe's blog](http://brucege.com) - Start Blogging
-- [Yangxiaolei's blog](http://yangxiaolei.me) - 让知识成为信仰，让优秀成为习惯
-- [CC's blog](http://ccloveyou.org) - CC
-- [TadGuo's pages](http://watermeion.github.io) - More is different.
-- [Mutse's blog](http://mutse.github.io) - Love Life, Love open source
-- [唐巧的技术博客](http://blog.devtang.com/) - 巧神
-- [Salogs](http://salogs.com/) - 拥抱开源，分享经验!
-
-
-If you are using Jacman,you can add your site [here](https://github.com/wuchong/jacman/wiki/Sites) ! I'll push the available sites here.
-
-##License
+##协议
 [MIT](/LICENSE)
+
+##捐赠
+
+支付宝捐赠链接还是要有的，万一真的有人捐呢。
+
+![支付宝扫码捐赠](http://p1.bpimg.com/567571/9a4a158daee8aa69.png)
