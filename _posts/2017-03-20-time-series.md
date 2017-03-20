@@ -152,6 +152,7 @@ mathjax: true
 - Once we have got the stationary time series, we must answer two primary questions:
     1. Is it an AR or MA process?
     2. What order of AR or MA process do we need to use?
+
 ### Auto Correlation Function (ACF)
 - In an MA series of lag n, we will not get any correlation between x(t) and x(t – n -1) . Hence, the total correlation chart cuts off at nth lag.
     - MA(2) process:
