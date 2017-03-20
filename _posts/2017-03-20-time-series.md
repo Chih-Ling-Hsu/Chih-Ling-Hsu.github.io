@@ -156,10 +156,10 @@ mathjax: true
 
 ### Auto Correlation Function (ACF)
 - In an MA series of lag n, we will not get any correlation between x(t) and x(t – n -1) . Hence, the total correlation chart cuts off at nth lag.
-    - MA(2) process:
+    MA(2) process:
     ![](https://i.imgur.com/2drPhjQ.png)
 - For an AR series this correlation will gradually go down without any cut off value.
-    - AR(2) process:
+    AR(2) process:
     ![](https://i.imgur.com/8OUtZhK.png)
     Our 2nd lag (x (t-2) ) is independent of x(t). Hence, the partial correlation function (PACF) will drop sharply after the 1st lag.
 
@@ -173,9 +173,11 @@ First, we check if the time series is stationary.
 If the series is found to be non-stationary, the followings are the commonly used technique to make a time series stationary:
 - **Detrending**
     remove the trend component from the time series.
+
     $$X(t) = (mean + trend*t) + error$$
 - **Differencing**
     Try to model the differences of the terms and not the actual term. 
+
     $$X(t) – X(t-1) = ARMA (p, q)\\
     p = AR; d = I; q = MA$$
     
