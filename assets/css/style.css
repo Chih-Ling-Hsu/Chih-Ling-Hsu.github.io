@@ -2514,10 +2514,10 @@ footer {
 .article-content pre,
 .article-content .highlight,
 .article-content .highlight pre {
-    background: #f5f5f5;
+    background: #2d2d2d;
     margin: .5em 0;
     padding: .5em 2%;
-    color: #000;
+    color: #ccc;
     line-height: 1.5;
     font-size: .8em;
     -webkit-border-radius: .35em;
@@ -2552,7 +2552,6 @@ footer {
     font-family: Monaco, Menlo, Consolas, Courier New, monospace;
     background: #f5f5f5;
     border: 1px solid #ccc;
-    overflow-x: scroll;
 }
 
 .article-content pre code {
@@ -2560,7 +2559,6 @@ footer {
     background: none;
     text-shadow: none;
     padding: 0;
-    overflow-x: scroll;
 }
 
 .article-content .highlight {
