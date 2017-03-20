@@ -37,13 +37,16 @@ mathjax: true
     where~Er(t)~is~the~error~at~time~point~t.
     $$
     - Is the Mean constant ? *YES*
+        
         $E[X(t)] = E[X(0)] + Sum(E[Er(1)],E[Er(2)],E[Er(3)].....E[Er(t)]) = Constant$
 
         Expectation of any Error will be zero as it is random.
     - Is the Variance constant? *NO*
+        
         $Var[X(t)] = Var[X(0)] + Sum(Var[Er(1)],Var[Er(2)],Var[Er(3)].....Var[Er(t)])$
         $Var[X(t)] = t * Var(Error) = Time~dependent$
 - Introduce coefficient **Rho** to make the formulation stationary.
+    
     $$
     X(t) = Rho * X(t-1) + Er(t)
     \\
