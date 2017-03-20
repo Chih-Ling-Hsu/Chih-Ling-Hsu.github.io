@@ -2,7 +2,7 @@
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 
 #### Code Highlighter
-highlighter: rouge
+highlighter: pygments
 
 #### Permalink
 # For more see: http://jekyllrb.com/docs/permalinks/
