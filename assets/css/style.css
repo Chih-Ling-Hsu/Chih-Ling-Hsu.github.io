@@ -2511,13 +2511,22 @@ footer {
     display: inline-block
 }
 
+.c { color: #99AA8A } /* Comment */
+.err { color: #960050; background-color: #1e0010 } /* Error */
+.k { color: #93C763 } /* Keyword */
+.l { color: #ae81ff } /* Literal */
+.highlight .c { color: #99AA8A } /* Comment */
+.highlight .err { color: #960050; background-color: #1e0010 } /* Error */
+.highlight .k { color: #93C763 } /* Keyword */
+.highlight .l { color: #ae81ff } /* Literal */
+
 .article-content pre,
 .article-content .highlight,
 .article-content .highlight pre {
     background: #272822;
     margin: .5em 0;
     padding: .5em 2%;
-    color: #ccc;
+    color: #ddd;
     line-height: 1.5;
     font-size: .8em;
     -webkit-border-radius: .35em;
@@ -2555,7 +2564,7 @@ footer {
 }
 
 .article-content pre code {
-    color: #ccc;
+    color: #ddd;
     background: none;
     text-shadow: none;
     padding: 0;
