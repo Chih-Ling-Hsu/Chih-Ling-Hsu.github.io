@@ -2552,14 +2552,15 @@ footer {
     font-family: Monaco, Menlo, Consolas, Courier New, monospace;
     background: #f5f5f5;
     border: 1px solid #ccc;
-    word-wrap: break-word;
+    overflow-x: scroll;
 }
 
 .article-content pre code {
     color: #333;
     background: none;
     text-shadow: none;
-    padding: 0
+    padding: 0;
+    overflow-x: scroll;
 }
 
 .article-content .highlight {
