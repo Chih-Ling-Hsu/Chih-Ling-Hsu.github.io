@@ -144,7 +144,9 @@ mathjax: true
 -  It is essentially a **finite impulse response filter** applied to white noise, with some additional interpretation placed on it.
 -  It is conceptually **a linear regression of the current value of the series** against current and previous (unobserved) white noise error terms or random shocks. 
 -  The random shocks at each point are assumed to be mutually independent and to come from the same distribution, typically a normal distribution, with location at zero and constant scale.
+
 ![](https://www.analyticsvidhya.com/wp-content/uploads/2015/02/MA1.png)
+
 - In MA model, noise / shock *quickly vanishes* with time.
 - The correlation between x(t) and x(t-n) for n > order of MA is always *zero*.
 
@@ -175,6 +177,7 @@ If the series is found to be non-stationary, the followings are the commonly use
     remove the trend component from the time series.
 
     $$X(t) = (mean + trend*t) + error$$
+
 - **Differencing**
     Try to model the differences of the terms and not the actual term. 
 
