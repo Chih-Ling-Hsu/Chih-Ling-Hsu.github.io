@@ -2514,10 +2514,10 @@ footer {
 .article-content pre,
 .article-content .highlight,
 .article-content .highlight pre {
-    background: #e5e5e5;
+    background: #2d2d2d;
     margin: .5em 0;
     padding: .5em 2%;
-    color: #000;
+    color: #ccc;
     line-height: 1.5;
     font-size: .8em;
     -webkit-border-radius: .35em;
