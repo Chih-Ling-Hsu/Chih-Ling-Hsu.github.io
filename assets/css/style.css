@@ -80,6 +80,7 @@ ul {
 table {
     border-collapse: separate;
     border-spacing: 0;
+    overflow-x: scroll; 
     vertical-align: middle
 }
 
@@ -2581,7 +2582,6 @@ footer {
 
 .article-content .highlight table {
     margin: 0;
-    overflow-x: scroll; 
     width: auto
 }
 
