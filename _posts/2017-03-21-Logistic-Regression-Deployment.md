@@ -12,7 +12,7 @@ category: Programming
 <!--more-->
 
 ## Preparing Data 
-- For detailed, please check https://hackmd.io/s/SkEYWCnjg
+- For detailed, please check [https://hackmd.io/s/SkEYWCnjg](https://hackmd.io/s/SkEYWCnjg)
 - **Notice 1.** that the **target** class should be at the **last** column.
 - **Notice 2.** the header column should be removed from the input dataset.
 <div>
