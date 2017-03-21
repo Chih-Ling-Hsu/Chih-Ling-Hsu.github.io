@@ -1,5 +1,5 @@
 ---
-title: 'Logistic Regression Deployment on Airline Data Using Spark Java'
+title: 'Logistic Regression Deployment Using Java Spark'
 layout: post
 tags:
   - Java
