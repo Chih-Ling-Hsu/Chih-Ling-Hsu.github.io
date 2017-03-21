@@ -8,9 +8,6 @@ tags:
 category: Programming
 ---
 
-![](https://i.imgur.com/xUqgoIp.png)
-
-<!--more-->
 
 ## References
 - [Download Apache Spark](http://spark.apache.org/downloads.html)
@@ -24,92 +21,98 @@ category: Programming
 - [Spark Java API doc](http://spark.apache.org/docs/latest/api/java/index.html)
 - [Sampling Large Datasets using Spark](http://www.bigsynapse.com/sampling-large-datasets-using-spark)
 
+<!--more-->
+
+![](https://i.imgur.com/xUqgoIp.png)
+
 ## Startup
 ### A Simple Application (Word Count)
-- Sample Code
-    ```java
-    /* SimpleApp.java */
-    /**
-     * Illustrates a wordcount in Java
-     */
-    import org.apache.log4j.Logger;
-    import org.apache.spark.SparkConf;
-    import org.apache.spark.api.java.JavaPairRDD;
-    import org.apache.spark.api.java.JavaRDD;
-    import org.apache.spark.api.java.JavaSparkContext;
-    import org.apache.spark.api.java.function.FlatMapFunction;
-    import org.apache.spark.api.java.function.Function;
-    import org.apache.spark.api.java.function.Function2;
-    import org.apache.spark.api.java.function.PairFunction;
-    import scala.Tuple2;
 
-    import java.util.Arrays;
-    import java.util.List;
+**Sample Code**
 
-    public class WordCount {
-        private static Logger logger = Logger.getLogger(WordCount.class);
+```java
+/* SimpleApp.java */
+/**
+    * Illustrates a wordcount in Java
+    */
+import org.apache.log4j.Logger;
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.JavaPairRDD;
+import org.apache.spark.api.java.JavaRDD;
+import org.apache.spark.api.java.JavaSparkContext;
+import org.apache.spark.api.java.function.FlatMapFunction;
+import org.apache.spark.api.java.function.Function;
+import org.apache.spark.api.java.function.Function2;
+import org.apache.spark.api.java.function.PairFunction;
+import scala.Tuple2;
 
-        public static void main(String[] args) throws Exception {
-            String inputFile = args[0];
-            String outputPath = args[1];
+import java.util.Arrays;
+import java.util.List;
 
-            // Create a Java Spark Context.
-            SparkConf conf = new SparkConf().setAppName("Simple Project");
-            JavaSparkContext sc = new JavaSparkContext(conf);
+public class WordCount {
+    private static Logger logger = Logger.getLogger(WordCount.class);
 
-            // Load our input data.
-            JavaRDD<String> input = sc.textFile(inputFile);
+    public static void main(String[] args) throws Exception {
+        String inputFile = args[0];
+        String outputPath = args[1];
 
-            // Split up into words.
-            JavaRDD<String> words = input .flatMap(new FlatMapFunction<String, String>() {
-                    public Iterable<String> call(String x) {
-                        return Arrays.asList(x.split(" "));
-                    }
-                });
+        // Create a Java Spark Context.
+        SparkConf conf = new SparkConf().setAppName("Simple Project");
+        JavaSparkContext sc = new JavaSparkContext(conf);
 
-            // Transform into <word, one> pair.
-            JavaPairRDD<String, Integer> word_one = words .mapToPair(new PairFunction<String, String, Integer>() {
-                    @Override
-                    public Tuple2<String, Integer> call(String s) throws Exception {
-                        return new Tuple2<>(s, 1);
-                    }
-                }).cache();
+        // Load our input data.
+        JavaRDD<String> input = sc.textFile(inputFile);
 
-            List<Tuple2<String, Integer>> result;
+        // Split up into words.
+        JavaRDD<String> words = input .flatMap(new FlatMapFunction<String, String>() {
+                public Iterable<String> call(String x) {
+                    return Arrays.asList(x.split(" "));
+                }
+            });
 
-            JavaPairRDD<String, Integer> counts_apporache_1 = word_one .reduceByKey(new Function2<Integer, Integer, Integer>() {
-                    @Override
-                    public Integer call(Integer v1, Integer v2) throws Exception {
-                        return v1 + v2;
-                    }
-                });
-            result = counts_apporache_1.collect();
-            counts_apporache_1.saveAsTextFile(outputPath);
-            for(Tuple2 r : result)
-                logger.info(r);
-        }
+        // Transform into <word, one> pair.
+        JavaPairRDD<String, Integer> word_one = words .mapToPair(new PairFunction<String, String, Integer>() {
+                @Override
+                public Tuple2<String, Integer> call(String s) throws Exception {
+                    return new Tuple2<>(s, 1);
+                }
+            }).cache();
+
+        List<Tuple2<String, Integer>> result;
+
+        JavaPairRDD<String, Integer> counts_apporache_1 = word_one .reduceByKey(new Function2<Integer, Integer, Integer>() {
+                @Override
+                public Integer call(Integer v1, Integer v2) throws Exception {
+                    return v1 + v2;
+                }
+            });
+        result = counts_apporache_1.collect();
+        counts_apporache_1.saveAsTextFile(outputPath);
+        for(Tuple2 r : result)
+            logger.info(r);
     }
-    ```
-    ```xml
-    <!--pom.xml-->
-    <project>
-      <groupId>edu.berkeley</groupId>
-      <artifactId>simple-project</artifactId>
-      <modelVersion>4.0.0</modelVersion>
-      <name>Simple Project</name>
-      <packaging>jar</packaging>
-      <version>1.0</version>
-      <dependencies>
-        <dependency> <!-- Spark dependency -->
-          <groupId>org.apache.spark</groupId>
-          <artifactId>spark-core_2.11</artifactId>
-          <version>2.1.0</version>
-        </dependency>
-      </dependencies>
-    </project>
-    ```
-    - Note that `SparkConf().setAppName` in main java class must match `project->name` in pom.xml.
-    - Note that `project->dependencies` in pom.xml must contain all libraries we import in our java classes.
+}
+```
+```xml
+<!--pom.xml-->
+<project>
+    <groupId>edu.berkeley</groupId>
+    <artifactId>simple-project</artifactId>
+    <modelVersion>4.0.0</modelVersion>
+    <name>Simple Project</name>
+    <packaging>jar</packaging>
+    <version>1.0</version>
+    <dependencies>
+    <dependency> <!-- Spark dependency -->
+        <groupId>org.apache.spark</groupId>
+        <artifactId>spark-core_2.11</artifactId>
+        <version>2.1.0</version>
+    </dependency>
+    </dependencies>
+</project>
+```
+- Note that `SparkConf().setAppName` in main java class must match `project->name` in pom.xml.
+- Note that `project->dependencies` in pom.xml must contain all libraries we import in our java classes.
 
 ### Canonical Maven directory structure
 ```sh
