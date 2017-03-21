@@ -9,7 +9,7 @@ category: Programming
 ---
 
 
-## References
+**References**
 - [Download Apache Spark](http://spark.apache.org/downloads.html)
     - MLlib is a built-in library of Spark
     - Spark supports Python, Scala, and Java
