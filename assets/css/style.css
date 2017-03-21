@@ -1331,7 +1331,7 @@ article .article-content .video-container embed {
 }
 
 article .article-content table {
-    max-width: 80%;
+    max-width: 500px;
     border-collapse: collapse;
     border-spacing: 0;
     margin-top: 1em;
