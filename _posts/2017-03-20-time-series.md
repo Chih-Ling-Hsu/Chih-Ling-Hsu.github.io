@@ -53,7 +53,7 @@ mathjax: true
     $$
     X(t) = Rho * X(t-1) + Er(t)
     \\
-    E[X(t)] = **Rho** *E[X(t-1)]
+    E[X(t)] = Rho *E[X(t-1)]
     \\
     1 <= Rho <= 1.0
     $$
