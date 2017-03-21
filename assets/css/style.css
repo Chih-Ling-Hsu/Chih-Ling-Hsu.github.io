@@ -1331,6 +1331,7 @@ article .article-content .video-container embed {
 }
 
 article .article-content table {
+    display:block;
     max-width: 100px;
     border-collapse: collapse;
     border-spacing: 0;
