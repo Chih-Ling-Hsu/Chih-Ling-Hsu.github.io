@@ -33,6 +33,13 @@ Classification as the task of learning a **target function** **_f_** that maps e
 - [More Datails](../../../2017/03/19/decision-tree)
 
 ### Rule Based Methods
+- As highly expressive as decision trees
+- Easy to interpret
+- Easy to generate
+- Can classify new instances rapidly
+- Performance comparable to decision trees
+- [More Datails](../../../2017/03/21/rule-based-classification)
+
 ### Instance Based Methods
 ### Memory Based Reasoning
 ### Naïve Bayes and Bayesian Belief Networks
