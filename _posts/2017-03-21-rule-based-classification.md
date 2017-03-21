@@ -171,7 +171,7 @@ C4.5rules extract rules from an **unpruned** decision tree.
 For each rule, r: $A \rightarrow y$, 
 
 1. consider an alternative rule $r’$: $A’ \rightarrow y$ where $A’$ is obtained by removing one of the conjuncts in $A$
-2. Compare the [pessimistic generalization error](../../../2017/03/19/Data-Science-classification/#underfitting-and-overfitting) for $r$ against all $r’$s
+2. Compare the [pessimistic generalization error](../../../2017/03/19/Data-Science-classification#underfitting-and-overfitting) for $r$ against all $r’$s
 3. Prune if one of the $r’$s has lower pessimistic error rate
 
 Repeat until we can no longer improve generalization error
