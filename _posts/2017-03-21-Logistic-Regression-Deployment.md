@@ -279,7 +279,7 @@ hadoop fs -copyToLocal test/output/model/LogisticRegressionModel ./Model
 ```
 
 
-### ==Package== the application using Maven.
+### `Package` the application using Maven.
 ```sh
 # Package a JAR containing your application
 $ mvn package
@@ -296,7 +296,7 @@ $ hadoop fs -copyFromLocal ./input/logistic_input test/input
 $ hadoop fs -rm -r test/output
 ```
 
-### Execute it with ==spark-submit==
+### Execute it with `spark-submit`
 ```sh
 # Use spark-submit to run your application
 $ spark-submit \

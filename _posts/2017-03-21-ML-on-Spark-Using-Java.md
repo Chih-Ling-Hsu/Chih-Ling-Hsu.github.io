@@ -109,8 +109,8 @@ category: Programming
       </dependencies>
     </project>
     ```
-    - Note that ==SparkConf().setAppName== in main java class must match ==project->name== in pom.xml.
-    - Note that ==project->dependencies== in pom.xml must contain all libraries we import in our java classes.
+    - Note that `SparkConf().setAppName` in main java class must match `project->name` in pom.xml.
+    - Note that `project->dependencies` in pom.xml must contain all libraries we import in our java classes.
 
 ### Canonical Maven directory structure
 ```sh
@@ -122,7 +122,7 @@ $ find .
 ./src/main/java/SimpleApp.java
 ```
 
-### ==Package== the application using Maven.
+### `Package` the application using Maven.
 ```sh
 # Package a JAR containing your application
 $ mvn package
@@ -138,7 +138,7 @@ $ hadoop fs -copyFromLocal ./input/data test/input
 # Remove output directory to prevent conflicts 
 $ hadoop fs -rm -r test/output
 ```
-### Execute it with ==spark-submit==
+### Execute it with `spark-submit`
 ```sh
 # Use spark-submit to run your application
 $ spark-submit \
@@ -146,8 +146,8 @@ $ spark-submit \
   --master local[4] \
   target/simple-project-1.0.jar
 ```
-- Note that you fill up your main java class name after ==```--class```==
-- Note that we run with ==local[4]==, meaning _4 threads_ - which represents “minimal” parallelism.
+- Note that you fill up your main java class name after ````--class````
+- Note that we run with `local[4]`, meaning _4 threads_ - which represents “minimal” parallelism.
 
 ### View and download the output files
 ```sh
@@ -163,40 +163,40 @@ do
 hadoop fs -copyToLocal test/output/part-0000$i ./
 done
 ```
-- Note that you can modify ==seq 0 10== as your need.
+- Note that you can modify `seq 0 10` as your need.
 
 
 
 ## MapReduce Functions
 ![](https://i.imgur.com/1DcypPa.png)
 ### Map
-#### ==map==
+#### `map`
 ![](https://i.imgur.com/akLHsqO.png)
-#### ==flatmap==
+#### `flatmap`
 ![](https://i.imgur.com/fe3HLyv.png)
-#### ==mapToPair==
+#### `mapToPair`
 ![](https://i.imgur.com/z6mrWIF.png)
-#### ==flapMapToPair==
+#### `flapMapToPair`
 ![](https://i.imgur.com/rbVSpqb.png)
-#### ==mapValues==
+#### `mapValues`
 ![](https://i.imgur.com/448dt9i.png)
 
 ### Filter
-#### ==filter==
+#### `filter`
 ![](https://i.imgur.com/9xyDZI6.png)
 
 ### Reduce
-#### ==reduce==
+#### `reduce`
 ![](https://i.imgur.com/1qPpXhS.png)
-#### ==reduceByKey==
+#### `reduceByKey`
 ![](https://i.imgur.com/f2k4WT6.png)
 
 ### Others
-#### ==groupBy==
+#### `groupBy`
 ![](https://i.imgur.com/ANUMMTP.png)
-#### ==sortByKey==
+#### `sortByKey`
 ![](https://i.imgur.com/wD2bu1P.png)
-#### ==distinct==
+#### `distinct`
 ![](https://i.imgur.com/XSo0DKb.png)
 
 
