@@ -182,7 +182,7 @@ $ find .
 ```
 
 ### Main Program
-```javas
+```java
 /*
 *
 LogisticRegression.java
