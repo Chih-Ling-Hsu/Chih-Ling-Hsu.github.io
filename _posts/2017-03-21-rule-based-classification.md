@@ -51,12 +51,12 @@ If we convert the result of decision tree to classification rules, these rules w
 
 These rules can be _simplified_.   However, simplified rules may no longer be mutually exclusive since a record may trigger more than one rule. Simplified rules may no longer be exhaustive either since a record may not trigger any rules.
 
-- Solution to make the rule set mutually exclusive:
-    - Ordered rule set
-    - Unordered rule set – use voting schemes
+**Solution to make the rule set mutually exclusive:**
+- Ordered rule set
+- Unordered rule set – use voting schemes
 
-- Solution to make the rule set exhaustive:
-    - Use a default class
+**Solution to make the rule set exhaustive:**
+- Use a default class
 
 ## Ordered Rule Set
 
@@ -70,7 +70,7 @@ That is, if more than one rule is triggered, need **conflict resolution**:
 
 ## Building Rules Through Direct Method
 
-Direct Method extract rules directly from data.   **Sequential Covering** such as **CN2** Algorithm and **RIPPER** Algorithm are common direct methods for building classification rules.
+Direct Method extract rules directly from data.   **Sequential Covering** such as `CN2` Algorithm and `RIPPER` Algorithm are common direct methods for building classification rules.
 
 Take `Ripper` method as example.   For **2-class problem**, choose one of the classes as positive class, and the other as negative class, learn rules for positive class, and negative class will be default class.   For **multi-class problem**, order the classes according to increasing class prevalence (fraction of instances that belong to a particular class), and learn the rule set for _smallest class first_, treat the rest as negative class.   Repeat with next smallest class as positive class
 
@@ -89,16 +89,18 @@ Take `Ripper` method as example.   For **2-class problem**, choose one of the cl
 
 1. Start from an **empty rule**: `{}` $\rightarrow$ class
 2. Add conjuncts that **maximizes FOIL’s information gain** measure:
-    $$
-    Gain(R_{0}, R_{1}) = t ( log\frac{p_{1}}{p_{1}+n_{1}} – log\frac{p_{0}}{p_{0} + n_{0}} )
-    $$
-    - $R_{0}$:  `{}` $\rightarrow$ class (initial rule)
-    - $R_{1}$:  `{A}` $\rightarrow$ class (rule after adding conjunct)
-    - $t$: number of positive instances covered by both $R_{0}$ and $R_{1}$
-    - $p_{0}$: number of positive instances covered by $R_{0}$
-    - $n_{0}$: number of negative instances covered by $R_{0}$
-    - $p_{1}$: number of positive instances covered by $R_{1}$
-    - $n_{1}$: number of negative instances covered by $R_{1}$
+
+$$
+Gain(R_{0}, R_{1}) = t ( log\frac{p_{1}}{p_{1}+n_{1}} – log\frac{p_{0}}{p_{0} + n_{0}} )
+$$
+
+- $R_{0}$:  `{}` $\rightarrow$ class (initial rule)
+- $R_{1}$:  `{A}` $\rightarrow$ class (rule after adding conjunct)
+- $t$: number of positive instances covered by both $R_{0}$ and $R_{1}$
+- $p_{0}$: number of positive instances covered by $R_{0}$
+- $n_{0}$: number of negative instances covered by $R_{0}$
+- $p_{1}$: number of positive instances covered by $R_{1}$
+- $n_{1}$: number of negative instances covered by $R_{1}$
 
 **Specific-to-General Strategy (`CN2` Algorithm)**
 
@@ -146,7 +148,7 @@ Rule Pruning is similar to post-pruning of decision trees.
 
 **Measure for pruning in Ripper method**
 
-Delete any final sequence of conditions that maximizes v.
+Delete any final sequence of conditions that maximizes $v$.
 
 $$
 v = \frac{p-n}{p+n}
@@ -179,9 +181,9 @@ Repeat until we can no longer improve generalization error
 Instead of ordering the rules, Class-Based Ordering orders **subsets** of rules.
 - Each subset is a collection of rules with the same rule consequent (class)
 - Compute description length of each subset
-    - $g$ : a tuning parameter that takes into account the presence of redundant attributes in a rule set (default value = 0.5)
-    - $L(error)$ : length needed for misclassified example
-    - $L(model)$ : length needed for the whole model
+    -  $g$ : a tuning parameter that takes into account the presence of redundant attributes in a rule set (default value = 0.5)
+    -  $L(error)$ : length needed for misclassified example
+    -  $L(model)$ : length needed for the whole model
 
 $$
 Description~length = L(error) + g*L(model)
