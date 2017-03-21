@@ -9,6 +9,8 @@ tags:
 category: Programming
 ---
 
+<!--more-->
+
 ## Preparing Data 
 - For detailed, please check https://hackmd.io/s/SkEYWCnjg
 - **Notice 1.** that the **target** class should be at the **last** column.
@@ -166,8 +168,6 @@ category: Programming
 </table>
 <p>5 rows × 29 columns</p>
 </div>
-
-<!--more-->
 
 ## Application Infrastructure
 

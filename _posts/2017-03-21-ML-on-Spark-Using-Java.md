@@ -8,8 +8,9 @@ tags:
 category: Programming
 ---
 
-# Machine Learning on Spark using Java
 ![](https://i.imgur.com/xUqgoIp.png)
+
+<!--more-->
 
 ## References
 - [Download Apache Spark](http://spark.apache.org/downloads.html)
@@ -22,8 +23,6 @@ category: Programming
 - [Apache Spark Machine Learning Tutorial](https://www.mapr.com/blog/apache-spark-machine-learning-tutorial)
 - [Spark Java API doc](http://spark.apache.org/docs/latest/api/java/index.html)
 - [Sampling Large Datasets using Spark](http://www.bigsynapse.com/sampling-large-datasets-using-spark)
-
-<!--more-->
 
 ## Startup
 ### A Simple Application (Word Count)
