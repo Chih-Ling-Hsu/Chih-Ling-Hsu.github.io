@@ -39,8 +39,8 @@ With the above three things, Nearest-Neighbor Classifier classifies an unknown r
 1. Compute distance between the unknown record and other training records
 2. Identify k nearest neighbors 
 3. Use class labels of nearest neighbors to determine the class label of unknown record
-- by taking majority vote
-- by weighting the vote according to distance \\(w = \frac{1}{d^{2}}\\)
+    * by taking majority vote
+    * by weighting the vote according to distance \\(w = \frac{1}{d^{2}}\\)
 
 Unlike eager learners such as decision tree induction and rule-based systems, k-NN classifiers does not build models explicitly.   As a result, classifying unknown records are relatively expensive.
 
