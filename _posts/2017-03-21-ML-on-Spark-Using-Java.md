@@ -4,7 +4,8 @@ layout: post
 tags:
   - Java
   - Spark
-  - DataScience
+  - DataMining
+  - MachineLearning
 category: Programming
 ---
 

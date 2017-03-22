@@ -2,7 +2,7 @@
 title: 'Instance Based Classification'
 layout: post
 tags:
-  - DataScience
+  - DataMining
   - Classification
 category: Notes
 mathjax: true
@@ -23,7 +23,7 @@ Nearest-Neighbor Classifier requires three things:
 	
 Scaling issues: Attributes may have to be scaled to prevent distance measures from being dominated by one of the attributes
 
-**2. [Distance Metric](../../2017/03/19/Data-Science-data-exploration#distance-metrics) to compute distance between records**
+**2. [Distance Metric](../../03/19/Data-Science-data-exploration#distance-metrics) to compute distance between records**
 
 Problem with Euclidean measure: High dimensional data may encounter curse of dimensionality.   To solve this problem, we can produce counter-intuitive results by normalizing the vectors to unit length.
 

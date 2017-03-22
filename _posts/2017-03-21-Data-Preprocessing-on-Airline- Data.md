@@ -5,7 +5,7 @@ tags:
   - Python
   - Sklearn
   - Pandas
-  - DataScience
+  - DataMining
 category: Programming
 ---
 

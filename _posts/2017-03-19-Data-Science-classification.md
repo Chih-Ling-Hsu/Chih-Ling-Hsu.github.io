@@ -2,7 +2,7 @@
 title: 'Data Science - classification'
 layout: post
 tags:
-  - DataScience
+  - DataMining
   - Classification
 category: Notes
 mathjax: true

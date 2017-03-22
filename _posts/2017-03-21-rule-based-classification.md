@@ -2,7 +2,7 @@
 title: 'Rule Based Classification'
 layout: post
 tags:
-  - DataScience
+  - DataMining
   - Classification
 category: Notes
 mathjax: true
