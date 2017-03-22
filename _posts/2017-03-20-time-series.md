@@ -2,9 +2,8 @@
 title: ' Time Series Analysis and Models'
 layout: post
 tags:
-  - TimeSeries
   - Statistics
-  - DataScience
+  - DataMining
 category: Notes
 mathjax: true
 ---
