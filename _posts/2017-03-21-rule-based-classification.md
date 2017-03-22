@@ -2,7 +2,6 @@
 title: 'Rule Based Classification'
 layout: post
 tags:
-  - Study
   - DataScience
   - Classification
 category: Notes

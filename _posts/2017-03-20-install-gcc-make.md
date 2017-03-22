@@ -1,6 +1,8 @@
 ---
 title: 'How To Install GCC and Make on Windows 8 System'
 layout: post
+tags: 
+  - Windows
 category: Install
 ---
 

@@ -2,7 +2,6 @@
 title: 'Data Science - classification'
 layout: post
 tags:
-  - Study
   - DataScience
   - Classification
 category: Notes

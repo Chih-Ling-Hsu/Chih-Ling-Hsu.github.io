@@ -2,7 +2,6 @@
 title: 'Decision Tree'
 layout: post
 tags:
-  - Study
   - DataScience
   - Classification
 category: Notes
