@@ -39,8 +39,8 @@ With the above three things, Nearest-Neighbor Classifier classifies an unknown r
 1. Compute distance between the unknown record and other training records
 2. Identify k nearest neighbors 
 3. Use class labels of nearest neighbors to determine the class label of unknown record
-    - by taking majority vote
-    - by weighting the vote according to distance \\(w = \frac{1}{d^{2}}\\)
+- by taking majority vote
+- by weighting the vote according to distance \\(w = \frac{1}{d^{2}}\\)
 
 Unlike eager learners such as decision tree induction and rule-based systems, k-NN classifiers does not build models explicitly.   As a result, classifying unknown records are relatively expensive.
 
@@ -68,9 +68,9 @@ Where \\(n_{1}\\) is the number of records that consists of nominal attribute va
 Use the above table as an example, we can calculate distance between different nomunal attribute values:
 
 - d(Status=Single, Status=Married) =  \| 2/4 – 0/4 \| + \| 2/4 – 4/4 \| =  1
-- d(Status=Single, Status=Divorced) =  | 2/4 – 1/2 | + | 2/4 – 1/2 | =  0
-- d(Status=Married, Status=Divorced) =  | 0/4 – 1/2 | + | 4/4 – 1/2 | =  1
-- d(Refund=Yes, Refund=No) = | 0/3 – 3/7 | + | 3/3 – 4/7 | = 6/7
+- d(Status=Single, Status=Divorced) =  \| 2/4 – 1/2 \| + \| 2/4 – 1/2 \| =  0
+- d(Status=Married, Status=Divorced) =  \| 0/4 – 1/2 \| + \| 4/4 – 1/2 \| =  1
+- d(Refund=Yes, Refund=No) = \| 0/3 – 3/7 \| + \| 3/3 – 4/7 \| = 6/7
 
 ### Distance Between Records
 
@@ -81,10 +81,10 @@ $$
 Each record \\(X\\) is assigned a **weight factor** \\(w_{X}\\), which represents the reliability of the certain record.
 
 $$
-w_{X} = \frac{N_{X_{predict}}}{N_{X_{predict~correct}}}
+w_{X} = \frac{N_{X_{predict}}}{N_{X_{predict}^{correct}}}
 $$
 
-where \\(N_{X_{predict}}\\) is the number of times X is used for prediction and \\(N_{X_{predict~correct}}\\) is the number of times the prediction using \\(X\\) is correct.
+where \\(N_{X_{predict}}\\) is the number of times X is used for prediction and \\(N_{X_{predict}^{correct}}\\) is the number of times the prediction using \\(X\\) is correct.
 
 We can see that if \\(w_{X}>1\\), then \\(X\\) is not reliable for making predictions.   High \\(w_{X}>1\\) would result in high distance, which makes it less possible to use \\(X\\) to make predictions.
 
