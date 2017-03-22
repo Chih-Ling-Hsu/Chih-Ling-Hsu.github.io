@@ -23,7 +23,7 @@ Nearest-Neighbor Classifier requires three things:
 	
 Scaling issues: Attributes may have to be scaled to prevent distance measures from being dominated by one of the attributes
 
-**2. [Distance Metric](../../03/19/Data-Science-data-exploration#distance-metrics) to compute distance between records**
+**2. [Distance Metric](../../../2017/03/19/Data-Science-data-exploration#distance-metrics) to compute distance between records**
 
 Problem with Euclidean measure: High dimensional data may encounter curse of dimensionality.   To solve this problem, we can produce counter-intuitive results by normalizing the vectors to unit length.
 
@@ -47,11 +47,7 @@ Unlike eager learners such as decision tree induction and rule-based systems, k-
 
 ## PEBLS: Parallel Examplar-Based Learning System
 
-PEBLS (Parallel Exemplar-Based Learning System) is a nearest-neighbor
-learning system (k=1) designed for applications where the instances have
-symbolic feature values.  PEBLS has been applied to the prediction of
-protein secondary structure and to the identification of DNA promoter
-sequences. 
+PEBLS (Parallel Exemplar-Based Learning System) is a nearest-neighbor learning system (k=1) designed for applications where the instances have symbolic feature values.  PEBLS has been applied to the prediction of protein secondary structure and to the identification of DNA promoter sequences. 
 
 ### Distance Between Nominal Attribute Values
 

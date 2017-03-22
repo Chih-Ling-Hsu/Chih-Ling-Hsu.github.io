@@ -37,9 +37,15 @@ Classification as the task of learning a **target function** **_f_** that maps e
 - Easy to generate
 - Can classify new instances rapidly
 - Performance comparable to decision trees
+- Common Methods: Ripper, CN2
 - [More Datails](../../../2017/03/21/rule-based-classification)
 
 ### Instance Based Methods
+- Store the training records 
+- Use training records to predict the class label of unseen cases
+- Common Methods: kNN, PEBLS(Parallel Examplar-Based Learning System)
+- [More Datails](../../../2017/03/22/instance-based-classification)
+
 ### Memory Based Reasoning
 ### Naïve Bayes and Bayesian Belief Networks
 ### Artificial Neural Networks (ANN)
