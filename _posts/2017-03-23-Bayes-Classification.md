@@ -44,7 +44,7 @@ $$
 P(H|E)=\frac{P(E|H)*P(H)}{P(E)}
 $$
 
-Where \\(H\\) is the unknown record's hypothesis of class to be tested, \\(E\\) is the evidence associated with \\(H\\) (attributes of the unknown record), and **P(H|E)** is the posterior probability of \\(H\\) conditioned on \\(E\\). 
+Where \\(H\\) is the unknown record's hypothesis of class to be tested, \\(E\\) is the evidence associated with \\(H\\) (attributes of the unknown record), and **P(H\|E)** is the posterior probability of \\(H\\) conditioned on \\(E\\). 
 
 
 ## Naïve Bayes Classifier
@@ -60,21 +60,21 @@ In machine learning, naive Bayes classifiers are a family of simple probabilisti
 ### Approach
 Consider each attribute and class label as random variables
 
-Given a record with attributes **(A1, A2,…,An)**, our goal is to predict class **C**. More specifically, we want to **find the value of C that maximizes P(C| A1, A2,…,An )**.
+Given a record with attributes **(A1, A2,…,An)**, our goal is to predict class **C**. More specifically, we want to **find the value of C that maximizes P(C\| A1, A2,…,An )**.
 
-**Step 1.** Compute the posterior probability **P(C | A1, A2, …, An)** for all values of **C** using the Bayes theorem
+**Step 1.** Compute the posterior probability **P(C \| A1, A2, …, An)** for all values of **C** using the Bayes theorem
 
 $$
 P(C | A1, A2, …, An) = \frac{P(A1, A2, …, An | C)P(C)}{P(A1, A2, …, An)}
 $$
 
-**Step 2.** Estimate **P(A1, A2, …, An | C)** for all values of **C\** by assuming independence among attributes Ai when class is given
+**Step 2.** Estimate **P(A1, A2, …, An \| C)** for all values of **C\** by assuming independence among attributes Ai when class is given
 
 $$    
 P(A1, A2, …, An |C=C_{j}) = P(A1| C_{j}) P(A2| C_{j})… P(An| C_{j})
 $$
 
-But how to compute conditioncal probability **P(Ai| C)** ? (Note that if one of the conditional probability is zero, then the entire expression becomes zero)
+But how to compute conditioncal probability **P(Ai\| C)** ? (Note that if one of the conditional probability is zero, then the entire expression becomes zero)
 
 - Original
 	- \\(N_{c}\\) = the number of records that belong to class C
@@ -103,7 +103,7 @@ $$
 P(Ai|C)=\frac{N_{ic}+m}{N_{c}+mp}
 $$
 
-**Step 3.** Choose value of **C** that maximizes **P(A1, A2, …, An|C) P(C)** is equivalent to choosing value of **C** that maximizes **P(C | A1, A2, …, An)**
+**Step 3.** Choose value of **C** that maximizes **P(A1, A2, …, An\|C) P(C)** is equivalent to choosing value of **C** that maximizes **P(C \| A1, A2, …, An)**
 
 ### Example
 
