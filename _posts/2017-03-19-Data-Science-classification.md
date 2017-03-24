@@ -1,5 +1,5 @@
 ---
-title: 'Data Science - classification'
+title: 'Data Mining - classification'
 layout: post
 tags:
   - DataMining

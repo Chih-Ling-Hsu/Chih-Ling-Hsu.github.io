@@ -1,5 +1,5 @@
 ---
-title: 'Data Science - data exploration'
+title: 'Data Mining - data exploration'
 layout: post
 tags:
   - DataMining
