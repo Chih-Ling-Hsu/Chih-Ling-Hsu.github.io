@@ -78,9 +78,10 @@ ul {
 }
 
 table {
+    margin: 0 auto;
     border-collapse: separate;
     border-spacing: 0;
-    overflow-x: scroll; 
+    overflow-x: auto; 
     vertical-align: middle
 }
 
