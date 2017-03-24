@@ -44,7 +44,7 @@ $$
 P(H|E)=\frac{P(E|H)*P(H)}{P(E)}
 $$
 
-Where \\(H\\) is the unknown record's hypothesis of class to be tested, \\(E\\) is the evidence associated with \\(H\\) (attributes of the unknown record), and \\(P(H|E)\\) is the posterior probability of \\(H\\) conditioned on \\(E\\). 
+Where \\(H\\) is the unknown record's hypothesis of class to be tested, \\(E\\) is the evidence associated with \\(H\\) (attributes of the unknown record), and **P(H|E)** is the posterior probability of \\(H\\) conditioned on \\(E\\). 
 
 
 ## Naïve Bayes Classifier
@@ -62,61 +62,61 @@ Consider each attribute and class label as random variables
 
 Given a record with attributes **(A1, A2,…,An)**, our goal is to predict class **C**. More specifically, we want to **find the value of C that maximizes P(C| A1, A2,…,An )**.
 
-**Step 1.** Compute the posterior probability \\(P(C | A1, A2, …, An)\\) for all values of \\(C\\) using the Bayes theorem
+**Step 1.** Compute the posterior probability **P(C | A1, A2, …, An)** for all values of **C** using the Bayes theorem
 
 $$
 P(C | A1, A2, …, An) = \frac{P(A1, A2, …, An | C)P(C)}{P(A1, A2, …, An)}
 $$
 
-**Step 2.** Estimate \\(P(A1, A2, …, An | C)\\) for all values of \\(C\\) by assuming independence among attributes Ai when class is given
+**Step 2.** Estimate **P(A1, A2, …, An | C)** for all values of **C\** by assuming independence among attributes Ai when class is given
 
 $$    
-P(A1, A2, …, An |C=C\_{j}) = P(A1| C\_{j}) P(A2| C\_{j})… P(An| C\_{j})
+P(A1, A2, …, An |C=C_{j}) = P(A1| C_{j}) P(A2| C_{j})… P(An| C_{j})
 $$
 
-But how to compute conditioncal probability \\(P(Ai| C)\\) ? (Note that if one of the conditional probability is zero, then the entire expression becomes zero)
+But how to compute conditioncal probability **P(Ai| C)** ? (Note that if one of the conditional probability is zero, then the entire expression becomes zero)
 
 - Original
-	- \\(N\_{c}\\) = the number of records that belong to class C
-	- \\(N\_{ic}\\) = the number of records that consist of attribute value \\(Ai\\) and belong to class C
+	- \\(N_{c}\\) = the number of records that belong to class C
+	- \\(N_{ic}\\) = the number of records that consist of attribute value \\(Ai\\) and belong to class C
 
 $$
-P(Ai|C)=\frac{N\_{ic}}{N\_{c}}
+P(Ai|C)=\frac{N_{ic}}{N_{c}}
 $$
 
 - Laplace
-	- \\(N\_{c}\\) = the number of records that belong to class C
-	- \\(N\_{ic}\\) = the number of records that consist of attribute value \\(Ai\\) and belong to class C
-	- \\(l\_{C}\\) = the number of classes
+	- \\(N_{c}\\) = the number of records that belong to class C
+	- \\(N_{ic}\\) = the number of records that consist of attribute value \\(Ai\\) and belong to class C
+	- \\(l_{C}\\) = the number of classes
 
 $$
-P(Ai|C)=\frac{N\_{ic}+1}{N\_{c}+l\_{C}}
+P(Ai|C)=\frac{N_{ic}+1}{N_{c}+l_{C}}
 $$
 
 - M-Estimate
-	- \\(N\_{c}\\) = the number of records that belong to class C
-	- \\(N\_{ic}\\) = the number of records that consist of attribute value \\(Ai\\) and belong to class C
+	- \\(N_{c}\\) = the number of records that belong to class C
+	- \\(N_{ic}\\) = the number of records that consist of attribute value \\(Ai\\) and belong to class C
 	- \\(p\\) = prior probability, which is usually set as uniform priors.
 	- \\(m\\) = a parameter, which is also known as pseudocount (virtual examples) and is used for additive smoothing. It prevents the probabilities from being 0. m is generally chosen to be small.
 
 $$
-P(Ai|C)=\frac{N\_{ic}+m}{N\_{c}+mp}
+P(Ai|C)=\frac{N_{ic}+m}{N_{c}+mp}
 $$
 
-**Step 3.** Choose value of \\(C\\) that maximizes \\(P(A1, A2, …, An|C) P(C)\\) is equivalent to choosing value of \\(C\\) that maximizes \\(P(C | A1, A2, …, An)\\)
+**Step 3.** Choose value of **C** that maximizes **P(A1, A2, …, An|C) P(C)** is equivalent to choosing value of **C** that maximizes **P(C | A1, A2, …, An)**
 
 ### Example
 
 Given:
 
-- P(Outlook = sunny | play = yes) = 2/9
-- P(Outlook = sunny | play = no) = 3/5
-- P(Temperature = cool | play = yes) = 3/9
-- P(Temperature = cool | play = no) = 1/5
-- P(Humidity = high | play = yes) = 3/9
-- P(Humidity = high | play = no) = 4/5
-- P(Windy = true | play = yes) = 3/9
-- P(Windy = true | play = no) = 3/5
+- P(Outlook = sunny \| play = yes) = 2/9
+- P(Outlook = sunny \| play = no) = 3/5
+- P(Temperature = cool \| play = yes) = 3/9
+- P(Temperature = cool \| play = no) = 1/5
+- P(Humidity = high \| play = yes) = 3/9
+- P(Humidity = high \| play = no) = 4/5
+- P(Windy = true \| play = yes) = 3/9
+- P(Windy = true \| play = no) = 3/5
 - P(play = yes) = 9/14
 - P(play = no) = 5/14
 
