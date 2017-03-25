@@ -12,7 +12,7 @@ Sklearn is an **open source Python library** that implements a range of **machin
 <!--more-->
 
 ## Problem 1. pip install sklearn/scipy failed
-```shell=
+```shell
 $ pip install sklearn
 failed building wheel for scikit-learn
 ```
@@ -41,7 +41,7 @@ $ pip install <filename>.whl
 ## Problem 2. `filename.whl` is not a supported wheel on this platform
 
 To check which version of wheel should be downloaded and installed, you can input the following python commands in shell:
-```shell
+```python
 >>> import pip;
 >>> print(pip.pep425tags.get_supported())
 [('cp36', 'cp36m', 'win32'), ('cp36', 'none', 'win32'), ('py3', 'none', 'win32'), ('cp36', 'none', 'any'), ('cp3', 'none', 'any'), ('py36', 'none', 'any'), ('py3', 'none', 'any'), ('py35', 'none', 'any'), ('py34', 'none', 'any'), ('py33', 'none', 'any'), ('py32', 'none', 'any'), ('py31', 'none', 'any'), ('py30', 'none', 'any')][('cp36', 'cp36m', 'win32'), ('cp36', 'none', 'win32'), ('py3', 'none', 'win32'), ('cp36', 'none', 'any'), ('cp3', 'none', 'any'), ('py36', 'none', 'any'), ('py3', 'none', 'any'), ('py35', 'none', 'any'), ('py34', 'none', 'any'), ('py33', 'none', 'any'), ('py32', 'none', 'any'), ('py31', 'none', 'any'), ('py30', 'none', 'any')][('cp36', 'cp36m', 'win32'), ('cp36', 'none', 'win32'), ('py3', 'none', 'win32'), ('cp36', 'none', 'any'), ('cp3', 'none', 'any'), ('py36', 'none', 'any'), ('py3', 'none', 'any'), ('py35', 'none', 'any'), ('py34', 'none', 'any'), ('py33', 'none', 'any'), ('py32', 'none', 'any'), ('py31', 'none', 'any'), ('py30', 'none', 'any')]
