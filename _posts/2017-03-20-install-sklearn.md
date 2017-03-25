@@ -12,7 +12,7 @@ Sklearn is an **open source Python library** that implements a range of **machin
 <!--more-->
 
 ## Problem 1. pip install sklearn/scipy failed
-```shell
+```shell=
 $ pip install sklearn
 failed building wheel for scikit-learn
 ```
