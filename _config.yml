@@ -91,7 +91,7 @@ share_button: true #enable share buttons if true
 author:
   name: Chih-Ling Hsu      ## e.g. wuchong Author name
   intro_line1:  "Hello, I'm Chih-Ling."    ## your introduction on the bottom of the page
-  intro_line2:  "Too simple, sometimes naive."  ## the 2nd line
+  intro_line2:  "I want something just like this."  ## the 2nd line
   tsina:       ## e.g. 2176287895  Your weibo ID,It will be used in share button.
   douban:      ## e.g. wuchong1014 or your id for https://www.douban.com/people/wuchong1014
   zhihu:       ## e.g. jark  for http://www.zhihu.com/people/jark

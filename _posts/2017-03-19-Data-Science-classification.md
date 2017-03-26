@@ -46,12 +46,62 @@ Classification as the task of learning a **target function** **_f_** that maps e
 - Common Methods: kNN, PEBLS(Parallel Examplar-Based Learning System)
 - [More Datails](../../../2017/03/22/instance-based-classification)
 
-### Memory Based Reasoning
 ### Naïve Bayes and Bayesian Belief Networks
-### Artificial Neural Networks (ANN)
-### Support Vector Machines (SVM)
-### Ensemble Methods
+Naïve Bayes Classifier is a probabilistic framework for solving classification problems.
 
+- Handle missing values by ignoring the instance during probability estimate calculations
+- Robust to isolated noise points
+- Robust to irrelevant attributes
+- **Independence assumption** may not hold for some attributes
+- [More Datails](../../../2017/03/22/Bayes-Classification)
+
+### Artificial Neural Networks (ANN)
+![](https://i.imgur.com/jbW1kWx.png)
+
+Alogorithm for learning ANN:
+
+1. Initialize the weights $(w_0, w_1, ..., w_k)$
+2. Adjust the weights in such a way that the output of ANN is consistent with class labels of training example.
+
+$$
+arg~min_w\sum_i[Y_i-f(w_i, X_i)]^2
+$$
+
+### Support Vector Machines (SVM)
+Find a linear hyperplane (decision boundary) that will separate the data.
+
+- **Separate** the different classes of data
+
+$$
+y^{(i)}(w^Tx^{(i)}_b) \geq 0
+$$
+
+- Maximizes the **margin** 
+    - $y^{(i)}(w^Tx^{(i)}_b) \geq a, \forall i~\Rightarrow~margin=2a$/||$w$||
+
+$$
+arg~min_{w, b, \xi}\frac{1}{2} ||w||^2
+\\
+subject~to~y^{(i)}(w^Tx^{(i)}_b) \geq 1, \forall i
+$$
+
+- Uses **slack** to tolerate non-separable points
+
+$$
+arg~min_{w, b, \xi}\frac{1}{2} ||w||^2 + C\sum^N_{i=1} \xi_i
+\\
+subject~to~y^{(i)}(w^Tx^{(i)}_b) \geq 1- \xi_i~and~\xi_i \geq 0, \forall i
+$$
+
+### Ensemble Methods
+As long as classifiers are independent, probability that ensemble classifier makes a wrong prediction becomes smaller as the number of the classifiers being used increases.
+
+- **Bagging**
+Bagging(short for bootstrap aggregating) is a voting method, but
+base-learners are made different deliberately.   That is, bagging train the classifiers using **slightly different** training sets (**random dampling with replacement**).
+
+- **Boosting** 
+In boosting, we generate **complementary** base-learners.   Boosting adaptively change distribution of training data by **focusing more on previously misclassified records**: Records that are wrongly classified will have their weights increased; Records that are classified correctly will have their weights decreased.
 
 
 ## Practical Issues of Classification
