@@ -67,7 +67,9 @@ $$
 c(X \rightarrow Y) = \frac{\sigma(X \cup Y)}{\sigma(X)}
 $$
 
-Where $\sigma(X)$ is the support count of $X$ and $N$ is the count of the transactions set $T$.   For example, given a table of market basket transactions:
+Where $\sigma(X)$ is the support count of $X$ and $N$ is the count of the transactions set $T$.
+
+For example, given a table of market basket transactions:
 
 | TID | Items                        |
 | --- | ---------------------------- |
@@ -95,7 +97,7 @@ A lattice structure can be used to enumerate the list of all possible itemsets:
 
 However, the cost of frequent itemset generation is large.   Given $d$ items, there are $2^d$ possible candidate itemsets.   There are several ways to reduce the computational complexity of frequent itemset generation:
 
-1. Reduce the number of candidate itemsets ($M$): [The _Apriori_ Principle](#frequent-itemset-generation-using-apriori-algorithm)
+1. Reduce the number of candidate itemsets ($M$): [The _Apriori_ Principle](#frequent-itemset-generation-using-apriori)
 2. Reduce the number of comparison while counting supports:
     By using more advanced data structures, we can reduce the number of comparisons for matching each candidate itemset against every transaction.
 
@@ -186,7 +188,7 @@ FP-Growth finds all the frequent itemsets ending with a particular suffix by emp
 ## Rule Generation
 Given a frequent itemset $L$, find all non-empty subsets $f \subset L$ such that $f \rightarrow L – f$ satisfies the minimum [confidence](#association-rule) requirement.
 
-If |$L$| = $k$, then there are $2k – 2$ candidate association rules (ignoring $L \rightarrow \varnothing – f$ and $\varnothing \rightarrow L$)
+If \|$L$\| = $k$, then there are $2k – 2$ candidate association rules (ignoring $L \rightarrow \varnothing – f$ and $\varnothing \rightarrow L$)
 
 So how to efficiently generate rules from frequent itemsets?
 
@@ -200,7 +202,7 @@ L = \{A,B,C,D\}
 c(ABC \rightarrow D) \geq c(AB \rightarrow CD) \geq c(A \rightarrow BCD)
 $$
 
-If we compare rules generated from the same frequent itemset $Y$, the folloeing theorem holds for the confidence measure:
+If we compare rules generated from the same frequent itemset $Y$, the following theorem holds for the confidence measure:
 
 > If a rule $X \rightarrow Y$ does not satisfy the confidence threshold, then any rule $X' \rightarrow Y-X'$ (where $X' \subset X$), must not satisfy the confidence threshold as well.
 
