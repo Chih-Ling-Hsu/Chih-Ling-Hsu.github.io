@@ -77,7 +77,7 @@ y^{(i)}(w^Tx^{(i)}_b) \geq 0
 $$
 
 - Maximizes the **margin** 
-    - $y^{(i)}(w^Tx^{(i)}_b) \geq a, \forall i~\Rightarrow~margin=2a$/||$w$||
+    - $y^{(i)}(w^Tx^{(i)}_b) \geq a, \forall i~\Rightarrow~margin=2a$/\|\|$w$\|\|
 
 $$
 arg~min_{w, b, \xi}\frac{1}{2} ||w||^2
