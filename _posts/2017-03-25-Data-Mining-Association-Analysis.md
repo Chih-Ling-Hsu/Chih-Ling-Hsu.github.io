@@ -42,7 +42,7 @@ Extract all the high-confidence rules (_strong rules_) from the frequent itemset
 ### Support Count
 
 $$
-\sigma(X) = \left|\{{t_{i}|X \subset t_{i}, t_{i} \in T}\}\right|
+\sigma(X) = \left|\{ {t_{i}|X \subset t_{i}, t_{i} \in T}\} \right|
 $$
 
 - $I=\{i_{1}, i{2}, ..., i_{N}\}$ is the set of all items
