@@ -4,8 +4,8 @@ layout: post
 tags:
   - Java
   - Spark
-  - DataMining
-  - MachineLearning
+  - Data-Mining
+  - Machine-Learning
 category: Programming
 ---
 

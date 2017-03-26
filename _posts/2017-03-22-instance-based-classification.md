@@ -2,7 +2,7 @@
 title: 'Instance Based Classification'
 layout: post
 tags:
-  - DataMining
+  - Data-Mining
   - Classification
 category: Notes
 mathjax: true

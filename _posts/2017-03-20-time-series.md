@@ -3,7 +3,7 @@ title: ' Time Series Analysis and Models'
 layout: post
 tags:
   - Statistics
-  - DataMining
+  - Data-Mining
 category: Notes
 mathjax: true
 ---

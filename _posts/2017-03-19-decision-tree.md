@@ -2,7 +2,7 @@
 title: 'Decision Tree'
 layout: post
 tags:
-  - DataMining
+  - Data-Mining
   - Classification
 category: Notes
 mathjax: true

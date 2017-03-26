@@ -2,7 +2,7 @@
 title: 'Data Mining - data exploration'
 layout: post
 tags:
-  - DataMining
+  - Data-Mining
 category: Notes
 ---
 

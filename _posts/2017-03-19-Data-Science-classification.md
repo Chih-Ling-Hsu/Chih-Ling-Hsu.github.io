@@ -2,7 +2,7 @@
 title: 'Data Mining - classification'
 layout: post
 tags:
-  - DataMining
+  - Data-Mining
   - Classification
 category: Notes
 mathjax: true
