@@ -1,5 +1,5 @@
 ---
-title: 'Generate A Candidate Hash Tree'
+title: 'Generate a Candidate Hash Tree'
 layout: post
 tags:
   - Data-Mining
