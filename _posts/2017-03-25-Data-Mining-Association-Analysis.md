@@ -8,7 +8,7 @@ category: Notes
 mathjax: true
 ---
 
-![](https://i.imgur.com/L2jXSFl.png)
+![](https://i.imgur.com/RiwE2Oe.png)
 
 Association analysis is useful for discovering interesting relationships hidden in large data sets.   The uncovered relationships can be represented in the form of **association rules** or sets of frequent items.
 
