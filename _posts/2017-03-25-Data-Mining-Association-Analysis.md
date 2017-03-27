@@ -8,6 +8,8 @@ category: Notes
 mathjax: true
 ---
 
+![](https://i.imgur.com/L2jXSFl.png)
+
 Association analysis is useful for discovering interesting relationships hidden in large data sets.   The uncovered relationships can be represented in the form of **association rules** or sets of frequent items.
 
 For example, given a table of market basket transactions
@@ -56,39 +58,56 @@ An associasion rule is an implication expression of the form $X \rightarrow Y$, 
 The strength of an association rule can be measured in terms of its **support** and **confidence**.   A rule that has very low support may occur simply by chance.   Confidence measures the reliability of the inference made by a rule.
 
 - **Support** of an association rule $X \rightarrow Y$
+    - $\sigma(X)$ is the support count of $X$ 
+    - $N$ is the count of the transactions set $T$.
 
 $$
 s(X \rightarrow Y) = \frac{\sigma(X \cup Y)}{N}
 $$
 
 - **Confidence** of an association rule $X \rightarrow Y$
+    - $\sigma(X)$ is the support count of $X$ 
+    - $N$ is the count of the transactions set $T$.
     
 $$
-c(X \rightarrow Y) = \frac{\sigma(X \cup Y)}{\sigma(X)}
+conf(X \rightarrow Y) = \frac{\sigma(X \cup Y)}{\sigma(X)}
 $$
 
-Where $\sigma(X)$ is the support count of $X$ and $N$ is the count of the transactions set $T$.
+- **Interest** of an association rule $X \rightarrow Y$
+    - $P(Y) = s(Y)$ is the support of $Y$ (fraction of baskets that contain $Y$)
+    - If interest of a rule is close to 1, then it is uninteresting.
+        - $I(X \rightarrow Y)=1 \rightarrow X$ and $Y$ are independent 
+        - $I(X \rightarrow Y)>1 \rightarrow X$ and $Y$ are positive correlated
+        - $I(X \rightarrow Y)<1 \rightarrow X$ and $Y$ are negative correlated
+    
+$$
+I(X \rightarrow Y) = \frac{P(X,Y)}{P(X) \times P(Y)}
+$$
+
 
 For example, given a table of market basket transactions:
 
 | TID | Items                        |
 | --- | ---------------------------- |
 | 1   | {Bread, Milk}                |
-| 2   | {Bread, Diapers, Beer, Eggs} |
-| 3   | {Milk, Diapers, Beer, Cola}  |
-| 4   | {Bread, Milk, Diapers, Beer} |
-| 5   | {Bread, Milk, Diapers, Cola} |
+| 2   | {Bread, Diaper, Beer, Eggs} |
+| 3   | {Milk, Diaper, Beer, Coke}  |
+| 4   | {Bread, Milk, Diaper, Beer} |
+| 5   | {Bread, Milk, Diaper, Coke} |
 
 We can conclude that
 
 $$
-s({Diapers} \rightarrow {Beer})=2/5=0.4
+s({Milk, Diaper} \rightarrow {Beer}) = 2/5 = 0.4
 $$
 
 $$
-c({Diapers} \rightarrow {Beer})=2/3=0.67
+conf({Milk, Diaper} \rightarrow {Beer}) = 2/3 = 0.67
 $$
 
+$$
+I({Milk, Diaper} \rightarrow {Beer}) = \frac{2/5}{3/5 \times 3/5} = 18/5 = 3.6
+$$
 
 ## Frequent Itemset Generation
 A lattice structure can be used to enumerate the list of all possible itemsets:
@@ -236,6 +255,17 @@ def ap_genrules(f, H):
 ## Compact Representation of Frequent Itemsets
 In practice, the number of frequent itemsets produced from a transaction data set can be very large. It is useful to identify a small representation set of itemsets from which all other frequent itemsets can be derived.
 
+To reduce the number of rules we can post-process them and only output:
+
+- Maximal frequent itemsets
+    - No immediate superset is frequent
+    - Gives more pruning
+
+- Closed itemsets
+    - No immediate superset has the same count
+    - Stores not only frequent information, but exact counts
+
+
 ### Maximal Frequent Itemsets
 > An itemset is **maximal frequent** if none of its immediate supersets is frequent.
 
@@ -305,6 +335,69 @@ Need to modify Apriori such that $C_{k+1}$(Candidate itemsets of size $(k+1)$) i
 
 Association rule algorithms tend to produce too many rules.   Many of them are uninteresting or redundant.
 
+**Objective Evaluation**
+
+An objective measure is a data-driven approach for evaluating the quality of association patterns.   It is domain-independent and requires minimal input from the users.   Patterns that involve a set of **mutually independent** items or **cover very few transactions** are considered [uninteresting](#association-rule) because they may capture spurious relationships in the data.   Such patterns can be eliminated by applying an [**objective interestingness measure**](#objective-measures-of-interestingness).
+
+An objective measure is usually computed based on **contingency table**.   For example, the table below is a 2-way contingency table for variable $A$ and $B$.
+
+|           | $B$      | $\bar{B}$ |          |
+| --------- | -------- | --------- | -------- |
+| $A$       | $f_{11}$ | $f_{10}$  | $f_{1+}$ |
+| $\bar{A}$ | $f_{01}$ | $f_{00}$  | $f_{0+}$ |
+|           | $f_{+1}$ | $f_{+1}$  | $N$      |
+
+- $f_{11}=N \times P(A,B)$ denotes the number of transaction that contains $A$ and $B$.
+- $f_{10}=N \times P(A, \bar{B})$ denotes the number of transaction that contains $A$ but not $B$.
+- $f_{1+}=N \times P(A)$ denotes the support count for $A$.
+- $f_{+1}=N \times P(B)$ denotes the support count for $B$.
+
+The pitfall of confidence can be traced to the fact that the measure ignores the support of the itemset in the rule consequent (e.g. $P(B)$ in the above case).
+
+**Subjective Evaluation**
+
+A pattern is considered subjectively uninteresting unless it reveals unexpected information about the data.   Unlike Objective measures, which rank patterns based on statistics computed from data, subjective measures rank patterns according to user’s interpretation.
+
+
+### Objective Measures of Interestingness
+
+- **Interest** of an association rule $X \rightarrow Y$
+    - $P(Y) = s(Y)$ is the support of $Y$ (fraction of baskets that contain $Y$)
+    - If interest of a rule is close to 1, then it is uninteresting.
+        - $I(X \rightarrow Y)=1 \rightarrow X$ and $Y$ are independent 
+        - $I(X \rightarrow Y)>1 \rightarrow X$ and $Y$ are positive correlated
+        - $I(X \rightarrow Y)<1 \rightarrow X$ and $Y$ are negative correlated
+    
+$$
+I(X \rightarrow Y) = \frac{P(X,Y)}{P(X) \times P(Y)}
+$$
+
+- **Lift** of an association rule $X \rightarrow Y$
+    - $P(Y$\|$X)=\frac{P(X,Y)}{P(X)}=\frac{f_{11}}{f_{1+}}$
+    - $P(Y)=f_{+1}$
+
+$$
+Lift(X \rightarrow Y) = \frac{P(Y|X)}{P(Y)}
+$$
+
+
+There are lots of measures proposed in the literature.   Some measures are good for certain applications, but not for others:
+
+![](https://i.imgur.com/kj1MR0m.png)
+
+### Properties of Good Objective Measure
+
+**Inversion Property**
+
+An objective measure $M$ is invariant under the inversion operation if its value remains the same when exchanging the frequent counts $f_{11}$ with $f_{10}$ and $f_{10}$ with $f_{01}$.
+
+**Null Addition Property**
+
+An objective measure $M$ is invariant under the null addition operation if it is not affected by increaing $f_{00}$, while all other frequencies in the contingency table stay the same.
+
+**Scaling Invariance Property**
+
+An objective measure $M$ is invariant under the row/column scaling operation.
 
 
 ## References
