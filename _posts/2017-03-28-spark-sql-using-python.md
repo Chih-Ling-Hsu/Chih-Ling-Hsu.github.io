@@ -308,7 +308,7 @@ If `False` is shown, then modify the schema of the selected rows to be the same 
 >>> df_rows = sqlContext.createDataFrame(df_rows.collect(), df_table.schema)
 ```
 
-For more detail, please refer to [How to Change Schema of a Spark SQL DataFrame?](https://hackmd.io/s/B11DjDw2e)
+For more detail, please refer to [How to Change Schema of a Spark SQL DataFrame?](./how-to-change-schema-of-a-spark-sql-dataframe)
 
 **3. INSERT into table "qacctdate"**
 
