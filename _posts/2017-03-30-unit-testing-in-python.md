@@ -18,7 +18,7 @@ It is a standard module that you already have if you’ve got python version 2.1
 `unittest` module includes 4 main parts:
 
 - [測試案例（Test case）](#test-case) - 測試的最小單元。
-- 測試設備（Test fixture） - 執行一或多個測試前必要的預備資源，以及相關的清除資源動作。
+- [測試設備（Test fixture）](#test-fixtures) - 執行一或多個測試前必要的預備資源，以及相關的清除資源動作。
 - [測試套件（Test suite）](#test-suite) - 一組測試案例、測試套件或者是兩者的組合。
 - [測試執行器（Test runner）](#text-test-runner) - 負責執行測試並提供測試結果的元件。
 
