@@ -25,7 +25,7 @@ For example, given a table of market basket transactions
 The follwing rule can be extracted from the table:
 
 $$
-{Diapers} \rightarrow {Beer}
+\{Milk, Diaper\} \rightarrow \{Beer\}
 $$
 
 <!--more-->
@@ -98,15 +98,15 @@ For example, given a table of market basket transactions:
 We can conclude that
 
 $$
-s({Milk, Diaper} \rightarrow {Beer}) = 2/5 = 0.4
+s(\{Milk, Diaper\} \rightarrow \{Beer\}) = 2/5 = 0.4
 $$
 
 $$
-conf({Milk, Diaper} \rightarrow {Beer}) = 2/3 = 0.67
+conf(\{Milk, Diaper\} \rightarrow \{Beer\}) = 2/3 = 0.67
 $$
 
 $$
-I({Milk, Diaper} \rightarrow {Beer}) = \frac{2/5}{3/5 \times 3/5} = 18/5 = 3.6
+I(\{Milk, Diaper\} \rightarrow \{Beer\}) = \frac{2/5}{3/5 \times 3/5} = 18/5 = 3.6
 $$
 
 ## Frequent Itemset Generation
