@@ -210,7 +210,9 @@ MsgBox (uTotalRows)
 Define a function.
 
 > [Modifiers] Function FunctionName [(ParameterList)] As ReturnType  
+> 
 > ....Statements.... 
+> 
 > End Function  
 
 ```VBA
