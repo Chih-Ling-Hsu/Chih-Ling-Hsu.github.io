@@ -1150,6 +1150,7 @@ article .article-content h4,
 article .article-content h5,
 article .article-content h6 {
     color: #7b68ee;
+    margin-top: 10px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
