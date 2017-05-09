@@ -12,16 +12,11 @@ category: Programming
 
 Types of queries one wants on answer on a data stream:
 
-- Sampling data from a stream
-    - Construct a random sample
-- Queries over sliding windows
-    - Number of items of type x in the last k elements of the stream
-- Filtering a data stream
-    - Select elements with property x from the stream
-- Counting distinct elements
-    - Number of distinct elements in the last k elements of the stream
-- Estimating moments
-    - Estimate average/std deviation of last k elements
+- Sampling data from a stream - Construct a random sample
+- Queries over sliding windows - Number of items of type x in the last k elements of the stream
+- Filtering a data stream - Select elements with property x from the stream
+- Counting distinct elements - Number of distinct elements in the last k elements of the stream
+- Estimating moments - Estimate average/std deviation of last k elements
 - Finding frequent elements
 
 <!--more-->
