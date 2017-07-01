@@ -4,6 +4,7 @@ layout: post
 tags:
   - Statistics
   - Data-Mining
+  - Time-Series
 category: Notes
 mathjax: true
 ---
