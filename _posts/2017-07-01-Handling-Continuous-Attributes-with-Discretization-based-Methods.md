@@ -12,10 +12,10 @@ Size of the discretized intervals affect support & confidence.
 
 - If intervals too small
 	- may not have enough support
-	- e.g. {Refund = No, (Income = $51,250)} \\(\rightarrow\\) {Cheat = No}
+	- e.g. {Refund = No, (Income = \$51,250)} $\rightarrow$ {Cheat = No}
 - If intervals too large
 	- may not have enough confidence
-	- e.g. {Refund = No, (0K \\(\leq\\) Income \\(\leq\\) 1B)} \\(\rightarrow\\) {Cheat = No}
+	- e.g. {Refund = No, (0K $\leq$ Income $\leq$ 1B)} $\rightarrow$ {Cheat = No}
 
 When there is any numerical attribute, the problem is to discretize individual numerical attribute into interesting intervals.   Each interval is represented as a Boolean attribute.
 
@@ -28,9 +28,9 @@ The _equi-sized_ approach is to simply partition the continuous domain into inte
 
 The _equi-depth_ approach basically partitions the data values into intervals with equal size along the ordering of the data.
 
-1. For a given bucket width \\(W\\), the _sorted values_ are divided into approximately equal buckets
+1. For a given bucket width $W$, the _sorted values_ are divided into approximately equal buckets
 2. **Different bucket has different values**: If upper bound of a bucket is equal to the lower bound of the next bucket, then the first value of the next bucket is reassined into the previous bucket.
-3. **Bucket width sould be less than \\(W\\)**: If a bucket with width \\(\geq W\\) has more than 1 value, then the bucket is split in two, one containing all the last value, the other containing all other values.
+3. **Bucket width sould be less than $W$**: If a bucket with width $\geq W$ has more than 1 value, then the bucket is split in two, one containing all the last value, the other containing all other values.
 
 
 ### _Srikant & Agrawal's_ Approach
@@ -41,27 +41,27 @@ Another _equi-depth_ approach proposed by Skrikant and Agrawal is based on the m
 2. Use **partial completeness measure** to determine number of partitions
 3. Merge adjacent intervals as long as support is less than max-support
 
-In step 2, we can determine number of intervals (\\(N\\)) given partial completeness level (\\(K\\))
+In step 2, we can determine number of intervals ($N$) given partial completeness level ($K$)
 
 Given assumptions as below:
 
-- \\(C\\): frequent itemsets obtained by considering all ranges of attribute values
-- \\(P\\): frequent itemsets obtained by considering all ranges over the partitions
+- $C$: frequent itemsets obtained by considering all ranges of attribute values
+- $P$: frequent itemsets obtained by considering all ranges over the partitions
 
-We know that \\(P\\) is \\(K\\)-complete with respect to \\(C\\) if 
+We know that $P$ is $K$-complete with respect to $C$ if 
 
-\\( \forall X \in C\\), \\(\exists X’ \in P \subset C\\) such that:
+$ \forall X \in C$, $\exists X’ \in P \subset C$ such that:
 
-1. \\(X’\\) is a generalization of \\(X\\) and \\(support (X’) \leq K \times support(X)~~~~(K \geq 1)\\)
-2. \\( \exists Y’ \subset X’\\) such that \\(support (Y’) \leq K \times support(Y),~\forall Y \subset X \\)
+1. $X’$ is a generalization of $X$ and $support (X’) \leq K \times support(X)~~~~(K \geq 1)$
+2. $ \exists Y’ \subset X’$ such that $support (Y’) \leq K \times support(Y),~\forall Y \subset X $
 
 <img src="discrete.png"></img>
 
-As the number of intervals increases, \\(K\\) increases and at the same time information loss rises.   As a result, we can determine number of intervals by choosing a proper \\(K\\).
+As the number of intervals increases, $K$ increases and at the same time information loss rises.   As a result, we can determine number of intervals by choosing a proper $K$.
 
 ## Interestingness Measure
 
-For \\(S: X \rightarrow Y\\), and its generalization \\(S’: X’ \rightarrow Y’\\), Rule \\(S\\) is \\(R\\)-interesting with respect to its ancestor rule \\(S’\\) if
+For $S: X \rightarrow Y$, and its generalization $S’: X’ \rightarrow Y’$, Rule $S$ is $R$-interesting with respect to its ancestor rule $S’$ if
 
 $$
 R \times E_{E'}(Support(S)) \leq Support(S)
