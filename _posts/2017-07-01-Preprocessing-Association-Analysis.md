@@ -12,6 +12,7 @@ Before we do association analysis, we need to handle the following 2 issues:
 
 - Categorical Attributes
 - Continuous Attributes
+- Multi-Level Concept Hierarchy
 
 <!--more-->
 
@@ -54,35 +55,35 @@ Size of the discretized intervals affect support & confidence.
 
 - If intervals too small
 	- may not have enough support
-	- e.g. {Refund = No, (Income = $51,250)} \\(\rightarrow\\) {Cheat = No}
+	- e.g. {Refund = No, (Income = $51,250)} $\rightarrow$ {Cheat = No}
 - If intervals too large
 	- may not have enough confidence
-	- e.g. {Refund = No, (0K \\(\leq\\) Income \\(\leq\\) 1B)} \\(\rightarrow\\) {Cheat = No}
+	- e.g. {Refund = No, (0K $\leq$ Income $\leq$ 1B)} $\rightarrow$ {Cheat = No}
 
 
 ### Discretization-based method
 
-**The _equi-sized_ approach** is to simply partition the continuous domain into intervals with equal length.   **The _equi-depth_ approach** basically partitions the data values into intervals with equal size along the ordering of the data.   For more information, please refer to [Handling Continuous Attributes with Discretization-based Methods](../../../2017/07/01/Handling-Continuous-Attributes-with-Discretization-based-Methods).
+**The _equi-sized_ approach** is to simply partition the continuous domain into intervals with equal length.   **The _equi-depth_ approach** basically partitions the data values into intervals with equal size along the ordering of the data.   For more information, please refer to [Handling Continuous Attributes with Discretization-based Methods](../../../2017/07/01/Handling-Continuous-Attributes).
 
 ### Statistics-based method
 
-Assume \\(\mu\\) is the segment of population covered by the rule \\(R\\) and \\(\mu'\\) is the segment of population **not** covered by the rule.   We can say that rule \\(R\\) is interesting if 
+Assume $\mu$ is the segment of population covered by the rule $R$ and $\mu'$ is the segment of population **not** covered by the rule.   We can say that rule $R$ is interesting if 
 
 $$
 \mu' > \mu + \Delta
 $$
 
-Where \\(\Delta\\) is the difference that is large enough to determine interestingness.
+Where $\Delta$ is the difference that is large enough to determine interestingness.
 
 **Statistical Hypothesis Testing**
 
-Since research/alternative hypothesis (\\(H_1\\)) is
+Since research/alternative hypothesis ($H_1$) is
 
 $$
 \mu' > \mu + \Delta
 $$
 
-So the null hypotheis (\\(H_2\\)) is
+So the null hypotheis ($H_2$) is
 
 $$
 \mu' \leq \mu + \Delta
@@ -108,11 +109,11 @@ so we can reject the null hypothesis in favor of the alternative.
 
 Min-Apriori is an algorithm for finding association rules in data with continuous attributes.   It counts support of itemsets using non-discretization method.   For example, if there are 3 documents
 
-| | \\(W_1\\) | \\(W_2\\) | \\(W_3\\) |
+| | $W_1$ | $W_2$ | $W_3$ |
 | - | - | - | - |
-| \\(D_1\\) | 2 | 2 | 0 |
-| \\(D_1\\) | 0 | 0 | 1 |
-| \\(D_1\\) | 2 | 3 | 0 |
+| $D_1$ | 2 | 2 | 0 |
+| $D_1$ | 0 | 0 | 1 |
+| $D_1$ | 2 | 3 | 0 |
 
 With Min-Apriori, we do not need to discretize the count of words. Instead, we normalize the word vectors and then use the new definition of support
 
@@ -120,7 +121,7 @@ $$
 support(C) = \sum_{i \in T}{min_{j \in C}D(i,j)}
 $$
 
-Where \\(C\\) is a set of words and \\(T\\) is the set of documents.
+Where $C$ is a set of words and $T$ is the set of documents.
 
 ## Multi-level Association Rule
 
