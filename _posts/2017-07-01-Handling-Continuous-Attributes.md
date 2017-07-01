@@ -55,7 +55,7 @@ $ \forall X \in C$, $\exists X’ \in P \subset C$ such that:
 1. $X’$ is a generalization of $X$ and $support (X’) \leq K \times support(X)~~~~(K \geq 1)$
 2. $ \exists Y’ \subset X’$ such that $support (Y’) \leq K \times support(Y),~\forall Y \subset X $
 
-<img src="discrete.png"></img>
+![](https://i.imgur.com/LdHwzGm.png)
 
 As the number of intervals increases, $K$ increases and at the same time information loss rises.   As a result, we can determine number of intervals by choosing a proper $K$.
 

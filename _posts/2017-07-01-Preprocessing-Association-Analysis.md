@@ -55,7 +55,7 @@ Size of the discretized intervals affect support & confidence.
 
 - If intervals too small
 	- may not have enough support
-	- e.g. {Refund = No, (Income = $51,250)} $\rightarrow$ {Cheat = No}
+	- e.g. {Refund = No, (Income = 51,250)} $\rightarrow$ {Cheat = No}
 - If intervals too large
 	- may not have enough confidence
 	- e.g. {Refund = No, (0K $\leq$ Income $\leq$ 1B)} $\rightarrow$ {Cheat = No}
