@@ -8,7 +8,6 @@ category: Notes
 mathjax: true
 ---
 
-![](https://i.imgur.com/RiwE2Oe.png)
 
 Association analysis is useful for discovering interesting relationships hidden in large data sets.   The uncovered relationships can be represented in the form of **association rules** or sets of frequent items.
 
@@ -28,7 +27,7 @@ $$
 \{Milk, Diaper\} \rightarrow \{Beer\}
 $$
 
-<!--more-->
+
 
 A common strategy adopted by many association rule mining algorithms is to decompose the problem into 2 major subtasks:
 
@@ -38,7 +37,13 @@ Find all the itemsets that satisfy the _minsup_ threshold.
 
 **2. Rule Generation**
 
+<!--more-->
+
+
 Extract all the high-confidence rules (_strong rules_) from the frequent itemsets found in the previous step.
+
+
+![](https://i.imgur.com/RiwE2Oe.png)
 
 ## Definitions
 ### Support Count
