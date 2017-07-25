@@ -36,16 +36,18 @@ FP-Growth finds all the frequent itemsets ending with a particular suffix by emp
 For example, we want to **find frequent itemsets ending in $e$**. First decompose the FP-Tree to obtain the predix paths ending with $e$, so that we can conclude that the conditional pattern bases for $e$ are
 
 $$
-\{(a:1, c:1, d:1), (a:1, d:1), (c:1)\}
+\{(a:1, c:1, d:1), (a:1, d:1), (b:1, c:1)\}
 $$
 
-Then we can divide the problem into 3 subproblems
+Then we can divide the problem into 3 subproblems (with minimum support count $2$)
 
 - find frequent itemsets ending in $ae$
 - find frequent itemsets ending in $ce$
 - find frequent itemsets ending in $de$
 
 and solve them recursively until the conditional FP tree contains only an empty node.
+
+(Note that we do not need to find frequent itemsets ending in $be$ since the support count of $be$ is $1$ㄝ, which is smaller than the support count threshold.)
 
 ![](https://i.imgur.com/QXBcLWn.png)
 
