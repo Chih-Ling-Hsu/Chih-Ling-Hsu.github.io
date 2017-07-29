@@ -1,5 +1,5 @@
 ---
-title: 'Association Analysis of Sequence Data'
+title: 'Imbalanced Data Classification'
 layout: post
 tags:
   - Data-Mining
