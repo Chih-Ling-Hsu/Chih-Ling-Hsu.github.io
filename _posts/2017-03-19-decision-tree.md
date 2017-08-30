@@ -87,7 +87,7 @@ However, using information gain to decide a split may be in approppriate since i
 $$
 GainRatio_{split} = \frac{Gain_{split}}{SplitInfo}
 \\
-where SplitInfo = -\sum_{t=1}^{k}\frac{n_{t}}{n}log(\frac{n_{t}}{n})
+where~SplitInfo = -\sum_{t=1}^{k}\frac{n_{t}}{n}log(\frac{n_{t}}{n})
 $$
 
 ### Misclassification error

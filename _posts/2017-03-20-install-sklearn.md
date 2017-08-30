@@ -1,9 +1,9 @@
 ---
-title: 'Problems Solving For Installing Sklearn on Windows'
+title: 'Problems Solving For Installing Scikit-Learn on Windows'
 layout: post
 tags:
   - Python
-  - Sklearn
+  - scikit-learn
 category: Install
 ---
 
