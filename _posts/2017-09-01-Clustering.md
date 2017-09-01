@@ -144,19 +144,21 @@ Until only a single cluster remains
 
 Key operation is the computation of the proximity of two clusters. So, the question is
 
-$$
-How~to~Define~Inter-Cluster~Similarity?
-$$
+> How to define inter-cluster similarity?
+
+
 **1. MIN**
 
 <table>
     <tr><td><img src="https://i.imgur.com/fTWaf4Z.png"></td><td><img src="https://i.imgur.com/f51UUhm.png"></td></tr>
 </table>
 
-- Strengths:
-    - Can handle non-elliptical shapes
-- Limitations:
-    - Sensitive to noise and outliers
+
+Strengths:
+- Can handle non-elliptical shapes
+
+Limitations:
+- Sensitive to noise and outliers
 
 
 **2. MAX**
@@ -165,27 +167,30 @@ $$
     <tr><td><img src="https://i.imgur.com/DntS4Cs.png"></td><td><img src="https://i.imgur.com/TqZF9wx.png"></td></tr>
 </table>
 
-- Strengths:
-    - Less susceptible to noise and outliers
-- Limitations:
-    - Tends to break large clusters
-    - Biased towards globular clusters
+Strengths:
+- Less susceptible to noise and outliers
+
+Limitations:
+- Tends to break large clusters
+- Biased towards globular clusters
 
 
 **3. Group Average**
+
+Group Average compromise between Single and Complete Link (that is, MIN and MAX).
 
 <table>
     <tr><td><img src="https://i.imgur.com/KFOYo0p.png"></td><td><img src="https://i.imgur.com/9OP81iA.png"></td></tr>
 </table>
 
 
-Group Average compromise between Single and Complete Link (that is, MIN and MAX).
 
 
-- Strengths:
-    - Less susceptible to noise and outliers
-- Limitations:
-    - Biased towards globular clusters
+Strengths:
+- Less susceptible to noise and outliers
+
+Limitations:
+- Biased towards globular clusters
 
 **4. Distance Between Centroids**
 
@@ -195,11 +200,12 @@ Group Average compromise between Single and Complete Link (that is, MIN and MAX)
 In Ward's Method, similarity of two clusters is based on the increase in squared error when two clusters are merged.   It is similar to group average if distance between points is distance squared.
 
 
-- Strengths:
-    - Less susceptible to noise and outliers
-    - Hierarchical analogue of K-means (Can be used to initialize K-means)
-- Limitations:
-    - Biased towards globular clusters
+Strengths:
+- Less susceptible to noise and outliers
+- Hierarchical analogue of K-means (Can be used to initialize K-means)
+
+Limitations:
+- Biased towards globular clusters
 
 
 
