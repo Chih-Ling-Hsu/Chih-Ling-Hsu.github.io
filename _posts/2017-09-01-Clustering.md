@@ -2,10 +2,9 @@
 title: 'Data Mining - Basic Cluster Analysis'
 layout: post
 tags:
-  - Python
-  - scikit-learn
+  - Clustering
   - Data Mining
-category: Programming
+category: Notes
 mathjax: true
 ---
 
