@@ -1183,7 +1183,7 @@ article .article-content abbr {
 
 article .article-content blockquote {
     border-left: .2em solid #cd5c5c;
-    margin: .65em 1% .65em 0%;
+    margin: .65em 0% .65em 1%;
     padding-left: 1%;
     padding-right: 1%;
     padding-top: .65em;
