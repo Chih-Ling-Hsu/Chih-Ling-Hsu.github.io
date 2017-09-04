@@ -1223,6 +1223,13 @@ article .article-content ul li {
     text-align: match-parent
 }
 
+article .article-content ul li ul li{
+    list-style: circle;
+}
+article .article-content ul li ul li ul li{
+    list-style: square;
+}
+
 article .article-content ol li {
     list-style-type: decimal
 }
