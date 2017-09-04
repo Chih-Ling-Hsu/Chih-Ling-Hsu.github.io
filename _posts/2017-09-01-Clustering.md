@@ -356,7 +356,7 @@ Silhouette Coefficient combine ideas of both cohesion and separation, but for in
 
 Let $a(i)$ be the average dissimilarity of $i$ with all other data within the same cluster.   We can interpret $a(i)$ as **how well $i$ is assigned to its cluster** (the smaller the value, the better the assignment).
 
-Let $b(i)$ be the lowest average dissimilarity of $i$ to any other cluster, of which $i$ is not a member. The cluster with this **lowest average dissimilarity is said to be the "neighbouring cluster" of $i$** because it is the next best fit cluster for point i. 
+Let $b(i)$ be the lowest average dissimilarity of $i$ to any other cluster, of which $i$ is not a member. The cluster with this **lowest average dissimilarity is said to be the "neighbouring cluster" of $i$** because it is the next best fit cluster for point $i$. 
 
 $$
 a(i) = \frac{1}{\left|C\right|} \sum_{j \in C} dist(i, j)
