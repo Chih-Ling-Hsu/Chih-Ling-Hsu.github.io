@@ -94,7 +94,6 @@ Use a **multilevel graph partitioning algorithm** on the graph to find a large n
 
 Use **Hierarchical Agglomerative Clustering** to merge sub-clusters.   Two clusters are combined if the resulting cluster shares certain properties (e.g., Relative Interconnectivity, Relative Closeness) with the constituent clusters.
 
-
 ## Shared Near Neighbor Approach (SNN)
 
 In a Sparse Graph, link weights are similarities between neighboring points.
@@ -102,6 +101,8 @@ In a Sparse Graph, link weights are similarities between neighboring points.
 In a SNN graph, the weight of an edge is **the number of shared nearest neighbors**, that is, the number of shared neighbors between vertices given that the vertices are connected.
 
 ![](https://i.imgur.com/Vsmurrf.png)
+
+However, the limitations of SNN Clustering is that it does not cluster all points and the complexity of its algorithms is high.
 
 
 ### RObust Clustering using linKs (ROCK)
@@ -132,8 +133,16 @@ Given parameter $T$ and $k$, the procedure of Jarvis-Patrick Clustering is defin
 3. Construct the shared nearest neighbor graph from the sparsified similarity matrix.
     - At this point, we could apply a similarity threshold and find the connected components to obtain the clusters
     - Jarvis-Patrick algorithm
-4. Find the SNN density of each Point.
-    - SNN density of a point is the number of points that have an SNN similarity of $Eps$ or greater to each point.
+4. Perform DBSCAN on these points.
+    - Find the SNN density of each Point.
+        - SNN density of a point is the number of points that have an SNN similarity of $Eps$ or greater to each point.
+    - Find the core points
+        - Find all points that have an SNN density greater than $MinPts$
+    - Form clusters from the core points
+    - Discard all noise points
+    - Assign all non-noise, non-core points to clusters
+        - This can be done by assigning such points to the nearest core point
+
 
 ## References
 - [“Introduction to Data Mining,” by P.-N. Tan, M. Steinbach, V. Kumar, Addison-Wesley.](http://www-users.cs.umn.edu/~kumar/dmbook/index.php)

@@ -1234,13 +1234,13 @@ article .article-content ul li ul li ul li{
 }
 
 article .article-content ol li {
-    list-style-type: decimal
+    list-style-type: decimal;
 }
 article .article-content ol li ul li{
-    list-style-type: disc
+    list-style-type: circle;
 }
 article .article-content ol li ul li ul li{
-    list-style-type: circle;
+    list-style-type: square;
 }
 
 article .article-content dl dt {
