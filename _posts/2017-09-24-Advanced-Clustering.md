@@ -3,7 +3,7 @@ title: 'Data Mining - Advanced Concepts and Algorithms of Cluster Analysis'
 layout: post
 tags:
   - Clustering
-  - Data Mining
+  - Data-Mining
 category: Notes
 mathjax: true
 ---

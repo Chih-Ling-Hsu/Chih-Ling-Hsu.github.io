@@ -3,7 +3,7 @@ title: 'Data Manipulation and Visualization Using Elasticsearch and Kibana'
 layout: post
 tags:
   - Clustering
-  - Data Mining
+  - Data-Mining
 category: Notes
 mathjax: true
 ---

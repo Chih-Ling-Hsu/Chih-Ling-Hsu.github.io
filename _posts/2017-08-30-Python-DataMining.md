@@ -4,7 +4,7 @@ layout: post
 tags:
   - Python
   - scikit-learn
-  - Data Mining
+  - Data-Mining
 category: Programming
 mathjax: true
 ---
