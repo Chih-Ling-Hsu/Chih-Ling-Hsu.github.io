@@ -71,9 +71,9 @@ This is the reason why we need to adapt to the characteristics of the data set t
 
 CHAMELEON uses a dynamic model to measure the similarity between clusters.   The main property of this dynamic model is the relative closeness and relative inter-connectivity of the cluster.
 
-> **Relative Interconnectivity**: Absolute interconnectivity of two clusters normalized by the *internal connectivity* of the clusters
+> **Relative Interconnectivity** is the absolute interconnectivity of two clusters normalized by the *internal connectivity* of the clusters
 
-> **Relative Closeness**: Absolute closeness of two clusters normalized by the *internal closeness* of the clusters
+> **Relative Closeness** is the absolute closeness of two clusters normalized by the *internal closeness* of the clusters
 
 Two clusters are combined if the resulting cluster shares certain properties with the constituent clusters, which means, the merging scheme preserves self-similarity.
 

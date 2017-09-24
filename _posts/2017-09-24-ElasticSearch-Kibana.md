@@ -140,33 +140,33 @@ es.search(index="airline", doc_type="all", body=body)
 
 Then we get the following response:
 
-```json
-{'_shards': {'failed': 0, 'successful': 5, 'total': 5},
- 'hits': {'hits': [
-     {'_id': 'AV5L8ptgYzpnPPxiI-4u',
-    '_index': 'airline',
-    '_score': 1.0,
-    '_source': {'ActualElapsedTime': 388.0,
-     'AirTime': 360.0,
-     'ArrDelay': 31.0,
-     'ArrTime': 1128.0,
-     'CRSArrTime': 1057,
-     'CRSDepTime': 700,
-     'CRSElapsedTime': 357,
-     'CancellationCode': None,
-     'Cancelled': 0,
-     'CarrierDelay': None,
-     'DayOfWeek': 7,
-     'DayofMonth': 2,
-     'DepDelay': 0.0,
-     ...,
-     'Year': 2000},
-    '_type': 'all'},
+```
+{"_shards": {"failed": 0, "successful": 5, "total": 5},
+ "hits": {"hits": [
+     {"_id": "AV5L8ptgYzpnPPxiI-4u",
+    "_index": "airline",
+    "_score": 1.0,
+    "_source": {"ActualElapsedTime": 388.0,
+     "AirTime": 360.0,
+     "ArrDelay": 31.0,
+     "ArrTime": 1128.0,
+     "CRSArrTime": 1057,
+     "CRSDepTime": 700,
+     "CRSElapsedTime": 357,
+     "CancellationCode": None,
+     "Cancelled": 0,
+     "CarrierDelay": None,
+     "DayOfWeek": 7,
+     "DayofMonth": 2,
+     "DepDelay": 0.0,
+     ...
+     "Year": 2000},
+    "_type": "all"},
    ...],
-  'max_score': 1.0,
-  'total': 7863},
- 'timed_out': False,
- 'took': 520}
+  "max_score": 1.0,
+  "total": 7863},
+ "timed_out": False,
+ "took": 520}
 ```
 
 For other types of query, please check [Official Document for Query API](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html).
