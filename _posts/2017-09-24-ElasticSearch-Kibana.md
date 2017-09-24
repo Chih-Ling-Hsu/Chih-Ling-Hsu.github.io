@@ -8,8 +8,6 @@ category: Notes
 mathjax: true
 ---
 
-# Data Manipulation and Visualization Using Elasticsearch and Kibana
-
 Elasticsearch is a **distributed**, **real-time**, search and analytics platform.
 
 Using a restful API, Elasticsearch saves data and indexes it automatically. It assigns types to fields and that way a search can be done smartly and quickly using filters and different queries.
