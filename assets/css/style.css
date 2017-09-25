@@ -1236,6 +1236,9 @@ article .article-content ul li ul li ul li{
 article .article-content ol li {
     list-style-type: decimal;
 }
+article .article-content ol li ol li{
+    list-style-type: lower-alpha;
+}
 article .article-content ol li ul li{
     list-style-type: circle;
 }
@@ -1244,7 +1247,7 @@ article .article-content ol li ul li ul li{
 }
 
 article .article-content dl dt {
-    font-weight: blod
+    font-weight: bold;
 }
 
 article .article-content ul li>code,
