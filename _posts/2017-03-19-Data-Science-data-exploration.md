@@ -77,7 +77,7 @@ Remove redundant features and irrelevant features to reduce dimensionality of da
 **Techniques**
 - Brute-force approach
 - Embedded approaches -
-    Feature selection occurs naturally as part of the data mining algorithm
+    Feature selection occurs naturally as part of the data mining algorithm (auto encoding)
 - Filter approaches - 
     Features are selected before data mining algorithm is run
 - Wrapper approaches - 
@@ -193,90 +193,91 @@ A preliminary exploration of the data to better understand its characteristics.
 
 Summary statistics are numbers that summarize properties of the data
 
-**Frequency**
-- The frequency of an attribute value is the percentage of time the value occurs in the data set 
-- Typically used with **categorical** data
+1. **Frequency**
+    - The frequency of an attribute value is the percentage of time the value occurs in the data set 
+    - Typically used with **categorical** data
 
-**Mode**
-- The mode of a an attribute is the most frequent attribute value
-- Typically used with **categorical** data
+2. **Mode**
+    - The mode of a an attribute is the most frequent attribute value
+    - Typically used with **categorical** data
 
-**Percentile**
-- the pth percentile of a distribution is a number such that approximately p percent (p%) of the values in the distribution are equal to or less than that number.
-- Typically used with **continuous** data
+3. **Percentile**
+    - the pth percentile of a distribution is a number such that approximately p percent (p%) of the values in the distribution are equal to or less than that number.
+    - Typically used with **continuous** data
 
-**Location (Mean and Median)**
-- The most common measure of the location of a set of points
-- Since the mean is very sensitive to outliers, the **median** or a **trimmed mean** is also commonly used.
+4. **Location (Mean and Median)**
+    - The most common measure of the location of a set of points
+    - Since the mean is very sensitive to outliers, the **median** or a **trimmed mean** is also commonly used.
 
-**Spread (Range and Variance)**
-- Range is the difference between the max and min.
-- The variance or standard deviation is the most common measure of the spread of a set of points.
+5. **Spread (Range and Variance)**
+    - Range is the difference between the max and min.
+    - The variance or standard deviation is the most common measure of the spread of a set of points.
 
-![](https://i.imgur.com/4jkH2um.png)
-- Since the variance is also sensitive to outliers, so other measures such as AAD, MAD, and interquartile range are often used.
+    ![](https://i.imgur.com/4jkH2um.png)
+    
+    - Since the variance is also sensitive to outliers, so other measures such as AAD, MAD, and interquartile range are often used.
 
 
 ### Visualization
 
 Visualization is the conversion of data into a visual or tabular format so that the characteristics of the data and the relationships among data items or attributes can be analyzed or reported.png)
 
-**Representation**
-- The mapping of rmation to a visual format.
-- Data objects, their attributes, and the relationships among data objects are translated into graphical elements such as **points, lines, shapes, and colors**.
+1. **Representation**
+    - The mapping of rmation to a visual format.
+    - Data objects, their attributes, and the relationships among data objects are translated into graphical elements such as **points, lines, shapes, and colors**.
 
-**Arrangement**
-- The placement of visual elements within a display.
+2. **Arrangement**
+    - The placement of visual elements within a display.
 
-![](https://i.imgur.com/uUzpznl.png)
+    ![](https://i.imgur.com/uUzpznl.png)
 
-**Selection**
-- The elimination or the de-emphasis of certain objects and attributes.
-- It may involve the chossing a subset of attributes objects (Dimensionality Reduction)
+3. **Selection**
+    - The elimination or the de-emphasis of certain objects and attributes.
+    - It may involve the chossing a subset of attributes objects (Dimensionality Reduction)
 
-**Visualization Techniques**
-1. **Histograms**
-    - 1D - shows the distribution of values of a single variable
-    - 2D - Show the joint distribution of the values of two attributes 
-    
-    ![](https://i.imgur.com/hml1ADX.png)
-2. **Box Plots**
-    - Another way of displaying the distribution of values of a single variable
-    
-    ![](https://i.imgur.com/y6OsQy4.png)
-    - It can be used to compare attributes
-    
-    ![](https://i.imgur.com/wTB9iDo.png)
-3. **Scatter Plots**
-    - Attributes values determine the position. Two-dimensional scatter plots most common, but can have three-dimensional scatter plots.
-    
-    ![](https://i.imgur.com/9nZUMVG.png)
-4. **Contour Plots**
-    - Partition the plane into regions of similar values. The contour lines that form the boundaries of these regions connect points with equal values.
-    - Useful when a **continuous attribute** is measured on a **spatial grid**.
-    - The most common example is contour maps of elevation, temperature, rainfall, air pressure, etc.
-    
-    ![](https://i.imgur.com/Dnd9Yia.png)
-5. **Matrix Plots**
-    - Plot the data matrix to show **relationships between objects**. Typically, the attributes are normalized to prevent one attribute from dominating the plot.
-    - Useful when objects are **sorted according to class**.
-    
-    ![](https://i.imgur.com/f0igt2m.png)
-    - Plots of **similarity** or **distance** matrices can also be useful for visualizing the relationships between objects. (The Matrix Plot below is the _Correlation Matrix_ Plot of Iris data.)
-    
-    ![](https://i.imgur.com/tBkXG59.png)
-6. **Parallel Coordinates**
-    - Instead of using perpendicular axes, use a set of parallel axes. Thus, **each object is represented as a line**.
-    - Used to plot the attribute values of **high-dimensional** data
-    
-    ![](https://i.imgur.com/nRmv010.png)
-    - Ordering of attributes is important in seeing such groupings
-7. **Star Plots**
-    
-    ![](https://i.imgur.com/ccPP2rS.png)
-8. **Chernoff Faces**
-    
-    ![](https://i.imgur.com/jajuDx7.png)
+4. **Visualization Techniques**
+    1. **Histograms**
+        - 1D - shows the distribution of values of a single variable
+        - 2D - Show the joint distribution of the values of two attributes 
+        
+        ![](https://i.imgur.com/hml1ADX.png)
+    2. **Box Plots**
+        - Another way of displaying the distribution of values of a single variable
+        
+        ![](https://i.imgur.com/y6OsQy4.png)
+        - It can be used to compare attributes
+        
+        ![](https://i.imgur.com/wTB9iDo.png)
+    3. **Scatter Plots**
+        - Attributes values determine the position. Two-dimensional scatter plots most common, but can have three-dimensional scatter plots.
+        
+        ![](https://i.imgur.com/9nZUMVG.png)
+    4. **Contour Plots**
+        - Partition the plane into regions of similar values. The contour lines that form the boundaries of these regions connect points with equal values.
+        - Useful when a **continuous attribute** is measured on a **spatial grid**.
+        - The most common example is contour maps of elevation, temperature, rainfall, air pressure, etc.
+        
+        ![](https://i.imgur.com/Dnd9Yia.png)
+    5. **Matrix Plots**
+        - Plot the data matrix to show **relationships between objects**. Typically, the attributes are normalized to prevent one attribute from dominating the plot.
+        - Useful when objects are **sorted according to class**.
+        
+        ![](https://i.imgur.com/f0igt2m.png)
+        - Plots of **similarity** or **distance** matrices can also be useful for visualizing the relationships between objects. (The Matrix Plot below is the _Correlation Matrix_ Plot of Iris data.)
+        
+        ![](https://i.imgur.com/tBkXG59.png)
+    6. **Parallel Coordinates**
+        - Instead of using perpendicular axes, use a set of parallel axes. Thus, **each object is represented as a line**.
+        - Used to plot the attribute values of **high-dimensional** data
+        
+        ![](https://i.imgur.com/nRmv010.png)
+        - Ordering of attributes is important in seeing such groupings
+    7. **Star Plots**
+        
+        ![](https://i.imgur.com/ccPP2rS.png)
+    8. **Chernoff Faces**
+        
+        ![](https://i.imgur.com/jajuDx7.png)
 
 
 ### Online Analytical Processing (OLAP)
@@ -289,6 +290,7 @@ An approach that uses a **multidimensional array representation** to answering *
     - drill-down
     - slicing
     - dicing
+
 **Create a Multidimensional Array**
 Convert tabular data into a multidimensional array:
 - **Step 1.** _Identify_ which attributes are to be the _dimensions_ and which attribute is to be the _target attribute_.
