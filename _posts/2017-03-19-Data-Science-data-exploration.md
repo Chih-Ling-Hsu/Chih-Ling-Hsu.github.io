@@ -114,12 +114,12 @@ A function that maps the entire set of values of a given attribute to a new set 
 
 A distance that satisfies the following properties is a <u>metric:</u>
 - Positive definiteness
-    d(p, q) >= 0   for all p and q 
-    d(p, q) = 0 only if p = q
+    - $d(p, q) >= 0$   for all $p$ and $q$ 
+    - $d(p, q) = 0$ only if $p = q$
 - Symmetry
-    d(p, q) = d(q, p)   for all p and q
+    - $d(p, q) = d(q, p)$ for all $p$ and $q$
 - Triangle Inequality
-    d(p, r) <= d(p, q) + d(q, r)   for all points p, q, and r
+   - $d(p, r) \leq d(p, q) + d(q, r)$  for all points $p$, $q$, and $r$
 
 **1. Euclidean Distance**
 
