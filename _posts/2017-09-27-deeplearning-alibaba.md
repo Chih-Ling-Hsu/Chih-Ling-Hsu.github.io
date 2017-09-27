@@ -70,7 +70,7 @@ $$
 [∥f(x^a_i) − f(x^p_i)∥^2_2 + 1 − ∥f(x^a_i) − f(x^n_i)∥^2_2]_+
 $$
 
-- $[z]_+$ is the hinge loss that outputs _one_ when $z > 0$ and _zero_ otherwise.
+- $[z]+$ is the hinge loss that outputs _one_ when $z > 0$ and _zero_ otherwise.
 - $x^a_i$ is a feature vector.
 - $x^p_i$ is a positive instance of $x^a_i$ (with the same label).
 - $x^n_i$ is a **negative instance from the KNN** of $x^a_i$ (with different label) that have smaller distance than those of the positive instances.
