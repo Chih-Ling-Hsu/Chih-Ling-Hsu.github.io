@@ -27,7 +27,7 @@ Presenter: _Sebastian Gutierrez_
 
 ---
 
-### Find the job you are interested on indeed.com
+### Find the job you are interested in on indeed.com
 
 indeed.com is job site in US.   You shoud do pairwise comparisons to find the the job you are interested and know about what you should learn to obtain this job.
 

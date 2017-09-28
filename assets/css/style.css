@@ -1190,8 +1190,9 @@ article .article-content blockquote {
     padding-bottom: .3em;
     line-height: 1.5;
     font-size: 110%;
-    color: #414141;
-    font-style: italic;
+    color: #616161;
+    font-style: bold,italic;
+    padding-left: .5em
     /*background-color: #eeeeee;*/
 }
 
@@ -1204,7 +1205,7 @@ article .article-content blockquote footer {
 }
 
 article .article-content blockquote cite {
-    font-style: bold;
+    /*font-style: bold;*/
     padding-left: .5em
 }
 
