@@ -1189,10 +1189,9 @@ article .article-content blockquote {
     /*padding-top: .1em;*/
     padding-bottom: .3em;
     line-height: 1.5;
-    font-size: 120%;
+    font-size: 110%;
     color: #515151;
-    font-style: italic;
-    /*background-color: #eeeeee;*/
+    background-color: #eeeeee;
 }
 
 article .article-content blockquote footer {
