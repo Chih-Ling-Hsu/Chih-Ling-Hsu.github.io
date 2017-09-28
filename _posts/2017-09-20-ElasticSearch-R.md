@@ -54,7 +54,7 @@ Note that you should specify the connection information to connect with authenti
  connect(es_host = "aea56252e39a17de2c3f908d64a82ad9.us-east-1.aws.found.io", es_path = "", es_user="elastic", es_pwd = "g8QHIaXkRPqLEKvdyEiCrKV1", es_port = 9243, es_transport_schema  = "https")
 ```
 
-<div class="well">
+```
 transport:  https 
 host:       aea56252e39a17de2c3f908d64a82ad9.us-east-1.aws.found.io 
 port:       9243 
@@ -63,7 +63,7 @@ username:   elastic
 password:   (secret)
 errors:     simple 
 headers (names):  NULL 
-</div>
+```{: style="background: #efefef; color:black;"}
 
 
 ## Upload Data
@@ -92,7 +92,8 @@ Search the `plos` index, limit to `1` result.
 ```{r}
 Search(index = "plos", size = 1)$hits$hits
 ```
-<div class="well">
+
+```
 [[1]]
 [[1]]$`_index`
 [1] "plos"
@@ -112,7 +113,7 @@ Search(index = "plos", size = 1)$hits$hits
 
 [[1]]$`_source`$title
 [1] "Phospholipase C-β4 Is Essential for the Progression of the Normal Sleep Sequence and Ultradian Body Temperature Rhythms in Mice"
-</div>
+```{: style="background: #efefef; color:black;"}
 
 Search the `plos` index, and the `article` document type. Query for `antibody`, limit to `1` result.
 
@@ -121,7 +122,7 @@ Search the `plos` index, and the `article` document type. Query for `antibody`, 
 Search(index = "plos", type = "article", q = "antibody", size = 1)$hits$hits
 ```
 
-<div class="well">
+```
 [[1]]
 [[1]]$`_index`
 [1] "plos"
@@ -141,7 +142,7 @@ Search(index = "plos", type = "article", q = "antibody", size = 1)$hits$hits
 
 [[1]]$`_source`$title
 [1] "Evaluation of 131I-Anti-Angiotensin II Type 1 Receptor Monoclonal Antibody as a Reporter for Hepatocellular Carcinoma"
-</div>
+```{: style="background: #efefef; color:black;"}
 
 
 
