@@ -152,17 +152,17 @@ This is because that we can obtain the smallest bin that can pack all the items,
 Now define the surface area as
 
 $$
-F(o|s) = WL+LH+WH
+Loss(o|s) = WL+LH+WH
 $$
 
 - $s$ is the input sequence and $o$ is the output sequence.
 - $W$, $H$, $L$ denotes the width, height, and length of the smallest bin respectively.
-- $F$ is the surface area, which is used to evaluate the performance of $o$.
+- $Loss()$ is the surface area, which is used to evaluate the performance of $o$.
 
 So the training objective for a given $s$ is the expected surface area, which is given as below
 
 $$
-J(\theta | s) = \varepsilon_{o~p_{\theta}(\cdot | s)}F(o|s)
+J(\theta | s) = \varepsilon_{o~p_{\theta}(\cdot | s)}Loss(o|s)
 $$
 
 - $p(o \vert s)$ is the probability of choosing the packing sequence $o$ given the input $s$
