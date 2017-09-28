@@ -1191,6 +1191,7 @@ article .article-content blockquote {
     line-height: 1.5;
     font-size: 110%;
     color: #414141;
+    font-style: italic;
     /*background-color: #eeeeee;*/
 }
 
