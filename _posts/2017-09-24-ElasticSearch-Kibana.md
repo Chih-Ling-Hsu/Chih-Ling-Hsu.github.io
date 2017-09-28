@@ -2,9 +2,10 @@
 title: 'Data Manipulation and Visualization Using Elasticsearch and Kibana'
 layout: post
 tags:
-  - Clustering
-  - Data-Mining
-category: Notes
+  - ElasticSearch
+  - NLP
+  - Python
+category: Programming
 mathjax: true
 ---
 
