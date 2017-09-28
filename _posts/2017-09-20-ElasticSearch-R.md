@@ -63,7 +63,7 @@ username:   elastic
 password:   (secret)
 errors:     simple 
 headers (names):  NULL 
-```{: #well}
+```
 
 
 ## Upload Data
@@ -113,7 +113,7 @@ Search(index = "plos", size = 1)$hits$hits
 
 [[1]]$`_source`$title
 [1] "Phospholipase C-β4 Is Essential for the Progression of the Normal Sleep Sequence and Ultradian Body Temperature Rhythms in Mice"
-```{: #well}
+```
 
 Search the `plos` index, and the `article` document type. Query for `antibody`, limit to `1` result.
 
@@ -142,7 +142,7 @@ Search(index = "plos", type = "article", q = "antibody", size = 1)$hits$hits
 
 [[1]]$`_source`$title
 [1] "Evaluation of 131I-Anti-Angiotensin II Type 1 Receptor Monoclonal Antibody as a Reporter for Hepatocellular Carcinoma"
-```{: #well}
+```
 
 
 
