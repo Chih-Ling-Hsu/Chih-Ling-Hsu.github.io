@@ -2581,9 +2581,9 @@ footer {
     border: 1px solid #ddd;
 }
 
-.article-content well {
-    font-family: Monaco, Menlo, Consolas, Courier New, monospace;
+#well {
     background: #efefef;
+    color: black;
     border: 1px solid #ddd;
 }
 

@@ -50,7 +50,7 @@ Note that you should specify the connection information to connect with authenti
 - **es_port**: The port number of the cluster on the server. The default port is `9243` on Elastic Cloud. 
 - **es_transport_schema**: the transport protocal, use `https` here.
 
-```{r}
+```r
  connect(es_host = "aea56252e39a17de2c3f908d64a82ad9.us-east-1.aws.found.io", es_path = "", es_user="elastic", es_pwd = "g8QHIaXkRPqLEKvdyEiCrKV1", es_port = 9243, es_transport_schema  = "https")
 ```
 
@@ -63,7 +63,7 @@ username:   elastic
 password:   (secret)
 errors:     simple 
 headers (names):  NULL 
-```{: style="background: #efefef; color:black;"}
+```{: #well}
 
 
 ## Upload Data
@@ -72,7 +72,7 @@ headers (names):  NULL
 
 Public Library of Science (PLOS) data is a dataset inluded in the elastic package is metadata for PLOS scholarly articles. 
 
-```{r}
+```r
 plosdat <- system.file("examples", "plos_data.json", package = "elastic")
 ```
 
@@ -81,7 +81,7 @@ plosdat <- system.file("examples", "plos_data.json", package = "elastic")
 
 we use the function `docs_bulk` to upload the data `plosdat`
 
-```{r}
+```r
 invisible(docs_bulk(plosdat))
 ```
 
@@ -89,7 +89,7 @@ invisible(docs_bulk(plosdat))
 
 Search the `plos` index, limit to `1` result.
 
-```{r}
+```r
 Search(index = "plos", size = 1)$hits$hits
 ```
 
@@ -113,12 +113,12 @@ Search(index = "plos", size = 1)$hits$hits
 
 [[1]]$`_source`$title
 [1] "Phospholipase C-β4 Is Essential for the Progression of the Normal Sleep Sequence and Ultradian Body Temperature Rhythms in Mice"
-```{: style="background: #efefef; color:black;"}
+```{: #well}
 
 Search the `plos` index, and the `article` document type. Query for `antibody`, limit to `1` result.
 
 
-```{r}
+```r
 Search(index = "plos", type = "article", q = "antibody", size = 1)$hits$hits
 ```
 
@@ -142,7 +142,7 @@ Search(index = "plos", type = "article", q = "antibody", size = 1)$hits$hits
 
 [[1]]$`_source`$title
 [1] "Evaluation of 131I-Anti-Angiotensin II Type 1 Receptor Monoclonal Antibody as a Reporter for Hepatocellular Carcinoma"
-```{: style="background: #efefef; color:black;"}
+```{: #well}
 
 
 
