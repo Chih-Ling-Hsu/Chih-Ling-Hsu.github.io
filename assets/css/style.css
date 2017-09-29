@@ -2581,15 +2581,19 @@ footer {
     border: 1px solid #ddd;
 }
 
-.well:first-child{
+.well{
     background: #ddd;
     color: black;
     border: 1px solid #ddd;
     padding-top: 30px;
 }
 
+.well::before{
+    content: "OUTPUT"
+}
+
 .article-content pre code {
-    /*background: #272822;*/
+    background: #272822;
     color: #ddd;
     background: none;
     text-shadow: none;
