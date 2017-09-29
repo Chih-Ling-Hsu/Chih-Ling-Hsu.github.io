@@ -92,7 +92,7 @@ Search the `plos` index, limit to `1` result.
 Search(index = "plos", size = 1)$hits$hits
 ```
 
-<div class="well">[[1]]
+<div class="well"  markdown="0">[[1]]
 [[1]]$`_index`
 [1] "plos"
 
