@@ -2583,9 +2583,10 @@ footer {
 }
 
 .well{
-    background: #fff;
+    background: #ddd;
     color: black;
     border: 1px solid #ddd;
+    border-radius: 3px;
     text-align: center;
     padding: 5px;
 }
