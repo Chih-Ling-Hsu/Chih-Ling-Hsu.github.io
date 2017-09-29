@@ -2585,7 +2585,6 @@ footer {
 .well{
     background: #ddd;
     color: black;
-    border: 1px solid #272822;
     border-radius: 3px;
     text-align: center;
 }
