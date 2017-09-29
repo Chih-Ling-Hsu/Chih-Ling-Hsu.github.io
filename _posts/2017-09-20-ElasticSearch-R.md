@@ -92,7 +92,8 @@ Search the `plos` index, limit to `1` result.
 Search(index = "plos", size = 1)$hits$hits
 ```
 
-<div class="well"  markdown="0">[[1]]
+```
+[[1]]
 [[1]]$`_index`
 [1] "plos"
 
@@ -111,7 +112,8 @@ Search(index = "plos", size = 1)$hits$hits
 
 [[1]]$`_source`$title
 [1] "Phospholipase C-β4 Is Essential for the Progression of the Normal Sleep Sequence and Ultradian Body Temperature Rhythms in Mice"
-</div>
+```
+{: .well}
 
 Search the `plos` index, and the `article` document type. Query for `antibody`, limit to `1` result.
 
