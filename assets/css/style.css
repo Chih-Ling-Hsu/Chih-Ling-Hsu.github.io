@@ -2583,11 +2583,13 @@ footer {
 
 .well{
     font-family: Monaco, Menlo, Consolas, Courier New, monospace;
+    font-size: .9em;
     white-space: pre;
     background: #fff;
     color: black;
     border: 1px solid #ddd;
-    padding: 20px
+    padding: 20px;
+    overflow-x: scroll;
 }
 
 .article-content pre code {
