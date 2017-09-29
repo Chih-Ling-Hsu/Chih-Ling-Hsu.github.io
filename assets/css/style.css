@@ -2582,10 +2582,10 @@ footer {
 }
 
 .well{
-    background: #ddd;
+    background: #fff;
     color: black;
     border: 1px solid #ddd;
-    padding-top: 30px;
+    text-align: center
 }
 
 .well::before{
