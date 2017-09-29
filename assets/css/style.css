@@ -2581,10 +2581,12 @@ footer {
     border: 1px solid #ddd;
 }
 
-#well {
-    background: #efefef;
+.well{
+    white-space: pre;
+    background: #fff;
     color: black;
     border: 1px solid #ddd;
+    padding: 20px
 }
 
 .article-content pre code {
