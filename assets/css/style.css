@@ -2579,13 +2579,15 @@ footer {
     font-family: Monaco, Menlo, Consolas, Courier New, monospace;
     background: #272822;
     border: 1px solid #ddd;
+    text-align: left;
 }
 
 .well{
     background: #fff;
     color: black;
     border: 1px solid #ddd;
-    text-align: center
+    text-align: center;
+    padding: 5px;
 }
 
 .well::before{

@@ -54,7 +54,8 @@ Note that you should specify the connection information to connect with authenti
  connect(es_host = "aea56252e39a17de2c3f908d64a82ad9.us-east-1.aws.found.io", es_path = "", es_user="elastic", es_pwd = "g8QHIaXkRPqLEKvdyEiCrKV1", es_port = 9243, es_transport_schema  = "https")
 ```
 
-<div class="well">transport:  https 
+```
+transport:  https 
 host:       aea56252e39a17de2c3f908d64a82ad9.us-east-1.aws.found.io 
 port:       9243 
 path:       NULL 
@@ -62,8 +63,8 @@ username:   elastic
 password:   (secret)
 errors:     simple 
 headers (names):  NULL 
-</div>
-
+```
+{: .well}
 
 ## Upload Data
 
@@ -122,7 +123,8 @@ Search the `plos` index, and the `article` document type. Query for `antibody`, 
 Search(index = "plos", type = "article", q = "antibody", size = 1)$hits$hits
 ```
 
-<div class="well">[[1]]
+```
+[[1]]
 [[1]]$`_index`
 [1] "plos"
 
@@ -141,7 +143,8 @@ Search(index = "plos", type = "article", q = "antibody", size = 1)$hits$hits
 
 [[1]]$`_source`$title
 [1] "Evaluation of 131I-Anti-Angiotensin II Type 1 Receptor Monoclonal Antibody as a Reporter for Hepatocellular Carcinoma"
-</div>
+```
+{: .well}
 
 
 
