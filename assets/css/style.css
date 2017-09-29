@@ -2592,7 +2592,8 @@ footer {
 }
 
 .well::before{
-    content: "OUTPUT"
+    content: "OUTPUT";
+    font-size: .8em;
 }
 
 .article-content pre code {
