@@ -2,7 +2,7 @@
 title: 'Data Manipulation and Visualization Using Elasticsearch and Kibana'
 layout: post
 tags:
-  - ElasticSearch
+  - Elasticsearch
   - NLP
   - Python
 category: Programming

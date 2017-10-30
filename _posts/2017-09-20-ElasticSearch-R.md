@@ -2,7 +2,7 @@
 title: 'Connect to Elastic Cloud with R Client'
 layout: post
 tags:
-  - ElasticSearch
+  - Elasticsearch
   - NLP
   - R
 category: Programming

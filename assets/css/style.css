@@ -2592,7 +2592,8 @@ footer {
 
 .well::before{
     content: "OUTPUT";
-    font-size: .8em;
+    font-family: Monaco, Menlo, Consolas, Courier New, monospace;
+    font-size: .5em;
 }
 
 .article-content pre code {

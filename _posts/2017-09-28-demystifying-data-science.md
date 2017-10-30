@@ -18,14 +18,13 @@ mathjax: false
 ## Getting a Data Science Job is Not About Stacking up Prerequisites and Hoping Somebody Picks You
 
 
-Introdiction: _"... Great news - you can stop waiting and hoping a data science manager will pick you. You can become a Data Scientist without being overwhelmed, perplexed, or unmotivated. This talk will make you a chooser by showing you three key ways you can turn the "Getting A Data Science Job" process on its head so that you have a 100% highly customized plan for you. You'll learn a) how to take control of the process from the beginning, b) how to build your portfolio so that you beat out all the other candidates who are hoping to be chosen, and c) how to revamp your resume so that your resume always goes to the top of the "must-hire" pile."_
+- Introdiction: _"... Great news - you can stop waiting and hoping a data science manager will pick you. You can become a Data Scientist without being overwhelmed, perplexed, or unmotivated. This talk will make you a chooser by showing you three key ways you can turn the "Getting A Data Science Job" process on its head so that you have a 100% highly customized plan for you. You'll learn a) how to take control of the process from the beginning, b) how to build your portfolio so that you beat out all the other candidates who are hoping to be chosen, and c) how to revamp your resume so that your resume always goes to the top of the "must-hire" pile."_
 
 
-Time: 10:00 AM in EST
+- Time: 10:00 AM in EST
 
-Presenter: _Sebastian Gutierrez_
+- Presenter: _Sebastian Gutierrez_
 
----
 
 ### Find the job you are interested in on indeed.com
 
@@ -56,13 +55,12 @@ This job should be the job that would make you say this upon everyday morning:
 
 ## The 5 Most Importtant Things in Data Science
 
-Introdiction: _"I will highlight the 5 most important things in data science, providing a short illustrative (hopefully enlightening and informative) example from my own experience for each of these: The Data, The Science, Data Storytelling, Data Ethics, and Data Literacy. Since the primary focus of data science is discovery (new insights, better decisions, and value-added innovations), I will include an overview of the different flavors of machine learning for discovery in big data, plus a summary of the different levels of analytics maturity and what they mean for real world data science applications. I will finish with a review of the top characteristics of leading candidates for data scientist positions within my organization."_
+- Introdiction: _"I will highlight the 5 most important things in data science, providing a short illustrative (hopefully enlightening and informative) example from my own experience for each of these: The Data, The Science, Data Storytelling, Data Ethics, and Data Literacy. Since the primary focus of data science is discovery (new insights, better decisions, and value-added innovations), I will include an overview of the different flavors of machine learning for discovery in big data, plus a summary of the different levels of analytics maturity and what they mean for real world data science applications. I will finish with a review of the top characteristics of leading candidates for data scientist positions within my organization."_
 
-Time: 10:30 AM in EST
+- Time: 10:30 AM in EST
 
-Presenter: _Kirk Borne_
+- Presenter: _Kirk Borne_
 
----
 
 ### 1. The Data
 
@@ -168,13 +166,12 @@ In the end, when talking avout the attitudes a data scientist should have, the s
 
 ## How I Became a Data Scientist Despite Having Been a Math Major
 
-Introdiction: _"Ten years ago, while I was studying math in my undergraduate, Business Week published an article declaring that "There has never been a better time to be a mathematician." As the field of data science has developed since, so has the hype around mathematics. While mathematical modeling is an important component of data science, my math education did little to prepare me for the types of challenges I face in my day-to-day as a data scientist. Many of my most valuable skills and tools are not taught in any traditional educational settings. In this talk, I will discuss this disconnect between my mathematics education and my data science career, the importance of self-instruction for data scientists, and advice on how students can prepare for a career in data science."_
+- Introdiction: _"Ten years ago, while I was studying math in my undergraduate, Business Week published an article declaring that "There has never been a better time to be a mathematician." As the field of data science has developed since, so has the hype around mathematics. While mathematical modeling is an important component of data science, my math education did little to prepare me for the types of challenges I face in my day-to-day as a data scientist. Many of my most valuable skills and tools are not taught in any traditional educational settings. In this talk, I will discuss this disconnect between my mathematics education and my data science career, the importance of self-instruction for data scientists, and advice on how students can prepare for a career in data science."_
 
-Time: 11:00 AM in EST
+- Time: 11:00 AM in EST
 
-Presenter: _Tim Hopper_
+- Presenter: _Tim Hopper_
 
----
 
 Here are some quotes from the presentation:
 
@@ -184,15 +181,14 @@ Here are some quotes from the presentation:
 
 ## 5 Steps to Launch Your Data Science Career (with Python)
 
-Introdiction: _"Data science can be an overwhelming field. Many people will tell you that you can't become a data scientist until you master the following: statistics, linear algebra, calculus, programming, databases, distributed computing, machine learning, visualization, experimental design, clustering, deep learning, natural language processing, and more. That's simply not true."_
+- Introdiction: _"Data science can be an overwhelming field. Many people will tell you that you can't become a data scientist until you master the following: statistics, linear algebra, calculus, programming, databases, distributed computing, machine learning, visualization, experimental design, clustering, deep learning, natural language processing, and more. That's simply not true."_
 
 In this talk, you'll learn how you can get started with your data science career today by learning how to master a small set of tools in a single programming language."
 
-Time: 11:30 AM in EST
+- Time: 11:30 AM in EST
 
-Presenter: _Kevin Markham_
+- Presenter: _Kevin Markham_
 
----
 
 What is exactly data science?
 
@@ -291,13 +287,12 @@ Qustions are...
 
 ## Fixing the Hot Mess: What You're Doing Wrong to Hire and Get Hired In Data Science
 
-Introdiction: _"The worst part of data science is the hiring process. It’s broken on both ends. People trying to get into the field don’t really understand the field well enough to position themselves for success. Companies hiring their 1st data science team have much the same problem. This is the real data science skills gap.   I want to speak to both audiences: aspiring/novice data scientists and those tasked with building their 1st team. Business needs meet skill sets in a rapid-fire fashion. I want both sides to leave with a framework, high quality questions to ask, and an understanding of what they need to educate themselves about to be successful."_
+- Introdiction: _"The worst part of data science is the hiring process. It’s broken on both ends. People trying to get into the field don’t really understand the field well enough to position themselves for success. Companies hiring their 1st data science team have much the same problem. This is the real data science skills gap.   I want to speak to both audiences: aspiring/novice data scientists and those tasked with building their 1st team. Business needs meet skill sets in a rapid-fire fashion. I want both sides to leave with a framework, high quality questions to ask, and an understanding of what they need to educate themselves about to be successful."_
 
-Time: 12:00 AM in EST
+- Time: 12:00 AM in EST
 
-Presenter: _Vin Vashishta_
+- Presenter: _Vin Vashishta_
 
----
 
 In this talk, the speaker talks about importance of business strategy and communications skills in data science.
 
