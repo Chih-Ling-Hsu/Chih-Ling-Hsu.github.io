@@ -20,9 +20,11 @@ The working assumption of anomaly detection is:
 As the result, the general steps can be
 
 1. **Build a profile of the “normal” behavior**
+    
     Profile can be patterns or summary statistics for the overall population
 
 2. **Use the “normal” profile to detect anomalies**
+    
     Anomalies are observations whose characteristics differ significantly from the normal profile
 
 
@@ -68,6 +70,7 @@ Assume the data set contains samples from a mixture of two probability distribut
 $$
 Data~distribution = D = (1 – \lambda) M + \lambda A
 $$
+
 $$
 where~M~is~a~probability~distribution~estimated~from~data
 \\
@@ -91,9 +94,7 @@ The steps of likelihood approach are as follows:
 The limitations of statistical approaches are
 
 1. Most of the tests are for a single attribute.
-
 2. Data distribution may not be known in many cases.
-
 3. It may be difficult to estimate the true distribution for high dimensional data.
 
 ## Distance-based
@@ -118,12 +119,14 @@ Basic idea of LOF is to **compare the local density of a point with the densitie
 The steps of Local Outlier Factor (LOF) Approach to detect outliers are as belows.
 
 1. For each point, compute the density of its local neighborhood
+
 2. Compute local outlier factor (LOF) of a sample $p$ as the average of the ratios of the density of sample $p$ and the density of its nearest neighbors
-    $$
-    LOF_{k}(p)=\frac{\sum_{q \in N_k(p)}\frac{lrd(q)}{lrd(p)}}{|N_k(p)|}
-    \\
-    lrd(p)=local~reachability~density~(p)=1/\Bigg(\frac{\sum_{q \in N_k(p)}dist(p,q)}{|N_k(p)|}\Bigg)
-    $$
+
+$$
+LOF_{k}(p)=\frac{\sum_{q \in N_k(p)}\frac{lrd(q)}{lrd(p)}}{|N_k(p)|}
+\\
+lrd(p)=local~reachability~density~(p)=1/\Bigg(\frac{\sum_{q \in N_k(p)}dist(p,q)}{|N_k(p)|}\Bigg)
+$$
     
 3. Outliers are points with largest LOF values
 
@@ -136,7 +139,10 @@ The steps of clustering based approach to detect outliers are as belows.
 3. Compute the distance between candidate points and non-candidate clusters. 
 4. If any candidate points are **far from all other non-candidate points**, they are outliers
 
-![](https://i.imgur.com/DJvL3OZ.png)
+![](https://i.imgur.com/AfDFu31.png)
 
-
+## References
+- [“Introduction to Data Mining,” by P.-N. Tan, M. Steinbach, V. Kumar, Addison-Wesley.](http://www-users.cs.umn.edu/~kumar/dmbook/index.php)
+- [Wikipedia - Local outlier factor](https://en.wikipedia.org/wiki/Local_outlier_factor)
+- [Grubbs' test for outliers](https://en.wikipedia.org/wiki/Grubbs%27_test_for_outliers)
 
