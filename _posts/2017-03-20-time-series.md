@@ -133,7 +133,7 @@ mathjax: true
 > AR(1) formulation :
 > $X(t) = alpha *  X(t – 1) + error(t)$
     
-- The **numeral one (1)** denotes that the next instance is ==solely== dependent on the previous instance.
+- The **numeral one (1)** denotes that the next instance is _solely_ dependent on the previous instance.
 - The **alpha** is a coefficient which we seek so as to minimize the error function.
 - Example: The current GDP of a country say x(t) is dependent on the last year’s GDP. (Consider the set up of manufacturing plants / services in both the previous year and the current year.)
 
@@ -146,7 +146,7 @@ mathjax: true
 > $X(t) = beta *  X(t – 1) + error(t)$
 
 - The **beta** is the the backshift operator.
--  It specifies that the output variable depends ==linearly== on the current and various past values of a stochastic (imperfectly predictable) term.
+-  It specifies that the output variable depends _linearly_ on the current and various past values of a stochastic (imperfectly predictable) term.
 -  It is essentially a **finite impulse response filter** applied to white noise, with some additional interpretation placed on it.
 -  It is conceptually **a linear regression of the current value of the series** against current and previous (unobserved) white noise error terms or random shocks. 
 -  The random shocks at each point are assumed to be mutually independent and to come from the same distribution, typically a normal distribution, with location at zero and constant scale.
