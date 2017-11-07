@@ -139,7 +139,7 @@ The steps of clustering based approach to detect outliers are as belows.
 3. Compute the distance between candidate points and non-candidate clusters. 
 4. If any candidate points are **far from all other non-candidate points**, they are outliers
 
-![](https://i.imgur.com/AfDFu31.png)
+![](https://i.imgur.com/sHXz5GT.png)
 
 ## References
 - [“Introduction to Data Mining,” by P.-N. Tan, M. Steinbach, V. Kumar, Addison-Wesley.](http://www-users.cs.umn.edu/~kumar/dmbook/index.php)
