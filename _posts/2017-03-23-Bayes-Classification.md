@@ -58,9 +58,7 @@ In machine learning, naive Bayes classifiers are a family of simple probabilisti
 - **Independence assumption** may not hold for some attributes
 
 ### Approach
-Consider each attribute and class label as random variables
-
-Given a record with attributes **(A1, A2,…,An)**, our goal is to predict class **C**. More specifically, we want to **find the value of C that maximizes P(C\| A1, A2,…,An )**.
+Consider each attribute and class label as random variables, given a record with attributes **(A1, A2,…,An)**, our goal is to predict class **C**. More specifically, we want to **find the value of C that maximizes P(C\| A1, A2,…,An )**.
 
 - **Step 1.** Compute the posterior probability **P(C \| A1, A2, …, An)** for all values of **C** using the Bayes theorem
 
@@ -68,7 +66,7 @@ Given a record with attributes **(A1, A2,…,An)**, our goal is to predict class
 	P(C=C_{j} | A1, A2, …, An) = \frac{P(A1, A2, …, An | C)P(C)}{P(A1, A2, …, An)}
 	$$
 
-- **Step 2.** Estimate **P(A1, A2, …, An \| C)** for all values of **C** by assuming independence among attributes Ai when class is given
+- **Step 2.** Estimate **P(A1, A2, …, An \| C)** for all values of **C** by assuming independence among attributes **Ai** when class is given
 
 	$$    
 	P(A1, A2, …, An |C=C_{j}) = P(A1| C) P(A2| C)… P(An| C)
