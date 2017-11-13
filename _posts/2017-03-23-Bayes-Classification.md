@@ -60,7 +60,7 @@ In machine learning, naive Bayes classifiers are a family of simple probabilisti
 ### Approach
 Consider each attribute and class label as random variables, given a record with attributes **(A1, A2,…,An)**, our goal is to predict class **C**. More specifically, we want to **find the value of C that maximizes P(C\| A1, A2,…,An )**.
 
-- **Step 1.** Compute the posterior probability **P(C \| A1, A2, …, An)** for all values of **C** using the Bayes theorem
+- **Step 1.** [OBSERVE] Compute the posterior probability **P(C \| A1, A2, …, An)** for all values of **C** using the Bayes theorem
 
 	$$
 	P(C=C_{j} | A1, A2, …, An) = \frac{P(A1, A2, …, An | C)P(C)}{P(A1, A2, …, An)}
