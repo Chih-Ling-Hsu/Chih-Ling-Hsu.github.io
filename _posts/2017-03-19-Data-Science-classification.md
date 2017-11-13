@@ -53,7 +53,7 @@ Naïve Bayes Classifier is a probabilistic framework for solving classification 
 - Robust to isolated noise points
 - Robust to irrelevant attributes
 - **Independence assumption** may not hold for some attributes
-- [More Datails](../../../2017/03/22/Bayes-Classification)
+- [More Datails](../../../2017/03/23/Bayes-Classification)
 
 ### Artificial Neural Networks (ANN)
 ![](https://i.imgur.com/jbW1kWx.png)
