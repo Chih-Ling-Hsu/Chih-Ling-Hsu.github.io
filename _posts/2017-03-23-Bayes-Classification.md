@@ -9,7 +9,7 @@ mathjax: true
 ---
 
 
-A probabilistic framework for solving classification problems.
+Bayes classification is a probabilistic framework for solving classification problems.
 
 <!--more-->
 
@@ -62,46 +62,46 @@ Consider each attribute and class label as random variables
 
 Given a record with attributes **(A1, A2,…,An)**, our goal is to predict class **C**. More specifically, we want to **find the value of C that maximizes P(C\| A1, A2,…,An )**.
 
-**Step 1.** Compute the posterior probability **P(C \| A1, A2, …, An)** for all values of **C** using the Bayes theorem
+- **Step 1.** Compute the posterior probability **P(C \| A1, A2, …, An)** for all values of **C** using the Bayes theorem
 
-$$
-P(C | A1, A2, …, An) = \frac{P(A1, A2, …, An | C)P(C)}{P(A1, A2, …, An)}
-$$
+	$$
+	P(C=C_{j} | A1, A2, …, An) = \frac{P(A1, A2, …, An | C)P(C)}{P(A1, A2, …, An)}
+	$$
 
-**Step 2.** Estimate **P(A1, A2, …, An \| C)** for all values of **C\** by assuming independence among attributes Ai when class is given
+- **Step 2.** Estimate **P(A1, A2, …, An \| C)** for all values of **C** by assuming independence among attributes Ai when class is given
 
-$$    
-P(A1, A2, …, An |C=C_{j}) = P(A1| C_{j}) P(A2| C_{j})… P(An| C_{j})
-$$
+	$$    
+	P(A1, A2, …, An |C=C_{j}) = P(A1| C) P(A2| C)… P(An| C)
+	$$
 
-But how to compute conditioncal probability **P(Ai\| C)** ? (Note that if one of the conditional probability is zero, then the entire expression becomes zero)
+	But how to compute conditioncal probability **P(Ai\| C)** ? (Note that if one of the conditional probability is zero, then the entire expression becomes zero)
 
-- Original
-	- \\(N_{c}\\) = the number of records that belong to class C
-	- \\(N_{ic}\\) = the number of records that consist of attribute value \\(Ai\\) and belong to class C
+	- Original
+		- \\(N_{c}\\) = the number of records that belong to class C
+		- \\(N_{ic}\\) = the number of records that consist of attribute value \\(Ai\\) and belong to class C
 
-$$
-P(Ai|C)=\frac{N_{ic}}{N_{c}}
-$$
+	$$
+	P(Ai|C)=\frac{N_{ic}}{N_{c}}
+	$$
 
-- Laplace
-	- \\(N_{c}\\) = the number of records that belong to class C
-	- \\(N_{ic}\\) = the number of records that consist of attribute value \\(Ai\\) and belong to class C
-	- \\(l_{C}\\) = the number of classes
+	- Laplace
+		- \\(N_{c}\\) = the number of records that belong to class C
+		- \\(N_{ic}\\) = the number of records that consist of attribute value \\(Ai\\) and belong to class C
+		- \\(l_{C}\\) = the number of classes
 
-$$
-P(Ai|C)=\frac{N_{ic}+1}{N_{c}+l_{C}}
-$$
+	$$
+	P(Ai|C)=\frac{N_{ic}+1}{N_{c}+l_{C}}
+	$$
 
-- M-Estimate
-	- \\(N_{c}\\) = the number of records that belong to class C
-	- \\(N_{ic}\\) = the number of records that consist of attribute value \\(Ai\\) and belong to class C
-	- \\(p\\) = prior probability, which is usually set as uniform priors.
-	- \\(m\\) = a parameter, which is also known as pseudocount (virtual examples) and is used for additive smoothing. It prevents the probabilities from being 0. m is generally chosen to be small.
+	- M-Estimate
+		- \\(N_{c}\\) = the number of records that belong to class C
+		- \\(N_{ic}\\) = the number of records that consist of attribute value \\(Ai\\) and belong to class C
+		- \\(p\\) = prior probability, which is usually set as uniform priors.
+		- \\(m\\) = a parameter, which is also known as pseudocount (virtual examples) and is used for additive smoothing. It prevents the probabilities from being 0. m is generally chosen to be small.
 
-$$
-P(Ai|C)=\frac{N_{ic}+m}{N_{c}+mp}
-$$
+	$$
+	P(Ai|C)=\frac{N_{ic}+m}{N_{c}+mp}
+	$$
 
 **Step 3.** Choose value of **C** that maximizes **P(A1, A2, …, An\|C) P(C)** is equivalent to choosing value of **C** that maximizes **P(C \| A1, A2, …, An)**
 
