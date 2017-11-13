@@ -103,7 +103,7 @@ Given a record with attributes **(A1, A2,…,An)**, our goal is to predict class
 	P(Ai|C)=\frac{N_{ic}+m}{N_{c}+mp}
 	$$
 
-**Step 3.** Choose value of **C** that maximizes **P(A1, A2, …, An\|C) P(C)** is equivalent to choosing value of **C** that maximizes **P(C \| A1, A2, …, An)**
+- **Step 3.** Choose value of **C** that maximizes **P(A1, A2, …, An\|C) P(C)** is equivalent to choosing value of **C** that maximizes **P(C \| A1, A2, …, An)**
 
 ### Example
 
