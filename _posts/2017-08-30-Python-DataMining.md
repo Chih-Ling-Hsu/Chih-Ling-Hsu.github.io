@@ -260,7 +260,7 @@ fig.show()
 
 ## Naïve Bayes
 
-Naïve Bayes is different from many other machine learning algorithms. Probabilistically, what most machine learning techniques try to evaluate is the probability of a certain event Y given conditions X, which we denote by p(Y|X).
+Naïve Bayes is different from many other machine learning algorithms. Probabilistically, what most machine learning techniques try to evaluate is the probability of a certain event $Y$ given conditions $X$, which we denote by $p(Y|X)$.
 
 For example, given the picture representing a digit (that is, a picture with a certain distribution of pixels), what is the probability that that number is 5? If the pixels' distribution is such that it is close to the pixel distribution of other examples that were labeled as 5, the probability of that event will be high, otherwise the probability will be low.
 
