@@ -51,7 +51,7 @@ Generalized Sequential Pattern (GSP) is an algorithm used for sequence mining.  
 5. **Candidate Elimination** - Eliminate candidate $k-sequences$ whose actual support is less than $minsup$
 6. If any frequent $k-sequences$ is found, increment $k$ and go back to step 2.
 
-Note that we can merge sequences $w_1=<\{1\} \{2~3\} \{4\}>$ and $w_2 =<\{2~3\} \{4\} \{5\}>$ into $<\{1\} \{2~3\} \{4\} \{5\}>$. However, it is unneccesary to merge sequences $w_1=<\{1\} \{2~6\} \{4\}>$ and $w_2 =<\{1\} \{2\} \{4~5\}>$ into $<\{1\} \{2~6\} \{4~5\}>$ since $<\{1\} \{2~6\} \{4~5\}>$ is a viable candidate as it is still a $5-sequence$.
+Note that we can merge sequences $w_1=<(1) (2~3) (4)>$ and $w_2 =<(2~3) (4) (5)>$ into $<(1) (2~3) (4) (5)>$. However, it is unneccesary to merge sequences $w_1=<(1) (2~6) (4)>$ and $w_2 =<(1) (2) (4~5)>$ into $<(1) (2~6) (4~5)>$ since $<(1) (2~6) (4~5)>$ is a viable candidate as it is still a $5-sequence$.
 
 ### Mining Sequential Patterns with Timing Constraints
 
@@ -79,16 +79,16 @@ $s$ is a **contiguous subsequence** of $w = <e_1~ e_2~…~e_k>$ if any of the fo
 
 Because of window-size constraint, different events within window-size can be seen as the same event.   So Support Counting step should be modified from
 
-> Given a candidate pattern $<\{a~c\}>$, any data sequence that contains
-> $<...,\{a~c\},...>$
+> Given a candidate pattern $<(a~c)>$, any data sequence that contains
+> $<...,(a~c),...>$
 > will contribute to the support count of candidate pattern.
 
 into
  
-> Given a candidate pattern $<\{a~c\}>$, any data sequence that contains
-> $<...,\{a~c\},...>$
-> $<...,\{a\},...,\{c\},...>$   where time({c}) – time({a}) ≤ ws
-> $<...,\{c\},...,\{a\},...>$   where time({a}) – time({c}) ≤ ws
+> Given a candidate pattern $<(a~c)>$, any data sequence that contains
+> $<...,(a~c),...>$
+> $<...,(a),...,(c),...>$   where time({c}) – time({a}) ≤ ws
+> $<...,(c),...,(a),...>$   where time({a}) – time({c}) ≤ ws
 > will contribute to the support count of candidate pattern.
 
 ## References
