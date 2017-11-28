@@ -2578,8 +2578,8 @@ footer {
 
 .article-content pre {
     font-family: Monaco, Menlo, Consolas, Courier New, monospace;
-    background: #272822;
-    border: 1px solid #ddd;
+    background: #f8f8f8;;
+    border: 1px solid #ccc;
     text-align: left;
 }
 
@@ -2598,8 +2598,8 @@ footer {
 }
 
 .article-content pre code {
-    background: #272822;
-    color: #ddd;
+    background: #f8f8f8;;
+    color: #555555;
     background: none;
     text-shadow: none;
     padding: 0;
