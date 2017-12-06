@@ -614,7 +614,7 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-    background: #2f4f4f;
+    /*background: #2f4f4f;*/
     color: #ff7f50
 }
 
