@@ -178,7 +178,7 @@ The [PUT mapping API](https://www.elastic.co/guide/en/elasticsearch/reference/cu
 
 ## Setup Kibana Server
 
-Follow the [installation instruction on official web page](https://www.elastic.co/guide/en/kibana/current/install.html), then you should be able to start a single node of Kibana.
+Follow the [installation instruction on official web page](https://www.elastic.co/guide/en/kibana/current/install.html), then you should be able to start running Kibana.
 
 Note that the ElasticSearch server should also be running so that we can do data visualization on Kibana interface since Kibana queries data from ElasticSearch server.
 
