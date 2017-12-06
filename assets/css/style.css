@@ -432,7 +432,7 @@ body>header {
     /*-webkit-box-shadow: 2px 4px 5px rgba(3, 3, 3, 0.2);
     box-shadow: 2px 4px 5px rgba(3, 3, 3, 0.2);
     background: url("../../") center #cd5c5c;*/
-    background: linear-gradient(to bottom, rgb(205, 92, 92), rgb(255, 204, 153), rgb(221, 221, 221));
+    background: linear-gradient(180deg, rgba(205,92,92,1) 0%, rgba(221,221,221,1) 93%, rgba(221,221,221,1) 100%);
     color: #fff;
     padding: 1em 0 .8em;
 }
