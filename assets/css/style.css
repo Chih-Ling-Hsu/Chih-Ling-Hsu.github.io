@@ -444,7 +444,7 @@ body>header {
 }
 
 body>header>div {
-    width: 65%;
+    width: 50%;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
@@ -452,7 +452,7 @@ body>header>div {
 
 @media only screen and (min-width:1024px) {
     body>header>div {
-        width: 65%;
+        width: 50%;
     }
 }
 
