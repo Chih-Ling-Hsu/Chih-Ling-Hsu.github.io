@@ -447,6 +447,7 @@ body>header>div {
     width: 95%;
     margin: 0 auto;
     position: relative;
+    top:100px;
     overflow: hidden;
 }
 
