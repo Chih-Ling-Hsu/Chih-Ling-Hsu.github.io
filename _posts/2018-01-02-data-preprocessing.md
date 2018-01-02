@@ -8,7 +8,7 @@ category: Programming
 mathjax: true
 ---
 
-In this report, I will need   to   do   some   data   preprocessing and   then   get   some   basic information   about   the   dataset, [New   York   Citi   Bike   Trip   Histories](https://www.citibikenyc.com/system-data),    via   tools.
+In this report, I will   do   some   data   preprocessing and   then   get   some   basic information   about   the   dataset, [New   York   Citi   Bike   Trip   Histories](https://www.citibikenyc.com/system-data),    via   tools.
 
 <!--more-->
 
@@ -1062,7 +1062,7 @@ print("The euclidean distance between in-flow and out-flow of this station is: {
     The euclidean distance between in-flow and out-flow of this station is: 63.427226939887035
 
 
-### 5. Visualize the flows of citibikes over time
+### Visualize the flows of citibikes over time
 
 First, annotate each record as in **Early-July**, **Mid-July**, or **Late-July**.
 
