@@ -1,5 +1,5 @@
 ---
-title: 'Data preprocessing and exploring the New York city bike dataset'
+title: 'Data Preprocessing and Exploring the New York City Bike Dataset'
 layout: post
 tags:
   - Data Mining

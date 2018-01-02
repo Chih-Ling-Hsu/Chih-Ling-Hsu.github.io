@@ -1,5 +1,5 @@
 ---
-title: 'Mining Association Rules on New York city bike dataset'
+title: 'Mining Association Rules on New York City Bike Dataset'
 layout: post
 tags:
   - Data Mining
@@ -9,7 +9,7 @@ mathjax: true
 ---
 
 
-What   we   want   to   do here   is   try   to  design 3 mining tasks with their definitions of transactions and   find   some   rules   behind them.
+What   we   want   to   do here   is  to design 3 mining tasks with their definitions of transactions and   find   some   rules   behind them.
 
 For   each   task,   we   should
 - Try **at   least   two   discretization   methods** (divided   by 10, divided   by   20, ...)
@@ -445,7 +445,7 @@ fig.tight_layout()
 ```
 
 
-![png](https://i.imgur.com/CMVDI75.png)
+![](https://i.imgur.com/CMVDI75.png)
 
 It is found that the flow counts values **highly concentrates** in the interval `0~20`.
 
@@ -1505,7 +1505,7 @@ show_discretization_result()
 ```
 
 
-![png](https://i.imgur.com/fpKkpDk.png)
+![](https://i.imgur.com/fpKkpDk.png)
 
 
 The table below shows the rules found, sorted by their confidence.
