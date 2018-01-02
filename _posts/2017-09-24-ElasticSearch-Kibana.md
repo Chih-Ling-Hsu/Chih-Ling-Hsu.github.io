@@ -106,7 +106,7 @@ HEADER_INDEX = 0
 
 # Read data from file
 df = pd.read_csv(FILE_PATH, header=HEADER_INDEX)
-df.to_json(data, orient='records')
+data = json.loads(df.to_json(orient='records'))
 
 # Upload data to elastic search server
 if isinstance(data, dict):    # JSON Object
