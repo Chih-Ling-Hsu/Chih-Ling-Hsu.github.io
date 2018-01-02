@@ -3,7 +3,7 @@ title: 'Data Preprocessing on Airline Data'
 layout: post
 tags:
   - Python
-  - scikit-learn
+  - Scikit-Learn
   - Data-Mining
 category: Programming
 ---

@@ -2,8 +2,10 @@
 title: 'Clustering on New York City Bike Dataset'
 layout: post
 tags:
-  - Data Mining
+  - Data-Mining
   - Python
+  - Scikit-Learn
+  - Clustering
 category: Programming
 mathjax: true
 ---

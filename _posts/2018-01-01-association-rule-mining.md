@@ -2,8 +2,9 @@
 title: 'Mining Association Rules on New York City Bike Dataset'
 layout: post
 tags:
-  - Data Mining
+  - Data-Mining
   - Python
+  - Association-Analysis
 category: Programming
 mathjax: true
 ---

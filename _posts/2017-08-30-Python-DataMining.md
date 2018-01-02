@@ -3,7 +3,7 @@ title: 'Brief Introduction to Popular Data Mining Algorithms'
 layout: post
 tags:
   - Python
-  - scikit-learn
+  - Scikit-Learn
   - Data-Mining
 category: Programming
 mathjax: true

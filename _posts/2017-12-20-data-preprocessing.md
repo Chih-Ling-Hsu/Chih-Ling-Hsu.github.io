@@ -2,7 +2,7 @@
 title: 'Data Preprocessing and Exploring the New York City Bike Dataset'
 layout: post
 tags:
-  - Data Mining
+  - Data-Mining
   - Python
 category: Programming
 mathjax: true

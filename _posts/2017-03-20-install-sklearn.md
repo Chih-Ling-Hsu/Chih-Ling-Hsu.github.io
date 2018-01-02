@@ -3,7 +3,7 @@ title: 'Problems Solving For Installing Scikit-Learn on Windows'
 layout: post
 tags:
   - Python
-  - scikit-learn
+  - Scikit-Learn
 category: Install
 ---
 
