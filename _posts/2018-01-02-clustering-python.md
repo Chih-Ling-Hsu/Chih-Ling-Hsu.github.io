@@ -54,7 +54,8 @@ We'll   use   [`201707-citibike-tripdata.csv.zip`](https://s3.amazonaws.com/trip
 
 We have already preprocessed this dataset into the following 2 data frames:
 
-**1. Every Station's Information**
+#### 1. Every Station's Information
+
 - `Station ID`
 - `Station Name`
 - `Station Latitude`
@@ -135,7 +136,8 @@ df_loc.head()
 
 
 
-**2. Every Station's Flow Data**
+#### 2. Every Station's Flow Data
+
 - `Station ID`
 - `Time`: One day is splitted into 48 segments in this case. (Every 30 minutes)
 - `In Flow Count`: The number of trips move to the station
@@ -570,7 +572,7 @@ for j in range(n2):
 ```
 
 
-![](https://i.imgur.com/aANWqZk.png)=
+![](https://i.imgur.com/aANWqZk.png)
 
 
 The clustering result is better with the great-circle distance, which is not surprised since the length of a longitude unit is not the same as the length of a latitude unit, undoubtedly.
