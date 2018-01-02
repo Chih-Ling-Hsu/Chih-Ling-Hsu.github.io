@@ -10,6 +10,8 @@ mathjax: true
 
 In this report, I will need   to   do   some   data   preprocessing and   then   get   some   basic information   about   the   dataset, [New   York   Citi   Bike   Trip   Histories](https://www.citibikenyc.com/system-data),    via   tools.
 
+<!--more-->
+
 ```python
 import pandas as pd
 import numpy as np
@@ -31,7 +33,7 @@ warnings.filterwarnings('ignore')
 
 Here we'll   use   [`201707-citibike-tripdata.csv.zip`](https://s3.amazonaws.com/tripdata/201707-citibike-tripdata.csv.zip)   only.
 
-### Schema:
+### Schema
 
 The data includes:
 - Trip Duration (seconds)
@@ -235,14 +237,12 @@ df.info()
     memory usage: 198.6+ MB
 
 
-## Preprocess:
+## Preprocess
 
-### 1. Missing Values & Anomaly Detection
+### Missing Values & Anomaly Detection
 
 There might be some noise in the dataset, like strange stations or null values.   Please detect it and take   proper actions to them.
 
-
-### (1) Deal with Missing Values 
 
 
 ```python
@@ -300,9 +300,7 @@ df.shape
 
 
 
-### (2) Detect and Eliminate Strange Values
-
-#### a. Plot all the histograms to see  if there is any strange values.
+Next, to detect and eliminate strange values, we plot all the histograms on numeric values.
 
 
 ```python
@@ -326,7 +324,7 @@ plt.show()
 ```
 
 
-![png](https://i.imgur.com/qyS8osn.png)
+![](https://i.imgur.com/qyS8osn.png)
 
 
 There are some values that are strange:
@@ -341,7 +339,7 @@ Here I would deal with the first problem by removing any records whose `trip dur
 df = df[df['trip duration'] <= 24*60*60*20]
 ```
 
-#### b. Check if all stations have one-to-one matching among their `id`, `name`, `latitude`, and `longitude`.
+Now we check if all stations have one-to-one matching among their `id`, `name`, `latitude`, and `longitude`.
 
 - `station id` <---> `station name`
 
@@ -400,7 +398,7 @@ x1 == y1 and x2 == y2
 
 
 
-#### c. draw all stations on map to see if there is any strange location
+We can also draw all stations on map to see if there is any strange location
 
 Here I use the [**`Basemap`**](https://matplotlib.org/basemap/api/basemap_api.html) package of `matplotlib` to draw the map. (See examples [here](https://matplotlib.org/basemap/users/geography.html))
 
@@ -460,7 +458,7 @@ plt.show()
 ```
 
 
-![png](https://i.imgur.com/PxJ76Iy.png)
+![](https://i.imgur.com/PxJ76Iy.png)
 
 The station "`3254`" and "`3182`" seems weird, however, these 2 stations are actually on an island named "Governors Island".
 
@@ -484,7 +482,7 @@ df_loc.to_csv("data/station_information.csv", index=None)
 
 So now I want to check if all station ids mentioned in this dataframe exists.
 
-### 2. Create Self-defined Features
+### Create Self-defined Features
 
 For future use, we need to calculate in-flow and out-flow for each stations every half hour.   The result data set should contains `station_id`, `time`, `in_flow_count`, `out_flow_count`.
 
@@ -776,7 +774,7 @@ print("The average distance between different stations is {} (meters)".format(di
     The average distance between different stations is 5393.467456938468 (meters)
 
 
-### 2. What  are  the  top  3  frequent  stations  pairs `(start station, end station)`  in weekdays, how   about   in   weekends?
+### What  are  the  top  3  frequent  stations  pairs `(start station, end station)`  in weekdays, how   about   in   weekends?
 
 $$
 (S_i,S_j)~is~not~(S_j,S_i)
@@ -813,7 +811,7 @@ print("The top 3 frequent stations pairs in weekends are: {}, {}, and {}.".forma
     The top 3 frequent stations pairs in weekends are: (3182, 3182), (3182, 3254), and (3254, 3182).
 
 
-### 3. Find  the  top  3  stations  with  highest  average  `out-flow`, and  top  3  highest average   `in-flow`
+### Find  the  top  3  stations  with  highest  average  `out-flow`, and  top  3  highest average   `in-flow`
 
 
 
@@ -841,7 +839,7 @@ print("The top 3 stations with highest inflow are: {}, {}, and {}".format(*top_i
     The top 3 stations with highest inflow are: 426, 519, and 514
 
 
-### 4. What  is  the  most  popular  station(highest  average  inflow+outflow)?
+### What  is  the  most  popular  station(highest  average  inflow+outflow)?
 
 
 ```python
@@ -880,7 +878,7 @@ plt.show()
 ```
 
 
-![png](https://i.imgur.com/RRbXGzU.png)
+![](https://i.imgur.com/RRbXGzU.png)
 
 #### b. Calculate  the  distance  function  between   $A$   and   $B$
 
@@ -909,7 +907,7 @@ plt.show()
 ```
 
 
-![png](https://i.imgur.com/ix4ROU5.png)
+![](https://i.imgur.com/ix4ROU5.png)
 
 Now calculate the euclidean distance between the in-flow and the out-flow again.
 
@@ -936,7 +934,7 @@ plt.show()
 ```
 
 
-![png](https://i.imgur.com/caYFbvl.png)
+![](https://i.imgur.com/caYFbvl.png)
 
 Now calculate the euclidean distance between the in-flow and the out-flow again.
 
@@ -990,7 +988,7 @@ plt.plot(time, y_pred_B, color='blue', linewidth=3)
 
 
 
-![png](https://i.imgur.com/wOjdyQz.png)
+![](https://i.imgur.com/wOjdyQz.png)
 
 
 Then we can calculate  $\{A_i−f(i)|A_i \in A\}$  and
@@ -1008,7 +1006,7 @@ plt.show()
 ```
 
 
-![png](https://i.imgur.com/jFoai85.png)
+![](https://i.imgur.com/jFoai85.png)
 
 Now calculate the euclidean distance between the in-flow and the out-flow again.
 
@@ -1050,7 +1048,7 @@ plt.show()
 ```
 
 
-![png](https://i.imgur.com/gmqF2Vo.png)
+![](https://i.imgur.com/gmqF2Vo.png)
 
 
 Now calculate the euclidean distance between the in-flow and the out-flow again.
@@ -1248,7 +1246,7 @@ plot_stations_map(ax, pop_flow[pop_flow['time_group'] == "Late-July"])
 ```
 
 
-![png](https://i.imgur.com/bsRhWZH.png)
+![](https://i.imgur.com/bsRhWZH.png)
 
 Here are my observations:
 
