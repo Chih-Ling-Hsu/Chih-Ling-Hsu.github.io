@@ -1130,13 +1130,14 @@ article .article-content h2 {
 article .article-content h3 {
     font-size: 140%;
     line-height: 1em;
-    margin-top: 1.3em
+    margin-top: 1.3em;
 }
 
 article .article-content h4,
 article .article-content h5,
 article .article-content h6 {
-    font-size: 120%
+    font-size: 120%;
+    margin-top: 1em;
 }
 
 article .article-content h1,
@@ -1151,10 +1152,10 @@ article {
 article .article-content h4,
 article .article-content h5,
 article .article-content h6 {
-    color: #7b68ee;
-    margin-top: 20px;
+    /*color: #7b68ee;*/
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-weight: bold
 }
 
 article .article-content h1>code,
@@ -1262,7 +1263,8 @@ article .article-content strong code,
 article .article-content em code,
 article .article-content table th>code,
 article .article-content table td>code {
-    font-family: Monaco, Menlo, Consolas, Courier New, monospace;
+    font-family: 'Lato', Calibri, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    /*Monaco, Menlo, Consolas, Courier New, monospace;*/
     background: #eee;
     color: #d14;
     border: 1px solid #d6d6d6;
