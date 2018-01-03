@@ -1146,6 +1146,7 @@ article {
     color: #333;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-weight: bold;
 }
 
 .article-content h3,
@@ -1155,7 +1156,7 @@ article .article-content h6 {
     /*color: #7b68ee;*/
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-weight: bold
+    font-weight: bold;
 }
 
 article .article-content h1>code,
@@ -1263,7 +1264,7 @@ article .article-content strong code,
 article .article-content em code,
 article .article-content table th>code,
 article .article-content table td>code {
-    font-family: 'Lato', Calibri, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: Noto Sans, Helvetica, Arial, sans-serif;
     /*Monaco, Menlo, Consolas, Courier New, monospace;*/
     background: #eee;
     color: #d14;
