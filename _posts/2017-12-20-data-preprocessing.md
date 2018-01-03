@@ -992,7 +992,7 @@ plt.plot(time, y_pred_B, color='blue', linewidth=3)
 
 
 Then we can calculate  $\{A_i−f(i)|A_i \in A\}$  and
-$\{B_i −f(i)|B_i \in B\}$, and  draw  them  both.
+$\{B_i −f(i)\|B_i \in B\}$, and  draw  them  both.
 
 
 ```python
