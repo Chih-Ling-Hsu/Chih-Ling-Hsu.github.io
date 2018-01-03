@@ -212,6 +212,7 @@ df_flow.head()
 - **Apriori**
     - Github repository: https://github.com/ymoch/apyori
     - How to Use: Install with pip: `pip install apyori`
+
     ```
     The MIT License (MIT)
 
@@ -269,6 +270,7 @@ def apriori_show_mining_results(records):
 - **FP-Growth**
     - Github repository: https://github.com/evandempsey/fp-growth
     - How to Use: Install with pip: `pip install pyfpgrowth`
+
     ```
     Copyright (c) 2016, Evan Dempsey
     All rights reserved.
