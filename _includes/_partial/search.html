@@ -14,6 +14,7 @@ google.setOnLoadCallback(function(){
   var match = location.search.match(/q=([^&]*)(&|$)/);
   if(match && match[1]){
     var search = decodeURIComponent(match[1]); 
+    console.log(search);
     customSearchControl.execute(search);
   }
 },true);

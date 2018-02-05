@@ -633,7 +633,7 @@ header nav ul li a:hover {
     -webkit-appearance: textfield;
     font-size: .87em;
     line-height: 1.7;
-    border: 1px solid #fff;
+    border: 1px solid #000;
     color: #000;
     background: transparent;
     width: 80%;
