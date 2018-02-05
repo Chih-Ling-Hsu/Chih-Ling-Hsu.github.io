@@ -23,7 +23,7 @@ google.setOnLoadCallback(function(){
 </script>-->
 
 <div  id="main" class="page">
-  <script>
+    <script>
     (function() {
       var cx = '013599163932417097999:da8tmm_kgzo';
       var gcse = document.createElement('script');
@@ -32,14 +32,18 @@ google.setOnLoadCallback(function(){
       gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
       var s = document.getElementsByTagName('script')[0];
       s.parentNode.insertBefore(gcse, s);
-      /*var match = location.search.match(/q=([^&]*)(&|$)/);
-      if(match && match[1]){
-        var search = decodeURIComponent(match[1]); 
-        s.execute(search);
-      }*/
     })();
   </script>
-  {{ lang.search-load }}
-  <gcse:search></gcse:search>
+
+  <gcse:search gname = "cse">{{ lang.search-load }}</gcse:search>  
+
+  <script>
+    var cse = google.search.cse.element.getElement("cse");
+    var match = location.search.match(/q=([^&]*)(&|$)/);
+    if(match && match[1]){
+      var search = decodeURIComponent(match[1]); 
+      cse.execute(search);
+    }
+  </script>
 </div>
 {% endif %}
