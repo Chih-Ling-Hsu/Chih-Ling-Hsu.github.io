@@ -1,5 +1,5 @@
 {% if site.google_cse.enable %}
-<div  id="main" class="page">
+<!--<div  id="main" class="page">
   <div id='cse' style='width:100%;text-align:center'>{{ lang.search-load }}</div>
 </div>
 <script src="https://www.google.com.hk/jsapi" type="text/javascript"></script>
@@ -20,9 +20,9 @@ google.setOnLoadCallback(function(){
   }
   console.log("3");
 },true);
-</script>
+</script>-->
 
-<!--<div  id="main" class="page"></div>
+<div  id="main" class="page">
   <script>
     (function() {
       var cx = '013599163932417097999:da8tmm_kgzo';
@@ -39,7 +39,7 @@ google.setOnLoadCallback(function(){
       }*/
     })();
   </script>
-
-  <gcse:search>{{ lang.search-load }}</gcse:search>
-</div>-->
+  {{ lang.search-load }}
+  <gcse:search></gcse:search>
+</div>
 {% endif %}

@@ -34,10 +34,7 @@
           {% include _partial/header.html %}
         </header>
         <div id="container">
-            {% include _partial/about.html %}
-            {% assign item = page %}
-            {% assign table = true %}
-            {% include _partial/sidebar.html %}
+            {{ content }}
         </div>
         <footer>{% include _partial/footer.html %}</footer>
         {% include _partial/after_footer.html %}
