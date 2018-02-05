@@ -1,6 +1,6 @@
 ---
 layout: about
-type: page
+type: about
 title: Hsu, Chih-Ling (徐芷翎)
 ---
 
