@@ -1,5 +1,5 @@
 {% if site.google_cse.enable %}
-<div  id="main" class="page">
+<!--<div  id="main" class="page">
   <div id='cse' style='width:100%;text-align:center'>{{ lang.search-load }}</div>
 </div>
 <script src="https://www.google.com.hk/jsapi" type="text/javascript"></script>
@@ -14,21 +14,29 @@ google.setOnLoadCallback(function(){
   var match = location.search.match(/q=([^&]*)(&|$)/);
   if(match && match[1]){
     var search = decodeURIComponent(match[1]); 
-    console.log(search);
     customSearchControl.execute(search);
   }
 },true);
-</script>
-<script>
-  (function() {
-    var cx = '013599163932417097999:da8tmm_kgzo';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
-</script>
-<gcse:search></gcse:search>
+</script>-->
+
+<div  id="main" class="page"></div>
+  <script>
+    (function() {
+      var cx = '013599163932417097999:da8tmm_kgzo';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+      var match = location.search.match(/q=([^&]*)(&|$)/);
+      if(match && match[1]){
+        var search = decodeURIComponent(match[1]); 
+        s.execute(search);
+      }
+    })();
+  </script>
+
+  <gcse:search>{{ lang.search-load }}</gcse:search>
+</div>
 {% endif %}
