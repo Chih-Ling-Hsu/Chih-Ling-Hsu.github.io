@@ -35,10 +35,11 @@ google.setOnLoadCallback(function(){
     })();
   </script>
 
-  <gcse:search gname = "cse">{{ lang.search-load }}</gcse:search>  
-  
+  <gcse:search gname="cse">{{ lang.search-load }}</gcse:search>  
+
   <script src="https://www.google.com.hk/jsapi" type="text/javascript"></script>
   <script>
+    google.search.cse.element.render();
     var cse = google.search.cse.element.getElement("cse");
     var match = location.search.match(/q=([^&]*)(&|$)/);
     if(match && match[1]){
