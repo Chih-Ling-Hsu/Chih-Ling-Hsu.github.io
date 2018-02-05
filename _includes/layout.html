@@ -27,6 +27,19 @@
         {% include _partial/after_footer.html %}
       </body>
      </html>
+{% elsif page.layout == 'about' %}
+    {% include _partial/head.resume.html %}
+      <body>
+        <header>
+          {% include _partial/header.html %}
+        </header>
+        <div id="container">
+            {% include _partial/about.html %}
+        </div>
+        <footer>{% include _partial/footer.html %}</footer>
+        {% include _partial/after_footer.html %}
+      </body>
+    </html>
 {% elsif page.layout == 'search' %}
 {% include _partial/head.html %}
     <body>
@@ -53,19 +66,6 @@
       {% include _partial/after_footer.html %}
     </body>
    </html>
-{% elsif page.layout == 'about' %}
-{% include _partial/head.resume.html %}
-  <body>
-    <header>
-      {% include _partial/header.html %}
-    </header>
-    <div id="container">
-      {{ content }}
-    </div>
-    <footer>{% include _partial/footer.html %}</footer>
-    {% include _partial/after_footer.html %}
-  </body>
-</html>
 {% else %}
         {% include _partial/head.html %}
   <body>
