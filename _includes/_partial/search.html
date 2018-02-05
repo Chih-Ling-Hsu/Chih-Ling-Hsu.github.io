@@ -35,12 +35,12 @@ google.setOnLoadCallback(function(){
       var gcse = document.createElement('script');
       gcse.type = 'text/javascript';
       gcse.async = true;
-      gcse.src = 'https://cse.google.com/cse.js?cx=' + cx + '/?q=' + search;
+      gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
       var s = document.getElementsByTagName('script')[0];
       s.parentNode.insertBefore(gcse, s);
     })();
   </script>
 
-  <gcse:search gname="cse">{{ lang.search-load }}</gcse:search>  
+  <gcse:search gname="cse" queryParameterName="term">{{ lang.search-load }}</gcse:search>  
 </div>
 {% endif %}
