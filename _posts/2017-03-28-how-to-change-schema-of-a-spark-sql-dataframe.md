@@ -103,8 +103,20 @@ In conclusion, I need to cast type of multiple columns manually:
 
 ## Change The Schema
 
+In order to change the schema, I try to create a new DataFrame based on the content of the original DataFrame using the following script.
+
 ```python
+>>> # This is not an efficient way to change the schema.
 >>> df_rows = sqlContext.createDataFrame(df_rows.collect(), df_table.schema)
+```
+
+However, thanks to the comment from Anthony Hsu, this script is found to be catastrophic since the method `collect()` may crash the driver program when the data is large.
+
+Although DataFrames no longer inherit from RDD directly since Spark SQL 1.3, they can still be converted to RDDs by calling the `.rdd` method.   That's why we can use `.rdd` instead of `collect()`:
+
+```python
+>>> # This is a better way to change the schema
+>>> df_rows = sqlContext.createDataFrame(df_rows.rdd, df_table.schema)
 ```
 
 ## Check Result
