@@ -124,14 +124,14 @@ K-means also has problems when the data contains outliers.
 Hierarchical clustering produces a set of nested clusters organized as a hierarchical tree, which can be visualized as a dendrogram.
 ![](https://i.imgur.com/xM5Ov9T.png)
 
-The advantages of hierarchical clustering is that it does not have to assume any particular number of clusters since any desired number of clusters can be obtained by ‘cutting’ the dendogram at the proper level.   Also, the clusters may correspond to meaningful taxonomies (e.g., animal kingdom, phylogeny reconstruction, …)
+The advantages of hierarchical clustering is that it does not have to assume any particular number of clusters since **any desired number of clusters can be obtained by ‘cutting’ the dendogram at the proper level**.   Also, the clusters may correspond to meaningful taxonomies (e.g., animal kingdom, phylogeny reconstruction, …)
 
-However, nnce a decision is made to combine two clusters, it cannot be undone. Also, no objective function is directly minimized using hierarchical clustering.
+However, once a decision is made to combine two clusters / divide a cluster, it cannot be undone. Also, no objective function is directly minimized using hierarchical clustering.
 
 
 ### Agglomerative clustering
 
-Agglomerative clustering start with the points as individual clusters.   At each step, it merges the closest pair of clusters until only one cluster (or k clusters) left.
+Agglomerative clustering **start with the points as individual clusters**.   At each step, it **merges the closest pair of clusters until only one cluster (or k clusters) left**.
 
 ```python
 Compute the proximity matrix
@@ -198,7 +198,7 @@ Key operation is the computation of the proximity of two clusters. So, the quest
 
 
 ### Divisive clustering
-Divisive clustering starts with one, all-inclusive cluster .   At each step, it splits a cluster until each cluster contains a point (or there are k clusters).
+Divisive clustering **starts with one, all-inclusive cluster**.   At each step, it **splits a cluster until each cluster contains a point** (or there are k clusters).
 
 Building MST (Minimum Spanning Tree) is a method for constructing hierarchy of clusters.
 

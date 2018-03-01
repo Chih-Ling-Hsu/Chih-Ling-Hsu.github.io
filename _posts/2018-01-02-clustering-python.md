@@ -786,7 +786,7 @@ $$
 d(u, v) = \sqrt{\frac{|v|+|s|}{T}d(v, s)^2+\frac{|v|+|t|}{T}d(v, t)^2-\frac{|v|}{T}d(s, t)^2}
 $$
 
-where $u$ is the newly joined cluster consisting of clusters $s$ and $t, v$ is an unused cluster in the forest, $T=|v|+|s|+|t|$, and $|∗|$ is the cardinality of its argument. This is also known as the incremental algorithm.
+where $u$ is the newly joined cluster consisting of clusters $s$ and $t, v$ is an unused cluster in the forest, $T=\|v\|+\|s\|+\|t\|$, and $\|∗\|$ is the cardinality of its argument. This is also known as the incremental algorithm.
 
 (Note that the function `plot_dendrogram` is defined in the [Appendix](#Appendix))
 
