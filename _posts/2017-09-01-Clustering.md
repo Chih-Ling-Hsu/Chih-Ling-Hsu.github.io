@@ -129,6 +129,59 @@ The advantages of hierarchical clustering is that it does not have to assume any
 However, once a decision is made to combine two clusters / divide a cluster, it cannot be undone. Also, no objective function is directly minimized using hierarchical clustering.
 
 
+In the process of Agglomerative Clustering, when you merge two clusters $A$ & $B$ to get a new cluster $R = A \cup B$, how do you compute the distance
+$$
+D(R, Q)
+$$
+Given $R$ and other cluster $Q$ ($Q \neq A; Q \neq B$)?
+
+If each data point is of 16 dimensions and we use Euclidean distance, then
+
+- 16 substractions
+- 15 additions
+- 16 multiplications
+- and a square root
+
+are needed.   So the number of operations is _dimension dependent_.
+
+In other word, you have a $n$-by-$n$ distance matrix initially.   In each step, you merge two clusters (e.g., $A$ & $B$) to get a new cluster $R$.   The number of clusters decrease by 1.   We thus update the distance metrics with certain formulas:
+- If $D = D_{min}$ (single affinity), 
+$$
+D(R, Q) = min\{D(A,Q), D(B,Q)\}
+$$
+- If $D = D_{max}$ (complete affinity), 
+$$
+D(R, Q) = Max\{D(A,Q), D(B,Q)\}
+$$
+- If $D = D_{avg}$ (group average), 
+$$
+D(R, Q) = \frac{1}{\|R\|\|Q\|}\sum_{r 
+\in R, q \in Q}\|r-q\|
+\\= \frac{1}{\|R\|\|Q\|}\left[\sum_{r 
+\in A, q \in Q}\|r-q\|+\sum_{r 
+\in B, q \in Q}\|r-q\|\right]
+\\= \frac{1}{\|R\|}\left[\frac{\|A\|}{\|A\|\|Q\|}\sum_{r 
+\in A, q \in Q}\|r-q\|+\frac{\|B\|}{\|B\|\|Q\|}\sum_{r 
+\in B, q \in Q}\|r-q\|\right]
+\\= \frac{\|A\|}{\|R\|}D(A,Q) + \frac{\|B\|}{\|R\|}D(B,Q)
+$$
+- If $D = D_{center}$, 
+$$
+\because A \cup B = R ~ \therefore \|A\|\bar{a}+\|B\|\bar{b} = \|R\|\bar{r}
+\\
+\bar{r} = \frac{\|A\|}{\|R\|}\bar{a}+\frac{\|B\|}{\|R\|}\bar{b} = \bar{a}+\frac{\|B\|}{\|R\|}(\bar{b}-\bar{a})
+\\
+(\because \frac{\|A\|}{\|R\|}+\frac{\|B\|}{\|R\|} = 1)
+\\
+\bar{r}~is~on~the~line~connecting~\bar{a}~and~\bar{b}
+D_{AQ}=\|\bar{r}-\bar{a}\|
+\\
+D(R, Q)^2 =\frac{\|A\|}{\|R\|}D(A,Q)^2 + \frac{\|B\|}{\|R\|}D(B,Q)^2 - \frac{\|A\|}{\|R\|}\frac{\|B\|}{\|R\|}D(A,B)^2
+$$
+
+
+
+
 ### Agglomerative clustering
 
 Agglomerative clustering **start with the points as individual clusters**.   At each step, it **merges the closest pair of clusters until only one cluster (or k clusters) left**.
@@ -153,11 +206,20 @@ Key operation is the computation of the proximity of two clusters. So, the quest
     <tr><td><img src="https://i.imgur.com/fTWaf4Z.png"></td><td><img src="https://i.imgur.com/f51UUhm.png"></td></tr>
 </table>
 
+Min similarity assigns
+
+$$
+d(A, B) = min(dist(A[i], B[j]))
+$$
+
+for all points $i$ in cluster $A$ and $j$ in cluster $B$.
+
 
 - Strengths:
-    - Can handle non-elliptical shapes
+    - Can handle non-elliptical shapes (_Chainning Effect of "Min" Similarity_)
 - Limitations:
     - Sensitive to noise and outliers
+    - Any point in sparse area would be isolated
 
 
 **2. MAX**
