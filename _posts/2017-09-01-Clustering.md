@@ -116,47 +116,9 @@ Poor **initial centroids** affect a lot to the clustering.   The followings are 
 - Multiple runs
 - Sample and use hierarchical clustering to determine initial centroids
 - Select more than K initial centroids and then select among these initial centroids
-- [Cluster Center Initialization Algorithms](#cluster-center-initialization-algorithms-ccia)
+- [Cluster Center Initialization Algorithms](../../../2017/09/01/Cluster-Centroid-Init)
 - [Postprocessing](#reduce-the-sse-using-post-processing)
 - [Bisecting K-means](#bisecting-k-means)
-
-### Cluster Center Initialization Algorithms (CCIA)
-
-In iterative clustering algorithms the procedure adopted for choosing initial cluster centers is extremely important as it has a direct impact on the formation of final clusters.   **It is dangerous to select outliers as initial centers, since they are away from normal samples.**
-
-CCIA is a density-based multi-scale data condensation.   This procedure is applicable to clustering algorithms for continuous data.   In CCIA, we assume that an individual attribute may provide some information about initial cluster center.
-
-CCIA generates _K_ clusters which may be greater than the desired number of clusters _K_. In this situation our aim is to merge some of the similar clusters so as to get _K_ clusters.
-
-1. Estimating the density at a point
-2. Sorting the points based on the density criterion
-    - For each dimension (attribute), divide the normal-distribution curve into K partitions. (The area under each partition is equal.)
-3. Selecting a point according to the sorted list
-    - For each dimension (attribute), take the representative-point $Z_j$ for each partition interval $j$
-    - The area from $-\inf$ to $Z_j$ equals to $(2j-1)/2k$
-4. Pruning all points lying within a disc about a selected point with radius inversely proportional to the density at that point.
-
-![](https://ars.els-cdn.com/content/image/1-s2.0-S0167865504000996-gr1.jpg)
-
-To evaluate the performance of CCIA, here we introduce **Cluster Center Proximity Index (CCPI)**.
-
-$$
-CCPI = \frac{1}{K \times m}\sum_{s=1}^{K}\sum_{j=1}^{m}~\biggl|~\frac{f_{sj}-C_{sj}}{f_{sj}}\biggr|
-$$
-
-where $f_{sj}$ is the $j_{th}$ attribute value of the desired $s_{th}$ cluster center and $C_{sj}$ is the $j_{th}$ attribute value of the initial $s_{th}$ cluster center.
-
-The CCPI of different data set using CCIA and random initialization is shown as follows.
-
-| Data set | CCIA | Random |
-| --- | --- | --- |
-| Fossil data | 0.0021 | 0.3537 |
-| Iris data | 0.0396 | 0.8909 |
-| Wine data | 0.1869 | 0.3557 |
-| Ruspini data | 0.0361 | 1.2274 |
-| Letter image recognition data | 0.0608 | 0.1572 |
-
-Despite the fact that CCIA performs better in the above data sets, note that CCIA is not always better than using random initialization.
 
 ### Reduce the SSE Using Post-processing
 
@@ -189,141 +151,14 @@ The advantages of hierarchical clustering is that it does not have to assume any
 
 However, once a decision is made to combine two clusters / divide a cluster, it cannot be undone. Also, no objective function is directly minimized using hierarchical clustering.
 
+There are two methods to do hierarchical clustering:
 
-
-### Agglomerative clustering
-
-Agglomerative clustering **start with the points as individual clusters**.   At each step, it **merges the closest pair of clusters until only one cluster (or k clusters) left**.
-
-```python
-Compute the proximity matrix
-Let each data point be a cluster
-Repeat
-	Merge the two closest clusters
-	Update the proximity matrix
-Until only a single cluster remains
-```
-
-Key operation is the computation of the proximity of two clusters. So, the question is
-
-> How to define inter-cluster similarity?
-
-
-**1. MIN**
-
-<table>
-    <tr><td><img src="https://i.imgur.com/fTWaf4Z.png"></td><td><img src="https://i.imgur.com/f51UUhm.png"></td></tr>
-</table>
-
-Min similarity assigns
-
-$$
-d(A, B) = min(dist(A[i], B[j]))
-$$
-
-for all points $i$ in cluster $A$ and $j$ in cluster $B$.
-
-
-- Strengths:
-    - Can handle non-elliptical shapes (_Chainning Effect of "Min" Similarity_)
-- Limitations:
-    - Sensitive to noise and outliers
-    - Any point in sparse area would be isolated
-
-
-**2. MAX**
-
-<table>
-    <tr><td><img src="https://i.imgur.com/DntS4Cs.png"></td><td><img src="https://i.imgur.com/TqZF9wx.png"></td></tr>
-</table>
-
-- Strengths:
-    - Less susceptible to noise and outliers
-- Limitations:
-    - Tends to break large clusters
-    - Biased towards globular clusters
-
-
-**3. Group Average**: Group Average compromise between Single and Complete Link (that is, MIN and MAX).
-
-<table>
-    <tr><td><img src="https://i.imgur.com/KFOYo0p.png"></td><td><img src="https://i.imgur.com/9OP81iA.png"></td></tr>
-</table>
-
-- Strengths:
-    - Less susceptible to noise and outliers
-- Limitations:
-    - Biased towards globular clusters
-
-**4. Distance Between Centroids**
-
-
-**5. Other methods driven by an objective function** (e.g., Ward’s Method uses squared error): In Ward's Method, similarity of two clusters is based on the increase in squared error when two clusters are merged.   It is similar to group average if distance between points is distance squared.
-
-- Strengths:
-    - Less susceptible to noise and outliers
-    - Hierarchical analogue of K-means (Can be used to initialize K-means)
-- Limitations:
-    - Biased towards globular clusters
-
-
-
-### Divisive clustering
-
-Divisive clustering **starts with one, all-inclusive cluster**.   At each step, it **splits a cluster until each cluster contains a point** (or there are k clusters).
-
-
-
-Building MST (Minimum Spanning Tree) is a method for constructing hierarchy of clusters.
-
-It starts with a tree that consists of any point.   In successive steps, look for the closest pair of points $(p, q)$  such that $p$ is in the current tree but $q$ is not.   With this closest pair of points $(p, q)$, add $q$ to the tree and put an edge between $p$ and $q$.
-
-The procedure of constructing hierarchy of clusters using MST would be as follows:
-
-```python
-Compute a MST for the proximity graph
-repeat
-    Split a cluster by breaking the link of the largest distance (smallest similarity).
-until Only singleton clusters remain
-```
-
-
-The following is an example of Divisive Clustering.
-
-| Distance | a | b | c | d | e |
-| - | - | - |- |- | - |
-| a | 0 | 2|6|10|9|
-|b|2|0|5|9|8|
-|c|6|5|0|4|5|
-|d|10 |9|4|0|3|
-|e|9|8|5|3|0|
-
-
-**Step 1.** Split whole data into 2 clusters
-
-- Who hates other members the most? (in Average)
-    - $a$ to others: $mean(2,6,10,9)=6.75 ~ \rightarrow a$ goes out! (Divide $a$ into a new cluster)
-    - $b$ to others: $mean(2,5,9,8)=6.0$
-    - $c$ to others: $mean(6,5,4,5)=5.0$
-    - $d$ to others: $mean(10,9,4,3)=6.5$
-    - $e$ to others: $mean(9,8,5,3)=6.25$
-- Everyone in the old party asks himself: _"In average, do I hate others in old party more than hating the members in the new party?"_
-    - If the answer is "No", then he will also go to the new party.
-    |  | $\alpha=$distance to the old party | $\beta=$distance to the new party | $\alpha-\beta$ |
-    | b | $\frac{5+9+8}{3}=7.33$ | 2 | $>0$ ($b$ also goes out!) |
-    | c | $\frac{5+4+5}{3}=4.67$ | 6 | $<0$ |
-    | d | $\frac{9+4+3}{3}=5.33$ | 10 | $<0$ |
-    | e | $\frac{8+5+3}{3}=5.33$ | 9 | $<0$ |
-- Everyone in the old party ask himself the same question as above again and again until everyone got the answer "Yes". 
-    |  | $\alpha=$distance to the old party | $\beta=$distance to the new party | $\alpha-\beta$ |
-    | c | ... | ... | $<0$ |
-    | d | ... | ... | $<0$ |
-    | e | ... | ... | $<0$ |
-    
-
-
-
-### The Computational Respect of Hierarchical Clustering
+1. [**Agglomerative Clustering**](../../../2017/09/01/Agg-Clustering)
+    - Start with the points as individual clusters.   
+    - At each step, it merges the closest pair of clusters until only one cluster (or k clusters) left.
+2. [**Divisive Clustering**](../../../2017/09/01/Divisive-Clustering)
+    - Starts with one, all-inclusive cluster.   
+    - At each step, it splits a cluster until each cluster contains a point (or there are k clusters).
 
 In the process of Agglomerative Clustering, when you merge two clusters $A$ & $B$ to get a new cluster $R = A \cup B$, how do you compute the distance
 $$
@@ -377,8 +212,8 @@ $$
 
 At the first step of Hierarchical methods to combine/divide clusters, 
 
-- Agglomerative method has $C^n_2=\frac{n(n-1)}{2}$ possible choices. ($\Theta(n^2)$)
-- Divisive method has $\frac{(2^n-2)}{2}=2^{n-1}-1$ possible choices. ($\Theta(2^n)$)
+- [**Agglomerative method**](../../../2017/09/01/Agg-Clustering) has $C^n_2=\frac{n(n-1)}{2}$ possible choices. ($\Theta(n^2)$)
+- [**Divisive method**](../../../2017/09/01/Divisive-Clustering) has $\frac{(2^n-2)}{2}=2^{n-1}-1$ possible choices. ($\Theta(2^n)$)
 
 given $n$ points.   Note that the computation cost of Divisive method will be higher than that of Agglomerative method when $n \geq 5$.
 
