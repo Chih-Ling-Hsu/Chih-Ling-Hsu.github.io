@@ -67,15 +67,39 @@ where~x~is~a~data~point~in~C_i~and
 m_i~is~the~centroid~of~C_i
 $$
 
-### Initial Centroids Problem
 
-Poor **initial centroids** affect a lot to the clustering.   The followings are the techniwues to address this problem:
+The advantages of K-means are
 
-- Multiple runs
-- Sample and use hierarchical clustering to determine initial centroids
-- Select more than K initial centroids and then select among these initial centroids
-- [Postprocessing](#reduce-the-sse-using-post-processing)
-- [Bisecting K-means](#bisecting-k-means)
+1. simple
+2. math-supported
+3. small TSSE (Total Sum of Squared Error)
+4. not slow (given a good initial)
+
+On the contrary, the weakness of K-means are
+
+1. depends on initials
+2. outliers (noises) will affect to results
+
+
+### Limitations of K-means
+
+K-means has problems when clusters are of 
+- differing Sizes
+- differing Densities
+- Non-globular shapes
+
+K-means also has problems when the data contains outliers.
+
+![](https://i.imgur.com/HJvSvUP.png)
+![](https://i.imgur.com/mnPsnOJ.png)
+![](https://i.imgur.com/jZWfvEE.png)
+
+### K-means always converge
+
+**Reason 1.** Cluster $n$ points into $K$ clusters $\rightarrow$ finite number of possible clustering results.
+**Reason 2.** Each iterstion in k-means causes the lower TSSE (Total Sum of Squared Error).   Hence, there's never a loop (cycle).
+
+Combine **Reason 1. & 2.**, the hypothesis can be proved.
 
 ### Handling Empty Clusters
 
@@ -84,6 +108,55 @@ Empty clusters can be obtained if no points are allocated to a cluster during th
 - Choose the point that contributes most to SSE
 - Choose a point from the cluster with the highest SSE
 - If there are several empty clusters, the above can be repeated several times.
+
+### Initial Centroids Problem
+
+Poor **initial centroids** affect a lot to the clustering.   The followings are the techniques to address this problem:
+
+- Multiple runs
+- Sample and use hierarchical clustering to determine initial centroids
+- Select more than K initial centroids and then select among these initial centroids
+- [Cluster Center Initialization Algorithms](#cluster-center-initialization-algorithms-ccia)
+- [Postprocessing](#reduce-the-sse-using-post-processing)
+- [Bisecting K-means](#bisecting-k-means)
+
+### Cluster Center Initialization Algorithms (CCIA)
+
+In iterative clustering algorithms the procedure adopted for choosing initial cluster centers is extremely important as it has a direct impact on the formation of final clusters.   **It is dangerous to select outliers as initial centers, since they are away from normal samples.**
+
+CCIA is a density-based multi-scale data condensation.   This procedure is applicable to clustering algorithms for continuous data.   In CCIA, we assume that an individual attribute may provide some information about initial cluster center.
+
+CCIA generates _K_ clusters which may be greater than the desired number of clusters _K_. In this situation our aim is to merge some of the similar clusters so as to get _K_ clusters.
+
+1. Estimating the density at a point
+2. Sorting the points based on the density criterion
+    - For each dimension (attribute), divide the normal-distribution curve into K partitions. (The area under each partition is equal.)
+3. Selecting a point according to the sorted list
+    - For each dimension (attribute), take the representative-point $Z_j$ for each partition interval $j$
+    - The area from $-\inf$ to $Z_j$ equals to $(2j-1)/2k$
+4. Pruning all points lying within a disc about a selected point with radius inversely proportional to the density at that point.
+
+![](https://ars.els-cdn.com/content/image/1-s2.0-S0167865504000996-gr1.jpg)
+
+To evaluate the performance of CCIA, here we introduce **Cluster Center Proximity Index (CCPI)**.
+
+$$
+CCPI = \frac{1}{K \times m}\sum_{s=1}^{K}\sum_{j=1}^{m}~\biggl|~\frac{f_{sj}-C_{sj}}{f_{sj}}\biggr|
+$$
+
+where $f_{sj}$ is the $j_{th}$ attribute value of the desired $s_{th}$ cluster center and $C_{sj}$ is the $j_{th}$ attribute value of the initial $s_{th}$ cluster center.
+
+The CCPI of different data set using CCIA and random initialization is shown as follows.
+
+| Data set | CCIA | Random |
+| --- | --- | --- |
+| Fossil data | 0.0021 | 0.3537 |
+| Iris data | 0.0396 | 0.8909 |
+| Wine data | 0.1869 | 0.3557 |
+| Ruspini data | 0.0361 | 1.2274 |
+| Letter image recognition data | 0.0608 | 0.1572 |
+
+Despite the fact that CCIA performs better in the above data sets, note that CCIA is not always better than using random initialization.
 
 ### Reduce the SSE Using Post-processing
 
@@ -105,18 +178,6 @@ repeat
 until list_of_clusters contains K clusters
 ```
 
-### Limitations of K-means
-
-K-means has problems when clusters are of 
-- differing Sizes
-- differing Densities
-- Non-globular shapes
-
-K-means also has problems when the data contains outliers.
-
-![](https://i.imgur.com/HJvSvUP.png)
-![](https://i.imgur.com/mnPsnOJ.png)
-![](https://i.imgur.com/jZWfvEE.png)
 
 
 ## Hierarchical clustering
@@ -127,58 +188,6 @@ Hierarchical clustering produces a set of nested clusters organized as a hierarc
 The advantages of hierarchical clustering is that it does not have to assume any particular number of clusters since **any desired number of clusters can be obtained by ‘cutting’ the dendogram at the proper level**.   Also, the clusters may correspond to meaningful taxonomies (e.g., animal kingdom, phylogeny reconstruction, …)
 
 However, once a decision is made to combine two clusters / divide a cluster, it cannot be undone. Also, no objective function is directly minimized using hierarchical clustering.
-
-
-In the process of Agglomerative Clustering, when you merge two clusters $A$ & $B$ to get a new cluster $R = A \cup B$, how do you compute the distance
-$$
-D(R, Q)
-$$
-Given $R$ and other cluster $Q$ ($Q \neq A; Q \neq B$)?
-
-If each data point is of 16 dimensions and we use Euclidean distance, then
-
-- 16 substractions
-- 15 additions
-- 16 multiplications
-- and a square root
-
-are needed.   So the number of operations is _dimension dependent_.
-
-In other word, you have a $n$-by-$n$ distance matrix initially.   In each step, you merge two clusters (e.g., $A$ & $B$) to get a new cluster $R$.   The number of clusters decrease by 1.   We thus update the distance metrics with certain formulas:
-- If $D = D_{min}$ (single affinity), 
-$$
-D(R, Q) = min\{D(A,Q), D(B,Q)\}
-$$
-- If $D = D_{max}$ (complete affinity), 
-$$
-D(R, Q) = Max\{D(A,Q), D(B,Q)\}
-$$
-- If $D = D_{avg}$ (group average), 
-$$
-D(R, Q) = \frac{1}{\|R\|\|Q\|}\sum_{r 
-\in R, q \in Q}\|r-q\|
-\\= \frac{1}{\|R\|\|Q\|}\left[\sum_{r 
-\in A, q \in Q}\|r-q\|+\sum_{r 
-\in B, q \in Q}\|r-q\|\right]
-\\= \frac{1}{\|R\|}\left[\frac{\|A\|}{\|A\|\|Q\|}\sum_{r 
-\in A, q \in Q}\|r-q\|+\frac{\|B\|}{\|B\|\|Q\|}\sum_{r 
-\in B, q \in Q}\|r-q\|\right]
-\\= \frac{\|A\|}{\|R\|}D(A,Q) + \frac{\|B\|}{\|R\|}D(B,Q)
-$$
-- If $D = D_{center}$, 
-$$
-\because A \cup B = R ~ \therefore \|A\|\bar{a}+\|B\|\bar{b} = \|R\|\bar{r}
-\\
-\bar{r} = \frac{\|A\|}{\|R\|}\bar{a}+\frac{\|B\|}{\|R\|}\bar{b} = \bar{a}+\frac{\|B\|}{\|R\|}(\bar{b}-\bar{a})
-\\
-(\because \frac{\|A\|}{\|R\|}+\frac{\|B\|}{\|R\|} = 1)
-\\
-\bar{r}~is~on~the~line~connecting~\bar{a}~and~\bar{b}
-D_{AQ}=\|\bar{r}-\bar{a}\|
-\\
-D(R, Q)^2 =\frac{\|A\|}{\|R\|}D(A,Q)^2 + \frac{\|B\|}{\|R\|}D(B,Q)^2 - \frac{\|A\|}{\|R\|}\frac{\|B\|}{\|R\|}D(A,B)^2
-$$
-
 
 
 
@@ -260,7 +269,10 @@ for all points $i$ in cluster $A$ and $j$ in cluster $B$.
 
 
 ### Divisive clustering
+
 Divisive clustering **starts with one, all-inclusive cluster**.   At each step, it **splits a cluster until each cluster contains a point** (or there are k clusters).
+
+
 
 Building MST (Minimum Spanning Tree) is a method for constructing hierarchy of clusters.
 
@@ -274,6 +286,102 @@ repeat
     Split a cluster by breaking the link of the largest distance (smallest similarity).
 until Only singleton clusters remain
 ```
+
+
+The following is an example of Divisive Clustering.
+
+| Distance | a | b | c | d | e |
+| - | - | - |- |- | - |
+| a | 0 | 2|6|10|9|
+|b|2|0|5|9|8|
+|c|6|5|0|4|5|
+|d|10 |9|4|0|3|
+|e|9|8|5|3|0|
+
+
+**Step 1.** Split whole data into 2 clusters
+
+- Who hates other members the most? (in Average)
+    - $a$ to others: $mean(2,6,10,9)=6.75 ~ \rightarrow a$ goes out! (Divide $a$ into a new cluster)
+    - $b$ to others: $mean(2,5,9,8)=6.0$
+    - $c$ to others: $mean(6,5,4,5)=5.0$
+    - $d$ to others: $mean(10,9,4,3)=6.5$
+    - $e$ to others: $mean(9,8,5,3)=6.25$
+- Everyone in the old party asks himself: _"In average, do I hate others in old party more than hating the members in the new party?"_
+    - If the answer is "No", then he will also go to the new party.
+    |  | $\alpha=$distance to the old party | $\beta=$distance to the new party | $\alpha-\beta$ |
+    | b | $\frac{5+9+8}{3}=7.33$ | 2 | $>0$ ($b$ also goes out!) |
+    | c | $\frac{5+4+5}{3}=4.67$ | 6 | $<0$ |
+    | d | $\frac{9+4+3}{3}=5.33$ | 10 | $<0$ |
+    | e | $\frac{8+5+3}{3}=5.33$ | 9 | $<0$ |
+- Everyone in the old party ask himself the same question as above again and again until everyone got the answer "Yes". 
+    |  | $\alpha=$distance to the old party | $\beta=$distance to the new party | $\alpha-\beta$ |
+    | c | ... | ... | $<0$ |
+    | d | ... | ... | $<0$ |
+    | e | ... | ... | $<0$ |
+    
+
+
+
+### The Computational Respect of Hierarchical Clustering
+
+In the process of Agglomerative Clustering, when you merge two clusters $A$ & $B$ to get a new cluster $R = A \cup B$, how do you compute the distance
+$$
+D(R, Q)
+$$
+Given $R$ and other cluster $Q$ ($Q \neq A; Q \neq B$)?
+
+If each data point is of 16 dimensions and we use Euclidean distance, then
+
+- 16 substractions
+- 15 additions
+- 16 multiplications
+- and a square root
+
+are needed.   So the number of operations is _dimension dependent_.
+
+In other word, you have a $n$-by-$n$ distance matrix initially.   In each step, you merge two clusters (e.g., $A$ & $B$) to get a new cluster $R$.   The number of clusters decrease by 1.   We thus update the distance metrics with certain formulas:
+- If $D = D_{min}$ (single affinity), 
+$$
+D(R, Q) = min\{D(A,Q), D(B,Q)\}
+$$
+- If $D = D_{max}$ (complete affinity), 
+$$
+D(R, Q) = Max\{D(A,Q), D(B,Q)\}
+$$
+- If $D = D_{avg}$ (group average), 
+$$
+D(R, Q) = \frac{1}{\|R\|\|Q\|}\sum_{r 
+\in R, q \in Q}\|r-q\|
+\\= \frac{1}{\|R\|\|Q\|}\left[\sum_{r 
+\in A, q \in Q}\|r-q\|+\sum_{r 
+\in B, q \in Q}\|r-q\|\right]
+\\= \frac{1}{\|R\|}\left[\frac{\|A\|}{\|A\|\|Q\|}\sum_{r 
+\in A, q \in Q}\|r-q\|+\frac{\|B\|}{\|B\|\|Q\|}\sum_{r 
+\in B, q \in Q}\|r-q\|\right]
+\\= \frac{\|A\|}{\|R\|}D(A,Q) + \frac{\|B\|}{\|R\|}D(B,Q)
+$$
+- If $D = D_{center}$, 
+$$
+\because A \cup B = R ~ \therefore \|A\|\bar{a}+\|B\|\bar{b} = \|R\|\bar{r}
+\\
+\bar{r} = \frac{\|A\|}{\|R\|}\bar{a}+\frac{\|B\|}{\|R\|}\bar{b} = \bar{a}+\frac{\|B\|}{\|R\|}(\bar{b}-\bar{a})
+\\
+(\because \frac{\|A\|}{\|R\|}+\frac{\|B\|}{\|R\|} = 1)
+\\
+\bar{r}~is~on~the~line~connecting~\bar{a}~and~\bar{b}
+D_{AQ}=\|\bar{r}-\bar{a}\|
+\\
+D(R, Q)^2 =\frac{\|A\|}{\|R\|}D(A,Q)^2 + \frac{\|B\|}{\|R\|}D(B,Q)^2 - \frac{\|A\|}{\|R\|}\frac{\|B\|}{\|R\|}D(A,B)^2
+$$
+
+At the first step of Hierarchical methods to combine/divide clusters, 
+
+- Agglomerative method has $C^n_2=\frac{n(n-1)}{2}$ possible choices. ($\Theta(n^2)$)
+- Divisive method has $\frac{(2^n-2)}{2}=2^{n-1}-1$ possible choices. ($\Theta(2^n)$)
+
+given $n$ points.   Note that the computation cost of Divisive method will be higher than that of Agglomerative method when $n \geq 5$.
+
 
 ## Density-based clustering
 
@@ -448,3 +556,4 @@ Relative Index is used to compare two different clusterings or clusters.   It is
 - [“Introduction to Data Mining,” by P.-N. Tan, M. Steinbach, V. Kumar, Addison-Wesley.](http://www-users.cs.umn.edu/~kumar/dmbook/index.php)
 - [Wikipedia - DBSCAN Algorithm](https://en.wikipedia.org/wiki/DBSCAN)
 - [Wikipedia - Silhouette (clustering)](https://en.wikipedia.org/wiki/Silhouette_(clustering))
+- [Khan, S. S., & Ahmad, A. (2004). Cluster center initialization algorithm for K-means clustering. _Pattern recognition letters_, _25_(11), 1293-1302.](https://www.sciencedirect.com/science/article/pii/S0167865504000996)
