@@ -1,5 +1,5 @@
 ---
-title: 'Divisive Method for Hierarchical Clustering'
+title: 'Divisive Method for Hierarchical Clustering and Minimum Spanning Tree Clustering'
 layout: post
 tags:
   - Clustering
@@ -12,23 +12,7 @@ Divisive clustering **starts with one, all-inclusive cluster**.   At each step, 
 
 <!--more-->
 
-
-Building MST (Minimum Spanning Tree) is a method for constructing hierarchy of clusters.
-
-It starts with a tree that consists of any point.   In successive steps, look for the closest pair of points $(p, q)$  such that $p$ is in the current tree but $q$ is not.   With this closest pair of points $(p, q)$, add $q$ to the tree and put an edge between $p$ and $q$.
-
-The procedure of constructing hierarchy of clusters using MST would be as follows:
-
-```python
-Compute a MST for the proximity graph
-repeat
-    Split a cluster by breaking the link of the largest distance (smallest similarity).
-until Only singleton clusters remain
-```
-
-## Illustrative Example
-
-# Divisive Clustering
+## Divisive Clustering Example
 
 The following is an example of Divisive Clustering.
 
@@ -83,5 +67,33 @@ The following is an example of Divisive Clustering.
 **Step 3.** Repeat **Step 2.** until each cluster contains a point (or there are k clusters)
 
 
+## Minimum Spanning Tree Clustering
+
+Building MST (Minimum Spanning Tree) is a method for constructing hierarchy of clusters.
+
+It starts with a tree that consists of a point $p$.   In successive steps, look for the closest pair of points $(p, q)$  such that $p$ is in the current tree but $q$ is not.   With this closest pair of points $(p, q)$, add $q$ to the tree and put an edge between $p$ and $q$.
+
+![](https://i.imgur.com/kZdrQAi.png)
+
+The procedure of constructing hierarchy of clusters using MST would be as follows:
+
+```python
+Compute a MST for the proximity graph
+repeat
+    Split a cluster by breaking the inconsistent edge.
+until Only singleton clusters remain
+```
+
+Note that the inconsistent edge is the link of the largest distance (smallest similarity).
+
+The definition of inconsistency varies. For example, we can also use **local** inconsistency remove edges significantly larger than their neighborhood edges.
+
+| ![](https://i.imgur.com/FivjUQl.png) | ![](https://i.imgur.com/viy1vqP.png) |
+| - | - |
+
+
 ## References
 - [“Introduction to Data Mining,” by P.-N. Tan, M. Steinbach, V. Kumar, Addison-Wesley.](http://www-users.cs.umn.edu/~kumar/dmbook/index.php)
+- [Gower, J. C., & Ross, G. J. (1969). Minimum spanning trees and single linkage cluster analysis. Applied statistics, 54-64.](http://www.jstor.org/stable/2346439)
+- [Jana, P. K., & Naik, A. (2009, December). An efficient minimum spanning tree based clustering algorithm. In Methods and Models in Computer Science, 2009. ICM2CS 2009. Proceeding of International Conference on (pp. 1-5). IEEE.](http://ieeexplore.ieee.org/abstract/document/5397966/)
+- [Lecture 24 - Clustering and Hierarchical Clustering Old Kiwi - Rhea](https://www.projectrhea.org/rhea/index.php/Lecture_24_-_Clustering_and_Hierarchical_Clustering_Old_Kiwi)

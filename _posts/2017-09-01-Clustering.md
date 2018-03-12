@@ -218,7 +218,13 @@ At the first step of Hierarchical methods to combine/divide clusters,
 - Agglomerative method has $C^n_2=\frac{n(n-1)}{2}$ possible choices. ($\Theta(n^2)$)
 - Divisive method has $\frac{(2^n-2)}{2}=2^{n-1}-1$ possible choices. ($\Theta(2^n)$)
 
-given $n$ points.   Note that the computation cost of Divisive method will be higher than that of Agglomerative method when $n \geq 5$.
+given $n$ points.
+
+Note that the computation cost of Divisive method will be higher than that of Agglomerative method when $n \geq 5$.   Either way, Hierarchical Clustering is time consuming and memory wasting.
+
+The final queation is: _"Which should be used? Divisive method or Agglomerative method?"_
+
+If there are many points ($n$ is large) and the number of clusters is very slow ($k=2~or~3$), then Divisive method should be used;   otherwise, agglomerative method is preferred.
 
 
 ## Density-based clustering
