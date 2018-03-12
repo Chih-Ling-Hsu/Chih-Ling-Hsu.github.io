@@ -97,6 +97,7 @@ K-means also has problems when the data contains outliers.
 ### K-means always converge
 
 **Reason 1.** Cluster $n$ points into $K$ clusters $\rightarrow$ finite number of possible clustering results.
+
 **Reason 2.** Each iterstion in k-means causes the lower TSSE (Total Sum of Squared Error).   Hence, there's never a loop (cycle).
 
 Combine **Reason 1. & 2.**, the hypothesis can be proved.
@@ -160,6 +161,8 @@ There are two methods to do hierarchical clustering:
     - Starts with one, all-inclusive cluster.   
     - At each step, it splits a cluster until each cluster contains a point (or there are k clusters).
 
+### The Computational Respect
+
 In the process of Agglomerative Clustering, when you merge two clusters $A$ & $B$ to get a new cluster $R = A \cup B$, how do you compute the distance
 $$
 D(R, Q)
@@ -212,8 +215,8 @@ $$
 
 At the first step of Hierarchical methods to combine/divide clusters, 
 
-- [**Agglomerative method**](../../../2017/09/01/Agg-Clustering) has $C^n_2=\frac{n(n-1)}{2}$ possible choices. ($\Theta(n^2)$)
-- [**Divisive method**](../../../2017/09/01/Divisive-Clustering) has $\frac{(2^n-2)}{2}=2^{n-1}-1$ possible choices. ($\Theta(2^n)$)
+- Agglomerative method has $C^n_2=\frac{n(n-1)}{2}$ possible choices. ($\Theta(n^2)$)
+- Divisive method has $\frac{(2^n-2)}{2}=2^{n-1}-1$ possible choices. ($\Theta(2^n)$)
 
 given $n$ points.   Note that the computation cost of Divisive method will be higher than that of Agglomerative method when $n \geq 5$.
 
@@ -391,4 +394,3 @@ Relative Index is used to compare two different clusterings or clusters.   It is
 - [“Introduction to Data Mining,” by P.-N. Tan, M. Steinbach, V. Kumar, Addison-Wesley.](http://www-users.cs.umn.edu/~kumar/dmbook/index.php)
 - [Wikipedia - DBSCAN Algorithm](https://en.wikipedia.org/wiki/DBSCAN)
 - [Wikipedia - Silhouette (clustering)](https://en.wikipedia.org/wiki/Silhouette_(clustering))
-- [Khan, S. S., & Ahmad, A. (2004). Cluster center initialization algorithm for K-means clustering. _Pattern recognition letters_, _25_(11), 1293-1302.](https://www.sciencedirect.com/science/article/pii/S0167865504000996)

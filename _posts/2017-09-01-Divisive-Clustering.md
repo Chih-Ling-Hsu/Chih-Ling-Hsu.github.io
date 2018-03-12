@@ -1,5 +1,5 @@
 ---
-title: 'Data Mining - Divisive Clustering'
+title: 'Divisive Method for Hierarchical Clustering'
 layout: post
 tags:
   - Clustering
@@ -28,6 +28,8 @@ until Only singleton clusters remain
 
 ## Illustrative Example
 
+# Divisive Clustering
+
 The following is an example of Divisive Clustering.
 
 | Distance | a | b | c | d | e |
@@ -41,24 +43,45 @@ The following is an example of Divisive Clustering.
 
 **Step 1.** Split whole data into 2 clusters
 
-- Who hates other members the most? (in Average)
+1. Who hates other members the most? (in Average)
     - $a$ to others: $mean(2,6,10,9)=6.75 ~ \rightarrow a$ goes out! (Divide $a$ into a new cluster)
     - $b$ to others: $mean(2,5,9,8)=6.0$
     - $c$ to others: $mean(6,5,4,5)=5.0$
     - $d$ to others: $mean(10,9,4,3)=6.5$
     - $e$ to others: $mean(9,8,5,3)=6.25$
-- Everyone in the old party asks himself: _"In average, do I hate others in old party more than hating the members in the new party?"_
+2. Everyone in the old party asks himself: _"In average, do I hate others in old party more than hating the members in the new party?"_
     - If the answer is "No", then he will also go to the new party.
+
     |  | $\alpha=$distance to the old party | $\beta=$distance to the new party | $\alpha-\beta$ |
+    | - | - | - | - |
     | b | $\frac{5+9+8}{3}=7.33$ | 2 | $>0$ ($b$ also goes out!) |
     | c | $\frac{5+4+5}{3}=4.67$ | 6 | $<0$ |
     | d | $\frac{9+4+3}{3}=5.33$ | 10 | $<0$ |
     | e | $\frac{8+5+3}{3}=5.33$ | 9 | $<0$ |
-- Everyone in the old party ask himself the same question as above again and again until everyone got the answer "Yes". 
+
+3. Everyone in the old party ask himself the same question as above again and again until everyone got the answer "Yes". 
+
     |  | $\alpha=$distance to the old party | $\beta=$distance to the new party | $\alpha-\beta$ |
+    | - | - | - | - |
     | c | ... | ... | $<0$ |
     | d | ... | ... | $<0$ |
     | e | ... | ... | $<0$ |
+    
+**Step 2.** Choose a current cluster and split it as in **Step 1.**
+
+1. Choose a current cluster
+    - If split the cluster with the largest number of members, then the cluster $\{c,d,e\}$ will be split.
+    - If split the cluster with the largest diameter, then the cluster $\{c,d,e\}$ will be split.
+    
+        | cluster | diameter |
+        | - | - |
+        | {a,b} | 2 |
+        | {c,d,e} | 5 |
+
+2. Split the chosen cluster as in **Step 1.**
+
+**Step 3.** Repeat **Step 2.** until each cluster contains a point (or there are k clusters)
+
 
 ## References
 - [“Introduction to Data Mining,” by P.-N. Tan, M. Steinbach, V. Kumar, Addison-Wesley.](http://www-users.cs.umn.edu/~kumar/dmbook/index.php)

@@ -1,5 +1,5 @@
 ---
-title: 'Data Mining - Agglomerative Clustering'
+title: 'Agglomerative Method for Hierarchical Clustering'
 layout: post
 tags:
   - Clustering
@@ -26,7 +26,7 @@ Key operation is the computation of the proximity of two clusters. So, the quest
 > How to define inter-cluster similarity?
 
 
-## MIN
+## MIN similarity
 
 <table>
     <tr><td><img src="https://i.imgur.com/fTWaf4Z.png"></td><td><img src="https://i.imgur.com/f51UUhm.png"></td></tr>
@@ -48,7 +48,7 @@ for all points $i$ in cluster $A$ and $j$ in cluster $B$.
     - Any point in sparse area would be isolated
 
 
-## MAX
+## MAX similarity
 
 <table>
     <tr><td><img src="https://i.imgur.com/DntS4Cs.png"></td><td><img src="https://i.imgur.com/TqZF9wx.png"></td></tr>

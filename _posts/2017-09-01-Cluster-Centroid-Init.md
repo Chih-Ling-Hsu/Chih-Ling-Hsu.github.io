@@ -16,13 +16,13 @@ CCIA is a density-based multi-scale data condensation.   This procedure is appli
 
 CCIA generates _K_ clusters which may be greater than the desired number of clusters _K_. In this situation our aim is to merge some of the similar clusters so as to get _K_ clusters.
 
-1. Estimating the density at a point
-2. Sorting the points based on the density criterion
+1. **Estimating the density at a point**
+2. **Sorting the points based on the density criterion**
     - For each dimension (attribute), divide the normal-distribution curve into K partitions. (The area under each partition is equal.)
-3. Selecting a point according to the sorted list
+3. **Selecting a point according to the sorted list**
     - For each dimension (attribute), take the representative-point $Z_j$ for each partition interval $j$
     - The area from $-\inf$ to $Z_j$ equals to $(2j-1)/2k$
-4. Pruning all points lying within a disc about a selected point with radius inversely proportional to the density at that point.
+4. **Pruning all points lying within a disc about a selected point with radius inversely proportional to the density at that point.**
 
 ![](https://ars.els-cdn.com/content/image/1-s2.0-S0167865504000996-gr1.jpg)
 
@@ -50,3 +50,4 @@ Despite the fact that CCIA performs better in the above data sets, note that CCI
 
 ## References
 - [“Introduction to Data Mining,” by P.-N. Tan, M. Steinbach, V. Kumar, Addison-Wesley.](http://www-users.cs.umn.edu/~kumar/dmbook/index.php)
+- [Khan, S. S., & Ahmad, A. (2004). Cluster center initialization algorithm for K-means clustering. _Pattern recognition letters_, _25_(11), 1293-1302.](https://www.sciencedirect.com/science/article/pii/S0167865504000996)
