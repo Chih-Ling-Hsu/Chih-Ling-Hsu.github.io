@@ -12,21 +12,11 @@ Peak-climbing is also called "mode-seeking" or "valley-seeking".
 
 <!--more-->
 
-Peak-climbing is also called "mode-seeking" or "valley-seeking".
-
 ### Method
 
 With **Grid (Mesh)**, summarise the number of points for each block (cell).
 
-
-$\begin{bmatrix}
-6 & 42 & 11 & 1~| & 2 & 1 \\
-37 & 250~(peak) & 58~| & 10 &24 &9\\
-34 & 200 & 52~| & 48 & 120 & 38 \\
-3 & 25 & 19~| & 125 & 230~(peak) & 97 \\
-2 & 3~| & 15 & 122 & 220 & 112 \\
-0~| & 5 & 7 & 52 & 190 & 46 \\
-\end{bmatrix}$
+![](https://i.imgur.com/Btxl7lx.png)
 
 For example, there are $6\times 6$ cells, each cell has at most $8=3^2-1$ neighbors.
 
