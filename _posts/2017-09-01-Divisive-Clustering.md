@@ -88,8 +88,7 @@ Note that the inconsistent edge is the link of the largest distance (smallest si
 
 The definition of inconsistency varies. For example, we can also use **local** inconsistency remove edges significantly larger than their neighborhood edges.
 
-| ![](https://i.imgur.com/FivjUQl.png) | ![](https://i.imgur.com/viy1vqP.png) |
-| - | - |
+![](https://i.imgur.com/FivjUQl.png) ![](https://i.imgur.com/viy1vqP.png)
 
 
 ## References
