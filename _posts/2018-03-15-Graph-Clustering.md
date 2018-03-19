@@ -64,8 +64,8 @@ $$
 
 Connecting the centers of circumcircles produces the Voronoi disgram (in red).   A circle circumscribing any Delaunay triangle does not contain any other input points in its interior.
 
-<img src="https://i.imgur.com/zF2X8cN.png" style="width:50%">
-<img src="https://i.imgur.com/m2dwd8E.png" style="width:50%">
+<img src="https://i.imgur.com/zF2X8cN.png" style="width:40%">
+<img src="https://i.imgur.com/m2dwd8E.png" style="width:40%">
 
 
 Whenever the Voronoi cells for a pair of points share a boundary component, we join them with an edge.   That is, if 2 points $x_i$ and $x_j$ share a boundary wall, then connect them and get $\overline{x_ix_j}$.
