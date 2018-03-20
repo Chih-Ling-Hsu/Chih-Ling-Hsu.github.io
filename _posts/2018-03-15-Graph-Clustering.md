@@ -20,6 +20,12 @@ In general, there are two steps in Graph Methods.
 
 The step 1 is to construct a graph that connects all data points.
 
+Note that the edges constructed in MST are all included in the edges constructed in RNG; the edges constructed in RNG are all included in the edges constructed in Gabrial Graph;the edges constructed in Gabrial Graph are all included in the edges constructed in DT.
+
+$$
+Edges_{MST} \subset Edges_{RNG} \subset Edges_{Gabrial} \subset Edges_{DT}
+$$
+
 ### Minimal Spanning Tree (MST)
 
 When we construct MST, we 
@@ -29,9 +35,9 @@ When we construct MST, we
 
 ### Relative Neighborhood Graph (RNG)
 
-Another example is Relative Neighborhood Graph (RNG).   RNG connects two data points $x_i$, $x_j$ by $\overline{x_i x_j}$ if there is no other data points in their **Lune Area**.   The **Lune Area** for $x_i$, $x_j$ contains two disks:
- - $Disk_1$ uses $x_i$ as center and $Disk_2$ uses $x_j$ as center
- - $\|x_i-x_j\|$ is the radius of $Disk_1$ and $Disk_2$.
+Another example is Relative Neighborhood Graph (RNG).   RNG connects two data points $x_i$, $x_j$ by $\overline{x_i x_j}$ if there is no other data points in their **Lune Area**.   The **Lune Area** for $x_i$, $x_j$ is the intersection of two disks $Disk_i$ and $Disk_j$.
+ - $Disk_i$ uses $x_i$ as center and $Disk_j$ uses $x_j$ as center
+ - $\|x_i-x_j\|$ is the radius of $Disk_i$ and $Disk_j$.
 
 That is,
 
@@ -62,16 +68,36 @@ $$
 
 ### Delaunay Triangulation (DT)
 
-Connecting the centers of circumcircles produces the Voronoi disgram (in red).   A circle circumscribing any Delaunay triangle does not contain any other input points in its interior.
+To sketch DT, you need to sketch Voronoi diagram (V-Diagram) first.
 
-<img src="https://i.imgur.com/zF2X8cN.png" style="width:40%">
+> **Voronoi Diagram**.   Given $n$ data points $\{\vec{x_1}, \vec{x_2}, ...\vec{x_n}\}$, then  V-diagram is finding the $cell_i~\big|_{i=1,2,...n}$ such that
+> $$
+> Cell_i = space~of~influence~of~x_i
+> \\
+> = \{\vec{y} \in space ~\big|~ \|\vec{y}-\vec{x_i}\| < \|\vec{y}-\vec{x_j}\|, \forall j \neq i\}
+> $$
+> In other words, the boundary walls of the cells are the **vertical lines** between any two points.
+
+Connecting the centers of circumcircles produces the Voronoi diagram (in red).   A circle circumscribing any Delaunay triangle does not contain any other input points in its interior.
+
 <img src="https://i.imgur.com/m2dwd8E.png" style="width:40%">
+<img src="https://i.imgur.com/zF2X8cN.png" style="width:40%">
 
 
 Whenever the Voronoi cells for a pair of points share a boundary component, we join them with an edge.   That is, if 2 points $x_i$ and $x_j$ share a boundary wall, then connect them and get $\overline{x_ix_j}$.
 
-Generate Delaunay lines (in black) so that all points are connected with triangles.   In the plane, the Delaunay triangulation maximizes the minimum angle.
+By this way, we can generate Delaunay lines (in black) so that all points are connected with triangles.   In the plane, the Delaunay triangulation maximizes the minimum angle.
 
+## Delete inconsistent edges
+
+For non-tree-based graphs (e.g., Gabrial Graph, Delaunay Triangulation, ...), we can set a threshold for the length of edges and cut all edges whose length exceeds the threshold.
+
+We can also use the following steps to delete inconsistent edges for non-tree-based graphs:
+
+1. For an edge $\overline{x_ix_j}$, find $x_i$ $NN_{x_i}^G$ and $NN_{x_j}^G$ where $NN_{x_i}^G$ is the nearest neighbor of $x_i$ and $NN_{x_j}^G$ is that of $x_j$ given a graph $G$ (e.g., Gabrial Graph).
+2. If $\overline{x_ix_j}$ > $\|x_i-NN_{x_i}^G\|$ AND (in some case OR) $\overline{x_ix_j}$ > $\|x_j-NN_{x_j}^G\|$, then cut $\overline{x_ix_j}$.
+
+![](https://i.imgur.com/emC17mI.png)
 
 
 ## References
