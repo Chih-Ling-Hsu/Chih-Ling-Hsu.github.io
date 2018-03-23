@@ -1842,6 +1842,10 @@ section.comment {
     padding: .3em 0
 }
 
+.toc-aside {
+    overflow-y: scroll
+}
+
 .toc-article ul li {
     list-style: disc;
     text-align: match-parent;
