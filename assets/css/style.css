@@ -1842,10 +1842,6 @@ section.comment {
     padding: .3em 0
 }
 
-.toc-aside {
-    overflow-y: scroll
-}
-
 .toc-article ul li {
     list-style: disc;
     text-align: match-parent;
@@ -1882,7 +1878,7 @@ section.comment {
     position: fixed;
     right: 2%;
     top: 320px;
-    overflow: hidden;
+    overflow-y: scroll;
     line-height: 1.5em;
     font-size: 1em;
     color: #333;
