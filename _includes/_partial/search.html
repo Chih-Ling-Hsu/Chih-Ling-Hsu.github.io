@@ -7,11 +7,11 @@
 google.load('search', '1', {language : 'en',style: google.loader.themes.MINIMALIST});
 google.setOnLoadCallback(function(){
   var customSearchControl = new google.search.CustomSearchControl('{{ site.google_cse.cx }}');
-  customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+  //customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
   
-  var options = new google.search.DrawOptions();
-  options.setAutoComplete(true);
-  customSearchControl.draw('cse', options);
+  //var options = new google.search.DrawOptions();
+  //options.setAutoComplete(true);
+  //customSearchControl.draw('cse', options);
   
   var match = location.search.match(/q=([^&]*)(&|$)/);
   if(match && match[1]){
