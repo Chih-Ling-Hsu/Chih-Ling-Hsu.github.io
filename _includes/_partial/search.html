@@ -24,25 +24,26 @@ google.setOnLoadCallback(function(){
 
 
 <script>
-(function() {
-  var match = location.search.match(/q=([^&]*)(&|$)/);
-  var search = "";
-  if(match && match[1]){
-    search = decodeURIComponent(match[1]); 
-  }
-
-  var cx = '013599163932417097999:da8tmm_kgzo';
-  var gcse = document.createElement('script');
-  gcse.type = 'text/javascript';
-  gcse.async = true;
-  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-  var s = document.getElementsByTagName('script')[0];
-  s.parentNode.insertBefore(gcse, s);
-  google.search.cse.element.getelement('cse').execute(search);
-})();
-</script>
-
 <div  id="main" class="page"></div>
-  <gcse:search gname="cse" queryParameterName="term">{{ lang.search-load }}</gcse:search>  
+  (function() {
+    var match = location.search.match(/q=([^&]*)(&|$)/);
+    var search = "";
+    if(match && match[1]){
+      search = decodeURIComponent(match[1]); 
+    }
+
+    var cx = '013599163932417097999:da8tmm_kgzo';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+    gcse.execute(search);
+  })();
+  </script>
+
+
+  <gcse:search gname="cse">{{ lang.search-load }}</gcse:search>  
 </div>
 {% endif %}
