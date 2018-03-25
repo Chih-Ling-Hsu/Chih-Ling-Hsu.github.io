@@ -1,5 +1,5 @@
 {% if site.google_cse.enable %}
-<!--<div  id="main" class="page">
+<div  id="main" class="page">
   <div id='cse' style='width:100%;text-align:center'>{{ lang.search-load }}</div>
 </div>
 <script src="https://www.google.com.hk/jsapi" type="text/javascript"></script>
@@ -20,11 +20,12 @@ google.setOnLoadCallback(function(){
   }
   
 },true);
-</script>-->
+</script>
 
 
-<script>
-<div  id="main" class="page"></div>
+
+<!--<div id="main" class="page">
+  <script>
   (function() {
     var match = location.search.match(/q=([^&]*)(&|$)/);
     var search = "";
@@ -45,5 +46,5 @@ google.setOnLoadCallback(function(){
 
 
   <gcse:search gname="cse">{{ lang.search-load }}</gcse:search>  
-</div>
+</div>-->
 {% endif %}
