@@ -21,24 +21,10 @@
 					{% endfor %}
 					<li>
  					{% if site.google_cse.enable %}
-					<!--<form class="search" action="{{ site.baseurl }}/search/" method="get" accept-charset="utf-8">
+					<form class="search" action="{{ site.baseurl }}/search/" method="get" accept-charset="utf-8">
 						<label>Search</label>
 						<input type="search" id="search" autocomplete="off" name="q" maxlength="20" placeholder="{{ lang.search }}" />
-					</form>-->
-					<div style="width:50px">
-						<script>
-							(function() {
-							  var cx = '013599163932417097999:da8tmm_kgzo';
-							  var gcse = document.createElement('script');
-							  gcse.type = 'text/javascript';
-							  gcse.async = true;
-							  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-							  var s = document.getElementsByTagName('script')[0];
-							  s.parentNode.insertBefore(gcse, s);
-							})();
-						  </script>
-						  <gcse:search></gcse:search>
-					</div>
+					</form>
 					{% elsif site.baidu_search.enable %}
 						<form class="search" action="{{ site.baidu_search.site }}" target="_blank">
 							<label>Search</label>
