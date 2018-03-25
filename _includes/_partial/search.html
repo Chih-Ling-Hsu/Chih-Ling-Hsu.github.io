@@ -1,5 +1,5 @@
 {% if site.google_cse.enable %}
-<div  id="main" class="page">
+<!--<div  id="main" class="page">
   <div id='cse' style='width:100%;text-align:center'>{{ lang.search-load }}</div>
 </div>
 <script src="https://www.google.com.hk/jsapi" type="text/javascript"></script>
@@ -20,31 +20,33 @@ google.setOnLoadCallback(function(){
   }
   
 },true);
+</script>-->
+
+
+<script src="https://www.google.com.hk/jsapi" type="text/javascript"></script>
+
+<script>
+(function() {
+  var match = location.search.match(/q=([^&]*)(&|$)/);
+  var search = "";
+  if(match && match[1]){
+    search = decodeURIComponent(match[1]); 
+  }
+
+  var cx = '013599163932417097999:da8tmm_kgzo';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s);
+  
+  var element = google.search.cse.element.getElement('cse');
+  element.execute(search);
+})();
 </script>
 
-
-
-<!--<div id="main" class="page">
-  <script>
-  (function() {
-    var match = location.search.match(/q=([^&]*)(&|$)/);
-    var search = "";
-    if(match && match[1]){
-      search = decodeURIComponent(match[1]); 
-    }
-
-    var cx = '013599163932417097999:da8tmm_kgzo';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-    gcse.execute(search);
-  })();
-  </script>
-
-
+<div id="main" class="page"></div>
   <gcse:search gname="cse">{{ lang.search-load }}</gcse:search>  
-</div>-->
+</div>
 {% endif %}
