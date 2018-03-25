@@ -38,6 +38,7 @@ google.setOnLoadCallback(function(){
   gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
   var s = document.getElementsByTagName('script')[0];
   s.parentNode.insertBefore(gcse, s);
+  google.search.cse.element.getelement('cse').execute(search);
 })();
 </script>
 
