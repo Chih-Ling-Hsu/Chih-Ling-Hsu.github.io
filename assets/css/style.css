@@ -1167,7 +1167,8 @@ article .article-content h3>code,
 article .article-content h4>code,
 article .article-content h5>code,
 article .article-content h6>code {
-    color: #a3a3a3
+    font-family: Monaco, Menlo, Consolas, Courier New, monospace;
+    color: #bc8f8f;
 }
 
 article .article-content hr {
