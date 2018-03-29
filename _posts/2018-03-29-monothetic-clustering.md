@@ -32,8 +32,8 @@ $$
 
 For example, 
 
-- M$(v_1,v_2) = \|2*2 - 2*2\| = 0$
-- M$(v_4,v_5) = \|4*2 - 2*0\| = 8$
+- $M(v_1,v_2)$ = \|2*2 - 2*2\| = 0$
+- $M(v_4,v_5)$ = \|4*2 - 2*0\| = 8$
 
 Note that the measure sum $Sum_i$ for variable $v_i$ is
 
