@@ -94,7 +94,7 @@ else:
 
 ## 實驗結果
 
-實驗結果中，我們會對[Apriori實作]的表現(https://github.com/Chih-Ling-Hsu/Apriori-Java)和[FP-Growth實作](https://github.com/Chih-Ling-Hsu/FPGrowth-Java)的表現進行比較。
+實驗結果中，我們會對[Apriori實作](https://github.com/Chih-Ling-Hsu/Apriori-Java)的表現和[FP-Growth實作](https://github.com/Chih-Ling-Hsu/FPGrowth-Java)的表現進行比較。
 
 ### 以`D1kT10N500.txt`做為資料集輸入
 
