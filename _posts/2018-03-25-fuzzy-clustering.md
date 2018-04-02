@@ -69,4 +69,6 @@ since $u_{ij}$ is positively relative to $\bigg[\|x_i-v_j\|^{-2}\bigg]^\frac{1}{
 
 The other disadvantage is that when $q=1^+$, FkM converges slowly.
 
+## Reference
 
+- [Chuang, K. S., Tzeng, H. L., Chen, S., Wu, J., & Chen, T. J. (2006). Fuzzy c-means clustering with spatial information for image segmentation. _computerized medical imaging and graphics_, _30_(1), 9-15.](https://www.sciencedirect.com/science/article/pii/S0895611105000923)

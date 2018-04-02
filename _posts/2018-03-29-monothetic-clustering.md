@@ -32,8 +32,8 @@ $$
 
 For example, 
 
-- $M(v_1,v_2)$ = \|2*2 - 2*2\| = 0$
-- $M(v_4,v_5)$ = \|4*2 - 2*0\| = 8$
+- $M(v_1,v_2)$ = \|2*2 - 2*2\| = 0
+- $M(v_4,v_5)$ = \|4*2 - 2*0\| = 8
 
 Note that the measure sum $Sum_i$ for variable $v_i$ is
 
@@ -71,3 +71,7 @@ $$
 for $i \in \{1,2,...,6\} - \{5\}$.
 
 and choose $i$ with the largest $Sum_i$ to separate cluster $C$.
+
+## Reference
+
+- [Chavent, M. (1998). A monothetic clustering method. _Pattern Recognition Letters_, _19_(11), 989-996.](https://www.researchgate.net/publication/222464365_A_monothetic_clustering_method)
