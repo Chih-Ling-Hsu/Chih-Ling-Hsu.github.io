@@ -82,9 +82,9 @@ To sketch DT, you need to sketch Voronoi diagram (V-Diagram) first.
 
 Connecting the centers of circumcircles produces the Voronoi diagram (in red).   A circle circumscribing any Delaunay triangle does not contain any other input points in its interior.
 
-<img src="https://imgur.com/V1DOZDh.png" style="width:30%">
-<img src="https://imgur.com/I5HIYj4.png" style="width:30%">
-<img src="https://imgur.com/MZ4HMwv.png" style="width:30%">
+<img src="https://imgur.com/V1DOZDh.png" style="width:32%">
+<img src="https://imgur.com/I5HIYj4.png" style="width:32%">
+<img src="https://imgur.com/MZ4HMwv.png" style="width:32%">
 
 
 Whenever the **Voronoi cells (in red)** for a pair of points share a boundary component, we join them with an edge.   That is, **if 2 points $x_i$ and $x_j$ share a boundary wall, then connect them and get** $\overline{x_ix_j}$.

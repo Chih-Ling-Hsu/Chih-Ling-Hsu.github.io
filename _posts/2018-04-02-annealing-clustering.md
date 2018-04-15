@@ -14,7 +14,7 @@ Local minima are still an important unsolved problem for artificial potential fi
 
 ## Deterministic Annealing (DA)
 
-Let $k$ be the number of the clusters, $m$ be the number of iterations, $y_i$ be the $i^{th}$ cluster representative, the membership $u_{x,j}$ is
+Let $k$ be the number of the clusters, $m$ be the number of iterations, $y_i$ be the $i^{th}$ cluster representative, the membership $u_{x,j}$ is the probability of that $x$ belongs to Cluster $j$
 
 $$
 u_{x,j}=u_{x,j}\vert_{\beta}
@@ -40,7 +40,7 @@ $$
 where
 
 $$
-y_j = \frac{\sum_x x \times u_{x,j}}{\sum_x u_{x,j}}
+y_j = \frac{\sum_x u_{x,j} \times x}{\sum_x u_{x,j}}
 \\
 \therefore y_j =  \frac{\sum_x x \times \frac{e^{-\beta\|x-y_i\|^2}}{\sum_{i=1}^{k}e^{-\beta\|x-y_i\|^2}}}{\sum_x \frac{e^{-\beta\|x-y_i\|^2}}{\sum_{i=1}^{k}e^{-\beta\|x-y_i\|^2}}}
 $$
@@ -55,7 +55,7 @@ $$
 
 ### Iterative Algorithm of DA
 
-**Step 0.** Let $\beta \approx o^+$ (e.g., $\beta = 10^{-4}$), $y_j\vert_{j=1}^k$ be arbitrary.
+**Step 0.** Let $\beta \approx 0^+$ (e.g., $\beta = 10^{-4}$), $y_j\vert_{j=1}^k$ be arbitrary.
 
 **Step 1.** Use the following formula to update $y_j\vert_{j=1}^k$ until $y_j\vert_{j=1}^k$ are stable.
 

@@ -8,23 +8,27 @@ category: Notes
 mathjax: true
 ---
 
-In iterative clustering algorithms the procedure adopted for choosing initial cluster centers is extremely important as it has a direct impact on the formation of final clusters.   **It is dangerous to select outliers as initial centers, since they are away from normal samples.**
+In iterative clustering algorithms, the procedure adopted for choosing initial cluster centers is extremely important as it has a direct impact on the formation of final clusters.   **It is dangerous to select outliers as initial centers, since they are away from normal samples.**
 
-CCIA is a density-based multi-scale data condensation.   This procedure is applicable to clustering algorithms for continuous data.   In CCIA, we assume that an individual attribute may provide some information about initial cluster center.
+Cluster Center Initialization Algorithms (CCIA) is a density-based multi-scale data condensation.   This procedure is applicable to clustering algorithms for continuous data.   In CCIA, we assume that an individual attribute may provide some information about initial cluster center.
 
 <!--more-->
 
-CCIA generates _K_ clusters which may be greater than the desired number of clusters _K_. In this situation our aim is to merge some of the similar clusters so as to get _K_ clusters.
+The CCIA procedure is in below.
 
 1. **Estimating the density at a point**
 2. **Sorting the points based on the density criterion**
-    - For each dimension (attribute), divide the normal-distribution curve into K partitions. (The area under each partition is equal.)
+    - For each dimension (attribute), divide the normal-distribution curve into $K$ partitions. (The area under each partition is equal.)
 3. **Selecting a point according to the sorted list**
-    - For each dimension (attribute), take the representative-point $Z_j$ for each partition interval $j$
-    - The area from $-\inf$ to $Z_j$ equals to $(2j-1)/2k$
+    - For each dimension (attribute), take the $j^{th}$representative-point $Z_j$ for each partition interval $j \in (1,K)$
+    - The area from $-\inf$ to $Z_j$ equals to $(2j-1)/2K$
+    - For example, if $K=3$ and $j=1$, then we can find that when the left-area is $(2\times1-1)/(2\times3)=1/6$, the $j^{th}$ representative is at $Z_{score} = -0.9672$ by looking up the CDF(Cumulative Distribution Function) table.
 4. **Pruning all points lying within a disc about a selected point with radius inversely proportional to the density at that point.**
 
 ![](https://ars.els-cdn.com/content/image/1-s2.0-S0167865504000996-gr1.jpg)
+
+
+CCIA generates _K'_ clusters which may be greater than the desired number of clusters _K_. In this situation our aim is to merge some of the similar clusters so as to get _K_ clusters.
 
 ## Cluster Center Proximity Index (CCPI)
 

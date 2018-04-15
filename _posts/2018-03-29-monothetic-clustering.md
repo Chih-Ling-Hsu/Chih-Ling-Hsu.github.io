@@ -38,10 +38,10 @@ For example,
 Note that the measure sum $Sum_i$ for variable $v_i$ is
 
 $$
-Sum_i = \sum_{i \neq j} M_{ij}
+Sum_i = \sum_{j \neq i} M_{ij}
 $$
 
-and the variable with the largest $Sum_i$ will be used for clustering.
+and the variable $v_i$ with the largest $Sum_i$ will be used for clustering.
 
 ## Bisection
 
@@ -50,12 +50,12 @@ Assume there are 8 data points $\{A, B, C, D, E, F, G\}$, each with 6 attributes
 For the first iteration, we compute
 
 $$
-Sum_i = \sum_{i \neq j} M_{ij}
+Sum_i = \sum_{j \neq i} M_{ij}
 $$
 
 for $i \in \{1,2,...,6\}$.
 
-and choose $i$ with the largest $Sum_i$, say, $Sum_5$ is the largest, then we separate data points into 2 clusters accoding to their answer on $v_5$.
+and choose $v_i$ with the largest $Sum_i$, say, $Sum_5$ is the largest, then we separate data points into 2 clusters accoding to their answer on $v_5$.
 
 Suppose the separated clusters are
 

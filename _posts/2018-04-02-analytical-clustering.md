@@ -12,7 +12,7 @@ Analytical clustering is a quick and automatic way by preserving certain feature
 
 <!--more-->
 
-## 1-Dimensional
+## 1-Dimensional 2-Class Clustering
 
 For example, if we want to find 2 clusters among 3000 data points, the goal is to find
 
@@ -21,35 +21,25 @@ For example, if we want to find 2 clusters among 3000 data points, the goal is t
     - cluster $A$ will include $3000\times P_A$ points 
     - cluster $B$ will include $3000\times P_B$ points
 
-Note that we will fisrt obtain the cluster representatives ($X_A, X_B$) and then obtain their percentages ($P_A, P_B$).
+Note that we will first obtain the cluster representatives ($X_A, X_B$) and then obtain their percentages ($P_A, P_B$).
 
 Clustering can be viewed as a method for quantification, that is, represent all data with smaller information.
 
-When see it as a quantification, to solve $4$ unknown variables, we can do clustering with assumptions that 
+When see it as a quantification, what we need to do is to solve $4$ unknown variables.   So we can do clustering with $4$ assumptions that 
 
 - $P_A+P_B = 100\%$
 - $P_AX_A +P_BX_B = \overline{X} = \frac{1}{3000}(X_1+X_2+...+X_{3000})$
 - $P_AX_A^{2} +P_BX_B^{2} = \overline{X^{2}} = \frac{1}{3000}(X_1^{2}+X_2^{2}+...+X_{3000}^{2})$
 - $P_AX_A^{3} +P_BX_B^{3} = \overline{X^{3}} = \frac{1}{3000}(X_1^{3}+X_2^{3}+...+X_{3000}^{3})$
 
-which can be written into a more general form as
+which can be used to solved the $4$ variables.
 
-- $P_A+P_B+... = 100\%$
-- $P_AX_A +P_BX_B+... = \overline{X} = \frac{1}{3000}(X_1+X_2+...+X_{3000})$
-- $P_AX_A^{2} +P_BX_B^{2}+... = \overline{X^{2}} = \frac{1}{3000}(X_1^{2}+X_2^{2}+...+X_{3000}^{2})$
-- ...
-- $P_AX_A^{(2k-1)} +P_BX_B^{(2k-1)} +... = \overline{X^{(2k-1)}} = \frac{1}{3000}(X_1^{(2k-1)}+X_2^{(2k-1)}+...+X_{3000}^{(2k-1)})$
-
-
-where $k$ is the number of clusters.
-
-
-## 2-Dimensional
+## 2-Dimensional 2-Class Clustering
 
 Now we need to find
 
 - the 2 representatives $(X_A, Y_A), (X_B, Y_B)$
-- the 2 percentages $P_A, P_B,$ ($P_A+P_B = 100\%$)
+- the 2 percentages $P_A, P_B$ ($P_A+P_B = 100\%$)
     - cluster $A$ will include $3000\times P_A$ points 
     - cluster $B$ will include $3000\times P_B$ points
 
@@ -63,7 +53,7 @@ Y_i = r_isin\theta_i
 where~i \in \{A,B\}
 $$
 
-the following formulas will be used to solve these variables:
+the following $6$ formulas will be used to solve these variables:
 
 - $P_A+P_B = 100\%$
 - $P_AX_A+P_BX_B=\overline{X}$
@@ -72,7 +62,7 @@ the following formulas will be used to solve these variables:
 - $P_A\theta_A+P_B\theta_B=\overline{\theta}$
 - Principle axis of $\{(X_A, Y_A), (X_B, Y_B)\}$ = Principle axis of data
 
-To make the computation easier, we first perform a translation so that $\overline{X}=0$ and $\overline{Y}=0$.   Note that $\overline{xy}, \overline{x^2}, \overline{y^2}, \overline{r}, \overline{\theta}$ are all known values.
+To make the computation easier, we first perform a transformation so that $\overline{X}=0$ and $\overline{Y}=0$.   Note that $\overline{xy}, \overline{x^2}, \overline{y^2}, \overline{r}, \overline{\theta}$ are all known values.
 
 Because
 
@@ -89,7 +79,7 @@ indicating that
 $$
 r_A = \sqrt{X_A^2+Y_A^2}=\frac{P_B}{P_A}\sqrt{X_B^2+Y_B^2}=\frac{P_B}{P_A}r_B
 \\
-\because P_Ar_A+P_Br_B=\overline{r},~P_A\bigg(\frac{P_B}{P_A}r_A\bigg)+P_Br_B = 2P_Br_B
+\because \overline{r}=P_Ar_A+P_Br_B=~P_A\bigg(\frac{P_B}{P_A}r_A\bigg)+P_Br_B = 2P_Br_B
 \\
 \therefore r_B = \frac{\overline{r}}{2P_B}
 $$
@@ -97,19 +87,21 @@ $$
 And the angle of the principle axis will be
 
 $$
-\theta_A = \frac{1}{2}tan^{-1}\bigg(\frac{2\overline{xy}}{\overline{x^2}, \overline{y^2}}\bigg)
+\theta_A = \frac{1}{2}tan^{-1}\bigg(\frac{2\overline{xy}}{\overline{x^2}- \overline{y^2}}\bigg)
 \\
 \theta_B = \theta_A+\pi
-~(\because P_A\theta_A+P_B\theta_B=\overline{\theta})
+~(\because~Principle~Axis~is~reserved)
 \\
-P_B=(\overline{\theta}-\theta_A)/\pi
+\because \overline{\theta} = P_A\theta_A+P_B\theta_B = (1-\theta_B)\theta_A+P_B(\theta_A + \pi)
+\\
+\therefore P_B=(\overline{\theta}-\theta_A)/\pi
 $$
 
 The principle axis is reserved before and after clustering. That is, we are minimizing the squared length of the projection from data point to the principle axis.
 
-## 3-Dimensional
+## 3-Dimensional 2-Class Clustering
 
-Analytical 2-class Clustering in 3-dim data is to solve 8 unknown variables ($P_A, P_B, X_A, X_B, Y_A, Y_B, Z_A, Z_B$) that uses one of the following preserve the properties before and after clustering.
+Analytical 2-class Clustering in 3-dim data is to solve 8 unknown variables ($P_A, P_B, X_A, X_B, Y_A, Y_B, Z_A, Z_B$) that uses one of the following method to preserve the properties before and after clustering.
 
 ### Method 1. Preserve $\{P; \overline{x}, \overline{y}, \overline{z}, \overline{\|xy\|}, \overline{\|xz\|}, \overline{\|yz\|}, \overline{\|xyz\|}\}$ before and after clustering.
 
