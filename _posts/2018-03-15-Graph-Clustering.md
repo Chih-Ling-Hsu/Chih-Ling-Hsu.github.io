@@ -70,12 +70,12 @@ $$
 
 To sketch DT, you need to sketch Voronoi diagram (V-Diagram) first.
 
-> **Voronoi Diagram**.   Given $n$ data points $\{\vec{x_1}, \vec{x_2}, ...\vec{x_n}\}$, then  V-diagram is finding the $cell_i~\big|_{i=1,2,...n}$ such that
+> **Voronoi Diagram**.   Given $n$ data points $\{\vec{x_1}, \vec{x_2}, ...\vec{x_n}\}$, then  V-diagram is finding the $\left.cell_i~\right\vert_{i=1,2,...n}$ such that
 > 
 > $$
 > Cell_i = space~of~influence~of~x_i
 > \\
-> = \{\vec{y} \in space ~\big|~ \|\vec{y}-\vec{x_i}\| < \|\vec{y}-\vec{x_j}\|, \forall j \neq i\}
+> = \{\vec{y} \vert \vec{y} \in space ~\big|~ \|\vec{y}-\vec{x_i}\| < \|\vec{y}-\vec{x_j}\|, \forall j \neq i\}
 > $$
 > 
 > In other words, the boundary walls of the cells are the **vertical lines** between any two points.
