@@ -75,20 +75,21 @@ To sketch DT, you need to sketch Voronoi diagram (V-Diagram) first.
 > $$
 > Cell_i = space~of~influence~of~x_i
 > \\
-> = \{\vec{y} \vert \vec{y} \in space ~\big|~ \|\vec{y}-\vec{x_i}\| < \|\vec{y}-\vec{x_j}\|, \forall j \neq i\}
+> = \{\vec{y} \in space ~\big|~ \|\vec{y}-\vec{x_i}\| < \|\vec{y}-\vec{x_j}\|, \forall j \neq i\}
 > $$
 > 
 > In other words, the boundary walls of the cells are the **vertical lines** between any two points.
 
 Connecting the centers of circumcircles produces the Voronoi diagram (in red).   A circle circumscribing any Delaunay triangle does not contain any other input points in its interior.
 
-<img src="https://i.imgur.com/m2dwd8E.png" style="width:40%">
-<img src="https://i.imgur.com/zF2X8cN.png" style="width:40%">
+<img src="https://imgur.com/V1DOZDh.png" style="width:30%">
+<img src="https://imgur.com/I5HIYj4.png" style="width:30%">
+<img src="https://imgur.com/MZ4HMwv.png" style="width:30%">
 
 
-Whenever the Voronoi cells for a pair of points share a boundary component, we join them with an edge.   That is, **if 2 points $x_i$ and $x_j$ share a boundary wall, then connect them and get** $\overline{x_ix_j}$.
+Whenever the **Voronoi cells (in red)** for a pair of points share a boundary component, we join them with an edge.   That is, **if 2 points $x_i$ and $x_j$ share a boundary wall, then connect them and get** $\overline{x_ix_j}$.
 
-By this way, we can generate Delaunay lines (in black) so that all points are connected with triangles.   In the plane, the Delaunay triangulation maximizes the minimum angle.
+By this way, we can generate **Delaunay lines (in black)** so that all points are connected with triangles.   In the plane, the Delaunay triangulation maximizes the minimum angle.
 
 ## Delete inconsistent edges
 
