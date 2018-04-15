@@ -71,11 +71,13 @@ $$
 To sketch DT, you need to sketch Voronoi diagram (V-Diagram) first.
 
 > **Voronoi Diagram**.   Given $n$ data points $\{\vec{x_1}, \vec{x_2}, ...\vec{x_n}\}$, then  V-diagram is finding the $cell_i~\big|_{i=1,2,...n}$ such that
+> 
 > $$
 > Cell_i = space~of~influence~of~x_i
 > \\
 > = \{\vec{y} \in space ~\big|~ \|\vec{y}-\vec{x_i}\| < \|\vec{y}-\vec{x_j}\|, \forall j \neq i\}
 > $$
+> 
 > In other words, the boundary walls of the cells are the **vertical lines** between any two points.
 
 Connecting the centers of circumcircles produces the Voronoi diagram (in red).   A circle circumscribing any Delaunay triangle does not contain any other input points in its interior.
@@ -84,7 +86,7 @@ Connecting the centers of circumcircles produces the Voronoi diagram (in red).  
 <img src="https://i.imgur.com/zF2X8cN.png" style="width:40%">
 
 
-Whenever the Voronoi cells for a pair of points share a boundary component, we join them with an edge.   That is, if 2 points $x_i$ and $x_j$ share a boundary wall, then connect them and get $\overline{x_ix_j}$.
+Whenever the Voronoi cells for a pair of points share a boundary component, we join them with an edge.   That is, **if 2 points $x_i$ and $x_j$ share a boundary wall, then connect them and get** $\overline{x_ix_j}$.
 
 By this way, we can generate Delaunay lines (in black) so that all points are connected with triangles.   In the plane, the Delaunay triangulation maximizes the minimum angle.
 

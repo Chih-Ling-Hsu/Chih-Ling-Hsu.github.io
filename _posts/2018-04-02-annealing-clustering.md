@@ -90,6 +90,7 @@ $$
 ### Iterative Algorithm of SA
 
 **Step 0.** Let $T = T_{initial}$, $\alpha$ be small (e.g., $\alpha$=0.9), and $P$ be arbitrary.
+
 **Step 1.** For $i \leftarrow 1~to~max\_iteration$ do
 
 1. $P' = \delta(P)$

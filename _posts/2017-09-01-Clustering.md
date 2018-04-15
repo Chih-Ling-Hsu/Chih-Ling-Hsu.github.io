@@ -56,7 +56,7 @@ Note that
 
 - Initial centroids are often chosen randomly.
 - The centroid is typically the mean of the points in the cluster.
-- Except for number of clusters, the **measure of "Closeness"** should also be specified. (Usually measured by *Euclidean distance*, *cosine similarity*, *orcorrelation*).
+- Except for number of clusters, the **measure of "Closeness"** should also be specified. (Usually measured by *Euclidean distance*, *cosine similarity*, or *correlation*).
 - To evaluate the clustering performance, the most common measure is **Sum of Squared Error (SSE)**
 
 $$
@@ -78,7 +78,7 @@ The advantages of K-means are
 On the contrary, the weakness of K-means are
 
 1. depends on initials
-2. outliers (noises) will affect to results
+2. outliers (noises) will affect results
 
 
 ### Limitations of K-means
@@ -137,7 +137,7 @@ repeat
     Select a cluster from list_of_clusters
     for i=1 to number_of_iteration:
         Bisect the selected cluster using basic K-means
-    Add the two clusters from the bisection with the lowaest SSE to list_of_clusters
+    Add the two clusters from the bisection with the lowest SSE to list_of_clusters
 until list_of_clusters contains K clusters
 ```
 
@@ -161,7 +161,7 @@ There are two methods to do hierarchical clustering:
     - Starts with one, all-inclusive cluster.   
     - At each step, it splits a cluster until each cluster contains a point (or there are k clusters).
 
-### The Computational Respect
+### The Cost to Update Distance Matrix
 
 In the process of Agglomerative Clustering, when you merge two clusters $A$ & $B$ to get a new cluster $R = A \cup B$, how do you compute the distance
 $$
@@ -169,16 +169,16 @@ D(R, Q)
 $$
 Given $R$ and other cluster $Q$ ($Q \neq A; Q \neq B$)?
 
-If each data point is of 16 dimensions and we use Euclidean distance, then
+If each data point is of 16 dimensions and we use Euclidean distance, then we need
 
 - 16 substractions
 - 15 additions
 - 16 multiplications
 - and a square root
 
-are needed.   So the number of operations is _dimension dependent_.
+So the number of operations is _dimension dependent_.
 
-In other word, you have a $n$-by-$n$ distance matrix initially.   In each step, you merge two clusters (e.g., $A$ & $B$) to get a new cluster $R$.   The number of clusters decrease by 1.   We thus update the distance metrics with certain formulas:
+For example, assume you have a $n$-by-$n$ distance matrix initially.   In each step, you merge two clusters (e.g., $A$ & $B$) to get a new cluster $R$ and the number of clusters decrease by 1.   We thus **update the distance matrix** with certain formulas:
 - If $D = D_{min}$ (single affinity), 
 $$
 D(R, Q) = min\{D(A,Q), D(B,Q)\}
@@ -199,8 +199,10 @@ D(R, Q) = \frac{1}{\|R\|\|Q\|}\sum_{r
 \in B, q \in Q}\|r-q\|\right]
 \\= \frac{\|A\|}{\|R\|}D(A,Q) + \frac{\|B\|}{\|R\|}D(B,Q)
 $$
-- If $D = D_{center}$, 
+- If $D = D_{centroid}$, 
 $$
+Assume~\bar{x}~is~the~centroid~of~a~cluster~X,
+\\
 \because A \cup B = R ~ \therefore \|A\|\bar{a}+\|B\|\bar{b} = \|R\|\bar{r}
 \\
 \bar{r} = \frac{\|A\|}{\|R\|}\bar{a}+\frac{\|B\|}{\|R\|}\bar{b} = \bar{a}+\frac{\|B\|}{\|R\|}(\bar{b}-\bar{a})
@@ -208,23 +210,27 @@ $$
 (\because \frac{\|A\|}{\|R\|}+\frac{\|B\|}{\|R\|} = 1)
 \\
 \bar{r}~is~on~the~line~connecting~\bar{a}~and~\bar{b}
-D_{AQ}=\|\bar{r}-\bar{a}\|
 \\
 D(R, Q)^2 =\frac{\|A\|}{\|R\|}D(A,Q)^2 + \frac{\|B\|}{\|R\|}D(B,Q)^2 - \frac{\|A\|}{\|R\|}\frac{\|B\|}{\|R\|}D(A,B)^2
+\\
+D(R, Q) = \frac{\|A\|}{\|R\|}D(A,Q) + \frac{\|B\|}{\|R\|}D(B,Q) - \frac{\|A\|}{\|R\|}\frac{\|B\|}{\|R\|}D(A,B)
 $$
+
+
+### The Cost to Compute Similarity between All Pairs of Clusters
 
 At the first step of Hierarchical methods to combine/divide clusters, 
 
-- Agglomerative method has $C^n_2=\frac{n(n-1)}{2}$ possible choices. ($\Theta(n^2)$)
-- Divisive method has $\frac{(2^n-2)}{2}=2^{n-1}-1$ possible choices. ($\Theta(2^n)$)
+- Agglomerative method has $C^n_2=\frac{n(n-1)}{2} = \Theta(n^2)$ possible choices
+- Divisive method has $\frac{(2^n-2)}{2}=2^{n-1}-1 = \Theta(2^n)$ possible choices
 
 given $n$ points.
 
-Note that the computation cost of Divisive method will be higher than that of Agglomerative method when $n \geq 5$.   Either way, Hierarchical Clustering is time consuming and memory wasting.
+Note that when $n \geq 5$, the computation cost for 1 iteration of Divisive method will be higher than that of Agglomerative method.   Either way, Hierarchical Clustering is time consuming and memory wasting.
 
-The final queation is: _"Which should be used? Divisive method or Agglomerative method?"_
+So... _"Which should be used? Divisive method or Agglomerative method?"_
 
-If there are many points ($n$ is large) and the number of clusters is very slow ($k=2~or~3$), then Divisive method should be used;   otherwise, agglomerative method is preferred.
+If there are many points ($n$ is large) and the number of clusters is very low ($k=2~or~3$), then divisive method should be used;   otherwise, agglomerative method is preferred.
 
 
 ## Density-based clustering

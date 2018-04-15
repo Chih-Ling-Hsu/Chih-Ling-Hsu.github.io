@@ -83,7 +83,7 @@ $$
 D(R, Q)^2 =\frac{\|A\|}{\|R\|}D(A,Q)^2 + \frac{\|B\|}{\|R\|}D(B,Q)^2 - \frac{\|A\|}{\|R\|}\frac{\|B\|}{\|R\|}D(A,B)^2
 $$
 
-given $R$ and other cluster $Q$ ($Q \neq A; Q \neq B$).
+given $R$ and an another cluster $Q$ ($Q \neq A; Q \neq B$).
 
 ## Other methods driven by an objective function
 

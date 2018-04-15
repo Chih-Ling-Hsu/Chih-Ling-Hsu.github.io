@@ -20,11 +20,11 @@ With **Grid (Mesh)**, summarise the number of points for each block (cell).
 
 For example, there are $6\times 6$ cells, each cell has at most $8=3^2-1$ neighbors.
 
-Start with any cell.   Find the $Max$ of your neighbors and shoot the $Max$ by an arrow (which means "_yield_") if the $Max$ is larger than you.   Repeat this procedure with all cells.
+Start with any cell.   Find the $Max$ of your neighbors and shoot to the $Max$ with an arrow (which means "_yield_") if the $Max$ is larger than you.   Repeat this procedure with all cells.
 
-In the end, a "_peak_" is a cell that many cells shoot to.   View a "_peak_" as a center of clusters and the member of this cluster is the cell that points to this "_peak_".
+In the end, a "_peak_" is a cell that shoots to no one and  many cells shoot to.   View a "_peak_" as a center of clusters and the member of this cluster is the cell that points to this "_peak_".
 
-For example, we can find that there are two clusters in the matrix above.   One is at the upper-left and the other is at the lower-right (separated by the symbol "\|").
+For example, we can find that there are two clusters in the matrix above.   One is at the upper-left and the other is at the lower-right.
 
 
 ## Strength

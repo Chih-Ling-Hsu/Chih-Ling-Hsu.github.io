@@ -746,7 +746,7 @@ $$
 d(u, v) = \sum_{i,j}\frac{dist\big(u[i], v[j]\big)}{\big(\left| u \right| \times \left| v \right|\big)}
 $$
 
-for all points $i$ and $j$ where $|u|$ and $|v|$ are the cardinalities of clusters $u$ and $v$, respectively. This is also called the UPGMA algorithm.
+for all points $i$ and $j$ where $\|u\|$ and $\|v\|$ are the cardinalities of clusters $u$ and $v$, respectively. This is also called the UPGMA algorithm.
 
 
 ```python

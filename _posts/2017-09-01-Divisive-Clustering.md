@@ -34,7 +34,7 @@ The following is an example of Divisive Clustering.
     - $d$ to others: $mean(10,9,4,3)=6.5$
     - $e$ to others: $mean(9,8,5,3)=6.25$
 2. Everyone in the old party asks himself: _"In average, do I hate others in old party more than hating the members in the new party?"_
-    - If the answer is "No", then he will also go to the new party.
+    - If the answer is "Yes", then he will also go to the new party.
 
     |  | $\alpha=$distance to the old party | $\beta=$distance to the new party | $\alpha-\beta$ |
     | - | - | - | - |
@@ -43,7 +43,7 @@ The following is an example of Divisive Clustering.
     | d | $\frac{9+4+3}{3}=5.33$ | 10 | $<0$ |
     | e | $\frac{8+5+3}{3}=5.33$ | 9 | $<0$ |
 
-3. Everyone in the old party ask himself the same question as above again and again until everyone got the answer "Yes". 
+3. Everyone in the old party ask himself the same question as above again and again until everyone got the answer "No". 
 
     |  | $\alpha=$distance to the old party | $\beta=$distance to the new party | $\alpha-\beta$ |
     | - | - | - | - |
@@ -54,8 +54,8 @@ The following is an example of Divisive Clustering.
 **Step 2.** Choose a current cluster and split it as in **Step 1.**
 
 1. Choose a current cluster
-    - If split the cluster with the largest number of members, then the cluster $\{c,d,e\}$ will be split.
-    - If split the cluster with the largest diameter, then the cluster $\{c,d,e\}$ will be split.
+    - If split the cluster with the largest number of members, then the cluster {$c,d,e$} will be split.
+    - If split the cluster with the largest diameter, then the cluster {$c,d,e$} will be split.
     
         | cluster | diameter |
         | - | - |
@@ -64,7 +64,7 @@ The following is an example of Divisive Clustering.
 
 2. Split the chosen cluster as in **Step 1.**
 
-**Step 3.** Repeat **Step 2.** until each cluster contains a point (or there are k clusters)
+**Step 3.** Repeat **Step 2.** until each cluster contains a point (or there are $k$ clusters)
 
 
 ## Minimum Spanning Tree Clustering
@@ -78,7 +78,7 @@ It starts with a tree that consists of a point $p$.   In successive steps, look 
 The procedure of constructing hierarchy of clusters using MST would be as follows:
 
 ```python
-Compute a MST for the proximity graph
+Construct a MST as a proximity graph
 repeat
     Split a cluster by breaking the inconsistent edge.
 until Only singleton clusters remain
