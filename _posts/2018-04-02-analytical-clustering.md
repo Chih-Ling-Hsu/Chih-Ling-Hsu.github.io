@@ -155,7 +155,7 @@ y_A = \pm\sqrt{\frac{P_B}{P_A}\overline{y^2}}
 z_A = \pm\sqrt{\frac{P_B}{P_A}\overline{z^2}}
 $$
 
-## 3-Dimensional 2-Class Clustering
+## d-Dimensional 2-Class Clustering
 
 Use the lookup table in [this reserach paper](https://ac.els-cdn.com/0031320396000337/1-s2.0-0031320396000337-main.pdf?_tid=64d0375a-b8ba-4762-9494-c25ed0961bde&acdnat=1523853435_4537709f8d5116676f23959ee7abc8a7) to solve variables.
 
