@@ -178,7 +178,7 @@ If each data point is of 16 dimensions and we use Euclidean distance, then we ne
 
 So the number of operations is _dimension dependent_.
 
-For example, assume you have a $n$-by-$n$ distance matrix initially.   In each step, you merge two clusters (e.g., $A$ & $B$) to get a new cluster $R$ and the number of clusters decrease by 1.   We thus **update the distance matrix** with certain formulas:
+For example, assume you have a $n$-by-$n$ distance matrix initially (if there are $n$ points).   In each step, you merge two clusters (e.g., $A$ & $B$) to get a new cluster $R$ and the number of clusters decrease by 1.   We thus **update the distance matrix** with certain formulas:
 - If $D = D_{min}$ (single affinity), 
 $$
 D(R, Q) = min\{D(A,Q), D(B,Q)\}
@@ -199,7 +199,7 @@ D(R, Q) = \frac{1}{\|R\|\|Q\|}\sum_{r
 \in B, q \in Q}\|r-q\|\right]
 \\= \frac{\|A\|}{\|R\|}D(A,Q) + \frac{\|B\|}{\|R\|}D(B,Q)
 $$
-- If $D = D_{centroid}$, 
+- If $D = D_{centroid}$ (UPGMC linkage), 
 $$
 Assume~\bar{x}~is~the~centroid~of~a~cluster~X,
 \\
@@ -230,7 +230,7 @@ Note that when $n \geq 5$, the computation cost for 1 iteration of Divisive meth
 
 So... _"Which should be used? Divisive method or Agglomerative method?"_
 
-If there are many points ($n$ is large) and the number of clusters is very low ($k=2~or~3$), then divisive method should be used;   otherwise, agglomerative method is preferred.
+If there are many points ($n$ is large) and the number of clusters is very low ($k=2~or~3$), then divisive method should be used;   otherwise, agglomerative method is preferred.   Agglomerative method is good at identifyting small clusters; Divisive method is good at identifying large clusters.
 
 
 ## Density-based clustering

@@ -43,7 +43,7 @@ The following is an example of Divisive Clustering.
     | d | $\frac{9+4+3}{3}=5.33$ | 10 | $<0$ |
     | e | $\frac{8+5+3}{3}=5.33$ | 9 | $<0$ |
 
-3. Everyone in the old party ask himself the same question as above again and again until everyone got the answer "No". 
+3. Everyone in the old party ask himself the same question as above again and again until everyone's got the answer "No". 
 
     |  | $\alpha=$distance to the old party | $\beta=$distance to the new party | $\alpha-\beta$ |
     | - | - | - | - |

@@ -96,7 +96,7 @@ $$
 1. $P' = \delta(P)$
 2. $\triangle = E(P')-E(P)$
 3. if $\triangle<0$, then accept $P'$
-4. if $\triangle>0$, then accept $P'$ only when $e^{\frac{- \triangle}{T}} \geq$ random number
+4. if $\triangle>0$, then accept $P'$ only when $e^{\frac{- \triangle}{T}} \geq$ random number $\in U(0,1)$
 
 If $\triangle>0$, then $P'$ is a bad partition.   Notice that if $T$ is large, then it is easier to accept bad partition.   That is, if $T \approx \infty$, then $e^{\frac{- \triangle}{T}} \approx e^{-0^+}$ (e.g., $e^{-0.001}$, which is very close to 0.999999).
 
