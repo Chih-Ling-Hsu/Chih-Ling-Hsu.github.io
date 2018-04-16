@@ -158,8 +158,11 @@ $$
 ## Multi-class Clustering
 
 **Step 1.** Do analytical clustering for $k$ = 2.
+
 **Step 2.** Draw vertical line (A [line segment](https://www.wikiwand.com/en/Line_segment) bisector passes through the [midpoint](https://www.wikiwand.com/en/Midpoint) of the segment) to split the two clusters according to their cluster centers.
+
 **Step 3.** For each splitted part of data points, do **Step 1.** and **Step 2.** recursively.
+
 **Step 4.** Merge 2 close clusters that have the same boundary cut.
 
 ## Applications
