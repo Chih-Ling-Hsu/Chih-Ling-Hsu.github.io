@@ -38,7 +38,7 @@ $$
 CCPI = \frac{1}{K \times m}\sum_{s=1}^{K}\sum_{j=1}^{m}~\biggl|~\frac{f_{sj}-C_{sj}}{f_{sj}}\biggr|
 $$
 
-where $f_{sj}$ is the $j_{th}$ attribute value of the desired $s_{th}$ cluster center and $C_{sj}$ is the $j_{th}$ attribute value of the initial $s_{th}$ cluster center.
+where $m$ is the number of attributes, $K$ is the number of clusters, $f_{sj}$ is the $j_{th}$ attribute value of the desired $s_{th}$ cluster center and $C_{sj}$ is the $j_{th}$ attribute value of the initial $s_{th}$ cluster center.
 
 The CCPI of different data set using CCIA and random initialization is shown as follows.
 
