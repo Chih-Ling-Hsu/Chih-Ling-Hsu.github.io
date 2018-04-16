@@ -167,7 +167,7 @@ In the process of Agglomerative Clustering, when you merge two clusters $A$ & $B
 $$
 D(R, Q)
 $$
-Given $R$ and other cluster $Q$ ($Q \neq A; Q \neq B$)?
+Given $R$ and an another cluster $Q$ ($Q \neq A; Q \neq B$)?
 
 If each data point is of 16 dimensions and we use Euclidean distance, then we need
 
