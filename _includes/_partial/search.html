@@ -22,7 +22,7 @@ google.setOnLoadCallback(function(){
 },true);
 </script>-->
 
-<div id="main" class="page"></div>
+<!--<div id="main" class="page"></div>
   <script src="https://www.google.com.hk/jsapi" type="text/javascript"></script>
 
   <script>
@@ -47,6 +47,19 @@ google.setOnLoadCallback(function(){
   </script>
   
   <gcse:searchresults-only></gcse:searchresults-only>
-</div>
+</div>-->
 
+
+<script>
+  (function() {
+    var cx = '013599163932417097999:da8tmm_kgzo';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
 {% endif %}
