@@ -1879,7 +1879,6 @@ section.comment {
     position: fixed;
     right: 2%;
     top: 320px;
-    overflow-y: scroll;
     line-height: 1.5em;
     font-size: 1em;
     color: #333;

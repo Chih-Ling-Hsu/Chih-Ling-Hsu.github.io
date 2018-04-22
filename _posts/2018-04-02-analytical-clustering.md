@@ -62,7 +62,7 @@ the following $6$ formulas will be used to solve these variables:
 - $P_A\theta_A+P_B\theta_B=\overline{\theta}$
 - Principle axis of $\{(X_A, Y_A), (X_B, Y_B)\}$ = Principle axis of data
 
-To make the computation easier, we first perform a transformation so that $\overline{X}=0$ and $\overline{Y}=0$.   Note that $\overline{xy}, \overline{x^2}, \overline{y^2}, \overline{r}, \overline{\theta}$ are all known values.
+To make the computation easier, we first perform a transformation so that $\overline{X}=0$ and $\overline{Y}=0$.   Note that $\overline{xy}, \overline{x^2}, \overline{y^2}, \overline{r}, \overline{\theta}$ are all known values.
 
 Because
 
@@ -155,11 +155,18 @@ y_A = \pm\sqrt{\frac{P_B}{P_A}\overline{y^2}}
 z_A = \pm\sqrt{\frac{P_B}{P_A}\overline{z^2}}
 $$
 
+## d-Dimensional 2-Class Clustering
+
+Use the lookup table in [this reserach paper](https://ac.els-cdn.com/0031320396000337/1-s2.0-0031320396000337-main.pdf?_tid=64d0375a-b8ba-4762-9494-c25ed0961bde&acdnat=1523853435_4537709f8d5116676f23959ee7abc8a7) to solve variables.
+
 ## Multi-class Clustering
 
 **Step 1.** Do analytical clustering for $k$ = 2.
+
 **Step 2.** Draw vertical line (A [line segment](https://www.wikiwand.com/en/Line_segment) bisector passes through the [midpoint](https://www.wikiwand.com/en/Midpoint) of the segment) to split the two clusters according to their cluster centers.
+
 **Step 3.** For each splitted part of data points, do **Step 1.** and **Step 2.** recursively.
+
 **Step 4.** Merge 2 close clusters that have the same boundary cut.
 
 ## Applications
@@ -194,4 +201,4 @@ Also, for $d$-Dimensions, the applications are
 ## References
 - [Lin, J. C., & Tsai, W. H. (1994). Feature-preserving clustering of 2-D Data for two-class problems using analytical formulas: An automatic and fast approach. _IEEE transactions on pattern analysis and machine intelligence_, _16_(5), 554-560.](http://ieeexplore.ieee.org/abstract/document/291439/)
 - [Lin, J. C. (1996). Multi-class clustering by analytical two-class formulas. _International journal of pattern recognition and artificial intelligence_, _10_(04), 307-323.](http://www.worldscientific.com/doi/abs/10.1142/S0218001496000220)
-- J.C. Lin and W.J. Lin (1996). ”Analytical two-class clustering formulas for high dimensional data,” Pattern Recognition, Vol. 29, No. 11, pp. 1919-1930.
+- [J.C. Lin and W.J. Lin (1996). ”Analytical two-class clustering formulas for high dimensional data,” Pattern Recognition, Vol. 29, No. 11, pp. 1919-1930.](https://ac.els-cdn.com/0031320396000337/1-s2.0-0031320396000337-main.pdf?_tid=64d0375a-b8ba-4762-9494-c25ed0961bde&acdnat=1523853435_4537709f8d5116676f23959ee7abc8a7)
