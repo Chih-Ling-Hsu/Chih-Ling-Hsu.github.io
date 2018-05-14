@@ -16,7 +16,12 @@ The answer can be _"by clustering"_, for instance, by repeated 2-means ($2 \righ
 
 However, we should also use the trained codebook to test some other images not in the training(clustering) process.   This shows whether the codebook is good or bad.
 
-## Pre-processing: Codebook Generation
+## Vector Quantization (VQ)
+
+According to Wikipedia, Vector quantization (VQ) is a classical quantization technique from signal processing that allows the modeling of probability density functions by the distribution of prototype vectors.   It works by dividing a large set of points (vectors) into groups having approximately the same number of points closest to them and each group is represented by its centroid point, as in k-means and some other clustering algorithms.
+
+
+### Pre-processing: Codebook Generation
 
 - Global codebook: using a training set of images
 - Local codebook: use the image itself as the training set
@@ -30,7 +35,7 @@ The commonly used Linde-Buzo-Gray(LBG) algorithm to create  codebook is in fact 
   - Each “cluster center” is still 4-by-4, so still has 4x4=16 pixels (and each pixel is always an integer value in the range 0~255) 
 - **Method**: a clustering method to cluster the input blocks into k clusters.
 
-## Encoding: Image Compression
+### Encoding: Image Compression
 
 For each block in the image, find its nearest neighbor in the codebook.
 
@@ -56,7 +61,7 @@ which is called the _Index File_ (1 * 10000 bits).
 
 In summary, the compression ratio is $1/8 = 0.125$.
 
-## Decoding: Reconstruct Image
+### Decoding: Reconstruct Image
 
 However, note that VQ is a compression method with "error" bits.   **Blocking-effect** (e.g., Lena's shoulder) is one of its drawbacks.
 
@@ -65,7 +70,7 @@ However, note that VQ is a compression method with "error" bits.   **Blocking-ef
 | VQ | Clustering |
 | - | - |
 | k = 256 CodeVectors | k = 256 ClusterCenters |
-| Codebook = {CodeVector$_i$}$_{i=1}^{256}$ | {ClusterCenter$_i$}$_{i=1}^{256}$ |
+| Codebook = {$CodeVector_i$ } $_{i=1}^{256}$ | { $ClusterCenter_i$ } $_{i=1}^{256}$  |
 | IndexFile = {A,B,B,A, ...} | Membership = {$x_1 \rightarrow$ Cluster A, $x_2 \rightarrow$ Cluster B, ...} |
 | Store IndexFile & Codebook | Record Clustering Result
 
