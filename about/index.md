@@ -4,7 +4,7 @@ type: page
 title: About me
 ---
 
-<div style="text-align:center"><img style="width:30%" src="https://i.imgur.com/NPlzntA.jpg" class="rounded-circle" alt="ME"></div>
+<div style="text-align:center"><img style="width:30%;border-radius: 50%;" src="https://i.imgur.com/NPlzntA.jpg"></div>
 
 
 Chih-Ling Hsu is a `data science enthusiast` who loves to learn and build new things.   She reflects a varied personality including genuineness, dependability and the qualities of rationality and thoughtfulness.   Determined to fight for what she desires, Chih-Ling believes that nothing great comes easy and with efforts everything is possible.
@@ -21,7 +21,7 @@ When studying in college, Chih-Ling found herself talented in computer programmi
 
 In the last semester in college, Chih-Ling worked as a long-term intern in `LITE-ON Technology Corporation`.   In the 6 months she worked in LITE-ON, she cooperated with auto testing team in Beijing and built several auto testing tools for the newly developed firmware of multi-functional printer.   In 2017, she worked as a part-time employee at `National Center for High-Performance Computing (NCHC)`, where she fostered her capability of exploratory data analytics under the supervision of a senior statistician.   She also contributed to the foundation of a big data analysis platform at NCHC by building machine learning tools using Apache Spark with Java programming language.
 
-Chih-Ling is now a full-time student, motivated by the hunger after knowledge as she strives to accumulate not only her technological know-how but also her ability to work out any problems she encounters.   She is currently completing the `Master Degree Program in Institute of Computer Science and Engineering` at National Chiao Tung University.
+Chih-Ling is now a full-time student, motivated by the hunger after knowledge as she strives to accumulate not only her technological know-how but also her ability to work out any problems she encounters.   She is currently completing the Master Degree Program in `Institute of Computer Science and Engineering` at National Chiao Tung University.
 
 
 ## Major Accomplishments
