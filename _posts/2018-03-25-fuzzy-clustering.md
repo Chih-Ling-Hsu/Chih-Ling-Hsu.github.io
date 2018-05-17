@@ -26,8 +26,9 @@ which turns out to be TSSE (Total Sum of Squared Error) if $u_{ij}$ is defined a
 
 Fuzzy k-means (FKM) is also called fuzzy C-means (FCM). This clustering method is stated as below:
 
-**Step 1.** Guess $K$ initial cluster centers {$V_j$}$_{j=1}^K$ randomly given $N$ data points.
-**Step 2.** Update membership coefficients {$u_{ij}$}$_{i=1,j=1}^{N, K}$
+**Step 1.** Guess $K$ initial cluster centers {$V_j$} $_{j=1}^K$ randomly given $N$ data points.
+
+**Step 2.** Update membership coefficients {$u_{ij}$} $_{i=1,j=1}^{N, K}$
 
 $$
 u_{ij} = \frac{\bigg(\|x_i-V_j\|^{-2}\bigg)^{\frac{1}{q-1}}}{\sum_{l=1}^{K}\bigg(\|x_i-V_l\|^{-2}\bigg)^{\frac{1}{q-1}}}
