@@ -45,14 +45,14 @@ $$
 **Step 4.** Repeat **Step 2.** and **Step 3.** until no big changes among $\{u_{ij}\}_{i=1,j=1}^{N, K}$
 
 
-Note that it is common that $q>1$ (e.g., $q=2$) so that this iterative clustering will be easier to converge.   On the other hand, when $q \approx 1$ (i.e., $q=0.001, \frac{1}{q-1}=1000$), the clustering result would be similar to the behaviour of Hard Clustering.
+Note that it is common that $q>1$ (e.g., $q=2$) so that this iterative clustering will be easier to converge.   On the other hand, when $q \approx 1$ (i.e., $q=1.001, \frac{1}{q-1}=1000$), the clustering result would be similar to the behaviour of Hard Clustering.
 
 ### When Fuzzy k-means almost becomes Hard k-means
 
 
-If $q=1^+$ (e.g., $q$=0.001), then FkM almost becomes Hard k-means.
+If $q=1^+$ (e.g., $q$=1.001), then FkM almost becomes Hard k-means.
 
-For example, when $q$=0.001 and thus $\frac{1}{q-1}=1000$.   Assume there are 3 clusters currently, and 
+For example, when $q$=1.001 and thus $\frac{1}{q-1}=1000$.   Assume there are 3 clusters currently, and 
 
 - $\| x_i-v_1 \| = \frac{1}{\sqrt{50}}$
 - $\| x_i-v_2 \| = \frac{1}{\sqrt{49}}$
