@@ -179,13 +179,15 @@ And we follow the steps here to obtain better result from numbers of clustering 
 
 **Step 2.** Do GA operations (Selection, Crossover, Mutation) on these 50 strings.
 
-**Step 3.** Among the 50 modified strings, for each string we assign $x_1, ...x_{3000}$ to their nearest centers, update $k$ centers, and evaluate the **TSE (total sum of non-squared error)** of this string.
+**Step 3.** Among the 50 modified strings, for each string we iteratively assign $x_1, ...x_{3000}$ to their nearest centers, and update $k$ centers in string.
 
-**Step 4.** Delete the string whose TSE is the worst.   Replace it by the best string in old generations so far.  (Replace the second best if the best is already in the current 50 strings.)
+**Step 4.** Evaluate the **TSE (total sum of non-squared error)** of all updated strings in pool.
 
-**Step 5.** Repeat **Step 2. ~ Step 4.** for pre-assigned number of generations.
+**Step 5.** Delete the string whose TSE is the worst.   Replace it by the best string in old generations so far.  (Replace the second best if the best is already in the current 50 strings.)
 
-**Step 6.** Among strings in the pool, output the string whose TSE is the smallest.
+**Step 6.** Repeat **Step 2. ~ Step 5.** for pre-assigned number of generations.
+
+**Step 7.** Among strings in the pool, output the string whose TSE is the smallest.
 
 
 ### Selection
@@ -210,9 +212,7 @@ Next we perform mutation with probability $P_{mutation}$ in each generation.
 
 We randomly grab a string $Q$ from pool.   Let $TSE_Q$ be the TSE of string $Q$ and define $TSE_{max}$ and $TSE_{min}$ as the maximum and minimum TSE of all strings in the current pool respectively.
 
-Among all data points, we find the maximum value $x_d^{max}$ and the minimum value $x_d^{min}$ in each dimension $d$.
-
-Then the new value of dimension $d$ in string $Q$ becomes
+Among all data points, we find the maximum value $x_d^{max}$ and the minimum value $x_d^{min}$ in each dimension $d$.    Then the new value of dimension $d$ in string $Q$ becomes
 
 $$
 Q_d^{updated}= 
@@ -240,15 +240,15 @@ In the table below we present the TSE of clustering results using different meth
 - GA, after training 1000 generations.
 - K-GA, after training 1000 generations.
 
-Note that the value in the brackets in the mean value of TSE.
+Note that the value in the brackets in the average TSE.
 
 | Experiment | k-means | GA | K-GA | 
 | - | - | - | - |
-| n=10, k=2, 2-dim | 2.225498~3.488572<br>(5.383182) | 2.225498 | 2.225498 |
-| n=76, k=3, 2-dim | 47.616~61.613<br>(57.713) | 60.033~72.342<br>(66.800*) | 47.616026 |
+| n=10, k=2, 2-dim | 2.225498~3.488572<br>(5.383182) | 2.225498<br>(2.225498) | 2.225498<br>(2.225498) |
+| n=76, k=3, 2-dim | 47.616~61.613<br>(57.713) | 60.033~72.342<br>(66.800*) | 47.616026<br>(47.616026) |
 | n=871, k=6, ?-dim<br>*Indian Vowels (audio)* | 149373~151605<br>(149904) | 383484~395267<br>(390088) | 149356~149378<br>(149369) |
-| n=156, k=3, 2-dim<br>*Iris* | 97.205~124.022<br>(107.725) | 124.127458~139.778272<br>(135.405) | 97.1 |
-| n=56, k=3, 5-dim<br>*Crude Oil* | 279.48~279.74<br>(279.597091) | 297.05~318.97<br>(278.965150*) | 278.965150<br>(308.155902) |
+| n=156, k=3, 2-dim<br>*Iris* | 97.205~124.022<br>(107.725) | 124.127458~139.778272<br>(135.405) | 97.1<br>(97.1) |
+| n=56, k=3, 5-dim<br>*Crude Oil* | 279.48 ~ 279.74<br>(279.48~279.74)(279.597091) | 297.05~318.97<br>(308.155902*) | 278.965150<br>(278.965150) |
 
 
 *For GA, in these cases the solution space is too large ($3^{76}$ and $3^{56}$ respectively).   So it would converge slowly.
@@ -256,7 +256,7 @@ Note that the value in the brackets in the mean value of TSE.
 
 On the other hand, for each method the number of generations needed to get lower bound TSE are
 
-| Experiment | GA | K-GA | 
+| Experiment | K-GA | GA | 
 | - | - | - |
 | n=10, k=2, 2-dim | 2.4 | 21 |
 | n=76, k=3, 2-dim | 3 | - |
@@ -264,16 +264,16 @@ On the other hand, for each method the number of generations needed to get lower
 | n=156, k=3, 2-dim<br>*Iris* | 358 | 5867 |
 | n=56, k=3, 5-dim<br>*Crude Oil* | 6.6 | 4703 |
 
-## Genetic Clustering for unknown $k$ (GCUK-clustering)
+## Genetic Clustering for Unknown $K$ (GCUK-clustering)
 
-According to "Genetic Clustering for Automatic Evolusion of Clusters" (2002), we can perform Genetic Clustering for unknown $k$.
+According to "Genetic Clustering for Automatic Evolusion of Clusters" (2002), we can perform Genetic Clustering for unknown $K$.
 
 In GCUK-clustering, the chromosomes are made up of real numbers (representing the coordinates of the centres) as well as the don’t care symbol ‘#’.
 
 The terms used in GCUK-clustering are defined here.
 
-- Each chromosome is represented by 10 cluster centers.
-- The value of K is assumed to lie in the range $[2, K_{Max}]$. (e.g., $K \in [2, 10]$)
+- Each chromosome is represented by $K_{Max}$ cluster centers.(e.g., $K_{Max}=10$)
+- The value of $K$ is assumed to lie in the range $[2, K_{Max}]$. (e.g., $K \in [2, 10]$)
 - Cross-over Probability $P_{crossover}$. (e.g., $P_{crossover}=0.8$)
 - Mutation Probability $P_{mutation}$. (e.g., $P_{mutation}=0.001$)
 - Population Size $\|P\|$. (e.g., $\|P\| = 50$)
@@ -297,9 +297,9 @@ $$
 
 For each chromosome ${string}_i$ in population, we 
 
-- extract the $K_i$ centers stored in it, 
-- perform clustering by assigning each point to the cluster corresponding to the closet center, 
-- and compute DB index $DB_i$.
+1. extract the $K_i$ centers stored in it, 
+2. perform clustering by assigning each point to the cluster corresponding to the closet center, 
+3. and compute its DB index $DB_i$.
 
 $$
 DB = \frac{1}{k}\sum_{i=1}^{k} R_i^{(t)}
@@ -346,7 +346,7 @@ The experimental result of using GCUK-clustering is presented in the table below
 | n= 76, k = 3, 2-dim | Really find out k = 3, and the k obtained centers are also precise. |
 | n = 250, k = 5, 2-dim | Really find out k = 5, and the k obtained centers are also precise. |
 | n=683, k=2, 9-dim<br>*Wisconsin Breast Cancer* | Really find out k = 2, and the k obtained centers are also similar to the ground truth. |
-| n=156, k=3, 2-dim<br>*Iris* | Find out k = 2 (${DB}_{k=2} = 0.39628$ $< {DB}_{k=3} = 0.74682$) |
+| n=156, k=3, 2-dim<br>*Iris* | Find out k = 2 ($DB_{k=2} = 0.39628$ $< DB_{k=3} = 0.74682$) |
 
 ## References
 - [An evolutionary technique based on K-means algorithm for optimal clustering in RN](https://www.sciencedirect.com/science/article/pii/S0020025502002086)

@@ -26,7 +26,11 @@ In *Pale Bezdek IEEE-T-Fuzzy-Systems* "On cluster validity for the fuzzy c-means
 1. [PC (Partition Coefficient)](#pc-partition-coefficient)
 2. [PE (Partition Entropy)](#pe-partition-entropy)
 
-To see experiments on PC & PE, you can also refer to "Fuzzy clustering based on k-nearest neighbors Rule" (2001) in *Fuzzy Sets & Systems Vol 120*.
+(To see experiments on PC & PE, you can also refer to "Fuzzy clustering based on k-nearest neighbors Rule" (2001) in *Fuzzy Sets & Systems Vol 120*.)
+
+One of the weaknesses of using PC & PE is that they only consider memberships.  That is, the structure of clusters are ignored.
+
+Another weakness is that using PC or PE to find the best $k$ is not that obvious because it uses "knee" rather than Max or min.   So it is recommended to perform FkM several times with different $q$.   If many result give the same knee, then this knee might be trustworthy.
 
 On the other hand, in *PAMI* "A Valid measure for fuzzy clustering" (1991), the authors used [XB-index](#xb-index-xie-beni) to decide the number of clusters.
 
@@ -49,11 +53,11 @@ $$
 
 for any specific data point $i$.
 
-If PC is large, then FkM is like hard clustering (well separated).   So with a graph of different PC over different $K$, we would **use $k$ with the largest PC**, which is at an apparent knee (or say, a peak).
+If PC is large, then FkM is like hard clustering (well separated).   So with a graph of different PC over different $k$, we would **use $k$ with the largest PC**, which is at an apparent knee (or say, a peak).
 
 ### PE (Partition Entropy)
 
-On the other hand, the definition of Partition Entropy is
+The definition of Partition Entropy is
 
 $$
 PE = PE |_{[u], k} = -\frac{1}{n} \sum_{j = 1}^{k} \sum_{i=1}^{n} u_{i,j} \times log(u_{i,j})
@@ -63,22 +67,18 @@ If PE is small, then FkM is like hard clustering (well separated).   So we would
 
 Note that if $k$ is close to $n$, PC decreases but PE increases.
 
-One of the weaknesses of using PC & PE is that they only consider memberships.  That is, the structure of clusters are ignored.
-
-Another weakness is that using PC or PE to find the best $k$ is not that obvious because it uses "knee" rather than Max or min.   So it is recommended to perform FkM using several different $q$.   If many result give the same knee, then this knee might be trustworthy.
-
 
 ### XB-index (Xie & Beni Index)
 
 The compactness($C$) & separation ($S$) of clustering result can be expressed as
 
 $$
-XB = \frac{C}{S} = \frac{\sum_{j = 1}^{k} \sum_{i=1}^{n} u_{i,j}^2 \|x_i-y_j\|^2}{n \times \bigg({min}_{\tilde{j} \neq j}\|y_{\tilde{j}} - y_j\|\bigg)}
+XB = \frac{C}{S} = \frac{\sum_{j = 1}^{k} \sum_{i=1}^{n} u_{i,j}^2 \|x_i-y_j\|^2}{n \times \bigg( \min_{\tilde{j} \neq j}\|y_{\tilde{j}} - y_j\|\bigg)}
 $$
 
 given $n$ points and $k$ clusters.
 
-A problem of implementation is that $S$ will have a yendency to eventually decrease when $k$ gets close to $n$.   So when XB-index is used, we need to determine $k_{max}$ in advanced ($k_{max} \ll n$) and then **choose $k$ that minimizes XB-index**.   (For example, let $k_{max} = n/3$, which very likely would not reach the starting point of decreasing tendency.)
+A problem of implementation is that separation ($S$) will have a tendency to eventually decrease when $k$ gets close to $n$.   So when XB-index is used, we need to determine $k_{max}$ in advanced ($k_{max} \ll n$) and then **choose $k$ that minimizes XB-index**.   (For example, let $k_{max} = n/3$, which very likely would not reach the starting point of decreasing tendency.)
 
 ### OS (Overlaps Separation Measure)
 
@@ -91,7 +91,7 @@ $$
 
 and our objective is to find a $k$ that minimizes $OS(k)$.
 
-For example, if we have 3000 data points ($n=3000$), let $q = 2$ in FkM, and the weight function for any point $x_i$ is defined as
+For example, if we have 3000 data points ($n=3000$), let $q = 2$ in FkM and the weight function for any point $x_i$ is defined as
 
 - $w(x_i) = 0.1$ (`S`) if $0.8 \leq u_{ij}$ for a cluster $j$
 - $w(x_i) = 0.4$ (`M`) if $0.7 \leq u_{ij} \leq 0.8$ for a cluster $j$
@@ -125,7 +125,7 @@ $$
 So our **overlap function** is defined as
 
 $$
-Overlap(k, R_k) = \sum_{U_{threshold} \in \{0.1, 0.25, ...\}} Overlap(k, R_k) \vert_{U_{threshold}}
+Overlap(k, R_k) = \sum_{U_{threshold}} Overlap(k, R_k) \vert_{U_{threshold}}
 $$
 
 On the other hand, the **separation function** is defined as
@@ -209,7 +209,7 @@ given $S_i^{MST}$ as the length of largest edge in the MST constructed using the
 
 The Dunn index (DI) (introduced by J. C. Dunn in 1974) is also a metric for evaluating clustering algorithms.
 
-The objective us to maximize $D_k$
+The objective is to maximize $D_k$
 
 $$
 D_k = \min_{1\leq i< j\leq k} \frac{\|\overrightarrow{C_i}-\overrightarrow{C_j}\|_{D_{mean}}}{\max_{l=1,2,...,k} S_{l}}
@@ -247,10 +247,10 @@ So if we have a data set $X$, we perform the following steps for $k \in$ { $k_{m
 
 1. Split $X$ into $k$ groups and calculate $log(W_k)$
 2. Generate several groups (say, 10 groups) artificial data $\tilde{X}^{(1)}, \tilde{X}^{(1)}, ...\tilde{X}^{(10)}$. 
-3. Split $\tilde{X}$ into $k$ groups and calculate $log(\tilde{W}_k^{(i)})$ for each group $\tilde{X}^{(i)}$.
+3. Split $\tilde{X}^{(i)}$ into $k$ groups and calculate $log(\tilde{W}_k^{(i)})$ for each group $\tilde{X}^{(i)}$.
 4. $Gap(k) = \Big(\frac{1}{10}\sum_{i=1}^{10}log(\tilde{W}_k^{(i)})\Big) - log(W_k)$
 5. Let $\tilde{\sigma}_{k}$ be the standard deviation of {$log(\tilde{W}_k^{(1)}), log(\tilde{W}_k^{(2)}), ..., log(\tilde{W}_k^{(10)})$}.
-6. Let $\tilde{\sigma}_{k} = \sqrt{1+\frac{1}{10}} \times \tilde{\sigma}_{k}$.
+6. Let $\tilde{\sigma}_{k}$ = $\sqrt{1+\frac{1}{10}} \times \tilde{\sigma}_{k}$.
 
 
 Follow these steps, we calculate Gap-Statistics in user-assigned range { $k_{min}, ..., k_{max}$ } and find smallest $k$ satisfying
@@ -259,7 +259,7 @@ $$
 Gap(k) \geq Gap(k+1) - \tilde{\sigma}_{k+1}
 $$
 
-Note that the artificial data can be generated in two different ways.   The common way is to **sample a value $\tilde{x}_d$ from uniform distribution $U(\min_{x \in X}(x_{d}), \max_{x \in X}(x_{d}))$ in each dimension $d$**.   However in this way the hyper-rectangle where we sample the data from is align to the coordinates, which is usually not similar to the actual distribution.   The other way is to generate the hyper-rectangle that aligns to the principle compomnents in data $X$ and sample uniformly from this space.   In this way, the performance would be much better than the common way.
+Note that the artificial data can be generated in two different ways.   The common way is to sample a value $\tilde{x}_d$ from uniform distribution $U(\min_{x \in X}(x_{d}), \max_{x \in X}(x_{d}))$ in each dimension $d$.   However in this way the hyper-rectangle where we sample the data from is align to the coordinates, which is usually not similar to the actual distribution.   The other way is to generate the hyper-rectangle that aligns to the principle compomnents in data $X$ and sample uniformly from this space.   In this way, the performance would be much better than the common way.
 
 In experiments, Gap-Statistics outperformed hartigan (1975), KL (1985), CH (1974), and Silhouette (1990).
 
