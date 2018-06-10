@@ -80,14 +80,14 @@ Side-Matched Vector Quantization (SMVQ) is proposed by Kim.   The goal of SMVQ i
 
 **Strength**:
 - Visual quality is better
-- Less memory is needed. Compression ratio are both better than VQ’s.
+- Less memory is needed. Compression ratio is both better than VQ’s.
 
 **Weakness**:
 - Time Consuming because the encoding process cannot be parallelized.
 
 ### Encode Seed Blocks
 
-- Top or leftmost blocks of size 4x4.
+- Seed Blocks: Topmost and leftmost blocks of size 4x4.
 - Encoded by VQ.
 - Use universal codebook, find similar block with Euclidean distance
 
@@ -115,6 +115,11 @@ universal~codebook:
 \begin{bmatrix}
 2 & 2 \\
 2 & 2 \\
+\end{bmatrix}
+,
+\begin{bmatrix}
+3 & 3 \\
+3 & 3 \\
 \end{bmatrix}
 ,...
 $$

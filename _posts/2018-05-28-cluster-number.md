@@ -268,5 +268,4 @@ In experiments, Gap-Statistics outperformed hartigan (1975), KL (1985), CH (1974
 - [On cluster validity index for estimation of the optimal number of fuzzy clusters](https://www.sciencedirect.com/science/article/pii/S0031320304001645#tbl1)
 - [Davies–Bouldin index - Wikipedia](https://en.wikipedia.org/wiki/Davies%E2%80%93Bouldin_index)
 - [A Valid measure for fuzzy clustering](http://cs.haifa.ac.il/hagit/courses/seminars/segmentation-III/Xie91.pdf)
-- [Dunn index - Wikipedia
-](https://en.wikipedia.org/wiki/Dunn_index)
+- [Dunn index - Wikipedia](https://en.wikipedia.org/wiki/Dunn_index)
