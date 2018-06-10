@@ -18,7 +18,7 @@ A few aggregation method has proposed, which will be introduced in the following
 
 In probability accumulation algorithm, the construction of correlation matrices takes the cluster sizes of the original clustering result into consideration.
 
-Assume there are $h$ clustering results $\tilde{R_1}, \tilde{R_2}, ..., \tilde{R_h}$ given $n$ data points { $x_1, x_2, ...x_n$ } where each point has $m$ dimensions.
+Assume there are $h$ clustering results $\tilde{R_1}, \tilde{R_2}, ..., \tilde{R_h}$ given $n$ data points { $x_1, x_2, ...x_n$ } and each point has $m$ dimensions.
 
 The clustering aggregation method is stated in the following steps.
 
@@ -29,7 +29,7 @@ A^{(p)}_{i, i} = 1~~~~~\forall i = 1, 2, ..., n
 \\
 A^{(p)}_{i, j}= 
 \begin{cases}
-\frac{1}{1 + \sqrt[m]{\|C_i\|}}& \text{if } C_i~\text{is}~C_j (\text{given}~x_i \in C_i, x_j \in C_j)\\
+\frac{1}{1 + \sqrt[m]{\|C_i\|}}& \text{if } C_i \equiv C_j (\text{given}~x_i \in C_i, x_j \in C_j)\\
 0& \text{otherwise}
 \end{cases}
 $$
@@ -37,7 +37,7 @@ $$
 **Step 2.** Compute the association between all Component Matrix.
 
 $$
-\bar{A} = [P-association] = \frac{1}{h}\bigg(\sum_{p=1}^h A^{(p)}\bigg)
+\bar{A} = [\text{P-association}] = \frac{1}{h}\bigg(\sum_{p=1}^h A^{(p)}\bigg)
 $$
 
 **Step 3.** Generate a distance matrix $D$ using the association $\bar{A}$
@@ -46,11 +46,11 @@ $$
 D = 1 - \bar{A}
 $$
 
-**Step 4.** Use distance matrix $D$ and sinlge linkage ($D_{min}$) hierarchical agglomerative method to perform clustering.
+**Step 4.** Use distance matrix $D$ and sinlge linkage ($D_{min}$) to perform hierarchical agglomerative clustering.
 
 **Step 5.** Stop merging clusters at "Big Jump".
 
-Note that the aggregation result will be better if we pre-process data into uniform distribution (zero mean and standard deviation) for each attribute.
+(Note that the aggregation result will be better if we pre-process data into uniform distribution (zero mean and standard deviation) for each attribute.)
 
 For example, if each data point has only 1 dimension ($m = 1$) and we have performed k-means twice.   So now we have 2 clustering results $R_1$ and $R_2$.
 
@@ -64,6 +64,7 @@ C_2 = \{x_3, x_4\}
 \\
 C_3 = \{x_5, x_6, x_7\}
 $$
+
 $$
 A^{(1)} = \begin{bmatrix}
 1 & 1/3  & 0  & 0  & 0  & 0  & 0\\
@@ -85,8 +86,6 @@ C_2 = \{x_2, x_4, x_5\}
 \\
 C_3 = \{x_6, x_7\}
 $$
-
-
 
 $$
 A^{(2)} = \begin{bmatrix}
@@ -209,7 +208,7 @@ This paper uses single-point crossover:
 
 Next we perform mutation with probability $P_{mutation}$ in each generation.
 
-We randomly grab a string $Q$ from pool.   Let ${TSE}_Q$ be the TSE of string $Q$ and define ${TSE}_{max}$ and ${TSE}_{min}$ as the maximum and minimum TSE of all strings in the current pool respectively.
+We randomly grab a string $Q$ from pool.   Let $TSE_Q$ be the TSE of string $Q$ and define $TSE_{max}$ and $TSE_{min}$ as the maximum and minimum TSE of all strings in the current pool respectively.
 
 Among all data points, we find the maximum value $x_d^{max}$ and the minimum value $x_d^{min}$ in each dimension $d$.
 
