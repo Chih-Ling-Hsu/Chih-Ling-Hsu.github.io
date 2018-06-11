@@ -28,9 +28,7 @@ In *Pale Bezdek IEEE-T-Fuzzy-Systems* "On cluster validity for the fuzzy c-means
 
 (To see experiments on PC & PE, you can also refer to "Fuzzy clustering based on k-nearest neighbors Rule" (2001) in *Fuzzy Sets & Systems Vol 120*.)
 
-One of the weaknesses of using PC & PE is that they only consider memberships.  That is, the structure of clusters are ignored.
-
-Another weakness is that using PC or PE to find the best $k$ is not that obvious because it uses "knee" rather than Max or min.   So it is recommended to perform FkM several times with different $q$.   If many result give the same knee, then this knee might be trustworthy.
+One of the weaknesses of using PC or PE is that they only consider memberships.  That is, the structure of clusters are ignored.   Another weakness is that using PC or PE to find the best $k$ is not that obvious because it uses "knee" rather than Max or min.   So it is recommended to perform FkM several times with different $q$.   If many result give the same knee, then this knee might be trustworthy.
 
 On the other hand, in *PAMI* "A Valid measure for fuzzy clustering" (1991), the authors used [XB-index](#xb-index-xie-beni) to decide the number of clusters.
 
@@ -49,9 +47,9 @@ with the assumption that
 
 $$
 \sum_{j = 1}^{k} u_{i,j}^2 \leq \sum_{j = 1}^{k} u_{i,j} = 1
+\\
+\text{for any specific data point}~i
 $$
-
-for any specific data point $i$.
 
 If PC is large, then FkM is like hard clustering (well separated).   So with a graph of different PC over different $k$, we would **use $k$ with the largest PC**, which is at an apparent knee (or say, a peak).
 
@@ -89,13 +87,13 @@ $$
 OS(k) = \frac{Overlap(k, R_k)}{Sep(k, R_k)}
 $$
 
-and our objective is to find a $k$ that minimizes $OS(k)$.
+and our objective is to **find a $k$ that minimizes $OS(k)$**.
 
 For example, if we have 3000 data points ($n=3000$), let $q = 2$ in FkM and the weight function for any point $x_i$ is defined as
 
-- $w(x_i) = 0.1$ (`S`) if $0.8 \leq u_{ij}$ for a cluster $j$
-- $w(x_i) = 0.4$ (`M`) if $0.7 \leq u_{ij} \leq 0.8$ for a cluster $j$
-- $w(x_i) = 0.7$ (`L`) if $0.6 \leq u_{ij} \leq 0.7$ for a cluster $j$
+- $w(x_i) = 0.1$ (`S`) if there exists a cluster $j$ such that $0.8 \leq u_{ij}$
+- $w(x_i) = 0.4$ (`M`) if there exists a cluster $j$ such that $0.7 \leq u_{ij} \leq 0.8$.
+- $w(x_i) = 0.7$ (`L`) if there exists a cluster $j$ such that $0.6 \leq u_{ij} \leq 0.7$.
 - $w(x_i) = 1.0$ (`XL`) otherwise.
 
 where `S`, `M`, `L` and `XL` represents different level of fuzziness for this point $x_i$.
@@ -141,7 +139,7 @@ So when $Sep(k, R_k)$ is large, then at least 2 out of $k$ clusters are separate
 
 ### Comparisons
 
-In *PR vol 37* "On Cluster Validity index for estimation of the optimal number of fuzzy cluster" (2004), we can see that experients have been conducted on different indices for cluster number validity.   The experimental result is shown in the table below.
+In *PR vol 37* "On Cluster Validity index for estimation of the optimal number of fuzzy cluster" (2004), we can see that experiments have been conducted on different indices for cluster number validity.   The experimental result is shown in the table below.
 
 | data set | PC | PE | XB | CWB* | SV** | OS |
 | - | - | - | - | - | - | - |
@@ -175,7 +173,7 @@ $$
 R_i^{(t)} = \max_{j=\{1,2,...,k\}-\{i\}} \frac{S_i + S_j}{d_{i,j}^{(t)}}
 $$
 
-given the **scatter level $S_i$** for Cluster $C_i$ and the **distance $d_{i,j}^{(t)}$** between $C_i$ and $C_j$.
+and the definitions of the **scatter level $S_i$** for Cluster $C_i$ and the **distance $d_{i,j}^{(t)}$** between $C_i$ and $C_j$ are
 
 $$
 S_i = \frac{1}{\|C_i\|} \sum_{x \in C_i} \|x - y_i\|
@@ -185,8 +183,7 @@ $$
 d_{i,j}^{(t)} = \|y_i - y_j\|_{L_t} = \bigg(\sum_{d=1}^{D} \|C_{i,d}-C_{j,d}\|^t\bigg)^{1/t}
 $$
 
-- $y_i$ is the center of $C_i$
-- $D$ is the dimension of each data point
+given $y_i$ as the center of $C_i$, $D$ as the dimension of each data point.
 
 When we use DB-index as the objective function, we aim to get a clustering result that minimizes DB-index.
 
@@ -209,7 +206,7 @@ given $S_i^{MST}$ as the length of largest edge in the MST constructed using the
 
 The Dunn index (DI) (introduced by J. C. Dunn in 1974) is also a metric for evaluating clustering algorithms.
 
-The objective is to maximize $D_k$
+The objective is to **maximize** $D_k$
 
 $$
 D_k = \min_{1\leq i< j\leq k} \frac{\|\overrightarrow{C_i}-\overrightarrow{C_j}\|_{D_{mean}}}{\max_{l=1,2,...,k} S_{l}}
@@ -259,7 +256,7 @@ $$
 Gap(k) \geq Gap(k+1) - \tilde{\sigma}_{k+1}
 $$
 
-Note that the artificial data can be generated in two different ways.   The common way is to sample a value $\tilde{x}_d$ from uniform distribution $U(\min_{x \in X}(x_{d}), \max_{x \in X}(x_{d}))$ in each dimension $d$ .   However in this way the hyper-rectangle where we sample the data from is align to the coordinates, which is usually not similar to the actual distribution.   **The better way is to generate the hyper-rectangle that aligns to the principle compomnents in data $X$ and sample uniformly from this space.**   In this way, the performance would be much better.
+Note that the artificial data can be generated in two different ways.   The common way is to sample a value $\tilde{x}_d$ from uniform distribution $U(\min_{x \in X}(x_{d}), \max_{x \in X}(x_{d}))$ in each dimension $d$ .   However in this way the hyper-box where we sample the data from is align to (or say, is parallel to) the coordinates, which is usually not similar to the actual distribution.   **The better way is to generate the hyper-box that aligns to (or say, is parallel to) the principal axis in data $X$ and sample uniformly from this space.**   In this way, the performance would be much better.
 
 In experiments, Gap-Statistics outperformed hartigan (1975), KL (1985), CH (1974), and Silhouette (1990).
 

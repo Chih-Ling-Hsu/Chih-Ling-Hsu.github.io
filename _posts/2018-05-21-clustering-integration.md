@@ -12,7 +12,7 @@ Since a large number of clustering algorithms exist, aggregating different clust
 
 <!--more-->
 
-A few aggregation method has proposed, which will be introduced in the following sections.
+A few aggregation methods have been proposed, which will be introduced in the following sections.
 
 ## Clustering aggregation by probability accumulation (2009)
 
@@ -177,11 +177,11 @@ And we follow the steps here to obtain better result from numbers of clustering 
 
 **Step 1.** Randomly generate 50 sets of chromosomes.
 
-**Step 2.** Do GA operations (Selection, Crossover, Mutation) on these 50 strings.
+**Step 2.** Do **GA operations** (Selection, Crossover, Mutation) on these 50 strings.
 
-**Step 3.** Among the 50 modified strings, for each string we iteratively assign $x_1, ...x_{3000}$ to their nearest centers, and update $k$ centers in string.
+**Step 3.** Among the 50 modified strings, for each string we assign $x_1, ...x_{3000}$ to their nearest centers, and update $k$ centers in string.
 
-**Step 4.** Evaluate the **TSE (total sum of non-squared error)** of all updated strings in pool.
+**Step 4.** Evaluate the **TSE (total sum of non-squared error)** for each updated string in pool.
 
 **Step 5.** Delete the string whose TSE is the worst.   Replace it by the best string in old generations so far.  (Replace the second best if the best is already in the current 50 strings.)
 
@@ -240,7 +240,7 @@ In the table below we present the TSE of clustering results using different meth
 - GA, after training 1000 generations.
 - K-GA, after training 1000 generations.
 
-Note that the value in the brackets in the average TSE.
+Note that the value in the brackets is the average TSE.
 
 | Experiment | k-means | GA | K-GA | 
 | - | - | - | - |
@@ -254,7 +254,7 @@ Note that the value in the brackets in the average TSE.
 *For GA, in these cases the solution space is too large ($3^{76}$ and $3^{56}$ respectively).   So it would converge slowly.
 
 
-On the other hand, for each method the number of generations needed to get lower bound TSE are
+On the other hand, for each method the number of generations needed to get lower bound TSE is
 
 | Experiment | K-GA | GA | 
 | - | - | - |
@@ -270,7 +270,7 @@ According to "Genetic Clustering for Automatic Evolusion of Clusters" (2002), we
 
 In GCUK-clustering, the chromosomes are made up of real numbers (representing the coordinates of the centres) as well as the don’t care symbol ‘#’.
 
-The terms used in GCUK-clustering are defined here.
+The assumptions used in GCUK-clustering are defined here.
 
 - Each chromosome is represented by $K_{Max}$ cluster centers.(e.g., $K_{Max}=10$)
 - The value of $K$ is assumed to lie in the range $[2, K_{Max}]$. (e.g., $K \in [2, 10]$)
@@ -312,7 +312,7 @@ $$
 R_i^{(t)} = \max_{j=\{1,2,...,k\}-\{i\}} \frac{S_i + S_j}{d_{i,j}^{(t)}}
 $$
 
-given the **scatter level $S_i$** for Cluster $C_i$ and the **distance $d_{i,j}^{(t)}$** between $C_i$ and $C_j$.
+and the definitions of the **scatter level $S_i$** for Cluster $C_i$ and the **distance $d_{i,j}^{(t)}$** between $C_i$ and $C_j$ are
 
 $$
 S_i = \frac{1}{\|C_i\|} \sum_{x \in C_i} \|x - y_i\|
@@ -322,7 +322,7 @@ $$
 d_{i,j}^{(t)} = \|y_i - y_j\|_{L_t} = \bigg(\sum_{d=1}^{D} \|C_{i,d}-C_{j,d}\|^t\bigg)^{1/t}
 $$
 
-(let $y_i$ be the center of $C_i$, $D$ be the dimension of each data point)
+given $y_i$ as the center of $C_i$, $D$ as the dimension of each data point.
 
 
 **Step 3. Genetic Operations**

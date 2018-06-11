@@ -80,7 +80,7 @@ Side-Matched Vector Quantization (SMVQ) is proposed by Kim.   The goal of SMVQ i
 
 **Strength**:
 - Visual quality is better
-- Less memory is needed. Compression ratio is both better than VQ’s.
+- Less memory is needed. Compression ratio is also better than VQ’s.
 
 **Weakness**:
 - Time Consuming because the encoding process cannot be parallelized.
@@ -125,7 +125,7 @@ universal~codebook:
 $$
 
 
-Then the minimum distance will be
+then the minimum distance will be
 
 $$
 \|
@@ -219,7 +219,7 @@ z & k \\
 = \|x-1\|+\|y-1\|+\|x-4\|+\|z-4\|
 $$
 
-(if $D$ is equal, candidate with smallest index wins.)
+(if $D$ is equal for several candidates, the candidate with smallest index wins.)
 
 Thus we have these 2 candidate codeblock:
 
