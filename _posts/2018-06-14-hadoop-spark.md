@@ -12,7 +12,7 @@ mathjax: true
 
 The goal of this document is to practice Spark programming on Hadoop platform with the following problems. 
 
-1. In the text file (`Youvegottofindwhatyoulove.txt`), Show the **top 30 most frequent occurring words** and their **average occurrences in a sentence**   According to the result, what are the characteristics of these words?
+1. In the text file (`Youvegottofindwhatyoulove.txt`), show the **top 30 most frequent occurring words** and their **average occurrences in a sentence**   According to the result, what are the characteristics of these words?
 2. Implement a program to calculate the **average amount in credit card trip for different number of passengers** which are from one to four passengers in **2017.09** NYC Yellow Taxi trip data. In NYC Taxi data, the "Passenger_count" is a driver-entered value. Explain also how you **deal with the data loss issue**.
 3. For each of the above task 1 and 2, **compare the execution time on local worker and yarn cluster**. Also, give some discussions on your observation.  
 
@@ -41,7 +41,7 @@ Here are some useful links for submitting spark programs and spark programing in
 
 
 
-## Q1. Implement a program to calculate the average occurrences of each word in a sentence in the attached article (`Youvegottofindwhatyoulove.txt`).
+## Q1. Implement a program to calculate the average occurrences of each word in a sentence.
 
 The source code that is used for answering this question is written in `q1.py` and the **execution commands** are listed as belows.
 
