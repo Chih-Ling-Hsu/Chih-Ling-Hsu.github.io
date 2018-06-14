@@ -247,7 +247,7 @@ So if we have a data set $X$, we perform the following steps for $k \in$ { $k_{m
 3. Split $\tilde{X}^{(i)}$ into $k$ groups and calculate $log(\tilde{W}_k^{(i)})$ for each group $\tilde{X}^{(i)}$.
 4. $Gap(k) = \Big(\frac{1}{10}\sum_{i=1}^{10}log(\tilde{W}_k^{(i)})\Big) - log(W_k)$
 5. Let $\tilde{\sigma}_{k}$ be the standard deviation of {$log(\tilde{W}_k^{(1)}), log(\tilde{W}_k^{(2)}), ..., log(\tilde{W}_k^{(10)})$}.
-6. Let $\tilde{\sigma}_{k} = \sqrt{1+\frac{1}{10}} \times \tilde{\sigma}_{k}$
+6. Let $\tilde{\sigma_{k}} = \sqrt{1+\frac{1}{10}} \times \tilde{\sigma_{k}}$
 
 
 Follow these steps, we calculate Gap-Statistics in user-assigned range { $k_{min}, ..., k_{max}$ } and find smallest $k$ satisfying
@@ -256,7 +256,7 @@ $$
 Gap(k) \geq Gap(k+1) - \tilde{\sigma}_{k+1}
 $$
 
-Note that the artificial data can be generated in two different ways.   The common way is to sample a value $\tilde{x}_d$ from uniform distribution $U(\min_{x \in X}(x_{d}), \max_{x \in X}(x_{d}))$ in each dimension $d$ .   However in this way the hyper-box where we sample the data from is align to (or say, is parallel to) the coordinates, which is usually not similar to the actual distribution.   **The better way is to generate the hyper-box that aligns to (or say, is parallel to) the principal axis in data $X$ and sample uniformly from this space.**   In this way, the performance would be much better.
+Note that the artificial data can be generated in two different ways.   The common way is to sample a value $\tilde{x_d}$ from uniform distribution $U(\min_{x \in X}(x_{d}), \max_{x \in X}(x_{d}))$ in each dimension $d$ .   However in this way the hyper-box where we sample the data from is align to (or say, is parallel to) the coordinates, which is usually not similar to the actual distribution.   **The better way is to generate the hyper-box that aligns to (or say, is parallel to) the principal axis in data $X$ and sample uniformly from this space.**   In this way, the performance would be much better.
 
 In experiments, Gap-Statistics outperformed hartigan (1975), KL (1985), CH (1974), and Silhouette (1990).
 
