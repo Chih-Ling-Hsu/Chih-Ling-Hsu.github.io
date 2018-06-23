@@ -9,13 +9,13 @@ title: About me
 
 Chih-Ling Hsu is a `data science enthusiast` who loves to learn and build new things.   She reflects a varied personality including genuineness, dependability and the qualities of rationality and thoughtfulness.   Determined to fight for what she desires, Chih-Ling believes that nothing great comes easy and with efforts everything is possible.
 
-## My family and My Early Life
+### My family and My Early Life
 
 When Chih-Ling was young, her father, who is a professor of mechanical engineering, taught her to see things objectively and tackle complicated issues by decomposing it into simple parts.   She has been encouraged to learn the nature of the world not only by scientific books and literature works but also by personal experiences through traveling.   As the eldest daughter in the family, Chih-Ling is expected to set a fine example for her sister and her brother.   This experience made her a broad-minded person and also a leader in study groups throughout her high school life and college life.
 
 Despite her reading hobby, Chih-Ling is also interested in art and music.   She joined pop music club in high school and played the electronic guitar in several public performance events.   Specifically, Chih-Ling loves `rock music` and considers playing music as a way to express and release her emotions.   During her high school life, she was also trained for patience and perceptivity through sketches assignments and fountain pen writings.   In her last year in high school, she imitated Pierre-Auguste Renoir’s `oil painting`, “Young Girls at the Piano”, and exhibit it along with the imitations painted by other students in National Experimental High School.
 
-## My Training & Working Background
+### My Training & Working Background
 
 When studying in college, Chih-Ling found herself talented in computer programming and passed Computer Programming Examination of National Tsing Hua University during her freshman year.   In Chih-Ling’s sophomore year, she received `Academic Excellence Award`, affirming her academic ability in Computer Science.   She also learned about activity planning and how to host an event when participating in the Student Association.
 
@@ -24,11 +24,11 @@ In the last semester in college, Chih-Ling worked as a long-term intern in `LITE
 Chih-Ling is now a full-time student, motivated by the hunger after knowledge as she strives to accumulate not only her technological know-how but also her ability to work out any problems she encounters.   She is currently completing the Master Degree Program in `Institute of Computer Science and Engineering` at National Chiao Tung University.
 
 
-## Major Accomplishments
+### Major Accomplishments
 
 In the end of 2016, Chih-Ling and her partner won the first prize in `Computer Science Senior Project Contest` among over 50 teams.   As the first author, Chih-Ling’s short paper `“Computer Assisted English Email Writing System”` was accepted by International Conference on Computational Linguistics and Intelligent Text Processing in 2017.   In the same year, she also received `College Student Research Creativity Award` by Ministry of Science and Technology according to her research results on computer-assisted language learning.
 
-## Sports & Interests
+### Sports & Interests
 
 Talking about sports, Chih-Ling is absolutely not good at it ever since she was in the elementary school.   She can’t even hit the volleyball ten times in a row.   Actually, she has a history of asthma, which is cured owing to her persistence on `swimming`.   Chih-Ling can now swim all 4 swimming strokes.    She even ranked the eleventh in Hsinchu City Backstroke Swimming Competition at her ninth.
 
