@@ -520,7 +520,7 @@ Cross-validation is a model validation technique for assessing how the results o
 
 The result of model validation on training data is shown as below.
 
-<img style="width:45%" src="res/cm.train.1.png"><img style="width:45%" src="res/cm.train.2.png">
+<img style="width:45%" src="https://i.imgur.com/q0CiAW9.png"><img style="width:45%" src="https://i.imgur.com/kUdPJdM.png">
 
 By checking the confusion matrix, we can see that
 
