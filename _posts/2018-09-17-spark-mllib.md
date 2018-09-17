@@ -5,6 +5,8 @@ tags:
   - Data-Mining
   - Spark
   - Python
+  - Machine-Learning
+  - Classification
 category: Programming
 mathjax: true
 ---
