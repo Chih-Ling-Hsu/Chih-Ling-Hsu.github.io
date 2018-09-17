@@ -532,7 +532,7 @@ By checking the confusion matrix, we can see that
 | - | - | - | - | - | - |
 | Overall | 0.992945546078 | 0.992945546078 | 0.992945546078 | 0.981035 | 0.817182 |
 | Class 0.0 <br>(`Not Cancelled`) | 0.992847084173 | 0.999987728664 | 0.996404613385 |
-| Class 0.0 <br>(`Cancelled`) | 0.999223200859 | 0.686622491843 | 0.813940596166 |
+| Class 1.0 <br>(`Cancelled`) | 0.999223200859 | 0.686622491843 | 0.813940596166 |
 
 Given the evaluation metrics, the validation results show that
 
@@ -560,7 +560,7 @@ By checking the confusion matrix, we can see that
 | - | - | - | - | - | - |
 | Overall | 0.995517407226 | 0.995517407226 | 0.995517407226 | 0.979634 | 0.826068 |
 | Class 0.0 <br>(`Not Cancelled`) | 0.995478844317 | 0.999982376073 | 0.997725528213 |
-| Class 0.0 <br>(`Cancelled`) | 0.9985983131 | 0.734367717185 | 0.846338994256 |
+| Class 1.0 <br>(`Cancelled`) | 0.9985983131 | 0.734367717185 | 0.846338994256 |
 
 Given the evaluation metrics, the evaluation results show that
 
