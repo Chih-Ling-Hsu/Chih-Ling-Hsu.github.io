@@ -80,9 +80,9 @@
       return;
     }
 
-    var needTocNum = true;
+    var needTocNum = false;
     if (headers[0].textContent.substring(0,5).search('.') == -1){
-      needTocNum = false;
+      needTocNum = true;
     }
 
 
