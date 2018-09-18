@@ -83,6 +83,7 @@
     var needTocNum = false;
     console.log(headers[0]);
     console.log(headers[0].textContent);
+    console.log(headers[0].textContent.substring(0,5).search('.'));
     if (headers[0].textContent.substring(0,5).search('.') == -1){
       needTocNum = true;
     }
