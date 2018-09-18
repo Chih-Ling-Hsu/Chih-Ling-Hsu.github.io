@@ -437,7 +437,7 @@ body>header {
     
     /*background: linear-gradient(180deg, rgba(244,167,185, 1) 0%, rgba(221,221,221,1) 93%, rgba(221,221,221,1) 100%);*/
 
-    background-image:url('../img/background.png');
+    background-image:url('../img/bg.png');
     background-repeat:no-repeat;
     background-size:cover;
     color: #000;
