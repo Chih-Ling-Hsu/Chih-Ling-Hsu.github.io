@@ -32,13 +32,17 @@
         return this.top
     }
     
-    function toc_number() {
-        var num = "";
-        for (i = 0; i < this.top; i++) {
-            num += this.dataStore[i] + ".";
+    function toc_number(needTocNum) {
+        if(needTocNum){
+          var num = "";
+          for (i = 0; i < this.top; i++) {
+              num += this.dataStore[i] + ".";
+          }
+          return num;
         }
-        //return num;
-        return '';
+        else{
+          return '';
+        }
     }
     
     function inc_number() {
@@ -76,6 +80,12 @@
       return;
     }
 
+    var needTocNum = true;
+    if (headers[0].textContent.substring(0,5).search('.') == -1){
+      needTocNum = false;
+    }
+
+
     var render = {
       show: function() { output.hide().html(html).show(settings.showSpeed); },
       slideDown: function() { output.hide().html(html).slideDown(settings.showSpeed); },
@@ -99,8 +109,7 @@
       }
     })
     .addClass('clickable-header')
-    .each(function(_, header) {
-      console.log(header);
+    .each(function(_, header) {      
       this_level = get_level(header);
       if (!settings.noBackToTopLinks && this_level === highest_level) {
         $(header).addClass('top-level-header').after(return_to_top);
@@ -109,7 +118,7 @@
         stack.inc_number();
         html += "<li class=\"toc-item toc-level-" + this_level + "\">";
         html += "<a class=\"toc-link\" href='#" + fixedEncodeURIComponent(header.id) + "'>";
-        html += "<span class='toc-number'>" + stack.toc_number() + "</span>"
+        html += "<span class='toc-number'>" + stack.toc_number(needTocNum) + "</span>"
         html += "<span class='toc-text'>" + header.innerHTML + "</span>";
         html += "</a>";
         
@@ -120,7 +129,7 @@
         }
         stack.inc_number();
         html += "<li class='toc-item toc-level-" + this_level + "'><a href='#" + fixedEncodeURIComponent(header.id) + "'>";
-        html += "<span class='toc-number'>" + stack.toc_number() + "</span>"
+        html += "<span class='toc-number'>" + stack.toc_number(needTocNum) + "</span>"
         html += "<span class='toc-text'>" + header.innerHTML + "</span>";
         html += "</a>";
       }
@@ -134,7 +143,7 @@
         }
         stack.inc_number();
         html += "<a href='#" + fixedEncodeURIComponent(header.id) + "'>";
-        html += "<span class='toc-number'>" + stack.toc_number() + "</span>"
+        html += "<span class='toc-number'>" + stack.toc_number(needTocNum) + "</span>"
         html += "<span class='toc-text'>" + header.innerHTML + "</span>";
         html += "</a>";
       }
