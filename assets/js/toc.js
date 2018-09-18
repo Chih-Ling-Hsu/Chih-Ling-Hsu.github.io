@@ -37,7 +37,8 @@
         for (i = 0; i < this.top; i++) {
             num += this.dataStore[i] + ".";
         }
-        return num;
+        //return num;
+        return '';
     }
     
     function inc_number() {
