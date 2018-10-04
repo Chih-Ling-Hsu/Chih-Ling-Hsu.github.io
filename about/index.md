@@ -391,9 +391,6 @@ In the end of 2016, Chih-Ling and her partner won the first prize in `Computer S
                         <strong>National Tsing Hua University</strong>
                     </div>
                     <div class="summary">
-                        &nbsp;
-                    </div>
-                    <div class="summary">
                         Judged by several professionals, scored by to creative innovation, technical difficulty, interface design, application level, team cooperation, and question answering.   Our senior project, "Computer Assisted English Email Writing System", won the first prize among 54 teams.
                     </div>
                 </div>
