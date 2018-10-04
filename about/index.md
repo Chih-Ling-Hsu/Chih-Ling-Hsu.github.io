@@ -218,8 +218,8 @@ In the last semester in college, Chih-Ling worked as a long-term intern in `LITE
 Chih-Ling is now a full-time student, motivated by the hunger after knowledge as she strives to accumulate not only her technological know-how but also her ability to work out any problems she encounters.   She is currently completing the Master Degree Program in `Institute of Computer Science and Engineering` at National Chiao Tung University.
 
 <div id="content" class="container">
-    <section id="education" class="row"><aside class="col-sm-2"><h3>Education</h3>
-        </div><div class="col-sm-10">
+    <section id="education" class="row"><aside class="col-sm-2"><!--<h3>Education</h3>-->
+        </aside><div class="col-sm-10">
             <div class="row">
                 <div class="col-sm-12">
                     <h4 class="strike-through">
@@ -268,8 +268,8 @@ Chih-Ling is now a full-time student, motivated by the hunger after knowledge as
                 </div>
             </div>
         </div>
-    </section><section id="work" class="row"><div class="col-sm-2"><h3>Work</h3>
-        </div><div class="col-sm-10">
+    </section><section id="work" class="row"><aside class="col-sm-2"><!--<h3>Work</h3>-->
+        </aside><div class="col-sm-10">
             <div class="row">
                 <div class="col-sm-12">
                     <h4 class="strike-through">
@@ -361,8 +361,8 @@ Chih-Ling is now a full-time student, motivated by the hunger after knowledge as
 In the end of 2016, Chih-Ling and her partner won the first prize in `Computer Science Senior Project Contest` among over 50 teams.   As the first author, Chih-Ling’s short paper `“Computer Assisted English Email Writing System”` was accepted by International Conference on Computational Linguistics and Intelligent Text Processing in 2017.   In the same year, she also received `College Student Research Creativity Award` by Ministry of Science and Technology according to her research results on computer-assisted language learning.
 
 <div id="content" class="container">
-    <section id="awards" class="row"><div class="col-sm-2"><h3>Awards</h3>
-        </div><div class="col-sm-10">
+    <section id="awards" class="row"><aside class="col-sm-2"><!--<h3>Awards</h3>-->
+        </aside><div class="col-sm-10">
             <div class="row">
                 <div class="col-sm-12">
                     <h4 class="strike-through">
@@ -418,14 +418,14 @@ In the end of 2016, Chih-Ling and her partner won the first prize in `Computer S
                 </div>
             </div>
         </div>
-    </section><section id="publications" class="row"><div class="col-sm-2"><h3>Publication</h3>
-        </div><div class="col-sm-10">
+    </section><section id="publications" class="row"><aside class="col-sm-2"><!--<h3>Publication</h3>-->
+        </aside><div class="col-sm-10">
             <div class="row">
                 <div class="col-sm-12">
                     <h4 class="strike-through">
                         <span>Computer Assisted English Email Writing System</span>
                         <span class="date">
-                            Accepted
+                            2017 Accepted
                         </span>
                     </h4>
                     <div class="publisher">
