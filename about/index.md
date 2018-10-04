@@ -131,7 +131,7 @@ title: About me
 
     @media (min-width: 480px) {
         .strike-through {
-            border-top: 1px solid #aaa;
+            border-top: 1px solid #ddd;
             height: 20px;
             margin-top: 12px;
             margin-bottom: -2px;
@@ -139,7 +139,7 @@ title: About me
         }
         .strike-through span,
         .strike-through a {
-            background: #ddd;
+            background: #fafafa;
             position: absolute;
         }
         .strike-through span:first-child {
