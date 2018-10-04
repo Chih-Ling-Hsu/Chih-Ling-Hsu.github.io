@@ -116,12 +116,6 @@ title: About me
         font-weight: bold;
     }
 
-    #education .area:before {
-        content: "\f0d7";
-        font: 16px Octicons;
-        margin-right: 6px;
-    }
-
     #education .studyType {
         margin-left: 25px;
     }
@@ -229,6 +223,7 @@ Chih-Ling is now a full-time student, motivated by the hunger after knowledge as
                         </span>
                     </h4>
                     <div class="area">
+                        <span class="glyphicon glyphicon-education"></span>
                         Institute of Computer Science and Engineering
                     </div>
                     <div class="studyType">
@@ -251,6 +246,7 @@ Chih-Ling is now a full-time student, motivated by the hunger after knowledge as
                         </span>
                     </h4>
                     <div class="area">
+                        <span class="glyphicon glyphicon-education"></span>
                         Department of Computer Science
                     </div>
                     <div class="studyType">
@@ -367,11 +363,11 @@ In the end of 2016, Chih-Ling and her partner won the first prize in `Computer S
                 <div class="col-sm-12">
                     <h4 class="strike-through">
                         <span>2017 College Student Research Creativity Award</span>
+                        <span class="date">
+                           <em>Awarded</em>
+                            2017-08-14
+                        </span>
                     </h4>
-                    <div class="date pull-right">
-                        <em>Awarded</em>
-                        2017-08-14
-                    </div>
                     <div class="awarder">
                         <em>by</em>
                         <strong>Ministry of Science and Technology</strong>
@@ -385,11 +381,11 @@ In the end of 2016, Chih-Ling and her partner won the first prize in `Computer S
                 <div class="col-sm-12">
                     <h4 class="strike-through">
                         <span>2016 Computer Science Senior Project Contest - First Prize</span>
+                        <span class="date">
+                           <em>Awarded</em>
+                            2016-12-09
+                        </span>
                     </h4>
-                    <div class="date pull-right">
-                        <em>Awarded</em>
-                        2016-12-09
-                    </div>
                     <div class="awarder">
                         <em>by</em>
                         <strong>National Tsing Hua University</strong>
@@ -406,11 +402,11 @@ In the end of 2016, Chih-Ling and her partner won the first prize in `Computer S
                 <div class="col-sm-12">
                     <h4 class="strike-through">
                         <span>Academic Excellence Award for Spring Semester 2014</span>
+                        <span class="date">
+                           <em>Awarded</em>
+                            2014-10-05
+                        </span>
                     </h4>
-                    <div class="date pull-right">
-                        <em>Awarded</em>
-                        2014-10-05
-                    </div>
                     <div class="awarder">
                         <em>by</em>
                         <strong>National Tsing Hua University</strong>
