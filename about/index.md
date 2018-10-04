@@ -4,6 +4,7 @@ type: page
 title: About me
 ---
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 <style type="text/css">
 	@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
     
@@ -187,6 +188,7 @@ Chih-Ling is now a full-time student, motivated by the hunger after knowledge as
                         Institute of Computer Science and Engineering
                     </div>
                     <div class="studyType">
+                        <span class="glyphicon glyphicon-education"></span>
                         Master
                     </div>
                     <!--<h4>Courses</h4>
@@ -210,6 +212,7 @@ Chih-Ling is now a full-time student, motivated by the hunger after knowledge as
                         Department of Computer Science
                     </div>
                     <div class="studyType">
+                        <span class="glyphicon glyphicon-education"></span>
                         Bachelor
                     </div>
                     <!--<h4>Courses</h4>
@@ -245,7 +248,6 @@ Chih-Ling is now a full-time student, motivated by the hunger after knowledge as
                         restaurant sales, customer behaviours, and competitor effect.
                         According to the analysis, measure the impact of newly-implemented bussiness strategy, tailor each
                         component, and give recommendations to respond best.
-                        <br> &nbsp;
                     </div>
                 </div>
             </div>
@@ -265,9 +267,7 @@ Chih-Ling is now a full-time student, motivated by the hunger after knowledge as
                     </div>
                     <div class="summary">
                         Contributed to the foundation of the big data analysis platform by (1) building machine learning tools using Apache Spark
-                        with Java programming language and (2) connecting Spark cluster with Elasticsearch cluster and
-                        Kibana.
-                        <br> &nbsp;
+                        with Java programming language and (2) connecting Spark cluster with Elasticsearch cluster and Kibana.
                     </div>
                     <!--<div class="summary">
                         <p>National Center for High-Performance Computing plays a leading role in Taiwan&rsquo;s cloud technology services by integrating high performance computing (HPC), storage, and networking to provide cloud services in storage, big data analysis, and scientific and engineering simulation.</p>
@@ -295,7 +295,6 @@ Chih-Ling is now a full-time student, motivated by the hunger after knowledge as
                     <div class="summary">
                         Cooperated with auto testing team in Beijing and built several auto testing tools for the newly developed firmware of multi-functional
                         printer.
-                        <br> &nbsp;
                     </div>
                     <!--<div class="summary">
                         <p>LITE-ON produces products that are used in a broad range of applications, such as computers, consumer electronics, automotive electronics, industrial automation as well as biotech and healthcare. LITE-ON is a worldwide leading provider of optoelectronics, information technology, storage devices, and mobile devices components.</p>
