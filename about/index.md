@@ -77,7 +77,7 @@ title: About me
     }
 
     #education .studyType {
-        margin-left: 25px;
+        font-weight: bold;
     }
 
     #awards .summary,
