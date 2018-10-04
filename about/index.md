@@ -152,7 +152,7 @@ title: About me
     }
 </style>
 
-<link rel="stylesheet" href="../assets/css/font-awesome.min.css">
+<link rel="stylesheet" href="../assets/css/font-awesome-4.7.0/css/font-awesome.min.css">
 
 <div style="text-align:center"><img style="width:30%;border-radius: 50%;" src="https://i.imgur.com/NPlzntA.jpg"></div>
 
