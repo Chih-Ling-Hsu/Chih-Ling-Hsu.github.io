@@ -4,7 +4,6 @@ type: page
 title: About me
 ---
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 <style type="text/css">
 	@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
     
@@ -153,6 +152,8 @@ title: About me
     }
 </style>
 
+<link rel="stylesheet" href="../assets/css/font-awesome.min.css">
+
 <div style="text-align:center"><img style="width:30%;border-radius: 50%;" src="https://i.imgur.com/NPlzntA.jpg"></div>
 
 
@@ -188,7 +189,7 @@ Chih-Ling is now a full-time student, motivated by the hunger after knowledge as
                         Institute of Computer Science and Engineering
                     </div>
                     <div class="studyType">
-                        <span class="glyphicon glyphicon-education"></span>
+                        <i class="fa fa-graduation-cap fa-lg" aria-hidden="true"></i>
                         Master
                     </div>
                     <!--<h4>Courses</h4>
@@ -212,7 +213,7 @@ Chih-Ling is now a full-time student, motivated by the hunger after knowledge as
                         Department of Computer Science
                     </div>
                     <div class="studyType">
-                        <span class="glyphicon glyphicon-education"></span>
+                        <i class="fa fa-graduation-cap fa-lg" aria-hidden="true"></i>
                         Bachelor
                     </div>
                     <!--<h4>Courses</h4>
