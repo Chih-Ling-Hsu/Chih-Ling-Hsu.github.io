@@ -7,49 +7,9 @@ title: About me
 <style type="text/css">
 	@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
     
-    a {
-        color: #2ecc71;
-    }
-
-    a:focus,
-    a:hover {
-        color: #f1c40f;
-        text-decoration: none;
-    }
-
-    p {
-        line-height: 1.5;
-        margin: 0;
-    }
-
-    p+p {
-        margin-top: 10px;
-    }
-
-    
 
     section {
         margin-top: 30px;
-    }
-
-    li {
-        line-height: 1.8;
-        list-style: none;
-    }
-
-    li:before {
-        content: "\f052";
-        float: left;
-        font: 13px Octicons;
-        margin-top: 6px;
-        margin-left: -20px;
-        opacity: .1;
-        position: absolute;
-    }
-
-    blockquote {
-        border-left: 5px solid #e7e9ec;
-        font-size: 14px;
     }
 
     em {
