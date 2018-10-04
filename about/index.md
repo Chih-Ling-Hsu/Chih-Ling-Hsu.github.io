@@ -131,7 +131,7 @@ title: About me
 
     @media (min-width: 480px) {
         .strike-through {
-            border-top: 1px solid #f2f3f3;
+            border-top: 1px solid #aaa;
             height: 20px;
             margin-top: 12px;
             margin-bottom: -2px;
@@ -139,7 +139,7 @@ title: About me
         }
         .strike-through span,
         .strike-through a {
-            /*background: #fff;*/
+            background: #ddd;
             position: absolute;
         }
         .strike-through span:first-child {
@@ -393,9 +393,9 @@ In the end of 2016, Chih-Ling and her partner won the first prize in `Computer S
                     <div class="summary">
                         &nbsp;
                     </div>
-                    <!--<div class="summary">
-                Judged by several professionals, scored by to creative innovation, technical difficulty, interface design, application level, team cooperation, and question answering.   Our senior project, "Computer Assisted English Email Writing System", won the first prize among 54 teams.
-            </div>-->
+                    <div class="summary">
+                        Judged by several professionals, scored by to creative innovation, technical difficulty, interface design, application level, team cooperation, and question answering.   Our senior project, "Computer Assisted English Email Writing System", won the first prize among 54 teams.
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -421,7 +421,8 @@ In the end of 2016, Chih-Ling and her partner won the first prize in `Computer S
                     <h4 class="strike-through">
                         <span>Computer Assisted English Email Writing System</span>
                         <span class="date">
-                            2017 Accepted
+                            <em>Accepted</em>
+                            2017
                         </span>
                     </h4>
                     <div class="publisher">
@@ -429,7 +430,7 @@ In the end of 2016, Chih-Ling and her partner won the first prize in `Computer S
                         <strong>Springer's Lecture Notes in Computer Science (LNCS)</strong>
                     </div>
                     <div class="summary">
-                        <p style="margin-bottom: 1em; font-family: sans-serif; text-align: justify;">EmailPro is a computer assisted english email writing system, which improves your writing productivity and fluency in real time.   EmailPro provides you with multiple appropriate pattern/collocation suggestions depending on previous writing to prevent you from common grammar mistakes and help you adopt collocations correctly and also more frequently.</p>
+                        EmailPro is a computer assisted english email writing system, which improves your writing productivity and fluency in real time.   EmailPro provides you with multiple appropriate pattern/collocation suggestions depending on previous writing to prevent you from common grammar mistakes and help you adopt collocations correctly and also more frequently.
                     </div>
                 </div>
             </div>
