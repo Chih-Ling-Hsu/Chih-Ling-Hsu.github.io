@@ -372,9 +372,6 @@ In the end of 2016, Chih-Ling and her partner won the first prize in `Computer S
                         <em>by</em>
                         <strong>Ministry of Science and Technology</strong>
                     </div>
-                    <div class="summary">
-                        &nbsp;
-                    </div>
                 </div>
             </div>
             <div class="row">
