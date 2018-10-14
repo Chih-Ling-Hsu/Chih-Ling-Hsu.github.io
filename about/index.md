@@ -242,7 +242,7 @@ Chih-Ling is now a full-time student, motivated by the hunger after knowledge as
                         <a href="https://www.predictivetechnologies.com/en">https://www.predictivetechnologies.com/en</a>
                     </div>
                     <div class="position">
-                        Extern
+                        Intern
                     </div>
                     <div class="summary">
                         Learn and utilize APT's predictive analytic methodology to explore and analyze retail sales, 
@@ -348,7 +348,7 @@ In the end of 2016, Chih-Ling and her partner won the first prize in `Computer S
                         <strong>National Tsing Hua University</strong>
                     </div>
                     <div class="summary">
-                        Judged by several professionals, scored by to creative innovation, technical difficulty, interface design, application level, team cooperation, and question answering.   Our senior project, "Computer Assisted English Email Writing System", won the first prize among 54 teams.
+                        Judged by several professionals, scored by creative innovation, technical difficulty, interface design, application level, team cooperation, and question answering.   The senior project of Chih-Ling's team, "Computer Assisted English Email Writing System", won the first prize among 54 teams.
                     </div>
                 </div>
             </div>
