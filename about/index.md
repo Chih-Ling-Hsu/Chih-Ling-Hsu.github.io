@@ -186,7 +186,7 @@ Chih-Ling is now a full-time student, motivated by the hunger after knowledge as
             <div class="row">
                 <div class="col-sm-12">
                     <h4 class="strike-through">
-                        <span class="dot"></span><span>National Chiao Tung University</span>
+                        <span><span class="dot"></span>National Chiao Tung University</span>
                         <span class="date">
                             to be completed in 2019
                         </span>
@@ -213,7 +213,7 @@ Chih-Ling is now a full-time student, motivated by the hunger after knowledge as
             <div class="row">
                 <div class="col-sm-12">
                     <h4 class="strike-through">
-                        <span class="dot"></span><span>Applied Predictive Technologies (APT)</span>
+                        <span><span class="dot"></span>Applied Predictive Technologies (APT)</span>
                         <span class="date">
                             2018-07-02 &mdash; 2017-09-07
                         </span>
@@ -235,7 +235,7 @@ Chih-Ling is now a full-time student, motivated by the hunger after knowledge as
             <div class="row">
                 <div class="col-sm-12">
                     <h4 class="strike-through">
-                        <span class="dot"></span><span>National Center for High-Performance Computing</span>
+                        <span><span class="dot"></span>National Center for High-Performance Computing</span>
                         <span class="date">
                             2017-03-01 &mdash; 2017-12-31
                         </span>
@@ -262,7 +262,7 @@ Chih-Ling is now a full-time student, motivated by the hunger after knowledge as
             <div class="row">
                 <div class="col-sm-12">
                     <h4 class="strike-through">
-                        <span class="dot"></span><span>National Tsing Hua University</span>
+                        <span><span class="dot"></span>National Tsing Hua University</span>
                         <span class="date">
                             2013-09-01 &mdash; 2017-06-01
                         </span>
@@ -289,7 +289,7 @@ Chih-Ling is now a full-time student, motivated by the hunger after knowledge as
             <div class="row">
                 <div class="col-sm-12">
                     <h4 class="strike-through">
-                        <span class="dot"></span><span>LITE-ON Technology Corporation</span>
+                        <span><span class="dot"></span>LITE-ON Technology Corporation</span>
                         <span class="date">
                             2017-02-16 &mdash; 2017-08-16
                         </span>
@@ -329,7 +329,7 @@ In the end of 2016, Chih-Ling and her partner won the first prize in `Computer S
             <div class="row">
                 <div class="col-sm-12">
                     <h4 class="strike-through">
-                        <span class="dot"></span><span>Academic Excellence Award for Autumn Semester 2017</span>
+                        <span><span class="dot"></span>Academic Excellence Award for Autumn Semester 2017</span>
                         <span class="date">
                            <em>Awarded</em>
                             2018-04-09
@@ -344,7 +344,7 @@ In the end of 2016, Chih-Ling and her partner won the first prize in `Computer S
             <div class="row">
                 <div class="col-sm-12">
                     <h4 class="strike-through">
-                        <span class="dot"></span><span>2017 College Student Research Creativity Award</span>
+                        <span><span class="dot"></span>2017 College Student Research Creativity Award</span>
                         <span class="date">
                            <em>Awarded</em>
                             2017-08-14
@@ -359,7 +359,7 @@ In the end of 2016, Chih-Ling and her partner won the first prize in `Computer S
             <div class="row">
                 <div class="col-sm-12">
                     <h4 class="strike-through">
-                        <span class="dot"></span><span>2016 Computer Science Senior Project Contest - First Prize</span>
+                        <span><span class="dot"></span>2016 Computer Science Senior Project Contest - First Prize</span>
                         <span class="date">
                            <em>Awarded</em>
                             2016-12-09
@@ -377,7 +377,7 @@ In the end of 2016, Chih-Ling and her partner won the first prize in `Computer S
             <div class="row">
                 <div class="col-sm-12">
                     <h4 class="strike-through">
-                        <span class="dot"></span><span>Academic Excellence Award for Spring Semester 2014</span>
+                        <span><span class="dot"></span>Academic Excellence Award for Spring Semester 2014</span>
                         <span class="date">
                            <em>Awarded</em>
                             2014-10-05
@@ -395,7 +395,7 @@ In the end of 2016, Chih-Ling and her partner won the first prize in `Computer S
             <div class="row">
                 <div class="col-sm-12">
                     <h4 class="strike-through">
-                        <span class="dot"></span><span>Computer Assisted English Email Writing System</span>
+                        <span><span class="dot"></span>Computer Assisted English Email Writing System</span>
                         <span class="date">
                             <em>Accepted</em>
                             2017
