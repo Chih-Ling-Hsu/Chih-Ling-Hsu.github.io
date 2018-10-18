@@ -181,34 +181,7 @@ In the last semester in college, Chih-Ling worked as a long-term intern in `LITE
 Chih-Ling is now a full-time student, motivated by the hunger after knowledge as she strives to accumulate not only her technological know-how but also her ability to work out any problems she encounters.   She is currently completing the Master Degree Program in Institute of Computer Science and Engineering at `National Chiao Tung University`.
 
 <div id="content" class="container">
-    <section id="education" class="row"><aside class="col-sm-2"><!--<h3>Education</h3>-->
-        </aside><div class="col-sm-10">
-            <div class="row">
-                <div class="col-sm-12">
-                    <h4 class="strike-through">
-                        <span><span class="dot"></span>National Chiao Tung University</span>
-                        <span class="date">
-                            to be completed in 2019
-                        </span>
-                    </h4>
-                    <div class="area">
-                        <span class="glyphicon glyphicon-education"></span>
-                        Institute of Computer Science and Engineering
-                    </div>
-                    <div class="studyType">
-                        <i class="fa fa-graduation-cap fa-lg" aria-hidden="true"></i>
-                        Master
-                    </div>
-                    <!--<h4>Courses</h4>
-                    <ul class="courses">
-                        <li>Data Mining</li>
-                        <li>Data Science, Statistics and R</li>
-                        <li>Parallel Programming</li>
-                    </ul>-->
-                </div>
-            </div>            
-        </div>
-    </section><section id="work" class="row"><aside class="col-sm-2"><!--<h3>Work</h3>-->
+    <section id="work" class="row"><aside class="col-sm-2"><!--<h3>Work</h3>-->
         </aside><div class="col-sm-10">
             <div class="row">
                 <div class="col-sm-12">
@@ -262,33 +235,6 @@ Chih-Ling is now a full-time student, motivated by the hunger after knowledge as
             <div class="row">
                 <div class="col-sm-12">
                     <h4 class="strike-through">
-                        <span><span class="dot"></span>National Tsing Hua University</span>
-                        <span class="date">
-                            2013-09-01 &mdash; 2017-06-01
-                        </span>
-                    </h4>
-                    <div class="area">
-                        <span class="glyphicon glyphicon-education"></span>
-                        Department of Computer Science
-                    </div>
-                    <div class="studyType">
-                        <i class="fa fa-graduation-cap fa-lg" aria-hidden="true"></i>
-                        Bachelor
-                    </div>
-                    <!--<h4>Courses</h4>
-                <ul class="courses">
-                    <li>Competitive Programming Training (II), Data Structure, Design and Analysis of Algorithms</li>
-                    <li>Computer Architecture, Operating Systems, Computer System Administration</li>
-                    <li>Computer Graphics, Introduction to Multimedia, Social Computing Application Design</li>
-                    <li>Cloud Programming, Large-Scale Machine Learning</li>
-                    <li>Software Engineering, Public Speaking and Presentation</li>
-                    <li>Industry Internship B</li>
-                </ul>-->
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <h4 class="strike-through">
                         <span><span class="dot"></span>LITE-ON Technology Corporation</span>
                         <span class="date">
                             2017-02-16 &mdash; 2017-08-16
@@ -313,6 +259,61 @@ Chih-Ling is now a full-time student, motivated by the hunger after knowledge as
                         <li class="bullet">Give an academic talk about Python programming.</li>
                         </ul>-->
                 </div>
+            </div>
+        </div>
+    </section>
+    <section id="education" class="row"><aside class="col-sm-2"><!--<h3>Education</h3>-->
+        </aside><div class="col-sm-10">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h4 class="strike-through">
+                        <span><span class="dot"></span>National Chiao Tung University</span>
+                        <span class="date">
+                            to be completed in 2019
+                        </span>
+                    </h4>
+                    <div class="area">
+                        <span class="glyphicon glyphicon-education"></span>
+                        Institute of Computer Science and Engineering
+                    </div>
+                    <div class="studyType">
+                        <i class="fa fa-graduation-cap fa-lg" aria-hidden="true"></i>
+                        Master
+                    </div>
+                    <!--<h4>Courses</h4>
+                    <ul class="courses">
+                        <li>Data Mining</li>
+                        <li>Data Science, Statistics and R</li>
+                        <li>Parallel Programming</li>
+                    </ul>-->
+                </div>
+            </div>            
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <h4 class="strike-through">
+                    <span><span class="dot"></span>National Tsing Hua University</span>
+                    <span class="date">
+                        2013-09-01 &mdash; 2017-06-01
+                    </span>
+                </h4>
+                <div class="area">
+                    <span class="glyphicon glyphicon-education"></span>
+                    Department of Computer Science
+                </div>
+                <div class="studyType">
+                    <i class="fa fa-graduation-cap fa-lg" aria-hidden="true"></i>
+                    Bachelor
+                </div>
+                <!--<h4>Courses</h4>
+            <ul class="courses">
+                <li>Competitive Programming Training (II), Data Structure, Design and Analysis of Algorithms</li>
+                <li>Computer Architecture, Operating Systems, Computer System Administration</li>
+                <li>Computer Graphics, Introduction to Multimedia, Social Computing Application Design</li>
+                <li>Cloud Programming, Large-Scale Machine Learning</li>
+                <li>Software Engineering, Public Speaking and Presentation</li>
+                <li>Industry Internship B</li>
+            </ul>-->
             </div>
         </div>
     </section>
