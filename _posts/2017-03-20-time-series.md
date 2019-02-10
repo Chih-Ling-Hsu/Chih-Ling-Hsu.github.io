@@ -131,10 +131,10 @@ mathjax: true
 
 ### Auto-Regressive Time Series Model
 > AR(1) formulation :
-> $X(t) = alpha *  X(t – 1) + error(t)$
+> $X(t) = \alpha \times  X(t – 1) + error(t)$
     
 - The **numeral one (1)** denotes that the next instance is _solely_ dependent on the previous instance.
-- The **alpha** is a coefficient which we seek so as to minimize the error function.
+- The **$\alpha$** is a coefficient which we seek so as to minimize the error function.
 - Example: The current GDP of a country say x(t) is dependent on the last year’s GDP. (Consider the set up of manufacturing plants / services in both the previous year and the current year.)
 
 ![](https://www.analyticsvidhya.com/wp-content/uploads/2015/02/AR1.png)
@@ -143,9 +143,9 @@ mathjax: true
 
 ### Moving Average Time Series Model
 > MA(n) formulation :
-> $X(t) = beta *  X(t – 1) + error(t)$
+> $X(t) = \beta \times X(t – 1) + error(t)$
 
-- The **beta** is the the backshift operator.
+- The **\beta** is the the backshift operator.
 -  It specifies that the output variable depends _linearly_ on the current and various past values of a stochastic (imperfectly predictable) term.
 -  It is essentially a **finite impulse response filter** applied to white noise, with some additional interpretation placed on it.
 -  It is conceptually **a linear regression of the current value of the series** against current and previous (unobserved) white noise error terms or random shocks. 
