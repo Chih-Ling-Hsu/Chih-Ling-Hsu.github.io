@@ -14,7 +14,7 @@ title : RSS Feed
         <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
         <ttl>60</ttl>
 
-{% for post in site.posts limit:20 %}
+{% for post in site.posts limit:1 %}
         <item>
                 <title>{{ post.title | xml_escape }}</title>
                 <description>{{ post.content | xml_escape }}</description>
