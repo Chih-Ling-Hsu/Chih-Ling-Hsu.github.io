@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html {% if site.language %}lang="{{ site.language }}"{% endif %}>
 <head>
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.baseurl }}/feed.xml">
   <meta charset="UTF-8">
     {% assign title = page.title %}
     {% if page.layout == 'archives' %}
