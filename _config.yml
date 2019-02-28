@@ -41,7 +41,7 @@ paginate: 10
 title : An Explorer of Things
 tagline: Hello, my name is Chih-Ling Hsu :)
 assets: /assets
-baseurl:
+baseurl: https://chih-ling-hsu.github.io
 
 #### Language
 language: en    ## blog site languages: en, zh-CN, zh-TW
@@ -68,10 +68,7 @@ widgets:
 
 
 #### RSS 
-rss: /atom.xml ## RSS address.
-# name: An Explorer of Things
-# description: Hello, my name is Chih-Ling Hsu :)
-# url: https://chih-ling-hsu.github.io/
+rss: /feed.xml ## RSS address.
 
 
 #### Image
