@@ -24,7 +24,7 @@ title : Atom Feed
    <content type="html">
     <html>
       <head>
-        <meta http-equiv="refresh" content="0; url='https://chih-ling-hsu.github.io{{ site.production_url }}{{ post.id }}''" />
+        <meta http-equiv="refresh" content="0; url='https://chih-ling-hsu.github.io{{ site.production_url }}{{ post.id }}'" />
       </head>
     </content>
   </content>
