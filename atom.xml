@@ -27,7 +27,6 @@ title : Atom Feed
         <meta http-equiv="refresh" content="0; url='https://chih-ling-hsu.github.io{{ site.production_url }}{{ post.id }}'" />
       </head>
     </html>
-    </content>
   </content>
  </entry>
  {% endfor %}
