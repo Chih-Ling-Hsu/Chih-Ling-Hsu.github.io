@@ -68,7 +68,11 @@ widgets:
 
 
 #### RSS 
-rss: /atom.xml ## RSS address.
+rss: /feed.xmln ##/atom.xml ## RSS address.
+name: An Explorer of Things
+description: Hello, my name is Chih-Ling Hsu :)
+url: https://chih-ling-hsu.github.io/
+
 
 #### Image
 imglogo:
