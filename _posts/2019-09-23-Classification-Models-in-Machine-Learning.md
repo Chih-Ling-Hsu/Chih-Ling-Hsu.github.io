@@ -50,15 +50,16 @@ X_test, Y_test = cancer.data, cancer.target
 
 According to [scikit-learn package](http://scikit-learn.org/stable/supervised_learning.html), there are a bunch of classification methods that we can use to classify data samples, and here we will go through the following classification models:
 
+- [**Naive Bayes**](https://scikit-learn.org/stable/modules/naive_bayes.html) - [GaussianNB](https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.GaussianNB.html#sklearn.naive_bayes.GaussianNB)
 - [**Generalized Linear Models**](https://scikit-learn.org/stable/modules/linear_model.html) - [Logistic regression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn.linear_model.LogisticRegression)
 - [**Nearest Neighbors Classification**](https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbors-classification) - [KNeighborsClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html#sklearn.neighbors.KNeighborsClassifier)
-- [**Support Vector Classifier**](https://scikit-learn.org/stable/modules/svm.html#classification) - [SVC](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html#sklearn.svm.SVC)
-- [**Decision Tree Classification**](https://scikit-learn.org/stable/modules/tree.html#classification)
-- [**Naive Bayes**](https://scikit-learn.org/stable/modules/naive_bayes.html) - [GaussianNB](https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.GaussianNB.html#sklearn.naive_bayes.GaussianNB)
 - [**Ensemble Methods**](https://scikit-learn.org/stable/modules/ensemble.html) - [RandomForestClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier)
+- [**Support Vector Classifier**](https://scikit-learn.org/stable/modules/svm.html#classification) - [SVC](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html#sklearn.svm.SVC)
+- [**Multi-layer Perceptron**](https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html#sklearn.neural_network.MLPClassifier)
   
 <!--
 - [**Gaussian Process Classification (GPC)**](https://scikit-learn.org/stable/modules/gaussian_process.html#gaussian-process-classification-gpc)
+- [**Decision Tree Classification**](https://scikit-learn.org/stable/modules/tree.html#classification)
 - [**Nearest Neighbors Classification**](https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbors-classification)
     - [KNeighborsClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html#sklearn.neighbors.KNeighborsClassifier)
     - [RadiusNeighborsClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.RadiusNeighborsClassifier.html#sklearn.neighbors.RadiusNeighborsClassifier)
