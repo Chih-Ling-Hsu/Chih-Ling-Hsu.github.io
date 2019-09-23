@@ -1,3 +1,16 @@
+---
+title: 'Classification Models in Machine Learning'
+layout: post
+tags:
+  - Data-Mining
+  - Scikit-Learn
+  - Python
+  - Machine-Learning
+  - Classification
+category: Programming
+mathjax: true
+---
+
 Classification is well so common in the area of machine learning and [scikit-learn](https://scikit-learn.org/stable/) provides a comprehensive toolkit that can be easily used.
 Here I will share some common classification models and how to apply them on a dataset using this good toolkit, while the classification process will cover
 
