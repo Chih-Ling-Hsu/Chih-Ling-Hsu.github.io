@@ -111,7 +111,7 @@ conf(\{Milk, Diaper\} \rightarrow \{Beer\}) = 2/3 = 0.67
 $$
 
 $$
-I(\{Milk, Diaper\} \rightarrow \{Beer\}) = \frac{2/5}{3/5 \times 3/5} = 18/5 = 3.6
+I(\{Milk, Diaper\} \rightarrow \{Beer\}) = \frac{2/5}{3/5 \times 3/5} = 10/9 = 1.11
 $$
 
 ## Frequent Itemset Generation
