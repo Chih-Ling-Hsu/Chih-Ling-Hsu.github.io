@@ -47,10 +47,10 @@ Then the generated hash tree would be:
 
 To identify all $3$-itemset candidates that belong to a transaction $t$, we hash the transaction $t$ from the root node of the generated candidate hash tree
 
-2. Let \\(k\\) be the current layer of the hash tree (initially \\(k=1, Identified~Set = \varnothing\\))
+2. Let \\(k\\) be the current layer of the hash tree (initially \\(k=1, \text{Identified Set} = \varnothing\\))
 2. Perform Hash function on the \\(k^{th}\\) item in the itemset \\(X\\) and get \\(n\\)
 3. Visit the \\(n^{th}\\) node of the current layer
-4. If the \\(n^{th}\\) node of the current layer is a leaf node, add this leaf node to \\(Identified~Set\\); If not, increment the value of \\(k\\) and jump back to step 1.
+4. If the \\(n^{th}\\) node of the current layer is a leaf node, add this leaf node to \\(\text{Identified Set}\\); If not, increment the value of \\(k\\) and jump back to step 1.
 
 ![](https://i.imgur.com/rBIYVo2.png)
 
