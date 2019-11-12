@@ -47,15 +47,17 @@ Then the generated hash tree would be:
 
 To identify all $3$-itemset candidates that belong to a transaction $t$, we hash the transaction $t$ from the root node of the generated candidate hash tree
 
-2. Let \\(k\\) be the current layer of the hash tree (initially \\(k=1, \text{Identified Set} = \varnothing\\))
-2. Perform Hash function on the \\(k^{th}\\) item in the itemset \\(X\\) and get \\(n\\)
-3. Visit the \\(n^{th}\\) node of the current layer
-4. If the \\(n^{th}\\) node of the current layer is a leaf node, add this leaf node to \\(\text{Identified Set}\\); If not, increment the value of \\(k\\) and jump back to step 1.
+1. Initially \\(k=1, \text{Identified Set} = \varnothing\\)
+2. Traverse to the next layer from the root node
+3. For \\(i \in [k, \|t\|-1]\\):
+   -  Perform Hash function on the \\(i^{th}\\) item in the itemset \\(X\\) and get \\(n\\)
+   - Visit the \\(n^{th}\\) node of the current layer
+   - If the \\(n^{th}\\) node of the \\(k^{th}\\) layer is a leaf node, add this leaf node to \\(\text{Identified Set}\\); If not, let it be the root node, increment the value of \\(k\\), and jump back to step 2.
 
-![](https://i.imgur.com/rBIYVo2.png)
+![](https://imgur.com/q1UMkvv.png)
 
 
 
 ## References
 - [“Introduction to Data Mining,” by P.-N. Tan, M. Steinbach, V. Kumar, Addison-Wesley.](http://www-users.cs.umn.edu/~kumar/dmbook/index.php)
-- [Apriori中的hash tree](http://www.rritw.com/a/JAVAbiancheng/j2ee/2012/0602/167448.html)
+- [Apriori中的hash tree](http://www.voidcn.com/article/p-eyracbnr-zn.html)
