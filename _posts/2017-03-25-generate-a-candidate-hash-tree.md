@@ -54,7 +54,7 @@ To identify all $3$-itemset candidates that belong to a transaction $t$, we hash
    - Visit the \\(n^{th}\\) node of the current layer
    - If the \\(n^{th}\\) node of the \\(k^{th}\\) layer is a leaf node, add this leaf node to \\(\text{Identified Set}\\); If not, let it be the root node, increment the value of \\(k\\), and jump back to step 2.
 
-![](https://imgur.com/q1UMkvv.png)
+![](https://imgur.com/NFHcHA9.png)
 
 
 
