@@ -269,7 +269,7 @@ Chih-Ling is now a full-time student, motivated by the hunger after knowledge as
                     <h4 class="strike-through">
                         <span><span class="dot"></span>National Chiao Tung University</span>
                         <span class="date">
-                            to be completed in 2019
+                            to be completed in 2020
                         </span>
                     </h4>
                     <div class="area">
