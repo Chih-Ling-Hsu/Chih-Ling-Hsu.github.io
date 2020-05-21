@@ -1,5 +1,5 @@
 ---
-title: 'Watts-Strogatz Random Graph'
+title: 'Watts-Strogatz Model of Small-Worlds'
 layout: post
 tags:
   - Graph
@@ -87,7 +87,13 @@ To discuss routing methods for small-world networks, we need to mention **Milgra
 In this experiment, 300 people in Omaha, Nebraska and Wichita, Kansas are picked and asked to get a letter to a stock-broker in Boston by passing it through friends.
 In the end, 64 chains completed and it took 6.2 steps on the average, indicating "6 degrees of separation", which has a similar idea of "Kevin Bacon Number" (Number of steps to Kevin Bacon in a Hollywood actor movie co-appearance network).
 
-However, despite the fact that we already know that there exist shortest path between any two nodes in a small world model, the question is:
+Milgram's experiment led to two striking discoveries:
+- the existence of short paths
+- people in society, with knowledge of only their own personal acquaintances, were collectively able to forward the letter to a distant target so quickly
+
+<!-- However, despite the fact that we already know that there exist shortest path between any two nodes in a small world model, the question is: -->
+
+To model these two aspects of small-world phenomenon poses further challenges: _Can we find model systems for which it can be proved that Milgram-style decentralized routing will produce short paths?_
 
 ### What is the global knowledge that we can find route for a node to traverse to a targeting node?
 
@@ -97,13 +103,16 @@ Milgram's experiment suggests it is possible to design **a completely decentrali
 
 In social networks, it is workable because it is a graph with certain "labels", each of which represents various dimensions of our life (e.g., hobbies, work, geographical distribution, ...).
 Hence with distance metric we can create a "labeling space(s)" and find the neighbor that is closest to the target node to route to.
-
 As a result, in **Decentralized Navigation (Decentralized Search)**, we follow the principles below to get from source node $s$ to the target node $t$ using $T$ steps.
 
 - $s$ only knows locations of its friends and location of the target $t$
 - $s$ does not know links of anyone else but itself
 - **ID-space (e.g., geographic) Navigation**: $s$ "navigates" to a node geographically closest to $t$
 
+> **Basic Navigation Principles**: 
+> Why can we navigate in the network and find short paths without any global view of the system?
+> - We have globaly agreed ID space with a distance function, which allows us to make local decisions on minimizing distance to the target
+> - Existence of [Kleinberg's](../../../2020/05/15/kleinberg) long-range links that allow us to progres towards the target rapidly (in polylogarithmic steps)
 
 However, Watts-Strogatz model with high clusterisation and short path lengths is not navigable.
 Decentralized greedy routing can not find short paths for any arbitrary pair of nodes although short paths exist in Watts-Strogatz model, but why?
@@ -112,7 +121,7 @@ Decentralized greedy routing can not find short paths for any arbitrary pair of 
 ### Why Watts-Strogatz is not navigable?
 
 
-Using a $1$-d ring structure and 1 random link from each node as an exmaple of Watts-Strogatz graph, let's assume that we're performing a decentralized distance minimizing search algorithm to route from the source node $s$ to the target node $t$.
+Using a $1$-dimensional ring structure and 1 random link from each node as an exmaple of Watts-Strogatz graph, let's assume that we're performing a decentralized distance minimizing search algorithm to route from the source node $s$ to the target node $t$.
 
 - $I$ is an interval of width $2x$ nodes (for some $x$)  around target $t$
 - $E=$ event that any of the first $k$ nodes search algorithm visits has a link to $I$
@@ -142,7 +151,11 @@ If $E$ does not happen $\big(P(\text{not }E) \geq \frac{1}{2}\big)$, we must tra
 Therefore the expected number of steps to go from $s$ to $t$ can be formulated as $T \geq \frac{1}{2} \cdot \frac{1}{2}\sqrt{n} = O(\sqrt{n})$
 Furthermore, for a $d$-dim lattice Watts-Strogatz graph, the expected number of search steps would be $T \geq O(n^{\frac{d}{d+1}})$, which is not effective for decentralized search.
 
-## Refrences
+
+
+
+
+## References
 
 - Jure Leskovec, A. Rajaraman and J. D. Ullman, "Mining of massive datasets"  Cambridge University Press, 2012
 - David Easley and Jon Kleinberg "Networks, Crowds, and Markets: Reasoning About a Highly Connected World" (2010).
@@ -152,3 +165,4 @@ Furthermore, for a $d$-dim lattice Watts-Strogatz graph, the expected number of 
 - [Scientific Communication As Sequential Art: Collective dynamics of 'small-world' networks](http://worrydream.com/ScientificCommunicationAsSequentialArt/)
 - Watts, D. J., & Strogatz, S. H. (1998). Collective dynamics of ‘small-world’networks. nature, 393(6684), 440.
 - [Wikipedia: Random regular graph](https://en.wikipedia.org/wiki/Random_regular_graph)
+- Kleinberg, J. (2004). The small-world phenomenon and decentralized search. SiAM News, 37(3), 1-2.
