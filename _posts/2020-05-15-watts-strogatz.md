@@ -107,11 +107,12 @@ As a result, in **Decentralized Navigation (Decentralized Search)**, we follow t
 
 - $s$ only knows locations of its friends and location of the target $t$
 - $s$ does not know links of anyone else but itself
-- **ID-space (e.g., geographic) Navigation**: $s$ "navigates" to a node geographically closest to $t$
+- _ID-space (e.g., geographic) Navigation_: $s$ "navigates" to a node geographically closest to $t$
 
 > **Basic Navigation Principles**: 
-> Why can we navigate in the network and find short paths without any global view of the system?
+> _Why can we navigate in the network and find short paths without any global view of the system?_
 > - We have globaly agreed ID space with a distance function, which allows us to make local decisions on minimizing distance to the target
+> Existence of the underlying lattice that assures us to always be able to reach the target
 > - Existence of [Kleinberg's](../../../2020/05/15/kleinberg) long-range links that allow us to progres towards the target rapidly (in polylogarithmic steps)
 
 However, Watts-Strogatz model with high clusterisation and short path lengths is not navigable.

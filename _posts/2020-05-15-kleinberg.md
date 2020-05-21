@@ -1,5 +1,5 @@
 ---
-title: 'Kleinberg’s Model of Small-Worlds'
+title: 'Kleinberg's Model of Small-Worlds'
 layout: post
 tags:
   - Graph
@@ -19,7 +19,7 @@ Moreover, with Kleinberg's model it is shown that
 > **Navigable Networks** are peculiar in that comparing with searching the whole graph, routing methods can determine a relatively short path between any two nodes.
 
 The intuition of Kleinberg's model is to make links not random but inversely proportional to the "distance".
-Let's assume the dimensionality is 2, the generation of Kleinberg’s basic model is described as below: 
+Let's assume the dimensionality is 2, the generation of Kleinberg's basic model is described as below: 
 
 | Illustration | Generation process |
 | - | - |
@@ -35,9 +35,9 @@ P(u \rightarrow v) = \frac{\frac{1}{d(u, v)^r}}{\sum_{\forall i \neq u} \frac{1}
 $$
 
 In other words, long range edges are added to the network that tend to favor nodes closer in distance rather than farther.
-Recall that [random graphs have diameter of $O(\log n)$](../../../2020/05/15/Gnp#path-lengths-of-erdos-renyi) where $n$ is the size of the graph, in Kleinberg’s model search time is polylogarithmic, while in Watts-Strogatz it is exponential.
+Recall that [random graphs have diameter of $O(\log n)$](../../../2020/05/15/Gnp#path-lengths-of-erdos-renyi) where $n$ is the size of the graph, in Kleinberg's model search time is polylogarithmic, while in Watts-Strogatz it is exponential.
 
-|  | Kleinberg’s Model | Watts-Strogatz Model | Erdos-Renyi Model |
+|  | Kleinberg's Model | Watts-Strogatz Model | Erdos-Renyi Model |
 | - | - | - | - |
 | Navigable? | Yes<br>$T = O\big((\log n)^\beta\big)$ | No<br>$T = O\big(n^{\alpha}\big)$ | No<br>$T = O\big(n^{\alpha}\big)$ |
 | Search Time | $O\big((\log n)^2\big)$ | $O\big(n^{\frac{2}{3}}\big)$ | $O\big(n\big)$
@@ -117,15 +117,19 @@ More specifically, given $q$ as the number of long-rang links per node, the time
 | - | - | - | - |
 | Search time ($T$) | $O\big((\log n)^2\big)$ | $O(\frac{(\log n)^2}{q})$ | $O(\log n)$
 
-Most of the structured P2P (peer-to-peer) systems utilize the Chord's model, which is one of the logarithmic-like approaches and is similar to Kleinberg’s model with $q=\log n$ and $r = d = 1$.
+Most of the structured P2P (peer-to-peer) systems utilize the Chord's model, which is one of the logarithmic-like approaches and is similar to Kleinberg's model with $q=\log n$ and $r = d = 1$.
 
-## Real-World Examples of Kleinberg’s Model
+## Real-World Examples of Kleinberg's Model
+
+Here we show some of the real-world networks that apply Kleinberg's Model:
 
 ### P2P System
 
-| Illustration | Explanation |
-| - | - |
-|![](https://imgur.com/5dtYzog.png) | - **Back dots**: Peers mapped on the ring (using a uniform hash function)<br>- **Red dots**: Resources mapped on the ring (using a uniform hash function)<br>- **Dashed arrows**: Connectivity establishment (based on Kleinberg's Principles)
+<img src="https://imgur.com/5dtYzog.png" style="width:300px">
+
+- **Back dots**: Peers mapped on the ring (using a uniform hash function)
+- **Red dots**: Resources mapped on the ring (using a uniform hash function)
+- **Dashed arrows**: Connectivity establishment (based on Kleinberg's Principles)
 
 ### Geographic routing in LiveJournal network
 
