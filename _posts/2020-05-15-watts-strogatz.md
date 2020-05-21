@@ -53,7 +53,7 @@ Let's say we formulate the Watts-Strogatz model in an alternative way:
 
 | Illustration | Process |
 | - | - |
-| <img src="https://imgur.com/3kpyFmz.png" style="width:300"> | 1. We start with a sqiuare grid, where each node is connected to all 9 neighbors and also has 1 spoke<br><br>2. We then connect each spoke to another random node in the graph |
+| <img src="https://imgur.com/3kpyFmz.png" style="width:300px"> | 1. We start with a sqiuare grid, where each node is connected to all 9 neighbors and also has 1 spoke<br><br>2. We then connect each spoke to another random node in the graph |
 
 In this way we do not remove the original local edges but add additional long edges.
 As a result, the corresponding clsutering coefficeint of any arbitrary node $v$ would be 
