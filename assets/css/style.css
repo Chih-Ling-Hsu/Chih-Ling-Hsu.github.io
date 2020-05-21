@@ -1198,13 +1198,13 @@ article .article-content blockquote {
     margin: .65em 0% .65em 0%;
     padding-left: 1%;
     padding-right: 1%;
-    /*padding-top: .1em;*/
+    padding-top: .1em;
     padding-bottom: .3em;
     line-height: 1.5;
     font-size: 110%;
     color: #717171;
-    font-style: italic;
-    font-weight:bold;
+    /*font-style: italic;
+    font-weight:bold;*/
     padding-left: .9em
     /*background-color: #eeeeee;*/
 }
