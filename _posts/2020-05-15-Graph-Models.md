@@ -129,12 +129,31 @@ For further details about the following items, please check [this post](../../..
 
 ## Kleinberg's Model
 
-Kleinberg's model presents the infinite family of Small-World networks that generalizes Watts-Strogatz model and shows that with Kleinberg's model,
+Kleinberg's model presents the infinite family of **navigable Small-World networks** that generalizes Watts-Strogatz model.
+Moreover, with Kleinberg's model it is shown that
 
-- decentralized search algorithms can find short paths with high probability
+- short paths not only exist but can be found with limited knowledge of the global network (Decentralized search algorithms can find short paths with high probability.)
 - there exist only one unique model within that family for which decentralized algorithms are effective
 
+> **Navigable Networks** are peculiar in that comparing with searching the whole graph, routing methods can determine a relatively short path between any two nodes.
+
 The intuition of Kleinberg's model is to make links not random but inversely proportional to the "distance".
+Let's assume $r=2$, the generation of Kleinberg’s basic model is described as below: 
+
+| Illustration | Generation process |
+| - | - |
+| ![Kleinberg (2004)](https://imgur.com/zbcko13.png) | 1. Build a $2$-dimensional grid (lattice)<br><br>2. Add long-range random links between any two nodes $u$ and $v$ with a probability proportional to $d(u, v)^{-2}$, where $d(x, y)$ is the Manhattan distance between node $x$ and node $y$ |
+
+In general, in a $r$-dimensional Kleinberg's model, there are 2 types of links:
+
+- **Short range links**: Neighborhood lattice
+- **Long range links**: Probability for a node $u$ to have a node $v$ as a long range contact is defined as
+
+$$
+P(u \rightarrow v) = \frac{\frac{1}{d(u, v)^r}}{\sum_{\forall i \neq u} \frac{1}{d(u, i)^r}} = \frac{1}{Z}\frac{1}{d(u, v)^r}  \propto \frac{1}{d(u, v)^r}
+$$
+
+In other words, long range edges are added to the network that tend to favor nodes closer in distance rather than farther.
 Recall that [random graphs have diameter of $O(\log n)$](../../../2020/05/15/Gnp#path-lengths-of-erdos-renyi) where $n$ is the size of the graph, in Kleinberg’s model search time is polynomial in $\log n$, while in Watts-Strogatz it is exponential (in $\log n$).
 
 |  | Kleinberg’s Model | Watts-Strogatz Model | Erdos-Renyi Model |

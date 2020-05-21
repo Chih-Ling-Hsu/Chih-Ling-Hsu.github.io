@@ -83,13 +83,13 @@ Consequently, the diameter of this Watts-Strogatz graph becomes $O\big(2\log_{\b
 
 ## Watts-Strogatz is not Navigable
 
-To discuss routing methods for small-world networks, we need to mention Milgram's experiment, which is also called Small-world experiment.
+To discuss routing methods for small-world networks, we need to mention **Milgram's experiment**, which is also called **Small-world experiment**.
 In this experiment, 300 people in Omaha, Nebraska and Wichita, Kansas are picked and asked to get a letter to a stock-broker in Boston by passing it through friends.
 In the end, 64 chains completed and it took 6.2 steps on the average, indicating "6 degrees of separation", which has a similar idea of "Kevin Bacon Number" (Number of steps to Kevin Bacon in a Hollywood actor movie co-appearance network).
 
 However, despite the fact that we already know that there exist shortest path between any two nodes in a small world model, the question is:
 
-### What is the global knowledge that we can find route for a node to traverse to another node?
+### What is the global knowledge that we can find route for a node to traverse to a targeting node?
 
 How can arbitrary pairs of strangers find short chains of acquaintances that link them together?
 Let's take P2P systems as an example, each P2P system can be interpreted as a directed graph where peers correspond to the nodes and their routing table entries as directed links to the other nodes.
