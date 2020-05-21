@@ -33,7 +33,7 @@ The simplest network model, for example, the [Erdos-Renyi random graph](../../..
 However, most networks in the real world have degree distributions very different from this.
 As illustrated in the figure below, the degree distribution of MSN network is highly right-skewed, indicating that a large majority of nodes have low degree but a small number of "hubs" have high degree.
 
-<img src="https://imgur.com/4TR7BPP.png" alt="Leskovec & Horvitz (2008)" width=500>
+<img src="https://imgur.com/4TR7BPP.png" alt="Leskovec & Horvitz (2008)" style="width:500">
 
 
 The degree distributions of real-world networks are usually power-law distributions, which is linear in log-log scale. 
@@ -43,7 +43,7 @@ The degree distributions of real-world networks are usually power-law distributi
 ## Connectivity
 
 
-<img src="https://imgur.com/PaRrmD7.png" alt="Leskovec & Horvitz (2008)" width=500>
+<img src="https://imgur.com/PaRrmD7.png" alt="Leskovec & Horvitz (2008)" style="width:500">
 
 The figure above displays the distribution of the
 connected components in the MSN network. 
@@ -53,7 +53,7 @@ This distribution also follows a power law.
 
 ## Clustering Coefficient
 
-<img src="https://imgur.com/PUZNUyT.png" alt="Leskovec & Horvitz (2008)" width=500>
+<img src="https://imgur.com/PUZNUyT.png" alt="Leskovec & Horvitz (2008)" style="width:500">
 
 
 The [clustering coefficient](../../../2020/05/12/Graph#clustering-coefficient) is a measure of transitivity in the network, which is defined as the fraction of triangles around a node of degree $k$.
@@ -76,7 +76,7 @@ That is, people with common friends also tend to be connected.
 
 ## Diameter
 
-<img src="https://imgur.com/O9bQcRN.png" alt="Leskovec & Horvitz (2008)" width=500>
+<img src="https://imgur.com/O9bQcRN.png" alt="Leskovec & Horvitz (2008)" style="width:500">
 
 To compute the [diameter](../../../2020/05/12/Graph#diameter) of MSN network, the average shortest path is considered, and the figure above displays the distribution over the shortest path lengths.
 it is observed that the distribution of path lengths reaches the mode at $6$ hops and has a median at $7$.
