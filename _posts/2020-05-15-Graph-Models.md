@@ -75,7 +75,7 @@ As a result, configuration model can be sued to compare a real network $G$ and a
 
 The generation of configuration model is described in below:
 
-1. Define a degree sequence $\{k(i) | i \in N\}$ and create nodes with stubs (or half-links) correspondingly
+1. Define a degree sequence $\{k(i) \| i \in N\}$ and create nodes with stubs (or half-links) correspondingly
    - $\sum_{i \in N}{k(i)} = 2m$.   The sum of stubs must be **even** in order to be able to construct a graph 
    - The degree sequence can either be drawn from a theoretical distribution or be determined from the adjacency matrix of a real network
 2. Choose two stubs uniformly at random and connect them to form an edge
