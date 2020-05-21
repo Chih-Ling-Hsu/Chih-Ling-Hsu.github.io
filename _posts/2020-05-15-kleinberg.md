@@ -1,5 +1,5 @@
 ---
-title: 'Kleinberg's Model of Small-Worlds'
+title: "Kleinberg's Model of Small-Worlds"
 layout: post
 tags:
   - Graph
