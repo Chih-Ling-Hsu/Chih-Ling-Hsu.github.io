@@ -43,7 +43,7 @@ The degree distributions of real-world networks are usually power-law distributi
 ## Connectivity
 
 
-<img src="https://imgur.com/PaRrmD7.png" alt="Leskovec & Horvitz (2008)" style="width:500">
+<img src="https://imgur.com/PaRrmD7.png" alt="Leskovec & Horvitz (2008)" style="width:150">
 
 The figure above displays the distribution of the
 connected components in the MSN network. 
