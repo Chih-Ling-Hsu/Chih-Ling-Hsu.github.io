@@ -53,7 +53,7 @@ Let's say we formulate the Watts-Strogatz model in an alternative way:
 
 | Illustration | Process |
 | - | - |
-| ![](https://imgur.com/7zV1cg5.png) | 1. We start with a sqiuare grid, where each node is connected to all 9 neighbors and also has 1 spoke<br><br>2. We then connect each spoke to another random node in the graph |
+| <img src="https://imgur.com/3kpyFmz.png" style="width:300"> | 1. We start with a sqiuare grid, where each node is connected to all 9 neighbors and also has 1 spoke<br><br>2. We then connect each spoke to another random node in the graph |
 
 In this way we do not remove the original local edges but add additional long edges.
 As a result, the corresponding clsutering coefficeint of any arbitrary node $v$ would be 
@@ -68,7 +68,7 @@ Use the previous graph continuously as an example, by considering the grid where
 In particular, for $r \geq 3$, a random $r$-regular graph of large size is asymptotically almost surely $r$-connected.
 That is, we now obtain a $4$-connected random graph with connectivity less than $r$ exist.
 
-![](https://imgur.com/tdRuGhY.png)
+![](https://imgur.com/pujDgcv.png)
 
 [As calculated in Erdos-Renyi random graph](../../../2020/05/15/Gnp#path-lengths-of-erdos-renyi), a random graph of size $n$ has a diameter of $h \approx \log_{\bar{k}}(n)$, where $n$ indicates the number of supernodes and $\bar{k}$ indicates the average degree of supernodes in our case.
 In addition, since in each supernode the path might at most hop 1 more step, resulting in a doubled number of steps to complete a path at most, comparing to only considering supernodes.
