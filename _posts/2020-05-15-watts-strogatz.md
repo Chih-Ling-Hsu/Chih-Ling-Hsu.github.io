@@ -17,18 +17,17 @@ To check the simulation of a small world model, [this website](http://netlogoweb
 
 The generation of a Watts-Strogatz random graph is called **the rewiring process**:
 
-1. Build a regular graph with degree $k$
-   - A regular graph is a graph where each vertex has the same number of neighbors. 
-   - Can be a ring lattice, a grid, torus, or any other "geographical" structure which has high clusterisation and high diameter
+1. Build a regular graph (a graph where each vertex has the same number of neighbors) with degree $k$ (Can be a ring lattice, a grid, torus, or any other "geographical" structure which has high clusterisation and high diameter)
 2. With probability $p$ rewire each edge $(x, y)$ in the network to a random node $y'$ by connecting $(x, y')$ instead, where $y'$ is chosen uniformly at random from all possible nodes while avoiding self-loops ($y' \neq x$) and link duplication ($y' \neq y$).
-   <!-- - $p = 0$:
-     - Regular
-     - Highly clustered: $\tilde{C}(G) \approx \frac{3}{4}$
-     - High diameter (Long paths): $L \approx \frac{n}{2\bar{k}}$
-   - $p = 1$:
-     - Random (~Erdos-Renyi)
-     - Low clustering: $\tilde{C}(G) \approx \frac{\bar{k}}{n}$
-     - Low diameter (Short path lengths): $L \approx \log_{\bar{k}} (n)$ -->
+
+<!-- - $p = 0$:
+  - Regular
+  - Highly clustered: $\tilde{C}(G) \approx \frac{3}{4}$
+  - High diameter (Long paths): $L \approx \frac{n}{2\bar{k}}$
+- $p = 1$:
+  - Random (~Erdos-Renyi)
+  - Low clustering: $\tilde{C}(G) \approx \frac{\bar{k}}{n}$
+  - Low diameter (Short path lengths): $L \approx \log_{\bar{k}} (n)$ -->
 
 
 ![Liao, Vasilakos & He (2017)](https://imgur.com/pnEl4X1.png)
@@ -54,7 +53,7 @@ Let's say we formulate the Watts-Strogatz model in an alternative way:
 
 | Illustration | Process |
 | - | - |
-| ![](https://imgur.com/7zV1cg5.png) | <ol><li>We start with a sqiuare grid, where each node is connected to all 9 neighbors and also has 1 spoke</li><li>We then connect each spoke to another random node in the graph</li></ol> |
+| ![](https://imgur.com/7zV1cg5.png) | 1. We start with a sqiuare grid, where each node is connected to all 9 neighbors and also has 1 spoke<br><br>2. We then connect each spoke to another random node in the graph |
 
 In this way we do not remove the original local edges but add additional long edges.
 As a result, the corresponding clsutering coefficeint of any arbitrary node $v$ would be 
@@ -86,9 +85,7 @@ Consequently, the diameter of this Watts-Strogatz graph becomes $O\big(2\log_{\b
 
 To discuss routing methods for small-world networks, we need to mention Milgram's experiment, which is also called Small-world experiment.
 In this experiment, 300 people in Omaha, Nebraska and Wichita, Kansas are picked and asked to get a letter to a stock-broker in Boston by passing it through friends.
-In the end, 64 chains completed and it took 6.2 steps on the average, indicating "6 degrees of separation", which has a similar idea of "Kevin Bacon Number".
-
-> **Kevin Bacon Number**: Number of steps to Kevin Bacon in a Hollywood actor movie co-appearance network
+In the end, 64 chains completed and it took 6.2 steps on the average, indicating "6 degrees of separation", which has a similar idea of "Kevin Bacon Number" (Number of steps to Kevin Bacon in a Hollywood actor movie co-appearance network).
 
 However, despite the fact that we already know that there exist shortest path between any two nodes in a small world model, the question is:
 
