@@ -138,13 +138,13 @@ Moreover, with Kleinberg's model it is shown that
 > **Navigable Networks** are peculiar in that comparing with searching the whole graph, routing methods can determine a relatively short path between any two nodes.
 
 The intuition of Kleinberg's model is to make links not random but inversely proportional to the "distance".
-Let's assume $r=2$, the generation of Kleinberg’s basic model is described as below: 
+Let's assume the dimensionality is 2, the generation of Kleinberg’s basic model is described as below: 
 
 | Illustration | Generation process |
 | - | - |
-| ![Kleinberg (2004)](https://imgur.com/zbcko13.png) | 1. Build a $2$-dimensional grid (lattice)<br><br>2. Add long-range random links between any two nodes $u$ and $v$ with a probability proportional to $d(u, v)^{-2}$, where $d(x, y)$ is the Manhattan distance between node $x$ and node $y$ |
+| ![Kleinberg (2004)](https://imgur.com/zbcko13.png) | 1. Build a $2$-dimensional grid (lattice)<br><br>2. Add long-range random links between any two nodes $u$ and $v$ with a probability proportional to $d(u, v)^{-r}$, where $r$ is the clustering exponent and $d(x, y)$ is the Manhattan distance between node $x$ and node $y$ |
 
-In general, in a $r$-dimensional Kleinberg's model, there are 2 types of links:
+In general, in a Kleinberg's model, there are 2 types of links:
 
 - **Short range links**: Neighborhood lattice
 - **Long range links**: Probability for a node $u$ to have a node $v$ as a long range contact is defined as
@@ -154,17 +154,18 @@ P(u \rightarrow v) = \frac{\frac{1}{d(u, v)^r}}{\sum_{\forall i \neq u} \frac{1}
 $$
 
 In other words, long range edges are added to the network that tend to favor nodes closer in distance rather than farther.
-Recall that [random graphs have diameter of $O(\log n)$](../../../2020/05/15/Gnp#path-lengths-of-erdos-renyi) where $n$ is the size of the graph, in Kleinberg’s model search time is polynomial in $\log n$, while in Watts-Strogatz it is exponential (in $\log n$).
+Recall that [random graphs have diameter of $O(\log n)$](../../../2020/05/15/Gnp#path-lengths-of-erdos-renyi) where $n$ is the size of the graph, in Kleinberg’s model search time is polylogarithmic, while in Watts-Strogatz it is exponential.
 
 |  | Kleinberg’s Model | Watts-Strogatz Model | Erdos-Renyi Model |
 | - | - | - | - |
 | Navigable? | Yes<br>$T = O\big((\log n)^\beta\big)$ | No<br>$T = O\big(n^{\alpha}\big)$ | No<br>$T = O\big(n^{\alpha}\big)$ |
 | Search Time | $O\big((\log n)^2\big)$ | $O\big(n^{\frac{2}{3}}\big)$ | $O\big(n\big)$
 
+For further details about the following items, please check [this post](../../../2020/05/15/kleinberg):
 
-<!-- ## Basic Navigation Principles
-
-## Expander Graphs -->
+- Greedy routing in the Kleinberg model
+- Clustering Exponent Tuning
+- Real-World Examples of Kleinberg’s Model
 
 ## References
 
