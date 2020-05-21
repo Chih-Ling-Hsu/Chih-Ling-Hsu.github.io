@@ -97,18 +97,8 @@ To check the simulation of a small world model, [this website](http://netlogoweb
 
 The generation of a Watts-Strogatz random graph is called **the rewiring process**:
 
-1. Build a regular graph with degree $k$
-   - A regular graph is a graph where each vertex has the same number of neighbors. 
-   - Can be a ring lattice, a grid, torus, or any other "geographical" structure which has high clusterisation and high diameter
+1. Build a regular graph (a graph where each vertex has the same number of neighbors) with degree $k$ (Can be a ring lattice, a grid, torus, or any other "geographical" structure which has high clusterisation and high diameter)
 2. With probability $p$ rewire each edge $(x, y)$ in the network to a random node $y'$ by connecting $(x, y')$ instead, where $y'$ is chosen uniformly at random from all possible nodes while avoiding self-loops ($y' \neq x$) and link duplication ($y' \neq y$).
-   <!-- - $p = 0$:
-     - Regular
-     - Highly clustered: $\tilde{C}(G) \approx \frac{3}{4}$
-     - High diameter (Long paths): $L \approx \frac{n}{2\bar{k}}$
-   - $p = 1$:
-     - Random (~Erdos-Renyi)
-     - Low clustering: $\tilde{C}(G) \approx \frac{\bar{k}}{n}$
-     - Low diameter (Short path lengths): $L \approx \log_{\bar{k}} (n)$ -->
 
 
 ![Liao, Vasilakos & He (2017)](https://imgur.com/pnEl4X1.png)
