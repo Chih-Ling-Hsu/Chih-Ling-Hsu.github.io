@@ -22,7 +22,7 @@ In computer science, random walk can be used to model epidemic diffusion of the 
 
 
 
-### An Example of Random Walk
+## An Example of Random Walk
 
 
 Let $G(V, E)$ be a graph consisting a set of vertices $V$ and a set of edges $E$.
