@@ -290,7 +290,6 @@ $$
 - $v_1$: the corresponding eigenvector of $g^{(1)}$
 
 and thus the largest eigenvalue of $g^{(1)}$ is $\lambda_1 = d$ and the corresponding eigenvector is $v_1 = \begin{pmatrix}1&...&1&0&...&0\end{pmatrix}$ where the count of $1$s is equal to $\|g^{(1)}\|$.
-
 Similarly, the largest eigenvalue of $g^{(2)}$ is $\lambda_1 = d$ and the corresponding eigenvector is $v_1 = \begin{pmatrix}0&...&0&1&...&1\end{pmatrix}$ where the count of $1$s is equal to $\|g^{(2)}\|$.
 
 Consequently, if $G'$ is a graph which is contructed by connecting components $g^{(1)}$ and $g^{(2)}$ with 2 edges, we will have
