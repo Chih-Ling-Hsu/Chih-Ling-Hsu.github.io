@@ -21,7 +21,7 @@ Clustering Analysis is finding groups of objects such that the objects in a grou
 
 <!--more-->
 
-Clustering can be classified to **partitional clustering** and **hierarchical clustering**.   Partitional clustering creates a division data objects into non-overlapping subsets (clusters) such that each data object is in exactly one subset; Hierarchical clustering creates a set of nested clusters organized as a hierarchical tree .
+Clustering can be classified to **partitional clustering** and **hierarchical clustering**.   Partitional clustering creates a division data objects into non-overlapping subsets (clusters) such that each data object is in exactly one subset; Hierarchical clustering creates a set of nested clusters organized as a hierarchical tree.
 
 ## Types of Clusters
 
