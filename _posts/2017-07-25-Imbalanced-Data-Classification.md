@@ -177,7 +177,7 @@ Document Related:
 - [Oversampling and undersampling in data analysis](https://www.wikiwand.com/en/Oversampling_and_undersampling_in_data_analysis)
 - [Learning pattern classification tasks with imbalanced data sets](http://ro.uow.edu.au/cgi/viewcontent.cgi?article=1806&context=infopapers)
 - [Cluster-based under-sampling approaches for imbalanced data distributions](http://sci2s.ugr.es/keel/pdf/specific/articulo/yen_cluster_2009.pdf)
-- [數據嗨客 | 第6期：不平衡數據處理](https://kknews.cc/zh-tw/tech/ylapn.html)
+- [數據嗨客 第6期：不平衡數據處理](https://kknews.cc/zh-tw/tech/ylapn.html)
 - [Addressing the Curse of Imbalanced Training Sets: One-Sided Selection](http://sci2s.ugr.es/keel/pdf/algorithm/congreso/kubat97addressing.pdf)
 - [Experimental Perspectives on Learning from Imbalanced Data](http://delivery.acm.org/10.1145/1280000/1273614/p935-van_hulse.pdf?ip=140.110.90.232&id=1273614&acc=ACTIVE%20SERVICE&key=AF37130DAFA4998B%2ED4BA753E6EB970F3%2E4D4702B0C3E38B35%2E4D4702B0C3E38B35&CFID=786979403&CFTOKEN=26396549&__acm__=1500367484_4f2f4585c98ddab06a2eda5245585b78)
 - [A Multiple Resampling Method for Learning from Imbalanced Data Sets](https://pdfs.semanticscholar.org/5665/69859435e974a8651c7836a8dcfbb1597a42.pdf)
