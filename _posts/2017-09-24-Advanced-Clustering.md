@@ -20,20 +20,70 @@ CURE (Clustering Using REpresentatives) is an efficient data clustering algorith
 
 CURE employs a hierarchical clustering algorithm that adopts a middle ground between the centroid based and all point extremes.
 
-
 - Strengths
     - Shrinking representative points toward the center helps avoid problems with noise and outliers
     - Handle clusters with varying sizes.
 - Limitations
     - Cannot handle different densities
 
-### Representative Points
+### Representative Points of Clusters
 
-In CURE, a constant number $c$ of well scattered points of a cluster are chosen and they are shrunk towards the centroid of the cluster by a fraction $α$.   The scattered points after shrinking are used as representatives of the cluster.
+Particularly, in CURE each cluster $C$ is represented by $R_C$, which is a set of representatives (i.e., $\|R_C\| = \kappa = 10$ for each cluster $C$).   
+These representatives are chosen on the border of the cluster, trying to capture its shape.   
+Then, they are pushed towards cluster mean by a fraction $a$, in order to discard the irregularities of the border.
 
-### Cluster Similarity
+<!-- > **Representative Points**:
+> In CURE, a constant number $\kappa$ of well scattered points of a cluster are chosen and they are shrunk towards the centroid of the cluster by a fraction $a$.
+> The scattered points after shrinking are used as representatives of the cluster. -->
 
-Cluster similarity is the similarity of the closest pair of representative points from different clusters.   That is, the clusters with the closest pair of representatives are merged at each step of CURE's hierarchical clustering algorithm.
+More specifically, to get representatives $R_C$ from cluster $C$ (each data point is a cluster initially), the following steps are performed.
+
+**Step 0.** If $\|C\| \leq \kappa$, then just let $R_C$ be $C$ and skip all remaining steps.
+
+**Step 1.** Select an arbitrary $x_1 \in C$, with the maximum distance from the mean of $C$. Let $R_C =$ {$x_1$}
+
+**Step 2.** for $i = 2,3,..., \kappa$, Pick a $x_i \in C-R_C$ that lies fartherest from points in $R_C$ and then let $R_C = R_C \cup$ {$x_i$}
+
+**Step 3.** Shrink all points of $R_C$ towards the mean ${mean}_C$ by a given factor $a$. ($0 \leq a \leq 1$)
+
+$$
+x = a \cdot {mean}_C + (1-a) \cdot x
+$$
+
+
+
+
+### Cluster Similarity Measuring
+
+In CURE, cluster similarity is the similarity of the closest pair of representative points from different clusters.   
+For example, given 2 clusters $C_i$ and $C_j$, the distance between them is
+
+$$
+d(C_i, C_j) = \min_{x \in R_{C_i}, y \in R_{C_j}} d(x, y)
+$$
+
+That is, the clusters with the closest pair of representatives are merged at each step of CURE's hierarchical clustering algorithm.
+To save time, when merging 2 cluster and get $C' = C_1 \cup C_2$, the $\kappa$ points of $R_{C'}$ are chosen from the (at most) $\kappa + \kappa = 2 \kappa$ points in $R_{C_1}$ and $R_{C_2}$ with the same procedure as introduced above.
+
+### Hyper-parameters in CURE
+
+Note that CURE with Random Sampling is sensitive to $\kappa$, $N'$, and $a$.
+
+- $\kappa$ must be large enough to capture the geometry of each cluster
+- $N'$ must be higher than a certain percentage of $N$. Typically $N' \geq 0.025N = 1/40 \times N$
+- If $a$ is small, then CURE behaves like Minimum Spanning Tree. If $a$ is large it resembles to the algorithm that use a single point repersentative for each cluster.
+
+### CURE Utilizing Random Sampling
+
+In 1998,  Guha et. al proved that the time complexity of CURE is $O(N^2log_2N)$ in the worst case, which is still time comsuming.
+
+That's why random sampling is utilized here to save time.   In other words, the adoption of random sampling makes $N$ into $N'$ and the time complexity becomes $O(N'^2log_2N')$.   However, the sampled data $X'$ should be sufficient enough.
+
+**Step 1.** Divide data set $X$ randomly into $p$ sample data sets ($p=N/N'$, each set has $N'$ data points).
+
+**Step 2.** For each sample data set, apply the original version of CURE, until (at most) $N'/q$ clusters are formed ($q>1$).
+
+**Step 3.** Consider all $(N'/q) \times p$ clusters, merge similar clusters to obtain $k$ clusters.
 
 ## Graph-Based Clustering
 
@@ -149,3 +199,4 @@ Given parameter $T$ and $k$, the procedure of Jarvis-Patrick Clustering is defin
 - [Wikipedia - CURE data clustering algorithm](https://en.wikipedia.org/wiki/CURE_data_clustering_algorithm)
 - [Chameleon Clustering](http://mlwiki.org/index.php/Chameleon_Clustering)
 - [Data Mining Algorithms In R/Clustering/RockCluster](https://en.wikibooks.org/wiki/Data_Mining_Algorithms_In_R/Clustering/RockCluster)
+- [Guha, S., Rastogi, R., & Shim, K. (1998, June). CURE: an efficient clustering algorithm for large databases. In ACM Sigmod Record (Vol. 27, No. 2, pp. 73-84). ACM.](https://dl.acm.org/citation.cfm?id=276312)
