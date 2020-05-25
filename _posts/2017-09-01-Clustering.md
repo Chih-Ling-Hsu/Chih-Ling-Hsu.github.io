@@ -141,6 +141,71 @@ repeat
 until list_of_clusters contains K clusters
 ```
 
+## BFR Algorithm: Extension of K-means to Large Data
+
+Bradley-Fayyad-Reina (BFR) Algorithm is a variant of k-means that can be used when the memory (RAM) buffer is limited and the data set is disk-resident.
+Designed to to handle very large data sets, BFR proposed an efficient way to summarize clusters so that the memory usage requires only $O(k)$ instead of $O(n)$ (as in normal k-means), where $k$ is the numner of clusters and $n$ is the number of data points.
+
+However, BFS makes a very strong assumption about the shape of clusters:
+Clusters are normally distributed around a centroid in a Euclidean space.
+The mean and standard deviation for a cluster may differ for different dimensions, but the dimensions must be _independent_.
+
+### A Single Pass over the Data
+
+In BFR, data points are read from disk one main-memory-full at a time, and most points from previous memory loads are summarized by simple statistics.
+
+When the algorithm obtains a sample from the database and fill the memory buffer, each data point will first be asigned to
+
+- **Retained set (RS)**: Isolated points waiting to be assigned.
+
+Afterwards, data points in RS would be decided to assign to either of the following set:
+
+- **Discard set (DS)**: If the point is close enough to any centroid, it would be assigned/sumarized to the DS of the corresponding cluster and discarded.
+- **Compression set (CS)**: If the point is not close to any existing centroid, then it would be assigned/sumarized to a group of existing CS that is close enough and discarded. 
+
+
+For each sumarized set, including the CS sets and the DS set of any cluster, the following statistics are maintained for a $d$-dimensional data set:
+
+- $N$: The number of points
+- $\text{SUM}$: A $d$-dimensional vector whose $i$-th component is the sum of the coordinates of the points in the $i$-th dimension
+- $\text{SUMSQ}$: A $d$-dimensional vector whose $i$-th component is the sum of squares of coordinates of the points in the $i$-th dimension
+
+In general, we use $2d + 1$ values to represent a cluster of any size, where its centroid can be calculated as $\text{SUM}/N$ and its variance can be calculated as $(\text{SUMSQ} / N) – (\text{SUM} / N)^2$.
+
+
+### A Scalable Expectation-Maximization Approach
+
+![](https://imgur.com/DKX4FgT.png)
+
+The BFR algorithm follows the steps below to decide $k$ clusters:
+
+1. Delect the initial $k$ centroids (_Initialize the mixture model parameters_)
+2. Obtain a sample from the database, filling the memory buffer, and add them into RS.
+3. **Perform Primary Compression**: Find those points that are _"sufficiently close"_ to a cluster centroid and add them to the DS set of the corresponding cluster (_Update mixture model parameters_)
+   - The statistics of the DS set of the corresponding cluster should be updated
+   - _"sufficiently close"_: The _**Mahalanobis distance**_ between the data point and the centroid is less than a threshold
+4. **Perform Secondary Compression**: Using data points in RS, determine a number of sub-clusters with any main-memory clustering algorithm (e.g., k-means)
+   - Sub-clusters are summarized into CSs
+   - Outlier points go back to RS
+   - Consider merging CSs if the variance of the combined subcluster is below some threshold ($N$, $\text{SUM}$, and $\text{SUMSQ}$ allow us to make that calculation quickly)
+5. Go back to **step 2.** until one full scan of the database is complete; if this is the last round, merge all CSs and all RS points into their nearest cluster.
+
+> **Mahalanobis Distance:** The Mahalanobis distance is a measure of the distance between a point $\overrightarrow{x}$ and a distribution $D$.
+> More specifically, it is a multi-dimensional generalization of the idea of measuring **how many standard deviations away $\overrightarrow{x}$ is from the mean of $D$**.
+> This distance is zero if $x$ is at the mean of $D$, and grows as $x$ moves away from the mean along each principal component axis. 
+
+BFS suggests that Mahalanobis Distance is a likelihood of the point belonging to currently nearest centroid.
+For example, for a point $\overrightarrow{x} = (x_1, x_2, ..., x_d)$ and a cluster $C$ with centroid $\overrightarrow{c} = (c_1, c_2, ..., c_d)$ and standard deviations $(\sigma_1, \sigma_2, ..., \sigma_d)$, the Mahalanobis Distance between $\overrightarrow{x}$ and $C$ is
+
+$$
+MD(\overrightarrow{x}, C) = \sqrt{\sum_{i=1}^d \Big(\frac{x_i - c_i}{\sigma_i}\Big)}
+$$
+
+If a cluster $C'$ is normally distributed in $d$ dimensions, then for any point $\overrightarrow{x}$ that is one standard deviation away from the distribution of $C$, then the Mahalanobis Distance between them is $MD(\overrightarrow{x}, C') = \sqrt{d}$.
+In other words, 
+
+- $68\%$ of the members of the cluster $C'$ have a Mahalanobis distance $MD < \sqrt{d}$
+- $99\%$ of the members of the cluster $C'$ have a Mahalanobis distance $MD < 3\sqrt{d}$ (3 standard deviations away in normal distribution)
 
 
 ## Hierarchical clustering
@@ -245,7 +310,7 @@ DBSCAN is a density-based algorithm, where $density$ = number of points within a
 
 ![](https://i.imgur.com/q9CNDv2.png)
 
-```C
+```python
 DBSCAN(DB, dist, eps, minPts) {
    C = 0                                              /* Cluster counter */
    for each point P in database DB {
@@ -406,3 +471,5 @@ Relative Index is used to compare two different clusterings or clusters.   It is
 - [“Introduction to Data Mining,” by P.-N. Tan, M. Steinbach, V. Kumar, Addison-Wesley.](http://www-users.cs.umn.edu/~kumar/dmbook/index.php)
 - [Wikipedia - DBSCAN Algorithm](https://en.wikipedia.org/wiki/DBSCAN)
 - [Wikipedia - Silhouette (clustering)](https://en.wikipedia.org/wiki/Silhouette_(clustering))
+- Bradley, P. S., Fayyad, U., & Reina, C. (1998). Scaling EM (expectation-maximization) clustering to large databases.
+- [Wikipedia - BFR algorithm](https://en.wikipedia.org/wiki/BFR_algorithm)
