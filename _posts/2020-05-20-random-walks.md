@@ -267,10 +267,18 @@ $$
 D_{i,i} = {deg(i)}
 $$
 
+> **Normalized Laplacian Matrix**:
+> A normalized laplacian matrix is defined as
+> 
+> $$
+> L = D^{-\frac{1}{2}}AD^{-\frac{1}{2}}
+> $$
+
 In consequence, 
 
 - $\lambda_1 = 0$ because the vector $v_1 = \begin{pmatrix}1&1&...&1\end{pmatrix}$ satisfies $L v_1 = \lambda_1 v_1 = 0$.
 - $G$ has $k$ connected components if $\lambda_k = 0, \lambda_1 \leq \lambda_2 \leq ... \leq \lambda_n$.   The number of connected components in the graph is the dimension of the nullspace of the Laplacian.
+
 
 ### Spectral Gap
 
