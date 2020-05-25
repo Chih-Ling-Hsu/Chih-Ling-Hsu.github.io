@@ -18,7 +18,7 @@ So how can we deal with these two types of problem?
 
 CURE (Clustering Using REpresentatives) is an efficient data clustering algorithm for large databases that is more robust to outliers and identifies clusters having non-spherical shapes and size variances.
 
-CURE employs a hierarchical clustering algorithm that adopts a middle ground between the centroid based and all point extremes.
+Employing a hierarchical clustering algorithm, CURE adopts a middle ground between the centroid based and all point extremes.
 
 - Strengths
     - Shrinking representative points toward the center helps avoid problems with noise and outliers
@@ -36,18 +36,18 @@ Then, they are pushed towards cluster mean by a fraction $a$, in order to discar
 > In CURE, a constant number $\kappa$ of well scattered points of a cluster are chosen and they are shrunk towards the centroid of the cluster by a fraction $a$.
 > The scattered points after shrinking are used as representatives of the cluster. -->
 
-More specifically, to get representatives $R_C$ from cluster $C$ (each data point is a cluster initially), the following steps are performed.
+More specifically, to get representatives $R_C$ from a cluster $C$ (each data point is a cluster initially), the following steps are performed.
 
 **Step 0.** If $\|C\| \leq \kappa$, then just let $R_C$ be $C$ and skip all remaining steps.
 
 **Step 1.** Select an arbitrary $x_1 \in C$, with the maximum distance from the mean of $C$. Let $R_C =$ {$x_1$}
 
-**Step 2.** for $i = 2,3,..., \kappa$, Pick a $x_i \in C-R_C$ that lies fartherest from points in $R_C$ and then let $R_C = R_C \cup$ {$x_i$}
+**Step 2.** For $i = 2,3,..., \kappa$, select a $x_i \in C-R_C$ that lies fartherest from points in $R_C$ and then let $R_C = R_C \cup$ {$x_i$}
 
 **Step 3.** Shrink all points of $R_C$ towards the mean ${mean}_C$ by a given factor $a$. ($0 \leq a \leq 1$)
 
 $$
-x = a \cdot {mean}_C + (1-a) \cdot x
+x_i := a \cdot {mean}_C + (1-a) \cdot x_i
 $$
 
 
