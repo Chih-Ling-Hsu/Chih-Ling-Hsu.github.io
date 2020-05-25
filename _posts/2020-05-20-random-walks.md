@@ -274,7 +274,7 @@ In consequence,
 
 ### Spectral Gap
 
-In addition, the **spectra of graph** are the eigenvalues $\lambda_1, \lambda_2, ... , \lambda_n$ of matrices $A$, $M$, or $L$, and the **eigengap** (or **spectral gap**) is $\lambda_1 - \lambda_2$, the difference between the two largest eigenvalues.
+In addition, the **spectra of graph** are the eigenvalues $\lambda_1, \lambda_2, ... , \lambda_n$ of matrices $A$, $M$, or $L$, which are in a descending order, and the **eigengap** (or **spectral gap**) is $\lambda_1 - \lambda_2$, the difference between the two largest eigenvalues.
 The **eigengap** represents how well the graph is connected.
 A higher eigengap (smaller $\lambda_2$) implies a higher [expansion](../../../2020/05/12/Graph#expanders-and-expansion) of the graph.
 
