@@ -77,8 +77,8 @@ Suppose we are given n undirected graph $G = (V, E)$, $\|V\| = n$, $\|E\| = m$, 
 
 - $S$ is the set of nodes in the cluster 
 - $n_s = \|S\|$ is the number of nodes in $S$ 
-- $m_s = \|{(u,v): u \in S, v \in S}\|$ is the number of edges in $S$
-- $c_s = \|{(u,v): u \in S, v \notin S}\|$ is the number of edges on the boundary of $S$
+- $m_s = \|{(u,v) \mid u \in S, v \in S}\|$ is the number of edges in $S$
+- $c_s = \|{(u,v) \mid u \in S, v \notin S}\|$ is the number of edges on the boundary of $S$
 - $f(S)$ represent the clustering quality of set $S$ 
 
 we are going to explain each type of evaluation measure successively.
@@ -98,17 +98,17 @@ $$
 f(S) = \frac{2m_s}{n_s}
 $$
 
-- **Fraction over median degree (FOMD)**: fraction of nodes in $S$ with internal degree greater than $d_m$, where $d_m =$ median degree of the whole graph and $\text{deg}_S(u) = \|$ {$(u, v | v \in S)$} $\|$
+- **Fraction over median degree (FOMD)**: fraction of nodes in $S$ with internal degree greater than $d_m$, where $d_m =$ median degree of the whole graph and $\text{deg}_S(u) = \|$ {$(u, v \mid v \in S)$} $\|$
 
 $$
-f(S) = \frac{\Big\|\Big\{u \Big| u \in S, 
+f(S) = \frac{\Big\|\Big\{u \mid u \in S, 
 \text{deg}_S(u) > d_m \Big\}\Big\|}{n_s}
 $$
 
-- **Triangle participation ratio**: Fraction of nodes in $S$ that belong to a triangle, where $n_T(a) = \|$ {$(b, c) | (a, b) \in E, (a, c) \in E, (b, c) \in E, b \in S, c \in S$} $\|$ is the number of triangles that contains a node $a$.
+- **Triangle participation ratio**: Fraction of nodes in $S$ that belong to a triangle, where $n_T(a) = \|$ {$(b, c) \mid (a, b) \in E, (a, c) \in E, (b, c) \in E, b \in S, c \in S$} $\|$ is the number of triangles that contains a node $a$.
 
 $$
-f(S) = \frac{\Big\|\Big\{a \Big| a \in S, 
+f(S) = \frac{\Big\|\Big\{a \mid a \in S, 
 n_T(a) \neq 0 \Big\}\Big\|}{n_s}
 $$
 
@@ -243,7 +243,7 @@ k = \arg \max_k \Delta_k = \arg \max_k \|\lambda_k - \lambda_{k+1}\|
 $$
 
 Why? **As long as the eigenvalue $\lambda_i$ is low, it assumes that there is little cuts for the partitioning in the associated eigenvector $x_i$**.
-Hence, if all eigenvalues $\lambda_1, ..., \lambda_k$ are very small but $\lambda_{k+1}$ is relatively large, then it is assumed that to partition $k+1$ clusters, the number of cuts required is suddenly grown a lot larger.
+Hence, if all eigenvalues $\lambda_1, ..., \lambda_k$ are very small but $\lambda_{k+1}$ is relatively large, then it is assumed that to partition one more cluster, the number of cuts required is suddenly grown a lot larger.
 Therefore, the larger this eigengap is, the closer the eigenvectors of the ideal case and hence the better spectral clustering works.
 
 
