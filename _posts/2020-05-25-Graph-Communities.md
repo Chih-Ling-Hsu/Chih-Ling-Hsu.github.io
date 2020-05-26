@@ -209,10 +209,6 @@ Take spectra of Laplacian as an example, the procedure of spectral partitioning 
 
 **Step 2.** **Decomposition**: Find eigenvalues $\lambda$ and eigenvectors $x$ of the matrix $L$
 
-$$
-L = \lambda x
-$$
-
 **Step 3.** **Grouping**: Sort the _Fiedler vector_ and identify 2 clusters by splitting the sorted vector into two parts 
 - _Fiedler vector_: the eigenvector associated with the $2^{nd}$ smallest eigenvalue ($\lambda_1 = 0$ and $\lambda_2 \neq 0$ is $G$ is connected)
 - Splitting point: naïve approach is to split at 0 or median value
