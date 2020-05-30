@@ -158,9 +158,9 @@ $$
 
 By multiplying $v$ by $A$ successively, we obtain
 
-- $vA = \begin{pmatrix}0&1&1&0&0\end{pmatrix}$, which indiactes how many walks of length 1 from node 1 end up in node $i$
-- $vA^2 = \begin{pmatrix}2&0&0&2&1\end{pmatrix}$, which indiactes how many walks of length 2 from node 1 end up in node $i$
-- $vA^3 = \begin{pmatrix}0&4&5&1&2\end{pmatrix}$, which indiactes how many walks of length 3 from node 1 end up in node $i$
+- $vA = \begin{pmatrix}0&1&1&0&0\end{pmatrix}$, the $i$-th entry indicates how many walks of length 1 from node 1 end up in node $i$
+- $vA^2 = \begin{pmatrix}2&0&0&2&1\end{pmatrix}$, the $i$-th entry indiactes how many walks of length 2 from node 1 end up in node $i$
+- $vA^3 = \begin{pmatrix}0&4&5&1&2\end{pmatrix}$, the $i$-th entry indiactes how many walks of length 3 from node 1 end up in node $i$
 - ...
 
 Furthermore, by multiplying $v$ by the random walk matrix $M$ successively, we obtain
@@ -220,7 +220,7 @@ This gives
 
 
 Therefore, the power iteration method is exactly how the probability distribution over vertices evolves if we run the random walk starting with some initial distribution $P_0$ over the vertices.
-This means such a process converges to the distribution $\pi$ over vertices in the limit as $t$ goes to infinity
+This means such a process converges to the distribution $\pi$ over vertices as $t$ goes to infinity.
 
 <!-- The adjacency matrix of a simple graph is a real symmetric matrix and is therefore orthogonally diagonalizable; its eigenvalues are real algebraic integers. -->
 
@@ -282,7 +282,7 @@ In consequence,
 
 ### Spectral Gap
 
-In addition, the **spectra of graph** are the eigenvalues $\lambda_1, \lambda_2, ... , \lambda_n$ of matrices $A$, $M$, or $L$, which are in a descending order, and the **eigengap** (or **spectral gap**) is $\|\lambda_1 - \lambda_2\|$, the difference between the two largest eigenvalues.
+In addition, the **spectra of graph** are the eigenvalues $\lambda_1, \lambda_2, ... , \lambda_n$ of matrices $A$, $M$, or $L$, and the **eigengap** (or **spectral gap**) is $\|\lambda_1 - \lambda_2\|$, the difference between the two largest eigenvalues.
 The **eigengap** represents how well the graph is connected.
 A larger eigengap implies a higher [expansion](../../../2020/05/12/Graph#expanders-and-expansion) of the graph.
 
@@ -305,7 +305,7 @@ Consequently, if $G'$ is a graph which is contructed by connecting components $g
 <img src="https://imgur.com/2dVy4cD.png" style="width:200px">
 
 - $\lambda_1 \text{ of } G' \approx \lambda_1 \text{ of } g^{(1)}$
-- $\lambda_2 \text{ of } G' \approx \lambda_2 \text{ of } g^{(1)}$
+- $\lambda_2 \text{ of } G' \approx \lambda_1 \text{ of } g^{(2)}$
 
 
 Therefore, the spectral gap for $G'$ is almost zero, indicating a low expansion.

@@ -41,10 +41,10 @@ $$
 \text{sim}(v_i,v_j) = \frac{\|N(v_i) \cap N(v_j)\|}{\|N(v_i) \cup N(v_j)\|}
 $$
 
-- **Adamic/Adar Score**: One of the strongest link predictors
+- **Adamic/Adar Score**: one of the strongest link predictors
 
 $$
-\text{sim}(v_i,v_j) = \sum_{v \in N(v_i) \cap N(v_j)} \frac{1}{\log \|N(v)\|}
+\text{sim}(v_i,v_j) = \sum_{u \in N(v_i) \cap N(v_j)} \frac{1}{\log \|N(u)\|}
 $$
 
 ### Path-based Similarity Functions for Non-Local-Neighborhood

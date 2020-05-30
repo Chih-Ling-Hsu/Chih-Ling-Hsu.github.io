@@ -56,7 +56,7 @@ Let's say we formulate the Watts-Strogatz model in an alternative way:
 | <img src="https://imgur.com/3kpyFmz.png" style="width:300px"> | 1. We start with a sqiuare grid, where each node is connected to all 9 neighbors and also has 1 spoke<br><br>2. We then connect each spoke to another random node in the graph |
 
 In this way we do not remove the original local edges but add additional long edges.
-As a result, the corresponding clsutering coefficeint of any arbitrary node $v$ would be 
+As a result, the corresponding clustering coefficeint of any arbitrary node $v$ would be 
 
 $$
 C(v) = \frac{e(v)}{\frac{1}{2}k(v) \big(k(v) - 1\big)} \geq \frac{12}{\frac{1}{2} \cdot 9 \cdot 8} = \frac{1}{3} \approx 0.33
@@ -66,7 +66,7 @@ $$
 
 Use the previous graph continuously as an example, by considering the grid where we contract 2x2 subgraphs into supernodes, we create a 4-regular random graph.
 In particular, for $r \geq 3$, a random $r$-regular graph of large size is asymptotically almost surely $r$-connected.
-That is, we now obtain a $4$-connected random graph with connectivity less than $r$ exist.
+<!-- That is, we now obtain a $4$-connected random graph with connectivity less than $4$ exist. -->
 
 ![](https://imgur.com/pujDgcv.png)
 
@@ -112,8 +112,8 @@ As a result, in **Decentralized Navigation (Decentralized Search)**, we follow t
 > **Basic Navigation Principles**: 
 > _Why can we navigate in the network and find short paths without any global view of the system?_
 > - We have globaly agreed ID space with a distance function, which allows us to make local decisions on minimizing distance to the target
-> Existence of the underlying lattice that assures us to always be able to reach the target
-> - Existence of [Kleinberg's](../../../2020/05/15/kleinberg) long-range links that allow us to progres towards the target rapidly (in polylogarithmic steps)
+> - Existence of the underlying lattice that assures us to always be able to reach the target
+> - Existence of [Kleinberg's](../../../2020/05/15/kleinberg) long-range links that allow us to progress towards the target rapidly (in polylogarithmic steps)
 
 However, Watts-Strogatz model with high clusterisation and short path lengths is not navigable.
 Decentralized greedy routing can not find short paths for any arbitrary pair of nodes although short paths exist in Watts-Strogatz model, but why?
@@ -125,8 +125,8 @@ Decentralized greedy routing can not find short paths for any arbitrary pair of 
 Using a $1$-dimensional ring structure and 1 random link from each node as an exmaple of Watts-Strogatz graph, let's assume that we're performing a decentralized distance minimizing search algorithm to route from the source node $s$ to the target node $t$.
 
 - $I$ is an interval of width $2x$ nodes (for some $x$)  around target $t$
-- $E=$ event that any of the first $k$ nodes search algorithm visits has a link to $I$
-- $E_i=$ event that long link out of node $i$ points to some node in $I$
+- $E=$ event that any of the first $k$ nodes search algorithm visits has a link to $I$
+- $E_i=$ event that long link of node $i$ points to some node in $I$
 
 We can infer that
 
@@ -142,7 +142,7 @@ $$
 P(E) \leq \frac{2 \cdot \Big(\frac{1}{2} \sqrt{n}\Big)}{n} = \frac{1}{2}
 $$
 
-To conclude, the probability that any of the first $k$ nodes search algorithm visits has a link to $I$ is
+To conclude, the probability that any of the first $k$ nodes ofsearch algorithm visits has a link to $I$ is
 
 $$
 P(E) = P(\text{in $\frac{1}{2}\sqrt{n}$ steps we jump inside $\frac{1}{2}\sqrt{n}$ of $t$}) \leq \frac{1}{2}

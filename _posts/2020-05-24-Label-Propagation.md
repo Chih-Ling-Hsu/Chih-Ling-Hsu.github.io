@@ -101,13 +101,13 @@ More specifically, a unique stationary probability distribution $Y \in \mathbb{R
 $$
 Y = T^{\infty} \cdot Y_0
 \\
-\begin{pmatrix}\hat{Y}_l\\\hat{Y}_u\end{pmatrix} = \begin{pmatrix}I & O\\T_{ul}^{'} & O\end{pmatrix} \cdot \begin{pmatrix}Y_l\\O\end{pmatrix}
+\begin{pmatrix}\hat{Y}_l\\\hat{Y}_u\end{pmatrix} = \begin{pmatrix}I & O\\\hat{T}_{ul} & O\end{pmatrix} \cdot \begin{pmatrix}Y_l\\O\end{pmatrix}
 $$
 
 
-- $T^{\infty} \in \mathbb{R}^{n \times n}$ is the absorption matrix with infinity number of hops (random walks with $\text{TTL} = \infty$) where $T_{ul}^{'} = (1 - T_{uu})^{-1} T_{ul}$.
+- $T^{\infty} \in \mathbb{R}^{n \times n}$ is the absorption matrix with infinity number of hops (random walks with $\text{TTL} = \infty$) where $\hat{T}_{ul} = (1 - T_{uu})^{-1} T_{ul}$.
 - $\hat{Y}_l = Y_l = I_k \in \mathbb{R}^{k \times k}$ is the label vectors of labelled nodes.
-- $\hat{Y}_u = T_{ul}^{'} \cdot Y_l \in \mathbb{R}^{n \times k}$ is the label vectors of unlabelled nodes.
+- $\hat{Y}_u = \hat{T}_{ul} \cdot Y_l \in \mathbb{R}^{n \times k}$ is the label vectors of unlabelled nodes.
 
 For example, using the above exmaple we can obtain the label vectors of unlabelled nodes by the calculation below:
 

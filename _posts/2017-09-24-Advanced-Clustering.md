@@ -28,9 +28,7 @@ Employing a hierarchical clustering algorithm, CURE adopts a middle ground betwe
 
 ### Representative Points of Clusters
 
-Particularly, in CURE each cluster $C$ is represented by $R_C$, which is a set of representatives (i.e., $\|R_C\| = \kappa = 10$ for each cluster $C$).   
-These representatives are chosen on the border of the cluster, trying to capture its shape.   
-Then, they are pushed towards cluster mean by a fraction $a$, in order to discard the irregularities of the border.
+Particularly, in CURE each cluster $C$ is represented by $R_C$, which is a set of representatives (i.e., $\|R_C\| = \kappa = 10$ for each cluster $C$).   These representatives are chosen on the border of the cluster, trying to capture its shape.   Then, they are pushed towards cluster mean by a fraction $a$, in order to discard the irregularities of the border.
 
 <!-- > **Representative Points**:
 > In CURE, a constant number $\kappa$ of well scattered points of a cluster are chosen and they are shrunk towards the centroid of the cluster by a fraction $a$.

@@ -24,15 +24,18 @@ On the other hand, the most commonly studied one is the $G(n, p)$ Model proposed
 ## Erdos-Renyi Model
 
 $G(n, p)$, the Erdos-Renyi Random Graph, defines a family of graphs, each of which starts with $n$ isolated nodes, and we place an edge between each distinct node pair with probability $p$.
-In $G(n, p)$ Model, the probability of obtaining any one particular random graph with $m$ edges is $p^{m}(1-p)^{N-m}$ with the notation $N=\binom{n}{2}$
+In $G(n, p)$ Model, the probability of obtaining any one particular random graph with $m$ edges is $p^{m}(1-p)^{N-m}$ with the notation $N=\binom{n}{2}$.
 As a result, $G(n, p)$ defines a bigger familiy than $G(n, m)$ since $n$ and $p$ do not uniquely determine the graph so number of possible graphs are larger.
 
 However, Erdos-Renyi graphs do not have two important properties observed in many real-world networks:
 
 1. They do not generate **local clustering** and triadic closures
-2. They do not account for **the formation of hubs**. (The degree distribution of ER graphs converges to a Poisson distribution, rather than a power law observed in many real-world, scale-free networks)
+2. They do not account for **the formation of hubs**. (The degree distribution of ER graphs converges to a Poisson distribution, rather than a power law distribution observed in many real-world, scale-free networks)
 
-The Watts-Strogatz model addressed the first limitation while the Barabasi-Albert Model and the Configuration Model addressed the second one.
+> **Triadic closure**: In social network theory, triadic closure is the property among three nodes $A$, $B$, and $C$, such that if a strong tie exists between $A-B$ and $A-C$, there is only a strong tie between $B-C$.
+> One measure for the presence of triadic closure is clustering coefficient.
+
+The [Watts-Strogatz model](./#watts-strogatz-model) addressed the first limitation while the [Barabasi-Albert Model](./#barabasi-albert-model) and the [Configuration Model](./#configuration-model) addressed the second one.
 
 For further details about the following items, please check [this post](../../../2020/05/15/Gnp):
 
@@ -68,9 +71,9 @@ The Barabasi-Albert model tries to explain the existence of such nodes in real n
 ## Configuration Model
 
 The configuration model is a method for **generating random networks from given degree sequence**. 
-Particularly, the degree of each vertex is pre-defined n the configuration model.
+Particularly, the degree of each vertex is pre-defined in the configuration model.
 As opposed to the Erdos-Renyi model, whose degree sequence is generated from  Poisson distribution, the model allows the user to give the network any desired degree distribution.
-As a result, configuration model can be sued to compare a real network $G$ and a "random" $G'$ which has the same degree sequence as $G$.
+As a result, configuration model can be used to compare a real network $G$ and a "random" network $G'$ which has the same degree sequence as $G$.
 
 
 The generation of configuration model is described in below:
@@ -118,7 +121,7 @@ As illustrated in the figure below, we quantify the structural properties of the
 It is observed that when $p \approx 0.01$, the local clustering of the graph is still high but the path lengths in the graph becomes very short, which is exactly the characteristics of a real-world network.
 
 However, Watts-Strogatz model with high clusterisation and short path lengths is not navigable.
-Decentralized greedy routing can not find short paths for any arbitrary pair of nodes although short paths exist in Watts-Strogatz model
+Decentralized greedy routing can not find short paths for any arbitrary pair of nodesin Watts-Strogatz model without searching the whole graph.
 
 For further details about the following items, please check [this post](../../../2020/05/15/watts-strogatz):
 
@@ -130,12 +133,9 @@ For further details about the following items, please check [this post](../../..
 ## Kleinberg's Model
 
 Kleinberg's model presents the infinite family of **navigable Small-World networks** that generalizes Watts-Strogatz model.
-Moreover, with Kleinberg's model it is shown that
+Moreover, with Kleinberg's model it is shown that **short paths not only exist but can be found with limited knowledge of the global network**. Decentralized search algorithms can find short paths with high probability.
 
-- short paths not only exist but can be found with limited knowledge of the global network (Decentralized search algorithms can find short paths with high probability.)
-- there exist only one unique model within that family for which decentralized algorithms are effective
-
-> **Navigable Networks** are peculiar in that comparing with searching the whole graph, routing methods can determine a relatively short path between any two nodes.
+> **Navigable Networks** are peculiar in that comparing with searching the whole graph, routing methods can efficiently determine a relatively short path between any two nodes.
 
 The intuition of Kleinberg's model is to make links not random but inversely proportional to the "distance".
 Let's assume the dimensionality is 2, the generation of Kleinberg’s basic model is described as below: 

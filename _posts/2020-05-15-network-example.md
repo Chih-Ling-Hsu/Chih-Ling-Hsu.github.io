@@ -10,10 +10,10 @@ mathjax: true
 
 In June 2006, MSN Messenger had 30 billion conversations among 240 million people.
 From the data, the MSN network is constructed as a communication graph with $n = 180 \text{ million}$ nodes and $m = 1.3 \text{ billion}$ undirected edges.
-To investigate the properties large-scale networks, we take the real-world data, MSN network, as an example and discover its macroscopic properties:
+To investigate the properties of large-scale networks, we take the real-world data, MSN network, as an example and discover its macroscopic properties:
 
 - **Diameter** - _What is the degrees of separation in this network?_
-- **Clustering coefficient** - What fraction of my friends are also friends themselves?
+- **Clustering coefficient** - _What fraction of my friends are also friends themselves?_
 - **Degree distribution** - _Are there many "hubs" in the network?_
 - **Connectivity** - _How many "islands" and how big are they?_
 <!-- - **Navigability** - _Can you do efficient routing?_ -->
@@ -27,7 +27,7 @@ To investigate the properties large-scale networks, we take the real-world data,
 
 
 The degree of a node in a network is the number of connections it has to other nodes and the degree distribution is the probability distribution of these degrees over the whole network.
-The simplest network model, for example, the [Erdos-Renyi random graph](../../../2020/05/15/Gnp), in which each of $n$ nodes is independently connected (or not) with probability $p$ (or $1 − p$), has a binomial distribution of degrees $k$.
+The simplest network model, for example, the [Erdos-Renyi random graph](../../../2020/05/15/Gnp), in which each of $n$ nodes is independently connected (or not) with probability $p$ (or $1 − p$), has a binomial distribution of degrees.
 
 
 However, most networks in the real world have degree distributions very different from this.
@@ -45,7 +45,7 @@ The degree distributions of real-world networks are usually power-law distributi
 
 <img src="https://imgur.com/PaRrmD7.png" alt="Leskovec & Horvitz (2008)" style="width:500px">
 
-The figure above displays the distribution of the
+The figure above displays the size distribution of the
 connected components in the MSN network. 
 The giant component contains 99.9% of the nodes
 in the network against a background of small components
@@ -57,7 +57,7 @@ This distribution also follows a power law.
 
 
 The [clustering coefficient](../../../2020/05/12/Graph#clustering-coefficient) is a measure of transitivity in the network, which is defined as the fraction of triangles around a node of degree $k$.
-The figure above displays the clustering coefficient versus the degree of a nodefor Messenger. 
+The figure above displays the clustering coefficient versus the degree of a node for Messenger. 
 For the Messenger network, the clustering coefficient decays very slowly with exponent $−0.37$ and the average clustering coefficient is $\tilde{C}(G) = 0.137$.
 
 By comparing with the edge density of a random graph,

@@ -48,14 +48,15 @@ In $Y_{\text{diffusion}}$, the $j$-th entry indicates the probability of node $j
 
 Similar to the idea of diffusion, the label spreading algorithm can be described in the following steps:
 
-**Step 1.** Initialize $Y_0$ in the same way
+**Step 1.** Initialize $Y_0$ such that entries of the **labelled nodes** are set to $1$ while other entries are set to $0$
+
 **Step 2.** Label Spreading
 
 $$
 Y_{t+1} := \alpha L Y_t + (1-\alpha) Y_0
 $$ 
 
-- $Y_0 \in \mathbb{R}^{n \times 1}$ is a binary vector whose $i$-th entry is set to $1$ while other entries are set to $0$
+- $Y_0 \in \mathbb{R}^{n \times 1}$ is a binary vector whose $i$-th entry is set to $1$ if node $i$ is a labelled node while other entries are set to $0$
 - $L =$ [Normalized Laplacian Matrix](../../../2020/05/20/random-walks#graph-spectra--graph-laplacian)
 - $\alpha$ is a constant, usually $0 < \alpha < 1$
 
@@ -105,7 +106,7 @@ f(S) = \frac{\Big\|\Big\{u \mid u \in S,
 \text{deg}_S(u) > d_m \Big\}\Big\|}{n_s}
 $$
 
-- **Triangle participation ratio**: Fraction of nodes in $S$ that belong to a triangle, where $n_T(a) = \|$ {$(b, c) \mid (a, b) \in E, (a, c) \in E, (b, c) \in E, b \in S, c \in S$} $\|$ is the number of triangles that contains a node $a$.
+- **Triangle participation ratio**: Fraction of nodes in $S$ that belong to a triangle, where $n_T(a, S) = \|$ {$(b, c) \mid (a, b) \in E, (a, c) \in E, (b, c) \in E, b \in S, c \in S$} $\|$ is the number of triangles in $S$ that contains a node $a$.
 
 $$
 f(S) = \frac{\Big\|\Big\{a \mid a \in S, 
@@ -161,7 +162,7 @@ Q = \frac{1}{4m} s^TBs
 $$
 
 - $s$ is the column vector whose elements are the $s_i=1$ if node $i$ belongs to $S$ and $0$ otherwise
-- $B_{ij} = A_{ij} - \frac{\text{deg}(i) \text{deg}(j)}{2m}$ for all pairs of vertices $(i, j)$
+- $B_{ij} = A_{ij} - \frac{\text{deg}(i) \text{deg}(j)}{2m}$ for all pairs of vertices $(i, j)$, where $A$ is the adjacency matrix
 
 
 
@@ -170,7 +171,7 @@ $$
 To perform spectral clustering in order to dectect communites in a graph, we first need to build up a Similarity Matrix / Affinity Matrix $A$ such that
 
 - $A_{ij}$ is the similarity or affinity between node $i$ and $j$
-- All values non-negative $A_{ij} \geq 0$
+- All values are non-negative $A_{ij} \geq 0, \forall i, j$
 - Highest values would be on the diagonal of $A$
 - $A$ is a symmetric matrix (assume our notion of similarity as symmetric)
 - $A$ is a positive semi-definite matrix
@@ -205,18 +206,18 @@ With this similarity matrix $A$, the following Spectral Partitioning Algorithms 
 
 Take spectra of Laplacian as an example, the procedure of spectral partitioning on a graph $G$ is described below:
 
-**Step 1.** **Pre-processing**: Build Laplacian matrix $L$ of the graph
+**Step 1.** **Pre-processing**: Build Laplacian matrix $L$ of the graph
 
 **Step 2.** **Decomposition**: Find eigenvalues $\lambda$ and eigenvectors $x$ of the matrix $L$
 
-**Step 3.** **Grouping**: Sort the _Fiedler vector_ and identify 2 clusters by splitting the sorted vector into two parts 
+**Step 3.** **Grouping**: Sort the _Fiedler vector_ $x_2$ and identify 2 clusters by splitting the sorted vector into two parts 
 - _Fiedler vector_: the eigenvector associated with the $2^{nd}$ smallest eigenvalue ($\lambda_1 = 0$ and $\lambda_2 \neq 0$ is $G$ is connected)
-- Splitting point: naïve approach is to split at 0 or median value
+- Splitting point: naïve approach is to split at $0$ or median value
 
 
 ![](https://imgur.com/UNP3l0t.png)
 
-For example, using the Fiedler vector $x_2$, we partition the graph into 2 clusters by setting spliting point at 0.
+For example, using the Fiedler vector $x_2$, we can partition the graph into 2 clusters by setting spliting point at $0$.
 
 ### $k$-Way Spectral Clustering
 
@@ -224,11 +225,11 @@ So far only bisection is considered, but the next question is: **How do we parti
 There are two basic approaches:
 
 - **Recursive bi-partitioning**: Recursively apply bi-partitioning algorithm in a hierarchical divisive manner.   However, this approach is inefficient and also unstable
-- **Cluster multiple eigenvectors**: Build a reduced space from multiple eigenvectors.
+- **Cluster multiple eigenvectors**: Build a reduced space from multiple eigenvectors and perform clustering in this space.
 
 The second approach is more commonly used, especially in recent papers.
 By combining the eigenvectors with top $k$ eigenvalues, we construct a $n \times k$ matrix.
-This process can be seen as transforming $n$ points in $n$ dimensional space to $n$ points in $k$ dimensional space, and we expect that in this $k$-dim eigenspace the data points are more distinct and easier to separate.
+This process can be seen as transforming $n$ points in $n$-dimensional space to $n$ points in $k$-dimensional space, and we expect that in this $k$-dim eigenspace the data points are more distinct and easier to separate (e.g., check $x_2$ in the above figure).
 Therefore, we can then perform simple clustering (e.g., k-means) to find $k$ clusters in this eigenspace.
 
 So now the next question is: **How to select $k$?**

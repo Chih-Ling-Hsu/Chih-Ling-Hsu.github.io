@@ -158,10 +158,10 @@ When the algorithm obtains a sample from the database and fill the memory buffer
 
 - **Retained set (RS)**: Isolated points waiting to be assigned.
 
-Afterwards, data points in RS would be decided to assign to either of the following set:
+Afterwards, data points in RS may be decided to assign to either of the following set:
 
-- **Discard set (DS)**: If the point is close enough to any centroid, it would be assigned/sumarized to the DS of the corresponding cluster and discarded.
-- **Compression set (CS)**: If the point is not close to any existing centroid, then it would be assigned/sumarized to a group of existing CS that is close enough and discarded. 
+- **Discard set (DS)**: If the point is close enough to any centroid, it would be assigned/sumarized to the DS of the corresponding cluster.
+- **Compression set (CS)**: If the point is not close to any existing centroid, then it may be assigned/sumarized to a group of existing CS that is close enough. 
 
 
 For each sumarized set, including the CS sets and the DS set of any cluster, the following statistics are maintained for a $d$-dimensional data set:
@@ -179,7 +179,7 @@ In general, we use $2d + 1$ values to represent a cluster of any size, where its
 
 The BFR algorithm follows the steps below to decide $k$ clusters:
 
-1. Delect the initial $k$ centroids (_Initialize the mixture model parameters_)
+1. Select the initial $k$ centroids (_Initialize the mixture model parameters_)
 2. Obtain a sample from the database, filling the memory buffer, and add them into RS.
 3. **Perform Primary Compression**: Find those points that are _"sufficiently close"_ to a cluster centroid and add them to the DS set of the corresponding cluster (_Update mixture model parameters_)
    - The statistics of the DS set of the corresponding cluster should be updated
@@ -187,7 +187,7 @@ The BFR algorithm follows the steps below to decide $k$ clusters:
 4. **Perform Secondary Compression**: Using data points in RS, determine a number of sub-clusters with any main-memory clustering algorithm (e.g., k-means)
    - Sub-clusters are summarized into CSs
    - Outlier points go back to RS
-   - Consider merging CSs if the variance of the combined subcluster is below some threshold ($N$, $\text{SUM}$, and $\text{SUMSQ}$ allow us to make that calculation quickly)
+   - Consider merging CSs if the variance of the combined subcluster isbelow some threshold ($N$, $\text{SUM}$, and $\text{SUMSQ}$ allow us to make that calculation quickly)
 5. Go back to **step 2.** until one full scan of the database is complete; if this is the last round, merge all CSs and all RS points into their nearest cluster.
 
 > **Mahalanobis Distance:** The Mahalanobis distance is a measure of the distance between a point $\overrightarrow{x}$ and a distribution $D$.

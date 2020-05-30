@@ -9,14 +9,11 @@ mathjax: true
 ---
 
 Kleinberg's model presents the infinite family of **navigable Small-World networks** that generalizes Watts-Strogatz model.
-Moreover, with Kleinberg's model it is shown that
-
-- short paths not only exist but can be found with limited knowledge of the global network (Decentralized search algorithms can find short paths with high probability.)
-- there exist only one unique model within that family for which decentralized algorithms are effective
+Moreover, with Kleinberg's model it is shown that **short paths not only exist but can be found with limited knowledge of the global network**. Decentralized search algorithms can find short paths with high probability.
 
 <!--more-->
 
-> **Navigable Networks** are peculiar in that comparing with searching the whole graph, routing methods can determine a relatively short path between any two nodes.
+> **Navigable Networks** are peculiar in that comparing with searching the whole graph, routing methods can efficiently determine a relatively short path between any two nodes.
 
 The intuition of Kleinberg's model is to make links not random but inversely proportional to the "distance".
 Let's assume the dimensionality is 2, the generation of Kleinberg's basic model is described as below: 
@@ -51,7 +48,7 @@ For a node $u$ to select another node $v$ (which is $x$ miles away from $u$) to 
 
 ![Girdzijauskas (2005)](https://imgur.com/g9NHlHA.png)
 
-So if we create $q$ long-range links between $u$ and any arbitray node (for every node $u$), the search cost to route from any node $u$ to a targeting node $v$ would be
+So if we create $q$ long-range links between $u$ and any arbitray node, the search cost to route from any node $u$ to a targeting node $v$ would be
 
 $$T = O(\frac{(\log n)^2}{q})$$
 
@@ -77,7 +74,7 @@ So the total search time is $T = O(\log n)$.
 
 ### Scenario with $q = 1$ long-range link per node
 
-Next, we assume we only have $k=1$ long-range link per node, then for each node $u$, **the probability for its long-range link to belong to the set $A_{1}$ is $\frac{1}{\log n}$**.
+Next, we assume we only have $q=1$ long-range link per node, then for each node $u$, **the probability for its long-range link to belong to the set $A_{1}$ is $\frac{1}{\log n}$**.
 Therefore, for a source node $s$ and a target node $t$ in the limiting case $d(u, v) = \log n$, the decentralized search can be explained in the following steps:
 
 1. Spend $O(\log n)$ steps to find a long-range link to a node $x^{(1)}$, which is in the set $A_{1}$ of the previous node.   Now the distance becomes $d(x^{(1)}, t) = \frac{1}{2} d(u, v)$
@@ -100,12 +97,12 @@ Therefore, although the short paths exist between every pair of vertices, there 
 
 ### When $r < d$
 
-The long-range contacts are almost short edges since $r$ is small.
+The long-range contacts are almost long edges since $r$ is small.
 Therefore, a decentralized algorithm can quickly approach the neighborhood of target, but then slows down untill finally reaching the target.
 
 ### When $r > d$
 
-The long-range contacts are almost long edges since $r$ is big.
+The long-range contacts are almost short edges since $r$ is big.
 Therefore, a decentralized algorithm can quickly find the target if it is in its neighborhood, but would take more time if it is not.
 
 ### When $r = d$

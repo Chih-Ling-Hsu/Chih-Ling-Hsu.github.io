@@ -52,7 +52,7 @@ $$
 C^*_C(i) = (n-1) C_C(i)
 $$
 
-The remaining issue for normalized closeness centrality is thatit can not apply to diconnected graphs.   It is only for connected components.
+The remaining issue for normalized closeness centrality is that it can not apply to diconnected graphs.   It is only for connected components.
 
 
 
